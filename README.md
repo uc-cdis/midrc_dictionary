@@ -1,4 +1,4 @@
-Data Model for Open Access Data
+Data Model for the Medical Imaging Resource Data Commons (MIDRC)
 
 # Data Dictionary
 
