@@ -1,4 +1,4 @@
-Data Model for the Medical Imaging Resource Data Commons (MIDRC)
+Data Model for the Medical Imaging and Data Resource Center (MIDRC) Data Commons
 
 # Data Dictionary
 

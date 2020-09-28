@@ -1,0 +1,203 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "subject"
+title: Subject
+type: object
+nodeTerms: null
+namespace: https://gen3.datacommons.io/
+category: administrative
+program: '*'
+project: '*'
+description: The collection of all data related to a specific subject in the context
+  of a specific experiment.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: studies
+    backref: subjects
+    label: member_of
+    target_type: study
+    multiplicity: many_to_many
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - studies
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  accession:
+    description: The subject's accession ID or number.
+    type: string
+
+  age_at_enrollment:
+    description: The age of the study subject at enrollment; must be less than 90
+      years.
+    type: integer
+    maximum: 89
+    minimum: 0
+
+  age_at_enrollment_gt89:
+    description: The age of the subject at enrollment is greater than 89 years.
+    enum:
+      - "No"
+      - "Yes"
+
+  age_at_immigration:
+    description: The age of the study subject at immigration, if the age is less than
+      90 years.
+    type: integer
+    maximum: 89
+    minimum: 0
+
+  birth_year:
+    description: The subject's birth year.
+    type: integer
+    minimum: 1928
+
+  collaboration_id:
+    description: For instances in which multiple institutions use the same patient
+      for their respective studies, this space is used as a place to enter in the
+      deidentified barcode, id, or other identifier for the patient. Work with your
+      collaborators to decide on the patient's id.
+    type: string
+
+  comments:
+    description: Any extra comments or notes about this subject.
+    type: string
+
+  days_to_birth:
+    description: The number of days between the subject's Index Date and the date
+      of birth.
+    type: integer
+    maximum: 0
+    minimum: -32872
+
+  days_to_immigration:
+    description: The number of days between the subject's Index Date and the date
+      subject immigrated To North America.
+    type: integer
+
+  days_to_lost_to_followup:
+    description: The number of days between the date used for index and the date the
+      patient was lost to follow-up.
+    type: integer
+
+  death_year:
+    description: The subject's death year.
+    type: integer
+
+  ethnicity:
+    term:
+      $ref: "_terms.yaml#/ethnicity"
+    enum:
+      - Hispanic or Latino
+      - Not Hispanic or Latino
+      - Not Reported
+      - Other (specify)
+      - Unknown
+
+  ethnicity_other:
+    description: If 'Other (specify)' was chosen for ethnicity, Ethnicity (free text).
+    type: string
+
+  experimental_group:
+    description: The group into which this subject has been classified for this study.
+    type: string
+
+  gender:
+    term:
+      $ref: "_terms.yaml#/gender"
+    enum:
+      - Female
+      - Male
+      - Not Reported
+      - Unknown
+      - Unspecified
+
+  handedness:
+    description: Handedness of the subject.
+    enum:
+      - Left
+      - Mixed
+      - Right
+
+  index_date:
+    description: The reference or anchor date used during date obfuscation, where
+      a single date is obscurred by creating one or more date ranges in relation to
+      this date.
+    enum:
+      - Diagnosis
+      - First Patient Visit
+      - Not Reported
+      - Study Enrollment
+
+  index_event_status:
+    description: A measure of our confidence that the logitundinal structure of the
+      study is well described as data-defined or via curation.
+    enum:
+      - Data-Derived
+      - Imputed
+
+  lost_to_followup:
+    description: A yes/no indicator related to whether a patient was unable to be
+      contacted for follow-up.
+    enum:
+      - "No"
+      - Not Applicable
+      - Not Reported
+      - "Yes"
+
+  place_of_birth:
+    description: Place of birth or origin.
+    type: string
+
+  primary_site:
+    description: The primary anatomical site of disease in the subject.
+    type: string
+
+  race:
+    term:
+      $ref: "_terms.yaml#/race"
+    enum:
+      - American Indian or Alaska Native
+      - Asian
+      - Biracial
+      - Black or African American
+      - Caribbean Indian
+      - Hispanic
+      - Jewish
+      - Lebanese/Non-jewish
+      - Multiracial
+      - Native Hawaiian or Other Pacific Islander
+      - Other (specify)
+      - Unknown
+      - White
+
+  race_other:
+    description: If 'Other (specify)' was chosen for race, free text to describe race
+      as collected.
+    type: string
+
+  species:
+    description: Taxonomic species of the subject.
+    type: string
+
+  studies:
+    $ref: "_definitions.yaml#/to_many"
