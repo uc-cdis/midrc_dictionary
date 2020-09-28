@@ -1,0 +1,255 @@
+id: _definitions
+
+UUID:
+    term:
+        $ref: "_terms.yaml#/UUID"
+    type: string
+    pattern: "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+
+parent_uuids:
+    type: array
+    minItems: 1
+    items:
+        $ref: "#/UUID"
+    uniqueItems: true
+
+foreign_key_project:
+    type: object
+    # Allow true here because we can have other unique keys defined on
+    # a target type
+    additionalProperties: true
+    #Can either use 'id' which are Gen3 IDs (UUID) or 'code'
+    #which is the user defined ID for project
+    properties:
+        id:
+            $ref: "#/UUID"
+        code:
+            type: string
+
+to_one_project:
+  anyOf:
+    - type: array
+      items:
+        $ref: "#/foreign_key_project"
+        minItems: 1
+        maxItems: 1
+    - $ref: "#/foreign_key_project"
+
+to_many_project:
+  anyOf:
+    - type: array
+      items:
+        $ref: "#/foreign_key_project"
+        minItems: 1
+    - $ref: "#/foreign_key_project"
+
+foreign_key:
+    type: object
+    # Allow true here because we can have other unique keys defined on
+    # a target type
+    additionalProperties: True
+    #Can either use 'id' which are GDC IDs (UUID) or 'submitter_id'
+    #which are user defined IDs ("submitter IDs in the backend")
+    properties:
+        id:
+            $ref: "#/UUID"
+        submitter_id:
+            type: string
+
+to_one:
+  anyOf:
+    - type: array
+      items:
+        $ref: "#/foreign_key"
+        minItems: 1
+        maxItems: 1
+    - $ref: "#/foreign_key"
+
+to_many:
+  anyOf:
+    - type: array
+      items:
+        $ref: "#/foreign_key"
+        minItems: 1
+    - $ref: "#/foreign_key"
+
+datetime:
+  oneOf:
+    - type: string
+      format: date-time
+    - type: 'null'
+  term:
+    $ref: "_terms.yaml#/datetime"
+
+file_name:
+    type: string
+    term:
+        $ref: "_terms.yaml#/file_name"
+
+file_size:
+    type: integer
+    term:
+        $ref: "_terms.yaml#/file_size"
+
+file_format:
+    type: string
+    term:
+        $ref: "_terms.yaml#/file_format"
+
+md5sum:
+    type: string
+    term:
+        $ref: "_terms.yaml#/md5sum"
+    pattern: "^[a-f0-9]{32}$"
+
+object_id:
+    type: string
+    description: "The GUID of the object in the index service."
+
+release_state:
+    description: "Release state of an entity."
+    default: unreleased
+    enum:
+      - unreleased
+      - released
+      - redacted
+
+data_bundle_state:
+    description: "State of a data bundle."
+    default: submitted
+    enum:
+        - submitted
+        - validated
+        - error
+        - released
+        - suppressed
+        - redacted
+
+data_file_error_type:
+    term:
+        $ref: "_terms.yaml#/data_file_error_type"
+    enum:
+        - file_size
+        - file_format
+        - md5sum
+
+state:
+    term:
+        $ref: "_terms.yaml#/state"
+    default: validated
+    downloadable:
+        - uploaded
+        - md5summed
+        - validating
+        - validated
+        - error
+        - invalid
+        - released
+    public:
+        - live
+    oneOf:
+        - enum: #This list covers legacy data
+            - uploading
+            - uploaded
+            - md5summing
+            - md5summed
+            - validating
+            - error
+            - invalid
+            - suppressed
+            - redacted
+            - live
+        - enum: #This list covers all future data 1/15/16
+            - validated
+            - submitted
+            - released
+
+file_state:
+    term:
+        $ref: "_terms.yaml#/file_state"
+    default: registered
+    enum:
+        - registered
+        - uploading
+        - uploaded
+        - validating
+        - validated
+        - submitted
+        - processing
+        - processed
+        - released
+        - error
+
+qc_metrics_state:
+    term:
+      $ref: "_terms.yaml#/qc_metric_state"
+    enum:
+        - FAIL
+        - PASS
+        - WARN
+
+project_id:
+    type: string
+    term:
+        $ref: "_terms.yaml#/project_id"
+
+data_file_properties:
+  $ref: "#/ubiquitous_properties"
+  file_name:
+    $ref: "#/file_name"
+  file_size:
+    $ref: "#/file_size"
+  md5sum:
+    $ref: "#/md5sum"
+  object_id:
+    $ref: "#/object_id"
+  storage_urls:
+    description: A list of URLs where the file is stored in the cloud.
+    type: array
+    items:
+      type: string
+  associated_ids:
+    description: A list of UUIDs or submitter_ids associated with this file.
+    type: array
+    items:
+      type: string
+
+workflow_properties:
+  $ref: "#/ubiquitous_properties"
+  workflow_link:
+    description: "Link to Github hash for the CWL workflow used."
+    type: string
+  workflow_version:
+    description: "Major version for a GDC workflow."
+    type: string
+  workflow_start_datetime:
+    $ref: "#/datetime"
+  workflow_end_datetime:
+    $ref: "#/datetime"
+
+ubiquitous_properties:
+  type:
+    description: The node_id of the node in the data model; the name of the node used in queries and API requests (e.g., "aligned_reads_file" for the "Aligned Reads File" node).
+    type: string
+  id:
+    $ref: "#/UUID"
+    systemAlias: node_id
+  submitter_id:
+    description: "A human-readable, unique identifier for a record in the metadata database. It can be used in place of the UUID for identifying or recalling a record (e.g., in data queries or uploads/exports)."
+    type: string
+  subject_ids:
+    description: "A list of one or more subject submitter_ids associated with this data."
+    type: array
+    items:
+      type: string
+  visit_id:
+    description: "The submitter_id of a subject's visit in the study."
+    type: string
+  state:
+    $ref: "#/state"
+  project_id:
+    $ref: "#/project_id"
+  created_datetime:
+    $ref: "#/datetime"
+  updated_datetime:
+    $ref: "#/datetime"
