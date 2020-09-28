@@ -1,0 +1,20 @@
+language: python
+python:
+- '3.6'
+before_script:
+- yes | python setup.py install
+- git clone https://github.com/uc-cdis/dictionaryutils; cd dictionaryutils
+script:
+- "./run_tests.sh"
+deploy:
+  provider: s3
+  access_key_id:
+  secret_access_key:
+    secure:
+  bucket: dictionary-artifacts
+  local-dir: artifacts
+  upload-dir: midrc_dictionary/$TRAVIS_BRANCH
+  skip_cleanup: true
+  on:
+    repo: uc-cdis/midrc_dictionary
+    all_branches: true
