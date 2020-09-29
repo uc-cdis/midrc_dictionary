@@ -4,7 +4,7 @@ id: "subject"
 title: Subject
 type: object
 nodeTerms: null
-namespace: https://gen3.datacommons.io/
+namespace: https://data.midrc.org
 category: administrative
 program: '*'
 project: '*'

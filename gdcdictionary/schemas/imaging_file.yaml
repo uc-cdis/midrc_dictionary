@@ -4,7 +4,7 @@ id: "imaging_file"
 title: Imaging File
 type: object
 nodeTerms: null
-namespace: https://gen3.datacommons.io/
+namespace: https://data.midrc.org
 category: data_file
 program: '*'
 project: '*'

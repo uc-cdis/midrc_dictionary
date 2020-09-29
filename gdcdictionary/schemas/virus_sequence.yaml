@@ -1,0 +1,104 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "virus_sequence"
+title: Virus Sequence
+type: object
+namespace: https://data.midrc.org
+category: genomic_data_file
+program: '*'
+project: '*'
+description: >
+  Data file containing virus sequence files.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - created_datetime
+  - updated_datetime
+  - state
+  - file_state
+  - error_type
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: virus_sequences
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: samples
+        backref: virus_sequences
+        label: data_from
+        target_type: sample
+        multiplicity: many_to_one
+        required: false
+      - name: virus_genomes
+        backref: virus_sequences
+        label: data_from
+        target_type: virus_genome
+        multiplicity: many_to_one
+        required: false
+      - name: studies
+        backref: virus_sequences
+        label: data_from
+        target_type: study
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - type
+  - submitter_id
+  - file_name
+  - file_size
+  - data_format
+  - md5sum
+  - data_category
+  - data_type
+
+
+uniqueKeys:
+  - [ id ]
+  - [ project_id, submitter_id ]
+
+properties:
+  $ref: "_definitions.yaml#/data_file_properties"
+  type:
+    enum: [ "virus_sequence" ]
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    enum:
+      - Nucleotide
+      - Protein
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    enum:
+      - Sequence
+      - Multi-Fasta
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    enum:
+      - fasta
+  data_source:
+    description: >
+      The source of the virus sequence.
+    enum:
+      - GenBank
+      - NCBI
+
+  virus_genomes:
+    $ref: "_definitions.yaml#/to_one"
+  samples:
+    $ref: "_definitions.yaml#/to_one"
+  studies:
+    $ref: "_definitions.yaml#/to_one"
+  core_metadata_collections:
+    $ref: "_definitions.yaml#/to_one"
