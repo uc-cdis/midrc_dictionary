@@ -4,7 +4,7 @@ id: "core_metadata_collection"
 title: Core Metadata Collection
 type: object
 nodeTerms: null
-namespace: https://gen3.datacommons.io/
+namespace: https://data.midrc.org
 category: administrative
 program: '*'
 project: '*'

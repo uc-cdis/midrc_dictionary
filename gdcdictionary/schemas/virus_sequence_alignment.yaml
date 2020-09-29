@@ -1,15 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "imaging_report"
-title: Imaging Report
+id: "virus_sequence_alignment"
+title: Virus Sequence Alignment
 type: object
-nodeTerms: null
 namespace: https://data.midrc.org
-category: data_file
+category: genomic_data_file
 program: '*'
 project: '*'
-description: Data file containing a report or tabulated results derived from the processing
-  of an image file.
+description: >
+  Data file containing virus sequence alignment files.
 additionalProperties: false
 submittable: true
 validators: null
@@ -17,9 +16,9 @@ validators: null
 systemProperties:
   - id
   - project_id
-  - state
   - created_datetime
   - updated_datetime
+  - state
   - file_state
   - error_type
 
@@ -28,21 +27,22 @@ links:
     required: true
     subgroup:
       - name: core_metadata_collections
-        backref: imaging_reports
+        backref: virus_sequence_alignments
         label: data_from
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
-      - name: imaging_files
-        backref: imaging_reports
-        label: derived_from
-        target_type: imaging_file
+      - name: virus_sequences
+        backref: virus_sequence_alignments
+        label: data_from
+        target_type: virus_sequence
         multiplicity: many_to_many
         required: false
 
+
 required:
-  - submitter_id
   - type
+  - submitter_id
   - file_name
   - file_size
   - data_format
@@ -50,44 +50,44 @@ required:
   - data_category
   - data_type
 
+
 uniqueKeys:
-  - [id]
-  - [project_id, submitter_id]
+  - [ id ]
+  - [ project_id, submitter_id ]
 
 properties:
-
   $ref: "_definitions.yaml#/data_file_properties"
-
-  atlas:
-    description: Atlas used for data output from scans.
-    type: string
-
+  type:
+    enum: [ "virus_sequence_alignment" ]
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
-    type: string
-
-  data_format:
-    term:
-      $ref: "_terms.yaml#/data_format"
-    type: string
-
+    enum:
+      - Nucleotide
+      - Protein
   data_type:
     term:
       $ref: "_terms.yaml#/data_type"
-    type: string
+    enum:
+      - Sequence Alignment
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    enum:
+      - fasta
+      - aln
+      - maf
+  alignment_tool:
+    description : >
+        The alignment tool that was used to create the alignment file.
+    enum:
+      - MAFFT
+      - ClustalW
+      - muscle
+      - Clustal Omega
 
-  derivation_method:
-    description: The name, version and description of the method, script or workflow
-      used to generate the derived or combined image
-    type: string
-
-  scan_identifier:
-    description: Identifier given to this scan.
-    type: string
+  virus_sequences:
+    $ref: "_definitions.yaml#/to_many"
 
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_one"
-
-  imaging_files:
-    $ref: "_definitions.yaml#/to_many"

@@ -1,0 +1,714 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "sample"
+title: Sample
+type: object
+namespace: https://data.midrc.org
+category: biospecimen
+program: '*'
+project: '*'
+description: >
+  Any material sample taken from a biological entity for testing, diagnostic, propagation, treatment or research purposes, including a sample obtained from a living organism or taken from the biological object after halting of all its life functions. Biospecimen can contain one or more components including but not limited to cellular molecules, cells, tissues, organs, body fluids, embryos, and body excretory products.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+required:
+  - submitter_id
+  - type
+
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+    - name: subjects
+      backref: samples
+      label: derived_from
+      target_type: subject
+      multiplicity: many_to_one
+      required: false
+    - name: studies
+      backref: samples
+      label: related_to
+      target_type: study
+      multiplicity: many_to_many
+      required: false
+    - name: projects
+      backref: samples
+      label: related_to
+      target_type: project
+      multiplicity: many_to_one
+      required: false
+
+# Sample properties: keep TCGA-specific fields
+properties:
+  type:
+    type: string
+  id:
+    $ref: "_definitions.yaml#/UUID"
+    systemAlias: node_id
+  state:
+    $ref: "_definitions.yaml#/state"
+  submitter_id:
+    type:
+      - string
+      - "null"
+    description: >
+      The legacy barcode used before prior to the use UUIDs, varies by project.
+      For TCGA this is bcrsamplebarcode.
+  biospecimen_anatomic_site:
+    term:
+      $ref: "_terms.yaml#/biospecimen_anatomic_site"
+    enum:
+      - Abdomen
+      - Abdominal Wall
+      - Acetabulum
+      - Adenoid
+      - Adipose
+      - Adrenal
+      - Alveolar Ridge
+      - Amniotic Fluid
+      - Ampulla Of Vater
+      - Anal Sphincter
+      - Ankle
+      - Anorectum
+      - Antecubital Fossa
+      - Antrum
+      - Anus
+      - Aorta
+      - Aortic Body
+      - Appendix
+      - Aqueous Fluid
+      - Arm
+      - Artery
+      - Ascitic fluid
+      - Ascending Colon
+      - Ascending Colon Hepatic Flexure
+      - Auditory Canal
+      - Autonomic Nervous System
+      - Axilla
+      - Back
+      - Bile Duct
+      - Biopsy
+      - Bladder
+      - Blood
+      - Blood Vessel
+      - Bone
+      - Bone Marrow
+      - Bowel
+      - Brain
+      - Brain Stem
+      - Breast
+      - Broad Ligament
+      - Bronchiole
+      - Bronchoalveolar Lavage Fluid
+      - Bronchus
+      - Brow
+      - Buccal Cavity
+      - Buccal Mucosa
+      - Buttock
+      - Calf
+      - Capillary
+      - Cardia
+      - Carina
+      - Carotid Artery
+      - Carotid Body
+      - Cartilage
+      - Cecum
+      - Cell-Line
+      - Central Nervous System
+      - Cerebellum
+      - Cerebral Cortex
+      - Cerebrospinal Fluid
+      - Cerebrum
+      - Cervical Spine
+      - Cervix
+      - Chest
+      - Chest Wall
+      - Chin
+      - Clavicle
+      - Clitoris
+      - Colon
+      - Colon - Mucosa Only
+      - Colonic Lamina Propria
+      - Common Duct
+      - Conjunctiva
+      - Connective Tissue
+      - Cord Blood
+      - Dermal
+      - Descending Colon
+      - Diaphragm
+      - Duodenum
+      - Ear
+      - Ear Canal
+      - Ear, Pinna (External)
+      - Effusion
+      - Elbow
+      - Endocrine Gland
+      - Epididymis
+      - Epidural Space
+      - Epithelium
+      - Esophagogastric Junction
+      - Esophagus
+      - Esophagus - Mucosa Only
+      - Eye
+      - Fallopian Tube
+      - Femoral Artery
+      - Femoral Vein
+      - Femur
+      - Fibroblasts
+      - Fibula
+      - Finger
+      - Floor Of Mouth
+      - Fluid
+      - Foot
+      - Forearm
+      - Forehead
+      - Foreskin
+      - Frontal Cortex
+      - Frontal Lobe
+      - Fundus Of Stomach
+      - Gallbladder
+      - Ganglia
+      - Gastric Lamina Propria
+      - Gastroesophageal Junction
+      - Gastrointestinal Tract
+      - Groin
+      - Gum
+      - Hand
+      - Hard Palate
+      - Head & Neck
+      - Head - Face Or Neck, Nos
+      - Heart
+      - Hepatic
+      - Hepatic Duct
+      - Hepatic Vein
+      - Hip
+      - Hippocampus
+      - Humerus
+      - Hypopharynx
+      - Ileum
+      - Ilium
+      - Index Finger
+      - Ischium
+      - Islet Cells
+      - Jaw
+      - Jejunum
+      - Joint
+      - Kidney
+      - Knee
+      - Lacrimal Gland
+      - Large Bowel
+      - Laryngopharynx
+      - Larynx
+      - Leg
+      - Leptomeninges
+      - Ligament
+      - Lip
+      - Liver
+      - Lumbar Spine
+      - Lung
+      - Lymph Node
+      - Lymph Node(s) Axilla
+      - Lymph Node(s) Brachial
+      - Lymph Node(s) Cervical
+      - Lymph Node(s) Distant
+      - Lymph Node(s) Epitrochlear
+      - Lymph Node(s) Femoral
+      - Lymph Node(s) Hilar
+      - Lymph Node(s) Iliac-Common
+      - Lymph Node(s) Iliac-External
+      - Lymph Node(s) Inguinal
+      - Lymph Node(s) Internal Mammary
+      - Lymph Node(s) Lung
+      - Lymph Node(s) Mammary
+      - Lymph Node(s) Mesenteric
+      - Lymph Node(s) Occipital
+      - Lymph Node(s) Paraaortic
+      - Lymph Node(s) Parotid
+      - Lymph Node(s) Pelvic
+      - Lymph Node(s) Popliteal
+      - Lymph Node(s) Regional
+      - Lymph Node(s) Retroperitoneal
+      - Lymph Node(s) Scalene
+      - Lymph Node(s) Splenic
+      - Lymph Node(s) Subclavicular
+      - Lymph Node(s) Submandibular
+      - Lymph Node(s) Supraclavicular
+      - Lymph Nodes(s) Mediastinal
+      - Mandible
+      - Maxilla
+      - Mediastinal Soft Tissue
+      - Mediastinum
+      - Mesentery
+      - Mesothelium
+      - Middle Finger
+      - Mitochondria
+      - Muscle
+      - Nails
+      - Nasal Cavity
+      - Nasal Soft Tissue
+      - Nasal Lavage Fluid
+      - Nasopharynx
+      - Neck
+      - Nerve
+      - Nerve(s) Cranial
+      - Occipital Cortex
+      - Ocular Orbits
+      - Omentum
+      - Oral Cavity
+      - Oral Cavity - Mucosa Only
+      - Oropharynx
+      - Other
+      - Ovary
+      - Palate
+      - Pancreas
+      - Paraspinal Ganglion
+      - Parathyroid
+      - Parotid Gland
+      - Patella
+      - Pelvis
+      - Penis
+      - Pericardium
+      - Periorbital Soft Tissue
+      - Peritoneal Cavity
+      - Peritoneum
+      - Pharynx
+      - Pineal
+      - Pineal Gland
+      - Pituitary Gland
+      - Placenta
+      - Pleura
+      - Popliteal Fossa
+      - Prostate
+      - Pylorus
+      - Rectosigmoid Junction
+      - Rectum
+      - Retina
+      - Retro-Orbital Region
+      - Retroperitoneum
+      - Rib
+      - Ring Finger
+      - Round Ligament
+      - Sacrum
+      - Saliva
+      - Salivary Gland
+      - Scalp
+      - Scapula
+      - Sciatic Nerve
+      - Scrotum
+      - Seminal Vesicle
+      - Shoulder
+      - Sigmoid Colon
+      - Synovial Fluid
+      - Synovial Tissue
+      - Sinus
+      - Sinus(es), Maxillary
+      - Skeletal Muscle
+      - Skin
+      - Skull
+      - Small Bowel
+      - Small Bowel - Mucosa Only
+      - Small Finger
+      - Soft Tissue
+      - Spinal Column
+      - Spinal Cord
+      - Spleen
+      - Splenic Flexure
+      - Sputum
+      - Sternum
+      - Stomach
+      - Stomach - Mucosa Only
+      - Subcutaneous Tissue
+      - Surgery - caseous masses
+      - Surgery - cavity internal wall
+      - Surgery - cavity external wall
+      - Surgery - infectious granuloma
+      - Surgery - healthy tissue
+      - Synovium
+      - Temporal Cortex
+      - Tendon
+      - Testis
+      - Thigh
+      - Thoracic Spine
+      - Thorax
+      - Throat
+      - Thumb
+      - Thymus
+      - Thyroid
+      - Tibia
+      - Tongue
+      - Tonsil
+      - Tonsil (Pharyngeal)
+      - Trachea / Major Bronchi
+      - Transverse Colon
+      - Trunk
+      - Umbilical Cord
+      - Umbilical Cord Blood
+      - Ureter
+      - Urethra
+      - Urinary Tract
+      - Urine
+      - Uterus
+      - Uvula
+      - Vagina
+      - Vas Deferens
+      - Vein
+      - Venous
+      - Vertebra
+      - Vulva
+
+      - Wrist
+      - Unknown
+      - Not Reported
+      - Not Allowed To Collect
+  composition:
+    term:
+      $ref: "_terms.yaml#/composition"
+    enum:
+      - B cell
+      - Buccal Cells
+      - Buffy Coat
+      - Bone Marrow Components
+      - Bone Marrow Components NOS
+      - Cell
+      - Fibroblasts from Bone Marrow Normal
+      - Granulocytes
+      - Lymphocytes
+      - Mononuclear Cells from Bone Marrow Normal
+      - Peripheral Blood Components NOS
+      - Peripheral Blood Nucleated Cells
+      - Pleural Effusion
+      - Plasma
+      - Peripheral Whole Blood
+      - Serum
+      - Solid Tissue
+      - Whole Bone Marrow
+      - Unknown
+      - Macrophage
+      - Monocyte
+      - Not Reported
+      - Not Allowed To Collect
+      - Supernatant
+      - White Blood Cells
+      - Peripheral Blood Molecular Cell
+      - Carbohydrate
+      - Red Blood Cell
+      - T cell
+      - Dendritic cell
+      - NK cell
+      - Neutrophil
+  current_weight:
+    term:
+      $ref: "_terms.yaml#/current_weight"
+    type: number
+  days_to_collection:
+    term:
+      $ref: "_terms.yaml#/days_to_collection"
+    type: integer
+
+  collection_date:
+    description: >
+      Date range in which samples were collected.
+    type: string
+
+  days_to_sample_procurement:
+    term:
+      $ref: "_terms.yaml#/days_to_sample_procurement"
+    type: integer
+  diagnosis_pathologically_confirmed:
+    term:
+      $ref: "_terms.yaml#/diagnosis_pathologically_confirmed"
+    enum:
+      - "True"
+      - "False"
+      - Unknown
+  freezing_method:
+    term:
+      $ref: "_terms.yaml#/freezing_method"
+    type: string
+  initial_weight:
+    term:
+      $ref: "_terms.yaml#/initial_weight"
+    type: number
+  intermediate_dimension:
+    term:
+      $ref: "_terms.yaml#/intermediate_dimension"
+    type: string
+  is_ffpe:
+    term:
+      $ref: "_terms.yaml#/is_ffpe"
+    type: boolean
+  method_of_sample_procurement:
+    term:
+      $ref: "_terms.yaml#/method_of_sample_procurement"
+    enum:
+      - Abdomino-perineal Resection of Rectum
+      - Anterior Resection of Rectum
+      - Aspirate
+      - Biopsy
+      - Blood Draw
+      - Bone Marrow Aspirate
+      - Core Biopsy
+      - Cystectomy
+      - Endo Rectal Tumor Resection
+      - Endoscopic Biopsy
+      - Endoscopic Mucosal Resection (EMR)
+      - Enucleation
+      - Excisional Biopsy
+      - Fine Needle Aspiration
+      - Full Hysterectomy
+      - Gross Total Resection
+      - Hand Assisted Laparoscopic Radical Nephrectomy
+      - Hysterectomy NOS
+      - Incisional Biopsy
+      - Indeterminate
+      - Laparoscopic Biopsy
+      - Laparoscopic Partial Nephrectomy
+      - Laparoscopic Radical Nephrectomy
+      - Laparoscopic Radical Prostatectomy with Robotics
+      - Laparoscopic Radical Prostatectomy without Robotics
+      - Left Hemicolectomy
+      - Lobectomy
+      - Local Resection (Exoresection; wall resection)
+      - Lumpectomy
+      - Modified Radical Mastectomy
+      - Needle Biopsy
+      - Open Craniotomy
+      - Open Partial Nephrectomy
+      - Open Radical Nephrectomy
+      - Open Radical Prostatectomy
+      - Orchiectomy
+      - Other
+      - Other Surgical Resection
+      - Pan-Procto Colectomy
+      - Pneumonectomy
+      - Right Hemicolectomy
+      - Sigmoid Colectomy
+      - Simple Mastectomy
+      - Subtotal Resection
+      - Surgical Resection
+      - Thoracoscopic Biopsy
+      - Total Colectomy
+      - Total Mastectomy
+      - Transplant
+      - Transurethral resection (TURBT)
+      - Transverse Colectomy
+      - Tumor Resection
+      - Wedge Resection
+      - Unknown
+      - Not Reported
+      - Not Allowed To Collect
+  oct_embedded:
+    term:
+      $ref: "_terms.yaml#/oct_embedded"
+    type: string
+  preservation_method:
+    term:
+      $ref: "_terms.yaml#/preservation_method"
+    enum:
+      - Cryopreserved
+      - FFPE
+      - Fresh
+      - OCT
+      - Snap Frozen
+      - Frozen
+      - Unknown
+      - Not Reported
+      - Not Allowed To Collect
+  sample_type:
+    description: "Characterization of the sample as either clinical or contrived."
+    enum:
+      - Additional Metastatic
+      - Additional - New Primary
+      - Blood Derived Cancer - Bone Marrow, Post-treatment
+      - Blood Derived Cancer - Peripheral Blood, Post-treatment
+      - Blood Derived Normal
+      - Bone Marrow Normal
+      - Buccal Cell Normal
+      - Cell Line Derived Xenograft Tissue
+      - Cell Lines
+      - cfDNA
+      - Circulating Tumor Cell (CTC)
+      - Control Analyte
+      - ctDNA
+      - DNA
+      - EBV Immortalized Normal
+      - FFPE Recurrent
+      - FFPE Scrolls
+      - Fibroblasts from Bone Marrow Normal
+      - GenomePlex (Rubicon) Amplified DNA
+      - Human Tumor Original Cells
+      - Lipid
+      - Metastatic
+      - Mononuclear Cells from Bone Marrow Normal
+      - Primary Blood Derived Cancer - Peripheral Blood
+      - Recurrent Blood Derived Cancer - Peripheral Blood
+      - Primary Blood Derived Cancer - Bone Marrow
+      - Primary Tumor
+      - Primary Xenograft Tissue
+      - Protein
+      - Post neo-adjuvant therapy
+      - Recurrent Blood Derived Cancer - Bone Marrow
+      - Recurrent Tumor
+      - Repli-G (Qiagen) DNA
+      - Repli-G X (Qiagen) DNA
+      - RNA
+      - Slides
+      - Solid Tissue Normal
+      - ssRNA
+      - Total RNA
+      - Xenograft Tissue
+      - Unknown
+      - Not Reported
+      - Not Allowed To Collect
+  sample_type_id:
+    term:
+      $ref: "_terms.yaml#/sample_type_id"
+    enum:
+      - '01'
+      - '02'
+      - '03'
+      - '04'
+      - '05'
+      - '06'
+      - '07'
+      - '08'
+      - '09'
+      - '10'
+      - '11'
+      - '12'
+      - '13'
+      - '14'
+      - '15'
+      - '16'
+      - '20'
+      - '40'
+      - '41'
+      - '42'
+      - '50'
+      - '60'
+      - '61'
+      - '99'
+  sample_volume:
+    description: "The volume of the sample in mL."
+    type: number
+  shortest_dimension:
+    term:
+      $ref: "_terms.yaml#/shortest_dimension"
+    type: string
+  time_between_clamping_and_freezing:
+    term:
+      $ref: "_terms.yaml#/time_between_clamping_and_freezing"
+    type: string
+  time_between_excision_and_freezing:
+    term:
+      $ref: "_terms.yaml#/time_between_excision_and_freezing"
+    type: string
+  tissue_type:
+    term:
+      $ref: "_terms.yaml#/tissue_type"
+    enum:
+      - Tumor
+      - Normal
+      - Abnormal
+      - Peritumoral
+      - Contrived
+      - Unknown
+      - Not Reported
+      - Not Allowed To Collect
+
+  cell_line:
+    description: >
+      A cell culture developed from a single cell and therefore consisting of cells with a uniform genetic makeup.
+    type: string
+
+  cell_number:
+    description: >
+      Number of cells cultured in one container.
+    type: integer
+
+  passage:
+    description: >
+      A record of the number of times the culture has been subcultured.
+    type: integer
+
+  cell_culture_vessel:
+    description: >
+      Flasks, Petri dishes, roller bottles, or multiwell plates to grow cells.
+    type: string
+
+  hours_to_collection:
+    description: >
+      Time interval from the date of biospecimen collection to the date of initial pathologic diagnosis, represented as a calculated number of days.
+    type: integer
+
+  lysis_buffer:
+    description: >
+      A buffer solution used for the purpose of breaking open cells for use in molecular biology experiments that analyze the compounds of the cells.
+    type: string
+
+  ncbi_bioproject:
+    description: >
+      Record identifier assigned by NCBI for entry in the BioProject database.
+    type: string
+
+  ncbi_biosample:
+    description: >
+      Record identifier assigned by NCBI for entry in the BioSample database.
+    type: string
+
+  host:
+    description: >
+      The species of the host.
+    type: string
+
+  location:
+    description: >
+      The geographic location of the host.
+    type: string
+
+  organism:
+    description: >
+      The scientific taxonomy of the organism.
+    type: string
+
+  isolation_source:
+    description: >
+      The isolation source for the sample.
+    type: string
+
+  isolate:
+    description: >
+      The isolate for the sample.
+    type: string
+
+  collection_date:
+    description: >
+      The collection date for the sample.
+    type: string
+
+  subjects:
+    $ref: "_definitions.yaml#/to_one"
+  studies:
+    $ref: "_definitions.yaml#/to_many"
+  projects:
+    $ref: "_definitions.yaml#/to_one_project"
+  project_id:
+    type: string
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"
