@@ -1,0 +1,105 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "supplementary_file"
+title: Supplementary File
+type: object
+namespace: https://data.midrc.org
+category: metadata_file
+program: '*'
+project: '*'
+description: >
+  Supplementary files associated with a study.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: supplementary_files
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: studies
+        backref: supplementary_files
+        label: refers_to
+        target_type: study
+        multiplicity: many_to_one
+        required: false
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+required:
+  - submitter_id
+  - type
+  - file_name
+  - file_size
+  - md5sum
+  - data_category
+  - data_type
+  - data_format
+
+uniqueKeys:
+  - [ id ]
+  - [ project_id, submitter_id ]
+
+properties:
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  file_description:
+    description: >
+      Free text to expand upon details for this file
+    type: string
+
+  data_type:
+    description: >
+      Study file type
+    enum:
+      - "Adverse Events"
+      - "Assessment Results"
+      - "Case Report Form"
+      - "Clinical Data"
+      - "Concomitant Medications"
+      - "Data Dictionary"
+      - "Demographics"
+      - "Interventions"
+      - "Lab Test Results"
+      - "Study Data"
+      - "Study Medication"
+      - "Study Summary Description"
+      - "Substance Use"
+
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    type:
+      - string
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    type:
+      - string
+
+  protocol_description:
+    description: >
+      Free text to expand upon details
+    type: string
+
+  studies:
+    $ref: "_definitions.yaml#/to_many"
+  core_metadata_collections:
+    $ref: "_definitions.yaml#/to_many"

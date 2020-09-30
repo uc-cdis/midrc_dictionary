@@ -1,0 +1,320 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "condition"
+title: Condition
+type: object
+nodeTerms: null
+namespace: https://gen3.datacommons.io/
+category: medical_history
+program: '*'
+project: '*'
+description: Information related to the condition of a subject within the context
+  of a particular study (e.g., a medical diagnoses, comorbidities). This includes a snapshot of the
+  subject's status with respect to certain diseases, disorders, symptoms, injuries,
+  or illnesses within the context of the study.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: subjects
+    backref: conditions
+    label: related_to
+    target_type: subject
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - subjects
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  # For TCIA studies
+  latest_bmi:
+    description: The last body-mass index (BMI) recorded for the subject.
+    type: number
+  latest_weight:
+    description: The last weight (pounds) recorded for the subject.
+    type: integer
+  latest_height_inches:
+    description: The last height in inches recorded for the subject.
+    type: integer
+  latest_height_string:
+    description: The last height in feet (') and inches ('') format recorded for the subject.
+    type: string
+  tuberculosis:
+    description: Has the subject been affected by tuberculosis?
+    type: boolean
+  systemic_lupus_erythmatosus:
+    description: Has the subject been diagnosed with systemic lupus erythmatosus?
+    type: boolean
+  rheumatoid_arthritis:
+    description: Has the subject been diagnosed with rheumatoid arthritis?
+    type: boolean
+  extensive_burns:
+    description: Has the subject suffered from extensive burns?
+    type: boolean
+  asplenia:
+    description: Has the subject been diagnosed with asplenia?
+    type: boolean
+  hyposplenia:
+    description: Has the subject been diagnosed with hyposplenia?
+    type: boolean
+  measles:
+    description: Has the subject been infected with measles?
+    type: boolean
+  cytomegalovirus:
+    description: Has the subject been infected with cytomegalovirus?
+    type: boolean
+  chicken_pox:
+    description: Has the subject been infected with chicken pox?
+    type: boolean
+  herpes_zoster:
+    description: Has the subject been infected with herpes zoster?
+    type: boolean
+  malnutrition:
+    description: Does the subject suffer from malnutrition?
+    type: boolean
+  current_pregnant:
+    description: Is the subject currently pregnant?
+    type: boolean
+  chronic_kidney_disease:
+    description: Has the subject been diagnosed with chronic kidney disease?
+    type: boolean
+  diabetes_type_1:
+    description: Has the subject been diagnosed with type 1 diabetes?
+    type: boolean
+  diabetes_type_2:
+    description: Has the subject been diagnosed with type 2 diabetes?
+    type: boolean
+  transplant:
+    description: Has the subject had a transplant?
+    type: boolean
+  hemodialysis_pre_diagnosis:
+    description: Has the subject had hemodialysis pre diagnosis?
+    type: boolean
+  hemodialysis_post_diagnosis:
+    description: Has the subject had hemodialysis post diagnosis?
+    type: boolean
+  cancer:
+    description: Has the subject been diagnosed with cancer?
+    type: boolean
+  covid_test_positive:
+    description: Has the subject tested positive for COVID-19?
+    type: boolean
+  covid_test_name:
+    description: The name of the test used to determine a subject's COVID-19 status.
+    type: string
+  icu_admit:
+    description: Has the subject been admitted to the ICU?
+    type: boolean
+  number_icu_admits:
+    description: The number of ICU admits for the subject.
+    type: integer
+  mortality:
+    description: Is the subject deceased?
+    type: boolean
+
+  #open access dictionary
+  adult_trauma_diagnosis:
+    description: Diagnosis of adult trauma in the patient.
+    type: string
+
+  adult_trauma_scale:
+    description: Scale used to determine the adult trauma score.
+    type: string
+
+  adult_trauma_score:
+    description: Score given to quantify the patient's level of adult trauma at the
+      time of diagnosis.
+    type: string
+
+  age_at_diagnosis:
+    description: The age of the subject when the primary diagnosis was determined.
+      See age_at_diagnosis_gt89 if the age is over 89 years.
+    type: integer
+    maximum: 89
+    minimum: 0
+
+  age_at_diagnosis_gt89:
+    description: Indicates whether the age of the subject when the primary diagnosis
+      was determined is greater than 89 years.
+    enum:
+      - "No"
+      - "Yes"
+
+  age_at_onset:
+    description: The age at which the subject acquired, developed, or first experienced
+      symptoms of the primary disease or disorder. If age is greater than 89 years,
+      see age_at_onset_gt89.
+    type: number
+    maximum: 89
+    minimum: 0
+
+  age_at_onset_gt89:
+    description: Indicate whether the 'Age at onset (ageonset) in years' is greater
+      than 89 years.
+    enum:
+      - "No"
+      - "Yes"
+
+  childhood_trauma_diagnosis:
+    description: The determined diagnosis of childhood trauma.
+    type: string
+
+  childhood_trauma_scale:
+    description: The scale used to determine the childhood trauma score.
+    type: string
+
+  childhood_trauma_score:
+    description: Score given to quantify the patient's level of childhood trauma at
+      the time of diagnosis.
+    type: string
+
+  comorbidity:
+    description: List any comorbidities with respect to the primary diagnosis.
+    type: string
+
+  days_to_diagnosis:
+    description: Number of days between the date used for index and the date of the
+      patient's diagnosis.
+    type: integer
+
+  depression_diagnosis:
+    description: The patient's depression diagnosis.
+    type: string
+
+  depression_diagnosis_scale:
+    description: The scale used to diagnose the patient's depression.
+    type: string
+
+  depression_severity:
+    description: The severity of the patient's depression.
+    type: string
+
+  diagnostic_code:
+    description: A code used to describe the patient's diagnosis (e.g., ICD code).
+    type: string
+
+  diagnostic_code_type:
+    description: Text term used to describe the code used to describe the patient's
+      diagnosis (e.g., International Classification of Diseases or ICD).
+    type: string
+
+  neurological_disorders:
+    description: Specify any neurological disorder(s).
+    type: string
+
+  organ_system:
+    description: The classification of organ system affected by the medical condition.
+    type: string
+
+  pd_diagnosis_category:
+    description: Parkinson's Disease Category.
+    type: string
+
+  pd_most_affected_side_onset:
+    description: Side most affected at PD onset
+    enum:
+      - Left
+      - Right
+      - Symmetric
+
+  pd_primary_diagnosis:
+    description: Most Likely Primary Diagnosis
+    type: string
+
+  pd_probability_bin:
+    description: Probability that individual has Parkinson's disease (PROBIPD)
+    enum:
+      - 0 Pct - 9 Pct
+      - 10 Pct - 49 Pct
+      - 50 Pct - 89 Pct
+      - 90 Pct - 100 Pct
+
+  persistent_asymmetry_side_onset_most:
+    description: Persistent asymmetry affecting the side of onset most (DCASYMM).
+    enum:
+      - "No"
+      - Not Applicable
+      - "Yes"
+
+  primary_diagnosis:
+    term:
+      $ref: "_terms.yaml#/primary_diagnosis"
+    type: string
+
+  ptsd_diagnosis_current:
+    description: The patient's PTSD diagnosis at the time of diagnosis.
+    type: string
+
+  ptsd_diagnosis_lifetime:
+    description: The patient's PTSD diagnosis over the course of their lifetime.
+    type: string
+
+  ptsd_diagnosis_scale:
+    description: The scale used to diagnose the patient with PTSD.
+    type: string
+
+  ptsd_severity_current:
+    description: The patient's PTSD severity at the time of diagnosis.
+    type: string
+
+  ptsd_severity_lifetime:
+    description: The patient's PTSD severity over the course of their lifetime.
+    type: string
+
+  ptsd_severity_scale:
+    description: The scale used to determine the severity of the patient's PTSD.
+    type: string
+
+  ptsd_symptom_duration:
+    description: The number of years the patient has experienced PTSD symptoms.
+    type: number
+
+  substance_abuse_scale:
+    description: The scale used to determine the patient's substance abuse score.
+    type: string
+
+  substance_abuse_score:
+    description: Score given to quantify the patient's substance abuse at the time
+      of diagnosis.
+    type: string
+
+  symptom:
+    description: List any symptoms relevant to listed condition.
+    type: string
+
+  tbi_diagnosis:
+    description: The patient's diagnosis for a traumatic brain injury.
+    type: string
+
+  tbi_type:
+    description: The type of TBI with which the patient has been diagnosed.
+    type: string
+
+  total_tbi:
+    description: The total number of TBIs that the patient has experienced.
+    type: integer
+
+  year_of_diagnosis:
+    description: Year of this diagnosis record.
+    type: integer
+
+  subjects:
+    $ref: "_definitions.yaml#/to_one"

@@ -46,6 +46,10 @@ properties:
     description: The subject's accession ID or number.
     type: string
 
+  age:
+    description: The subject's age at the time of the study.
+    type: integer
+
   age_at_enrollment:
     description: The age of the study subject at enrollment; must be less than 90
       years.
@@ -186,18 +190,22 @@ properties:
       - Lebanese/Non-jewish
       - Multiracial
       - Native Hawaiian or Other Pacific Islander
-      - Other (specify)
+      - Other
       - Unknown
       - White
 
   race_other:
-    description: If 'Other (specify)' was chosen for race, free text to describe race
+    description: If 'Other' was chosen for race, free text to describe race
       as collected.
     type: string
 
   species:
     description: Taxonomic species of the subject.
     type: string
+
+  zip:
+    description: The zip code of the subject at the time of the study.
+    type: integer
 
   studies:
     $ref: "_definitions.yaml#/to_many"
