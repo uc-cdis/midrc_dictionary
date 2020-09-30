@@ -44,6 +44,93 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
+  # For TCIA studies
+  latest_bmi:
+    description: The last body-mass index (BMI) recorded for the subject.
+    type: number
+  latest_weight:
+    description: The last weight (pounds) recorded for the subject.
+    type: integer
+  latest_height_inches:
+    description: The last height in inches recorded for the subject.
+    type: integer
+  latest_height_string:
+    description: The last height in feet (') and inches ('') format recorded for the subject.
+    type: string
+  tuberculosis:
+    description: Has the subject been affected by tuberculosis?
+    type: boolean
+  systemic_lupus_erythmatosus:
+    description: Has the subject been diagnosed with systemic lupus erythmatosus?
+    type: boolean
+  rheumatoid_arthritis:
+    description: Has the subject been diagnosed with rheumatoid arthritis?
+    type: boolean
+  extensive_burns:
+    description: Has the subject suffered from extensive burns?
+    type: boolean
+  asplenia:
+    description: Has the subject been diagnosed with asplenia?
+    type: boolean
+  hyposplenia:
+    description: Has the subject been diagnosed with hyposplenia?
+    type: boolean
+  measles:
+    description: Has the subject been infected with measles?
+    type: boolean
+  cytomegalovirus:
+    description: Has the subject been infected with cytomegalovirus?
+    type: boolean
+  chicken_pox:
+    description: Has the subject been infected with chicken pox?
+    type: boolean
+  herpes_zoster:
+    description: Has the subject been infected with herpes zoster?
+    type: boolean
+  malnutrition:
+    description: Does the subject suffer from malnutrition?
+    type: boolean
+  current_pregnant:
+    description: Is the subject currently pregnant?
+    type: boolean
+  chronic_kidney_disease:
+    description: Has the subject been diagnosed with chronic kidney disease?
+    type: boolean
+  diabetes_type_1:
+    description: Has the subject been diagnosed with type 1 diabetes?
+    type: boolean
+  diabetes_type_2:
+    description: Has the subject been diagnosed with type 2 diabetes?
+    type: boolean
+  transplant:
+    description: Has the subject had a transplant?
+    type: boolean
+  hemodialysis_pre_diagnosis:
+    description: Has the subject had hemodialysis pre diagnosis?
+    type: boolean
+  hemodialysis_post_diagnosis:
+    description: Has the subject had hemodialysis post diagnosis?
+    type: boolean
+  cancer:
+    description: Has the subject been diagnosed with cancer?
+    type: boolean
+  covid_test_positive:
+    description: Has the subject tested positive for COVID-19?
+    type: boolean
+  covid_test_name:
+    description: The name of the test used to determine a subject's COVID-19 status.
+    type: string
+  icu_admit:
+    description: Has the subject been admitted to the ICU?
+    type: boolean
+  number_icu_admits:
+    description: The number of ICU admits for the subject.
+    type: integer
+  mortality:
+    description: Is the subject deceased?
+    type: boolean
+
+  #open access dictionary
   adult_trauma_diagnosis:
     description: Diagnosis of adult trauma in the patient.
     type: string

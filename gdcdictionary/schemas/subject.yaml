@@ -190,12 +190,12 @@ properties:
       - Lebanese/Non-jewish
       - Multiracial
       - Native Hawaiian or Other Pacific Islander
-      - Other (specify)
+      - Other
       - Unknown
       - White
 
   race_other:
-    description: If 'Other (specify)' was chosen for race, free text to describe race
+    description: If 'Other' was chosen for race, free text to describe race
       as collected.
     type: string
 
