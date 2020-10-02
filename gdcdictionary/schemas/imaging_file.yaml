@@ -38,6 +38,12 @@ links:
         target_type: subject
         multiplicity: many_to_one
         required: false
+      - name: imaging_exams
+        backref: imaging_files
+        label: data_from
+        target_type: imaging_exam
+        multiplicity: many_to_one
+        required: false
 
 required:
   - submitter_id
@@ -334,4 +340,6 @@ properties:
     $ref: "_definitions.yaml#/to_one"
 
   subjects:
+    $ref: "_definitions.yaml#/to_one"
+  imaging_exams:
     $ref: "_definitions.yaml#/to_one"
