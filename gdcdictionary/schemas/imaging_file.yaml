@@ -312,6 +312,7 @@ properties:
       of frequency encodings or the number of phase steps results in improved resolution.
     type: string
 
+  #https://wiki.cancerimagingarchive.net/display/Public/DICOM+Modality+Abbreviations
   modality:
     description: Mode instrument was in during image acquisition.
     type: string
