@@ -378,33 +378,7 @@ properties:
 
   imaging_body_site:
     description: The site in the body of which the image was taken.
-    enum:
-      - Anterior Cingulum
-      - Brain
-      - Caudate
-      - Cerebellar Cortex
-      - Cerebellar White Matter
-      - Frontal Cortex
-      - Lateral Temproral Cortex
-      - Left Brain
-      - Left Lung
-      - Lungs
-      - Mean Cerebellum Gray
-      - Mean Whole Cerebellum
-      - Mesial Temporal Cortex
-      - Occipital Cortex
-      - Orbitofrontal Cortex
-      - Parietal Cortex
-      - Pons
-      - Posterior Cingulum
-      - Putamen
-      - Rectus
-      - Right Brain
-      - Right Lung
-      - Striatum
-      - Subcortical White Matter
-      - Temporal Cortex
-      - Thalamus
+    type: string
 
   imaging_completed:
     description: Imaging Completed.
