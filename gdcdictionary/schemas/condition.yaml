@@ -58,7 +58,7 @@ properties:
     description: The last height in feet (') and inches ('') format recorded for the subject.
     type: string
   tuberculosis:
-    description: Has the subject been affected by tuberculosis?
+    description: Has the subject been diagnosed with tuberculosis?
     type: boolean
   systemic_lupus_erythmatosus:
     description: Has the subject been diagnosed with systemic lupus erythmatosus?
@@ -76,19 +76,19 @@ properties:
     description: Has the subject been diagnosed with hyposplenia?
     type: boolean
   measles:
-    description: Has the subject been infected with measles?
+    description: Has the subject been diagnosed with measles?
     type: boolean
   cytomegalovirus:
-    description: Has the subject been infected with cytomegalovirus?
+    description: Has the subject been diagnosed with cytomegalovirus?
     type: boolean
   chicken_pox:
-    description: Has the subject been infected with chicken pox?
+    description: Has the subject been diagnosed with chicken pox?
     type: boolean
   herpes_zoster:
-    description: Has the subject been infected with herpes zoster?
+    description: Has the subject been diagnosed with herpes zoster?
     type: boolean
   malnutrition:
-    description: Does the subject suffer from malnutrition?
+    description: Has the subject been diagnosed with malnutrition?
     type: boolean
   current_pregnant:
     description: Is the subject currently pregnant?
