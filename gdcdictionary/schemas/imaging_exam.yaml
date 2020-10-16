@@ -4,7 +4,7 @@ id: "imaging_exam"
 title: Imaging Exam
 type: object
 namespace: https://data.midrc.org/
-category: Imaging
+category: medical_history
 program: '*'
 project: '*'
 description: Information related to an imaging exam done for diagnostic or research.
@@ -42,11 +42,11 @@ properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
   days_to_exam:
-    description: The number of days between diagnosis and the imaging study.
+    description: The number of days between the subject's index_date (e.g., diagnosis) and the imaging study.
     type: number
 
   hours_to_exam:
-    description: The number of hours expired between diagnosis and the imaging study.
+    description: The number of hours expired between the subject's index date (e.g., diagnosis) and the imaging study.
     type: number
 
   exam_description:
@@ -89,12 +89,6 @@ properties:
   clinical_site_name:
     description: Clinical Site Name.
     type: string
-
-  days_to_image:
-    description: The number of days from the index event to the date an image was
-      taken. The date of the index event acts as an anchor, helping to create a relational
-      range of days for all obfuscated temporal properties.
-    type: integer
 
   exam_start_time:
     description: Imaging Start Time.
