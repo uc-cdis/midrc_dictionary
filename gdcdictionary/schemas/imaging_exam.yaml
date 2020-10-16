@@ -4,7 +4,7 @@ id: "imaging_exam"
 title: Imaging Exam
 type: object
 namespace: https://data.midrc.org/
-category: Imaging
+category: imaging
 program: '*'
 project: '*'
 description: Information related to an imaging exam done for diagnostic or research.
