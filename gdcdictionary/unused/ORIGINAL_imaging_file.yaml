@@ -330,8 +330,8 @@ properties:
     type: number
 
   scan_id:
-    description: The identification number for a stack or series of images generated during
-      a single scan; the image series ID.
+    description: The identification number for a stack of images generated during
+      a single scan.
     type: string
 
   study_date:
