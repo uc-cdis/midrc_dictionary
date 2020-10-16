@@ -4,7 +4,7 @@ id: "supplementary_file"
 title: Supplementary File
 type: object
 namespace: https://data.midrc.org
-category: metadata_file
+category: data_file
 program: '*'
 project: '*'
 description: >
@@ -67,20 +67,7 @@ properties:
   data_type:
     description: >
       Study file type
-    enum:
-      - "Adverse Events"
-      - "Assessment Results"
-      - "Case Report Form"
-      - "Clinical Data"
-      - "Concomitant Medications"
-      - "Data Dictionary"
-      - "Demographics"
-      - "Interventions"
-      - "Lab Test Results"
-      - "Study Data"
-      - "Study Medication"
-      - "Study Summary Description"
-      - "Substance Use"
+    type: string
 
   data_category:
     term:
