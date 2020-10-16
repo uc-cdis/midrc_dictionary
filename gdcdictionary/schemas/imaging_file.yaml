@@ -5,7 +5,7 @@ title: Imaging File
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
-category: data_file
+category: imaging_data_file
 program: '*'
 project: '*'
 description: Data file containing a diagnostic image from a clinical imaging exam.
