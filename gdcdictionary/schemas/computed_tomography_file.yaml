@@ -27,25 +27,25 @@ links:
     required: true
     subgroup:
       - name: core_metadata_collections
-        backref: imaging_files
+        backref: computed_tomography_files
         label: data_from
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
       - name: subjects
-        backref: imaging_files
+        backref: computed_tomography_files
         label: data_from
         target_type: subject
         multiplicity: many_to_one
         required: false
       - name: imaging_exams
-        backref: imaging_files
+        backref: computed_tomography_files
         label: data_from
         target_type: imaging_exam
         multiplicity: many_to_one
         required: false
       - name: imaging_series
-        backref: imaging_files
+        backref: computed_tomography_files
         label: data_from
         target_type: imaging_series
         multiplicity: many_to_one

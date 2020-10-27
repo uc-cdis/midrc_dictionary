@@ -108,3 +108,5 @@ properties:
     $ref: "_definitions.yaml#/to_many"
   imaging_files:
     $ref: "_definitions.yaml#/to_many"
+  subjects:
+    $ref: "_definitions.yaml#/to_one"
