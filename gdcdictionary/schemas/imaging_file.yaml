@@ -44,6 +44,12 @@ links:
         target_type: imaging_exam
         multiplicity: many_to_one
         required: false
+      - name: imaging_stack
+        backref: imaging_files
+        label: data_from
+        target_type: imaging_stacks
+        multiplicity: many_to_one
+        required: false
 
 required:
   - submitter_id
@@ -273,6 +279,10 @@ properties:
     description: The field strength (in Tesla, T) of the MRI magnet.
     type: number
 
+  file_description:
+    description: Any additional text to give this file context in its study.
+    type: string
+
   fov:
     description: Field-of-view (FOV); the distance (in cm or mm) over which an MR
       image is acquired or displayed. The FOV is typically divided into several hundred
@@ -343,4 +353,6 @@ properties:
   subjects:
     $ref: "_definitions.yaml#/to_one"
   imaging_exams:
+    $ref: "_definitions.yaml#/to_one"
+  imaging_series:
     $ref: "_definitions.yaml#/to_one"
