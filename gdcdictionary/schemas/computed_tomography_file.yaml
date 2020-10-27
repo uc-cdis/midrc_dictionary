@@ -44,6 +44,12 @@ links:
         target_type: imaging_exam
         multiplicity: many_to_one
         required: false
+      - name: imaging_series
+        backref: imaging_files
+        label: data_from
+        target_type: imaging_series
+        multiplicity: many_to_one
+        required: false
 
 required:
   - submitter_id
