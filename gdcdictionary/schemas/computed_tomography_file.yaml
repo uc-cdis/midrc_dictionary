@@ -1,0 +1,140 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "computed_tomography_file"
+title: Computed Tomography File
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: imaging_data_file
+program: '*'
+project: '*'
+description: A Computed Tomography (CT) imaging file.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+  - file_state
+  - error_type
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: computed_tomography_files
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: subjects
+        backref: computed_tomography_files
+        label: data_from
+        target_type: subject
+        multiplicity: many_to_one
+        required: false
+      - name: imaging_exams
+        backref: computed_tomography_files
+        label: data_from
+        target_type: imaging_exam
+        multiplicity: many_to_one
+        required: false
+      - name: imaging_series
+        backref: computed_tomography_files
+        label: data_from
+        target_type: imaging_series
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - submitter_id
+  - type
+  - file_name
+  - file_size
+  - md5sum
+  - data_format
+  - data_type
+  - data_category
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  body_part_examined:
+    description: Part of the body that was studied.
+    type: string
+
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    type: string
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    type: string
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    type: string
+
+  days_to_image:
+    description: Days from the subject's index event to the date the image was acquired.
+    type: integer
+
+  imaging_subtype:
+    description: The subtype of imaging exam performed, for example, "T1-Weighted".
+    type: string
+
+  imaging_type:
+    description: The type of imaging exam performed, for example, "CT Scan","MRI","Ultrasound","fMRI".
+    type: string
+
+  instrument_manufacturer:
+    description: The imaging instrument or scanner manufacturer.
+    type: string
+
+  instrument_model:
+    description: The imaging instrument or scanner model.
+    type: string
+
+  #https://wiki.cancerimagingarchive.net/display/Public/DICOM+Modality+Abbreviations
+  modality:
+    description: Mode instrument was in during image acquisition.
+    type: string
+
+  series_id:
+    description: The identification code for an imaging series or stack of images that this image belongs to, if applicable.
+    type: string
+
+  series_type:
+    description: The text term describing the type of imaging series this file belongs to, if applicable.
+    type: string
+
+  study_date:
+    description: The date the image was created.
+    type: string
+
+  file_description:
+    description: Any additional text to give this file context in its study.
+    type: string
+
+  core_metadata_collections:
+    $ref: "_definitions.yaml#/to_one"
+
+  subjects:
+    $ref: "_definitions.yaml#/to_one"
+  imaging_exams:
+    $ref: "_definitions.yaml#/to_one"
+  imaging_series:
+    $ref: "_definitions.yaml#/to_one"
