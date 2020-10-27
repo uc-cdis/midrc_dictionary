@@ -31,7 +31,7 @@ links:
 required:
   - submitter_id
   - type
-  - subjects
+  - imaging_exams
 
 uniqueKeys:
   - [id]
