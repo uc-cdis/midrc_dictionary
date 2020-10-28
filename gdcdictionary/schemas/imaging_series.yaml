@@ -53,8 +53,8 @@ properties:
     description: The text term describing the type of imaging series.
     type: string
 
-  series_description:
-    description: The text term describing the sub-type of imaging series.
+  series_name:
+    description: The name of the imaging series or stack of images.
     type: string
 
   imaging_exams:

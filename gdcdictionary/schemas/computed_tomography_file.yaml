@@ -69,6 +69,66 @@ properties:
 
   $ref: "_definitions.yaml#/data_file_properties"
 
+  ImplementationClassUID:
+    description: (0002, 0012) Implementation Class UID
+    type: string
+
+  ImplementationVersionName:
+    description: (0002, 0013) Implementation Version Name
+    type: string
+
+  TransferSyntaxUID:
+     description: (0002, 0010) Transfer Syntax UID
+     type: string
+
+  ImageType:
+     description: (0008, 0008) Image Type
+     type: string
+
+  Modality:
+     description: (0008, 0060) Modality
+     type: string
+
+  Manufacturer:
+     description: (0008, 0070) Manufacturer
+     type: string
+
+  ManufacturerModelName:
+     description: (0008, 1090) Manufacturer's Model Name
+     type: string
+
+  StudyDescription:
+     description: (0008, 1030) Study Description
+     type: string
+
+  SeriesDescription:
+     description: (0008, 103e) Series Description
+     type: string
+
+  BodyPartExamined:
+     description: (0018, 0015) Body Part Examined
+     type: string
+
+  ViewPosition:
+     description: (0018, 5101) View Position
+     type: string
+
+  SliceThickness:
+     description: (0018, 0050) Slice Thickness
+     type: string
+
+  ContrastBolusAgentNumber:
+     description: (0018, 0010) Contrast/Bolus Agent
+     type: string
+
+  SpacingBetweenSlices:
+     description: (0018, 0088) Spacing Between Slices
+     type: string
+
+  LossyImageCompression:
+     description: (0028, 2110) Lossy Image Compression
+     type: string
+
   body_part_examined:
     description: Part of the body that was studied.
     type: string
