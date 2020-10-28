@@ -213,11 +213,6 @@ data_file_properties:
     type: array
     items:
       type: string
-  subject_ids:
-    description: "A list of one or more subject submitter_ids associated with this data."
-    type: array
-    items:
-      type: string
 
 workflow_properties:
   $ref: "#/ubiquitous_properties"
