@@ -50,26 +50,6 @@ properties:
     description: The subject's age at the time of the study.
     type: integer
 
-  age_at_enrollment:
-    description: The age of the study subject at enrollment; must be less than 90
-      years.
-    type: integer
-    maximum: 89
-    minimum: 0
-
-  age_at_enrollment_gt89:
-    description: The age of the subject at enrollment is greater than 89 years.
-    enum:
-      - "No"
-      - "Yes"
-
-  age_at_immigration:
-    description: The age of the study subject at immigration, if the age is less than
-      90 years.
-    type: integer
-    maximum: 89
-    minimum: 0
-
   birth_year:
     description: The subject's birth year.
     type: integer
@@ -92,11 +72,6 @@ properties:
     type: integer
     maximum: 0
     minimum: -32872
-
-  days_to_immigration:
-    description: The number of days between the subject's Index Date and the date
-      subject immigrated To North America.
-    type: integer
 
   days_to_lost_to_followup:
     description: The number of days between the date used for index and the date the
