@@ -69,6 +69,40 @@ properties:
 
   $ref: "_definitions.yaml#/data_file_properties"
 
+
+(0002, 0012) Implementation Class UID            UI: 1.3.6.1.4.1.22213.1.143
+(0002, 0013) Implementation Version Name         SH: '0.5'
+(0002, 0010) Transfer Syntax UID                 UI: Implicit VR Little Endian
+
+(0008, 0008) Image Type                          CS: ['ORIGINAL', 'PRIMARY', '']
+(0008, 0060) Modality                            CS: 'DX'
+(0008, 0070) Manufacturer
+(0008, 1090) Manufacturer's Model Name           LO: 'MobileDiagnost wDR'
+(0008, 1030) Study Description                   LO: 'XR CHEST AP PORTABLE'
+
+(0008, 103e) Series Description                  LO: 'AP'
+(0008, 1090) Manufacturer's Model Name           LO: 'MobileDiagnost wDR'
+
+(0018, 0015) Body Part Examined                  CS: 'CHESTABDOMEN'
+(0018, 5101) View Position                       CS: 'AP'
+(0018, 0050) Slice Thickness                     DS: "1.0"
+(0018, 0010) Contrast/Bolus Agent                LO: 'CONTRAST'
+(0018, 0088) Spacing Between Slices              DS: "1.0"
+
+(0028, 2110) Lossy Image Compression             CS: '00'
+
+
+  implementation_class_uid:
+    description: The Implementation Class UID (0002, 0012)
+    type: string
+
+  ImplementationVersion:
+    description: The Implementation Version Name (0002, 0013)
+    type: string
+
+
+
+
   body_part_examined:
     description: Part of the body that was studied.
     type: string
