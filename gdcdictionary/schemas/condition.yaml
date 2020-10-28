@@ -130,6 +130,7 @@ properties:
     description: Is the subject deceased?
     type: boolean
 
+  # gen3 properties:
   age_at_diagnosis:
     description: The age of the subject when the primary diagnosis was determined.
       See age_at_diagnosis_gt89 if the age is over 89 years.

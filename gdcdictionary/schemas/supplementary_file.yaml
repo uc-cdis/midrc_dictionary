@@ -56,13 +56,8 @@ uniqueKeys:
   - [ project_id, submitter_id ]
 
 properties:
-  $ref: "_definitions.yaml#/ubiquitous_properties"
-  $ref: "_definitions.yaml#/data_file_properties"
 
-  file_description:
-    description: >
-      Free text to expand upon details for this file
-    type: string
+  $ref: "_definitions.yaml#/data_file_properties"
 
   data_type:
     description: >
@@ -81,9 +76,8 @@ properties:
     type:
       - string
 
-  protocol_description:
-    description: >
-      Free text to expand upon details
+  file_description:
+    description: Free text to expand upon details of this file.
     type: string
 
   studies:
