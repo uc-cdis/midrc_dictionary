@@ -53,7 +53,7 @@ properties:
     description: General description of the imaging study.
     type: string
 
-  modality:
+  exam_modality:
     description: The modality used in the imaging study (e.g., CT, CR, DX).
     type: string
 
