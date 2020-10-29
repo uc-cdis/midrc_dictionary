@@ -1,0 +1,118 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "structured_report"
+title: Structured Report
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: sr_data_file
+program: '*'
+project: '*'
+description: Data file containing a Structured Report (SR) for an imaging exam.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+  - file_state
+  - error_type
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: structured_reports
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: subjects
+        backref: structured_reports
+        label: data_from
+        target_type: subject
+        multiplicity: many_to_one
+        required: false
+      - name: imaging_exams
+        backref: structured_reports
+        label: data_from
+        target_type: imaging_exam
+        multiplicity: many_to_many
+        required: false
+      - name: ct_images
+        backref: structured_reports
+        label: data_from
+        target_type: ct_image
+        multiplicity: many_to_many
+        required: false
+
+required:
+  - submitter_id
+  - type
+  - file_name
+  - file_size
+  - md5sum
+  - data_format
+  - data_type
+  - data_category
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    type: string
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    type: string
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    type: string
+
+  report_name:
+    description: The name of the requested imaging study or exam.
+    type: string
+
+  report_notes:
+    description: Any additional notes about the structured report.
+    type: string
+
+  report_request:
+    description: The text term describing the requested imaging study or exam.
+    type: string
+
+  report_history:
+    description: A description of the medical history context of the structured report.
+    type: string
+
+  completion_flag:
+    description: The text term describing the completion status of the imaging exam.
+    type: string
+
+  verification_flag:
+    description: The text term describing the verification status of the imaging exam.
+    type: string
+
+  core_metadata_collections:
+    $ref: "_definitions.yaml#/to_one"
+  imaging_exams:
+    $ref: "_definitions.yaml#/to_many"
+  ct_images:
+    $ref: "_definitions.yaml#/to_many"
+  subjects:
+    $ref: "_definitions.yaml#/to_one"
