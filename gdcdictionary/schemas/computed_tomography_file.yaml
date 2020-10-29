@@ -5,7 +5,7 @@ title: Computed Tomography File
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
-category: imaging_data_file
+category: ct_data_file
 program: '*'
 project: '*'
 description: A Computed Tomography (CT) imaging file.
