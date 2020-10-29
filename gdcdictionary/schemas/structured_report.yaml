@@ -5,7 +5,7 @@ title: Structured Report
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
-category: structured_report_file
+category: imaging_data_file
 program: '*'
 project: '*'
 description: Data file containing a Structured Report (SR) for an imaging exam.
