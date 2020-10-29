@@ -213,11 +213,6 @@ data_file_properties:
     type: array
     items:
       type: string
-  file_state:
-    $ref: "#/file_state"
-  error_type:
-    $ref: "#/data_file_error_type"
-
 
 workflow_properties:
   $ref: "#/ubiquitous_properties"
@@ -241,6 +236,14 @@ ubiquitous_properties:
     systemAlias: node_id
   submitter_id:
     description: "A human-readable, unique identifier for a record in the metadata database. It can be used in place of the UUID for identifying or recalling a record (e.g., in data queries or uploads/exports)."
+    type: string
+  subject_ids:
+    description: "A list of one or more subject submitter_ids associated with this data."
+    type: array
+    items:
+      type: string
+  visit_id:
+    description: "The submitter_id of a subject's visit in the study."
     type: string
   state:
     $ref: "#/state"

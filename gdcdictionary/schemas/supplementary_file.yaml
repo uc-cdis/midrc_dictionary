@@ -4,7 +4,7 @@ id: "supplementary_file"
 title: Supplementary File
 type: object
 namespace: https://data.midrc.org
-category: data_file
+category: metadata_file
 program: '*'
 project: '*'
 description: >
@@ -56,13 +56,31 @@ uniqueKeys:
   - [ project_id, submitter_id ]
 
 properties:
-
+  $ref: "_definitions.yaml#/ubiquitous_properties"
   $ref: "_definitions.yaml#/data_file_properties"
+
+  file_description:
+    description: >
+      Free text to expand upon details for this file
+    type: string
 
   data_type:
     description: >
       Study file type
-    type: string
+    enum:
+      - "Adverse Events"
+      - "Assessment Results"
+      - "Case Report Form"
+      - "Clinical Data"
+      - "Concomitant Medications"
+      - "Data Dictionary"
+      - "Demographics"
+      - "Interventions"
+      - "Lab Test Results"
+      - "Study Data"
+      - "Study Medication"
+      - "Study Summary Description"
+      - "Substance Use"
 
   data_category:
     term:
@@ -76,8 +94,9 @@ properties:
     type:
       - string
 
-  file_description:
-    description: Free text to expand upon details of this file.
+  protocol_description:
+    description: >
+      Free text to expand upon details
     type: string
 
   studies:

@@ -52,11 +52,23 @@ links:
       multiplicity: many_to_one
       required: false
 
+# Sample properties: keep TCGA-specific fields
 properties:
-  $ref: "_definitions.yaml#/ubiquitous_properties"
-
+  type:
+    type: string
+  id:
+    $ref: "_definitions.yaml#/UUID"
+    systemAlias: node_id
+  state:
+    $ref: "_definitions.yaml#/state"
+  submitter_id:
+    type:
+      - string
+      - "null"
+    description: >
+      The legacy barcode used before prior to the use UUIDs, varies by project.
+      For TCGA this is bcrsamplebarcode.
   biospecimen_anatomic_site:
-    description: "The text term that represents the name of the primary disease site of the submitted tumor sample (cde 4742851)."
     term:
       $ref: "_terms.yaml#/biospecimen_anatomic_site"
     enum:
@@ -357,12 +369,12 @@ properties:
       - Venous
       - Vertebra
       - Vulva
+
       - Wrist
       - Unknown
       - Not Reported
       - Not Allowed To Collect
   composition:
-    description: "Text term that represents the cellular composition of the sample (cde 5432591)."
     term:
       $ref: "_terms.yaml#/composition"
     enum:
@@ -517,7 +529,7 @@ properties:
       - Not Reported
       - Not Allowed To Collect
   sample_type:
-    description: "Text term to describe the source of a biospecimen used for a laboratory test (cde 3111302)."
+    description: "Characterization of the sample as either clinical or contrived."
     enum:
       - Additional Metastatic
       - Additional - New Primary
@@ -560,7 +572,6 @@ properties:
       - Total RNA
       - Xenograft Tissue
       - Unknown
-      - Viral Isolate
       - Not Reported
       - Not Allowed To Collect
   sample_type_id:
