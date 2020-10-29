@@ -213,6 +213,10 @@ data_file_properties:
     type: array
     items:
       type: string
+  file_state:
+    $ref: "#/file_state"
+  error_type:
+    $ref: "#/data_file_error_type"
 
 workflow_properties:
   $ref: "#/ubiquitous_properties"
