@@ -560,6 +560,7 @@ properties:
       - Total RNA
       - Xenograft Tissue
       - Unknown
+      - Viral Isolate
       - Not Reported
       - Not Allowed To Collect
   sample_type_id:

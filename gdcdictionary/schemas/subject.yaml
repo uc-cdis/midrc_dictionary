@@ -47,7 +47,7 @@ properties:
     type: string
 
   age:
-    description: The subject's age at the time of the study.
+    description: The subject's age at the index_date or time of the study.
     type: integer
 
   birth_year:
