@@ -1,0 +1,225 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "cr_image"
+title: CR Image
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: imaging_data_file
+program: '*'
+project: '*'
+description: A Computed Radiography (CR) imaging file.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+  - file_state
+  - error_type
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: cr_images
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: subjects
+        backref: cr_images
+        label: data_from
+        target_type: subject
+        multiplicity: many_to_one
+        required: false
+      - name: imaging_exams
+        backref: cr_images
+        label: data_from
+        target_type: imaging_exam
+        multiplicity: many_to_one
+        required: false
+      - name: imaging_series
+        backref: cr_images
+        label: data_from
+        target_type: imaging_series
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - submitter_id
+  - type
+  - file_name
+  - file_size
+  - md5sum
+  - data_format
+  - data_type
+  - data_category
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  # gen3 properties
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    type: string
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    type: string
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    type: string
+
+  days_to_image:
+    description: Days from the subject's index event to the date the image was acquired.
+    type: integer
+
+  file_description:
+    description: Any additional text to give this file context in its study.
+    type: string
+
+  # DICOM elements
+  implementation_class_uid:
+    description: (0002, 0012) Implementation Class UID
+    type: string
+
+  implementation_version_name:
+    description: (0002, 0013) Implementation Version Name
+    type: string
+
+  transfer_syntax_uid:
+     description: (0002, 0010) Transfer Syntax UID
+     type: string
+
+  image_type:
+     description: (0008, 0008) Image Type
+     type: string
+
+  modality:
+     description: (0008, 0060) Modality
+     type: string
+
+  manufacturer:
+     description: (0008, 0070) Manufacturer
+     type: string
+
+  manufacturer_model_name:
+     description: (0008, 1090) Manufacturer's Model Name
+     type: string
+
+  study_description:
+     description: (0008, 1030) Study Description
+     type: string
+
+  series_description:
+     description: (0008, 103e) Series Description
+     type: string
+
+  body_part_examined:
+     description: (0018, 0015) Body Part Examined
+     type: string
+
+  view_position:
+     description: (0018, 5101) View Position
+     type: string
+
+  slice_thickness:
+     description: (0018, 0050) Slice Thickness
+     type: string
+
+  contrast_bolus_agent_number:
+     description: (0018, 0010) Contrast/Bolus Agent
+     type: string
+
+  spacing_between_slices:
+     description: (0018, 0088) Spacing Between Slices
+     type: string
+
+  lossy_image_compression:
+     description: (0028, 2110) Lossy Image Compression
+     type: string
+
+  # DICOM keyword properties
+  # ImplementationClassUID:
+  #   description: (0002, 0012) Implementation Class UID
+  #   type: string
+  #
+  # ImplementationVersionName:
+  #   description: (0002, 0013) Implementation Version Name
+  #   type: string
+  #
+  # TransferSyntaxUID:
+  #    description: (0002, 0010) Transfer Syntax UID
+  #    type: string
+  #
+  # ImageType:
+  #    description: (0008, 0008) Image Type
+  #    type: string
+  #
+  # Modality:
+  #    description: (0008, 0060) Modality
+  #    type: string
+  #
+  # Manufacturer:
+  #    description: (0008, 0070) Manufacturer
+  #    type: string
+  #
+  # ManufacturerModelName:
+  #    description: (0008, 1090) Manufacturer's Model Name
+  #    type: string
+  #
+  # StudyDescription:
+  #    description: (0008, 1030) Study Description
+  #    type: string
+  #
+  # SeriesDescription:
+  #    description: (0008, 103e) Series Description
+  #    type: string
+  #
+  # BodyPartExamined:
+  #    description: (0018, 0015) Body Part Examined
+  #    type: string
+  #
+  # ViewPosition:
+  #    description: (0018, 5101) View Position
+  #    type: string
+  #
+  # SliceThickness:
+  #    description: (0018, 0050) Slice Thickness
+  #    type: string
+  #
+  # ContrastBolusAgentNumber:
+  #    description: (0018, 0010) Contrast/Bolus Agent
+  #    type: string
+  #
+  # SpacingBetweenSlices:
+  #    description: (0018, 0088) Spacing Between Slices
+  #    type: string
+  #
+  # LossyImageCompression:
+  #    description: (0028, 2110) Lossy Image Compression
+  #    type: string
+
+  core_metadata_collections:
+    $ref: "_definitions.yaml#/to_one"
+  subjects:
+    $ref: "_definitions.yaml#/to_one"
+  imaging_exams:
+    $ref: "_definitions.yaml#/to_one"
+  imaging_series:
+    $ref: "_definitions.yaml#/to_one"
