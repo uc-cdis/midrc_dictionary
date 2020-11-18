@@ -4,7 +4,7 @@ id: "supplementary_file"
 title: Supplementary File
 type: object
 namespace: https://data.midrc.org
-category: metadata_file
+category: data_file
 program: '*'
 project: '*'
 description: >
