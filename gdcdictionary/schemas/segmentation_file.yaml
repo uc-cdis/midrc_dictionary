@@ -1,15 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "derived_image"
-title: Derived Image
+id: "segmentation_file"
+title: SEG File
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
-category: data_file
+category: imaging_data_file
 program: '*'
 project: '*'
-description: Data file containing a derived image or a composite image created from
-  the combination of individual slices or scans.
+description: Data file containing a segmentation (SEG) file for an imaging series.
 additionalProperties: false
 submittable: true
 validators: null
@@ -28,15 +27,21 @@ links:
     required: true
     subgroup:
       - name: core_metadata_collections
-        backref: derived_images
+        backref: segmentation_file
         label: data_from
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
-      - name: imaging_files
-        backref: derived_images
-        label: derived_from
-        target_type: imaging_file
+      - name: imaging_exams
+        backref: segmentation_file
+        label: data_from
+        target_type: imaging_exam
+        multiplicity: many_to_many
+        required: false
+      - name: imaging_series
+        backref: segmentation_file
+        label: data_from
+        target_type: imaging_series
         multiplicity: many_to_many
         required: false
 
@@ -45,11 +50,10 @@ required:
   - type
   - file_name
   - file_size
+  - md5sum
   - data_format
   - data_type
   - data_category
-  - md5sum
-  - derivation_method
 
 uniqueKeys:
   - [id]
@@ -58,10 +62,6 @@ uniqueKeys:
 properties:
 
   $ref: "_definitions.yaml#/data_file_properties"
-
-  atlas:
-    description: Atlas used for data output from scans.
-    type: string
 
   data_category:
     term:
@@ -78,38 +78,25 @@ properties:
       $ref: "_terms.yaml#/data_type"
     type: string
 
-  derivation_method:
-    description: The name and version of the method, script or workflow used to generate
-      the derived or combined image (also see 'workflow_type').
+  segmentation_name:
+    description: The name of the segmentation file.
     type: string
 
-  scan_identifier:
-    description: Identifier given to this scan.
+  segmentation_type:
+    description: The type of the segmentation file, for example, 'slice annotation'.
     type: string
 
-  workflow_end_datetime:
-    description: The datetime the workflow ended.
+  segmentation_notes:
+    description: Any additional notes about the segmentation file.
     type: string
 
-  workflow_link:
-    description: A hyperlink or storage location for the workflow used.
-    type: string
-
-  workflow_start_datetime:
-    description: The datetime the workflow started.
-    type: string
-
-  workflow_type:
-    term:
-      $ref: "_terms.yaml#/workflow_type"
-    type: string
-
-  workflow_version:
-    description: The version number of the workflow.
+  verification_flag:
+    description: The text term describing the verification status of the segmentation file or annotation.
     type: string
 
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_one"
-
-  imaging_files:
+  imaging_exams:
+    $ref: "_definitions.yaml#/to_many"
+  imaging_series:
     $ref: "_definitions.yaml#/to_many"
