@@ -1,7 +1,7 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
 id: "structured_report"
-title: Structured Report
+title: SR File
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
@@ -32,22 +32,16 @@ links:
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
-      - name: subjects
-        backref: structured_reports
-        label: data_from
-        target_type: subject
-        multiplicity: many_to_one
-        required: false
       - name: imaging_exams
         backref: structured_reports
         label: data_from
         target_type: imaging_exam
         multiplicity: many_to_many
         required: false
-      - name: ct_images
+      - name: imaging_series
         backref: structured_reports
         label: data_from
-        target_type: ct_image
+        target_type: imaging_series
         multiplicity: many_to_many
         required: false
 
@@ -85,7 +79,11 @@ properties:
     type: string
 
   report_name:
-    description: The name of the requested imaging study or exam.
+    description: The name of the structured report.
+    type: string
+
+  report_type:
+    description: The type of the structured report, for example, 'dose report' or 'radiologist notes'.
     type: string
 
   report_notes:
@@ -112,7 +110,5 @@ properties:
     $ref: "_definitions.yaml#/to_one"
   imaging_exams:
     $ref: "_definitions.yaml#/to_many"
-  ct_images:
+  imaging_series:
     $ref: "_definitions.yaml#/to_many"
-  subjects:
-    $ref: "_definitions.yaml#/to_one"
