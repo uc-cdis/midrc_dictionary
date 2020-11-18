@@ -65,38 +65,15 @@ properties:
     type: string
 
   data_type:
-    description: >
-      Study file type
-    enum:
-      - "Adverse Events"
-      - "Assessment Results"
-      - "Case Report Form"
-      - "Clinical Data"
-      - "Concomitant Medications"
-      - "Data Dictionary"
-      - "Demographics"
-      - "Interventions"
-      - "Lab Test Results"
-      - "Study Data"
-      - "Study Medication"
-      - "Study Summary Description"
-      - "Substance Use"
+    description: "The type of supplementary file, for example, figures, tables, clinical data, notes, publications, summary statistics, etc."
+    type: string
 
   data_category:
-    term:
-      $ref: "_terms.yaml#/data_category"
-    type:
-      - string
+    description: "The text term describing the broad category that the supplementary file falls into."
+    type: string
 
   data_format:
-    term:
-      $ref: "_terms.yaml#/data_format"
-    type:
-      - string
-
-  protocol_description:
-    description: >
-      Free text to expand upon details
+    description: "The text term describing the file format of the supplementary file, for example, PDF, XLSX, JPEG, PNG, TSV, etc."
     type: string
 
   studies:
