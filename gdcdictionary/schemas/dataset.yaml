@@ -1,0 +1,138 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "dataset"
+title: Dataset
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: administrative
+program: '*'
+project: '*'
+description: A set of metadata and associated data file objects originating from single a research study, clinical trial or patient cohort.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: projects
+    backref: datasets
+    label: performed_for
+    target_type: project
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - data_description
+  - projects
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  #system properties, do not change or remove:
+  created_datetime:
+    $ref: "_definitions.yaml#/datetime"
+
+  id:
+    $ref: "_definitions.yaml#/UUID"
+
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+
+  state:
+    $ref: "_definitions.yaml#/state"
+
+  submitter_id:
+    description: A human-readable identifier for the study's record in the database. It can be used in place of the UUID for identifying or recalling a record.
+    type: string
+
+  type:
+    description: The name of the node in the database to be used in queries. In this case "dataset".
+    enum:
+      - dataset
+
+  updated_datetime:
+    $ref: "_definitions.yaml#/datetime"
+
+  # additional properties to describe the dataset
+  associated_study:
+    description: The submitter_id or id for any dataset with which this dataset is associated, paired, or matched.
+    type: string
+
+  data_url:
+    description: A URL or DOI for the source of the dataset or the contributing organization's website.
+    type: string
+
+  data_contributor:
+    description: The name of the organization or individual that the contributed dataset belongs to.
+    type: string
+
+  data_description:
+    description: A brief, free-text description of the data files and associated metadata provided for this dataset.
+    type: string
+
+  longitudinal:
+    description: Indicates whether the dataset has longitudinal or time-series data.
+    type: boolean
+
+  research_description:
+    description: If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results.
+    type: string
+
+  research_design:
+    description: A summary of the goals of the research or a general description of the research's relationship to a clinical application.
+    enum:
+      - Analytical
+      - Case-Control Cohort Study
+      - Case-Control Cross-Sectional Study
+      - Case-Control Cross-Sequential Study
+      - Case-Control Longitudinal Study
+      - Case-study
+      - Clinical
+      - Clinical Assay
+      - Clinical Utility
+      - Experimental with Random Assignment
+      - Field Experiment
+      - Meta-analysis
+      - Naturalistic Observation
+      - Observational Cohort Study
+      - Observational Cross-Sectional Study
+      - Observational Longitudinal Study
+      - Observational Study
+      - Pre-Analytical
+      - Research/Early Development
+      - Survey
+
+  research_objective:
+    description: The general objective of the research; what the researchers hope to discover or determine.
+    enum:
+      - Accuracy
+      - Interference
+      - Limit of Detection
+      - Repeatability
+      - Reproducibility
+      - Specificity
+      - Sensitivity
+      - Stability
+
+  research_setup:
+    description: A high level description of the setup used to achieve the research objectives.
+    enum:
+      - Detection
+      - Enumeration
+      - Isolation
+      - Genetic Analysis
+
+  projects:
+    $ref: "_definitions.yaml#/to_one_project"
