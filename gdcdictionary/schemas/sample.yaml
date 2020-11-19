@@ -20,11 +20,6 @@ systemProperties:
   - created_datetime
   - updated_datetime
 
-required:
-  - submitter_id
-  - type
-
-
 uniqueKeys:
   - [id]
   - [project_id, submitter_id]
@@ -45,12 +40,22 @@ links:
       target_type: study
       multiplicity: many_to_many
       required: false
+    - name: datasets
+      backref: samples
+      label: related_to
+      target_type: dataset
+      multiplicity: many_to_many
+      required: false
     - name: projects
       backref: samples
       label: related_to
       target_type: project
       multiplicity: many_to_one
       required: false
+
+required:
+  - submitter_id
+  - type
 
 # Sample properties: keep TCGA-specific fields
 properties:
@@ -703,6 +708,8 @@ properties:
   subjects:
     $ref: "_definitions.yaml#/to_one"
   studies:
+    $ref: "_definitions.yaml#/to_many"
+  datasets:
     $ref: "_definitions.yaml#/to_many"
   projects:
     $ref: "_definitions.yaml#/to_one_project"

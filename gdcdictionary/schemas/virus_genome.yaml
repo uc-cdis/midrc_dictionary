@@ -44,6 +44,12 @@ links:
         target_type: study
         multiplicity: many_to_many
         required: false
+      - name: datasets
+        backref: virus_genomes
+        label: data_from
+        target_type: dataset
+        multiplicity: many_to_many
+        required: false
 
 required:
   - type
@@ -103,3 +109,5 @@ properties:
     $ref: "_definitions.yaml#/to_many"
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_one"
+  datasets:
+    $ref: "_definitions.yaml#/to_many"
