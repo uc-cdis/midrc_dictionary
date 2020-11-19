@@ -20,17 +20,25 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: imaging_exams
-    backref: imaging_series
-    label: related_to
-    target_type: imaging_exam
-    multiplicity: many_to_one
+  - exclusive: false
     required: true
+    subgroup:
+      - name: imaging_exams
+        backref: imaging_series
+        label: related_to
+        target_type: imaging_exam
+        multiplicity: many_to_one
+        required: false
+      - name: imaging_studies
+        backref: imaging_series
+        label: related_to
+        target_type: imaging_study
+        multiplicity: many_to_one
+        required: false
 
 required:
   - submitter_id
   - type
-  - imaging_exams
 
 uniqueKeys:
   - [id]
@@ -57,4 +65,6 @@ properties:
     type: string
 
   imaging_exams:
+    $ref: "_definitions.yaml#/to_one"
+  imaging_studies:
     $ref: "_definitions.yaml#/to_one"

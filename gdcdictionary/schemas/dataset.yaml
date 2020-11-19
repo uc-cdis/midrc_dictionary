@@ -92,47 +92,15 @@ properties:
 
   research_design:
     description: A summary of the goals of the research or a general description of the research's relationship to a clinical application.
-    enum:
-      - Analytical
-      - Case-Control Cohort Study
-      - Case-Control Cross-Sectional Study
-      - Case-Control Cross-Sequential Study
-      - Case-Control Longitudinal Study
-      - Case-study
-      - Clinical
-      - Clinical Assay
-      - Clinical Utility
-      - Experimental with Random Assignment
-      - Field Experiment
-      - Meta-analysis
-      - Naturalistic Observation
-      - Observational Cohort Study
-      - Observational Cross-Sectional Study
-      - Observational Longitudinal Study
-      - Observational Study
-      - Pre-Analytical
-      - Research/Early Development
-      - Survey
+    type: string
 
   research_objective:
     description: The general objective of the research; what the researchers hope to discover or determine.
-    enum:
-      - Accuracy
-      - Interference
-      - Limit of Detection
-      - Repeatability
-      - Reproducibility
-      - Specificity
-      - Sensitivity
-      - Stability
+    type: string
 
   research_setup:
     description: A high level description of the setup used to achieve the research objectives.
-    enum:
-      - Detection
-      - Enumeration
-      - Isolation
-      - Genetic Analysis
+    type: string
 
   projects:
     $ref: "_definitions.yaml#/to_one_project"
