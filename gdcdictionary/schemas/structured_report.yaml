@@ -8,7 +8,7 @@ namespace: https://data.midrc.org
 category: imaging_data_file
 program: '*'
 project: '*'
-description: Data file containing a Structured Report (SR) for an imaging exam.
+description: Data file containing a Structured Report (SR) for an imaging study or series.
 additionalProperties: false
 submittable: true
 validators: null
