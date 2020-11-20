@@ -99,11 +99,11 @@ properties:
     type: string
 
   completion_flag:
-    description: The text term describing the completion status of the imaging exam.
+    description: The text term describing the completion status of the imaging study or series.
     type: string
 
   verification_flag:
-    description: The text term describing the verification status of the imaging exam.
+    description: The text term describing the verification status of the imaging study or series.
     type: string
 
   core_metadata_collections:
