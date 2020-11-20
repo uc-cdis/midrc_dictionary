@@ -32,12 +32,6 @@ links:
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
-      - name: imaging_exams
-        backref: segmentation_file
-        label: data_from
-        target_type: imaging_exam
-        multiplicity: many_to_many
-        required: false
       - name: imaging_studies
         backref: segmentation_file
         label: data_from
@@ -102,8 +96,6 @@ properties:
 
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_one"
-  imaging_exams:
-    $ref: "_definitions.yaml#/to_many"
   imaging_series:
     $ref: "_definitions.yaml#/to_many"
   imaging_studies:

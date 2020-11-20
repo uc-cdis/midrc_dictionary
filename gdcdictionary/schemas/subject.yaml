@@ -22,25 +22,17 @@ systemProperties:
   - updated_datetime
 
 links:
-  - exclusive: false
+  - name: datasets
+    backref: subjects
+    label: member_of
+    target_type: dataset
+    multiplicity: many_to_many
     required: true
-    subgroup:
-      - name: studies
-        backref: subjects
-        label: member_of
-        target_type: study
-        multiplicity: many_to_many
-        required: false
-      - name: datasets
-        backref: subjects
-        label: member_of
-        target_type: dataset
-        multiplicity: many_to_many
-        required: false
 
 required:
   - submitter_id
   - type
+  - datasets
 
 uniqueKeys:
   - [id]
@@ -215,7 +207,5 @@ properties:
     description: The zip code of the subject at the time of the study.
     type: integer
 
-  studies:
-    $ref: "_definitions.yaml#/to_many"
   datasets:
     $ref: "_definitions.yaml#/to_many"

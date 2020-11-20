@@ -70,16 +70,16 @@ properties:
     description: The submitter_id or id for any dataset with which this dataset is associated, paired, or matched.
     type: string
 
-  data_url:
-    description: A URL or DOI for the source of the dataset or the contributing organization's website.
-    type: string
-
   data_contributor:
     description: The name of the organization or individual that the contributed dataset belongs to.
     type: string
 
   data_description:
     description: A brief, free-text description of the data files and associated metadata provided for this dataset.
+    type: string
+
+  data_url:
+    description: A URL or DOI for the source of the dataset or the contributing organization's website.
     type: string
 
   longitudinal:
