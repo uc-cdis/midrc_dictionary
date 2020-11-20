@@ -38,12 +38,6 @@ links:
         target_type: subject
         multiplicity: many_to_one
         required: false
-      - name: imaging_exams
-        backref: cr_images
-        label: data_from
-        target_type: imaging_exam
-        multiplicity: many_to_one
-        required: false
       - name: imaging_studies
         backref: cr_images
         label: data_from
@@ -224,8 +218,6 @@ properties:
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_one"
   subjects:
-    $ref: "_definitions.yaml#/to_one"
-  imaging_exams:
     $ref: "_definitions.yaml#/to_one"
   imaging_studies:
     $ref: "_definitions.yaml#/to_one"
