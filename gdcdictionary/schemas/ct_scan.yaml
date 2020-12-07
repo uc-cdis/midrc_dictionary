@@ -61,7 +61,7 @@ properties:
     type: integer
 
   spacing_between_slices:
-     description: (0018, 0088) Spacing Between Slices
+    description: (0018, 0088) Spacing Between Slices
     type: string
 
   slice_thickness:
@@ -73,32 +73,32 @@ properties:
     type: string
 
   view_position:
-     description: (0018, 5101) View Position
-     type: string
+    description: (0018, 5101) View Position
+    type: string
 
   image_type:
-     description: (0008, 0008) Image Type
-     type: string
+    description: (0008, 0008) Image Type
+    type: string
 
   modality:
-     description: (0008, 0060) Modality
-     type: string
+    description: (0008, 0060) Modality
+    type: string
 
   manufacturer:
-     description: (0008, 0070) Manufacturer
-     type: string
+    description: (0008, 0070) Manufacturer
+    type: string
 
   manufacturer_model_name:
-     description: (0008, 1090) Manufacturer's Model Name
-     type: string
+    description: (0008, 1090) Manufacturer's Model Name
+    type: string
 
   study_description:
-     description: (0008, 1030) Study Description
-     type: string
+    description: (0008, 1030) Study Description
+    type: string
 
   series_description:
-     description: (0008, 103e) Series Description
-     type: string
+    description: (0008, 103e) Series Description
+    type: string
 
   imaging_studies:
     $ref: "_definitions.yaml#/to_one"
