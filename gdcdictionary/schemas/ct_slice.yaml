@@ -1,0 +1,152 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "ct_slice"
+title: CT Image Slice
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: imaging_data_file
+program: '*'
+project: '*'
+description: A data object representing a single slice from a Computed Tomography (CT) Scan
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+  - file_state
+  - error_type
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: ct_slices
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: ct_scans
+        backref: ct_slices
+        label: data_from
+        target_type: ct_scan
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - submitter_id
+  - type
+  - file_name
+  - file_size
+  - md5sum
+  - data_format
+  - data_type
+  - data_category
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  # gen3 properties
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    type: string
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    type: string
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    type: string
+
+  days_to_image:
+    description: Days from the subject's index event to the date the image was acquired.
+    type: integer
+
+  file_description:
+    description: Any additional text to give this file context in its study.
+    type: string
+
+  slice_number_in_series:
+    description: The order of the slice in the series of slices comprising a parent CT scan.
+    type: integer
+
+  # DICOM elements
+  implementation_class_uid:
+    description: (0002, 0012) Implementation Class UID
+    type: string
+
+  implementation_version_name:
+    description: (0002, 0013) Implementation Version Name
+    type: string
+
+  transfer_syntax_uid:
+     description: (0002, 0010) Transfer Syntax UID
+     type: string
+
+  image_type:
+     description: (0008, 0008) Image Type
+     type: string
+
+  modality:
+     description: (0008, 0060) Modality
+     type: string
+
+  manufacturer:
+     description: (0008, 0070) Manufacturer
+     type: string
+
+  manufacturer_model_name:
+     description: (0008, 1090) Manufacturer's Model Name
+     type: string
+
+  study_description:
+     description: (0008, 1030) Study Description
+     type: string
+
+  series_description:
+     description: (0008, 103e) Series Description
+     type: string
+
+  body_part_examined:
+     description: (0018, 0015) Body Part Examined
+     type: string
+
+  view_position:
+     description: (0018, 5101) View Position
+     type: string
+
+  slice_thickness:
+     description: (0018, 0050) Slice Thickness
+     type: string
+
+  contrast_bolus_agent_number:
+     description: (0018, 0010) Contrast/Bolus Agent
+     type: string
+
+  spacing_between_slices:
+     description: (0018, 0088) Spacing Between Slices
+     type: string
+
+  lossy_image_compression:
+     description: (0028, 2110) Lossy Image Compression
+     type: string
+
+  core_metadata_collections:
+    $ref: "_definitions.yaml#/to_one"
+  ct_scans:
+    $ref: "_definitions.yaml#/to_one"
