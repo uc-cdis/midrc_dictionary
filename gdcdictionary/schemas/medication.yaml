@@ -8,7 +8,7 @@ namespace: https://gen3.datacommons.io/
 category: medical_history
 program: '*'
 project: '*'
-description: Information related to medication prescribed, dispensed or administered to the 
+description: Information related to medication prescribed, dispensed or administered to the
   subject.
 additionalProperties: false
 submittable: true
@@ -47,8 +47,7 @@ properties:
     type: string
 
   medication_type:
-    description: A categorization of medication used to describe the type of medication the 
-    patient was perscribed or administered.
+    description: A categorization of medication used to describe the type of medication the patient was perscribed or administered.
     enum:
       - ACE inhibitors
       - Bronchodilator
@@ -67,15 +66,13 @@ properties:
       - Active
       - Inactive
       - Not Reported
-  
+
   days_to_medication_start:
-    description: The number of days from the index date to the date the subject started
-    a specific medication.
+    description: The number of days from the index date to the date the subject started a specific medication.
     type: integer
 
   days_to_medication_end:
-    description: The number of days from the index date to the date the subject stopped
-    a specific medication.
+    description: The number of days from the index date to the date the subject stopped a specific medication.
     type: integer
 
   subjects:
