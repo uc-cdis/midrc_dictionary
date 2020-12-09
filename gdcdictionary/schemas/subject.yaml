@@ -86,6 +86,14 @@ properties:
     description: Any extra comments or notes about this subject.
     type: string
 
+  covid_status:
+    description: The COVID-19 test status of the patient at the time the data were collected or for the purpose of the study.
+    enum:
+      - "Positive"
+      - "Negative"
+      - "Unknown"
+      - "Inconclusive"
+
   days_to_birth:
     description: The number of days between the subject's Index Date and the date
       of birth.
