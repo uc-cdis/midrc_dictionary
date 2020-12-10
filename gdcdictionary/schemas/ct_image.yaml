@@ -94,6 +94,26 @@ properties:
     type: string
 
   # DICOM elements
+  acquisition_type:
+    description: (0018, 9302) Acquisition Type
+    type: string
+
+  body_part_examined:
+    description: (0018, 0015) Body Part Examined
+    type: string
+
+  contrast_bolus_agent_number:
+    description: "(0018, 0010) Contrast/Bolus Agent"
+    type: string
+
+  convolution_kernel:
+    description: "(0018, 1210) Convolution Kernel"
+    type: string
+
+  exposure_modulation_type:
+    description: (0018, 9323) Exposure Modulation Type
+    type: string
+
   implementation_class_uid:
     description: (0002, 0012) Implementation Class UID
     type: string
@@ -102,118 +122,57 @@ properties:
     description: (0002, 0013) Implementation Version Name
     type: string
 
-  transfer_syntax_uid:
-     description: (0002, 0010) Transfer Syntax UID
-     type: string
-
   image_type:
-     description: (0008, 0008) Image Type
-     type: string
-
-  modality:
-     description: (0008, 0060) Modality
-     type: string
-
-  manufacturer:
-     description: (0008, 0070) Manufacturer
-     type: string
-
-  manufacturer_model_name:
-     description: (0008, 1090) Manufacturer's Model Name
-     type: string
-
-  study_description:
-     description: (0008, 1030) Study Description
-     type: string
-
-  series_description:
-     description: (0008, 103e) Series Description
-     type: string
-
-  body_part_examined:
-     description: (0018, 0015) Body Part Examined
-     type: string
-
-  view_position:
-     description: (0018, 5101) View Position
-     type: string
-
-  slice_thickness:
-     description: (0018, 0050) Slice Thickness
-     type: string
-
-  contrast_bolus_agent_number:
-     description: (0018, 0010) Contrast/Bolus Agent
-     type: string
-
-  spacing_between_slices:
-     description: (0018, 0088) Spacing Between Slices
-     type: string
+    description: (0008, 0008) Image Type
+    type: string
 
   lossy_image_compression:
-     description: (0028, 2110) Lossy Image Compression
-     type: string
+    description: (0028, 2110) Lossy Image Compression
+    type: string
 
-  # DICOM keyword properties
-  # ImplementationClassUID:
-  #   description: (0002, 0012) Implementation Class UID
-  #   type: string
-  #
-  # ImplementationVersionName:
-  #   description: (0002, 0013) Implementation Version Name
-  #   type: string
-  #
-  # TransferSyntaxUID:
-  #    description: (0002, 0010) Transfer Syntax UID
-  #    type: string
-  #
-  # ImageType:
-  #    description: (0008, 0008) Image Type
-  #    type: string
-  #
-  # Modality:
-  #    description: (0008, 0060) Modality
-  #    type: string
-  #
-  # Manufacturer:
-  #    description: (0008, 0070) Manufacturer
-  #    type: string
-  #
-  # ManufacturerModelName:
-  #    description: (0008, 1090) Manufacturer's Model Name
-  #    type: string
-  #
-  # StudyDescription:
-  #    description: (0008, 1030) Study Description
-  #    type: string
-  #
-  # SeriesDescription:
-  #    description: (0008, 103e) Series Description
-  #    type: string
-  #
-  # BodyPartExamined:
-  #    description: (0018, 0015) Body Part Examined
-  #    type: string
-  #
-  # ViewPosition:
-  #    description: (0018, 5101) View Position
-  #    type: string
-  #
-  # SliceThickness:
-  #    description: (0018, 0050) Slice Thickness
-  #    type: string
-  #
-  # ContrastBolusAgentNumber:
-  #    description: (0018, 0010) Contrast/Bolus Agent
-  #    type: string
-  #
-  # SpacingBetweenSlices:
-  #    description: (0018, 0088) Spacing Between Slices
-  #    type: string
-  #
-  # LossyImageCompression:
-  #    description: (0028, 2110) Lossy Image Compression
-  #    type: string
+  manufacturer:
+    description: (0008, 0070) Manufacturer
+    type: string
+
+  manufacturer_model_name:
+    description: (0008, 1090) Manufacturer's Model Name
+    type: string
+
+  modality:
+    description: (0008, 0060) Modality
+    type: string
+
+  pixel_spacing:
+    description: (0028, 0030) Pixel Spacing
+    type: string
+
+  series_description:
+    description: (0008, 103e) Series Description
+    type: string
+
+  slice_thickness:
+    description: (0018, 0050) Slice Thickness
+    type: string
+
+  sop_class_uid:
+    description: (0008, 0016) SOP Class UID
+    type: string
+
+  spacing_between_slices:
+    description: (0018, 0088) Spacing Between Slices
+    type: string
+
+  spiral_pitch_factor:
+    description: (0018, 9311) Spiral Pitch Factor
+    type: string
+
+  study_description:
+    description: (0008, 1030) Study Description
+    type: string
+
+  transfer_syntax_uid:
+    description: (0002, 0010) Transfer Syntax UID
+    type: string
 
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_one"

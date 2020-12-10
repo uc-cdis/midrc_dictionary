@@ -102,18 +102,6 @@ properties:
     description: A free-text description of the type of imaging study performed.
     type: string
 
-  injection_time:
-    description: The time of injection with radiopharmaceuticals.
-    type: string
-
-  injection_volume:
-    description: Volume of radiopharmaceutical injection in mL.
-    type: number
-
-  radiopharmaceutical:
-    description: Indicate the radiopharmaceutical used for the imaging study, if any.
-    type: string
-
   series_number:
     description: The number of imaging series performed during the imaging study.
     type: integer
