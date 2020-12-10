@@ -99,7 +99,7 @@ properties:
     type: string
 
   contrast_bolus_agent_number:
-    description: (0018, 0010) Contrast/Bolus Agent
+    description: "(0018, 0010) Contrast/Bolus Agent"
     type: string
 
   detector_type:
