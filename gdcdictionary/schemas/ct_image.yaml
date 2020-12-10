@@ -106,7 +106,7 @@ properties:
     description: (0018, 0010) Contrast/Bolus Agent
     type: string
 
-  convolution _kernel :
+  convolution_kernel :
     description: (0018, 1210) Convolution Kernel 
     type: string
 
