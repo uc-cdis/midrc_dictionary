@@ -107,7 +107,7 @@ properties:
     type: string
 
   convolution_kernel:
-    description: "(0018, 1210) Convolution Kernel "
+    description: "(0018, 1210) Convolution Kernel"
     type: string
 
   exposure_modulation_type:
