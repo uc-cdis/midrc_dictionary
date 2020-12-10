@@ -1,0 +1,79 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "medication"
+title: Medication
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: medical_history
+program: '*'
+project: '*'
+description: Information related to medication prescribed, dispensed or administered to the
+  subject.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: subjects
+    backref: medications
+    label: related_to
+    target_type: subject
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - subjects
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  medication_name:
+    description: The name of the specific medication the subject was prescribed or administered.
+    type: string
+
+  medication_type:
+    description: A categorization of medication used to describe the type of medication the patient was perscribed or administered.
+    enum:
+      - ACE inhibitors
+      - Bronchodilator
+      - Chemotherapy
+      - Immunosuppressive medication
+      - Immunotherapy
+      - Inhaled steroids
+      - NSAID
+      - Protease inhibitor
+      - Supplemental oxygen
+      - Systemic steroids
+
+  medication_status:
+    description: Indicates if the medication is in active use.
+    enum:
+      - Active
+      - Inactive
+      - Not Reported
+
+  days_to_medication_start:
+    description: The number of days from the index date to the date the subject started a specific medication.
+    type: integer
+
+  days_to_medication_end:
+    description: The number of days from the index date to the date the subject stopped a specific medication.
+    type: integer
+
+  subjects:
+    $ref: "_definitions.yaml#/to_one"
