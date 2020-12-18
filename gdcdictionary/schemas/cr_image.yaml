@@ -94,12 +94,31 @@ properties:
     type: string
 
   # DICOM elements
+  acquisition_type:
+    description: (0018, 9302) Acquisition Type
+    type: string
+
   body_part_examined:
     description: (0018, 0015) Body Part Examined
     type: string
 
   contrast_bolus_agent_number:
     description: "(0018, 0010) Contrast/Bolus Agent"
+    type: string
+
+  convolution_kernel:
+    description: (0018, 1210)
+    type: string
+
+  detector_type:
+    description: (0018, 7004)
+    type: string
+
+  exposure_modulation_type:
+    description: (0018, 9323)
+
+  imager_pixel_spacing:
+    description: (0018, 1164)
     type: string
 
   implementation_class_uid:
@@ -138,8 +157,16 @@ properties:
     description: (0008, 103e) Series Description
     type: string
 
+  slice_thickness:
+    description: (0018, 0050) Slice Thickness
+    type: string
+
   sop_class_uid:
     description: (0008, 0016) SOP Class UID
+    type: string
+
+  spacing_between_slices:
+    description: (0018, 0088) Spacing Between Slices
     type: string
 
   spatial_resolution:
