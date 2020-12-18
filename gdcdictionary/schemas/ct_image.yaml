@@ -120,6 +120,7 @@ properties:
 
   imager_pixel_spacing:
     description: (0018, 1164)
+    type: string
 
   implementation_class_uid:
     description: (0002, 0012) Implementation Class UID
