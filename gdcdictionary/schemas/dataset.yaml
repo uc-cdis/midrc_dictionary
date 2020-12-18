@@ -96,6 +96,7 @@ properties:
 
   publication_citation:
     description: The major or main publication(s) associated with the data itself or with the publication that published the dataset.
+    type: string
 
   research_description:
     description: If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results.
