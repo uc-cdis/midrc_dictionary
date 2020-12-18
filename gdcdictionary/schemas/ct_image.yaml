@@ -110,8 +110,16 @@ properties:
     description: "(0018, 1210) Convolution Kernel"
     type: string
 
+  detector_type:
+    description: (0018, 7004) Detector Type
+    type: string
+
   exposure_modulation_type:
     description: (0018, 9323) Exposure Modulation Type
+    type: string
+
+  imager_pixel_spacing:
+    description: (0018, 1164)
     type: string
 
   implementation_class_uid:
@@ -172,6 +180,10 @@ properties:
 
   transfer_syntax_uid:
     description: (0002, 0010) Transfer Syntax UID
+    type: string
+
+  view_position:
+    description: (0018, 5101)
     type: string
 
   core_metadata_collections:

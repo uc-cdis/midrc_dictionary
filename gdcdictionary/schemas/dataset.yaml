@@ -66,8 +66,12 @@ properties:
     $ref: "_definitions.yaml#/datetime"
 
   # additional properties to describe the dataset
-  associated_study:
-    description: The submitter_id or id for any dataset with which this dataset is associated, paired, or matched.
+  acknowledgement:
+    description: Publication acknowledgement(s) for the published dataset.
+    type: string
+
+  data_citation:
+    description: The citation for the published dataset.
     type: string
 
   data_contributor:
@@ -82,9 +86,17 @@ properties:
     description: A URL or DOI for the source of the dataset or the contributing organization's website.
     type: string
 
+  license:
+    description: The license under which the daaset has been published.
+    type: string
+
   longitudinal:
     description: Indicates whether the dataset has longitudinal or time-series data.
     type: boolean
+
+  publication_citation:
+    description: The major or main publication(s) associated with the data itself or with the publication that published the dataset.
+    type: string
 
   research_description:
     description: If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results.
