@@ -8,7 +8,7 @@ namespace: https://data.midrc.org
 category: imaging_data_file
 program: '*'
 project: '*'
-description: A Computed Tomography (CT) imaging file.
+description: A Computed Tomography (CT) imaging file. Could be a slice from a stack of images or a single image.
 additionalProperties: false
 submittable: true
 validators: null
@@ -32,22 +32,10 @@ links:
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
-      - name: subjects
+      - name: ct_series
         backref: ct_images
         label: data_from
-        target_type: subject
-        multiplicity: many_to_one
-        required: false
-      - name: imaging_studies
-        backref: ct_images
-        label: data_from
-        target_type: imaging_study
-        multiplicity: many_to_one
-        required: false
-      - name: imaging_series
-        backref: ct_images
-        label: data_from
-        target_type: imaging_series
+        target_type: ct_series
         multiplicity: many_to_one
         required: false
 
@@ -188,9 +176,5 @@ properties:
 
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_one"
-  subjects:
-    $ref: "_definitions.yaml#/to_one"
-  imaging_series:
-    $ref: "_definitions.yaml#/to_one"
-  imaging_studies:
+  ct_series:
     $ref: "_definitions.yaml#/to_one"
