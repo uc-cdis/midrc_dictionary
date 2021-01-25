@@ -40,7 +40,6 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  # properties from UAMS TCIA study
   exam_description:
     description: General description of the radiography exam.
     type: string
@@ -50,5 +49,5 @@ properties:
     type: string
 
   imaging_studies:
-    description: Reference to the imaging study of which this radiography exam was a part.
+    description: The submitter_id or id of the imaging_study to which this radiography_exam belongs, i.e., a link to a records in the parent node.
     $ref: "_definitions.yaml#/to_one"

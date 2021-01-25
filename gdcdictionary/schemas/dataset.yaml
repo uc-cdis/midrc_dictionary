@@ -115,4 +115,5 @@ properties:
     type: string
 
   projects:
+    description: The code of the project that this dataset belongs to, i.e., a link to the parent node.
     $ref: "_definitions.yaml#/to_one_project"

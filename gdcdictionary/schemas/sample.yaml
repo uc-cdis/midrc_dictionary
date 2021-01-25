@@ -102,4 +102,5 @@ properties:
     type: string
 
   datasets:
+    description: The submitter_id or id of the dataset to which the sample belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"

@@ -131,4 +131,5 @@ properties:
     type: boolean
 
   cases:
+    description: The submitter_id or id of the case this condition describes, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"

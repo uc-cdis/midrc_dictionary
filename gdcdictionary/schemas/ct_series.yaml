@@ -57,4 +57,5 @@ properties:
     type: string
 
   ct_scans:
+    description: The submitter_id or id of the ct_scan this ct_series belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"

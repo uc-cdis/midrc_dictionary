@@ -174,9 +174,16 @@ properties:
     description: (0018, 5101) View Position
     type: string
 
+  imaging_study_id:
+    description: The submitter_id of the corresponding imaging study.
+    type: string
+  imaging_series_id:
+    description: The submitter_id of the corresponding imaging series.
+    type: string
 
   core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the dx_image belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
   dx_series:
-    description: The DX imaging series of which this DX image is a part.
+    description: The DX imaging series of which this DX image is a part; a link to the parent node.
     $ref: "_definitions.yaml#/to_one"

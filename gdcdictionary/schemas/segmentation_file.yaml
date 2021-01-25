@@ -102,10 +102,14 @@ properties:
     type: string
 
   core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the segmentation file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
   cr_series:
+    description: The submitter_id or id of the cr_series to which the segmentation file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
   ct_series:
+    description: The submitter_id or id of the ct_series to which the segmentation file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
   dx_series:
+    description: The submitter_id or id of the dx_series to which the segmentation file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"

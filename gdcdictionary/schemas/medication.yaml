@@ -76,4 +76,5 @@ properties:
     type: integer
 
   cases:
+    description: The submitter_id or id of the case receiving this medication, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"

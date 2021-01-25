@@ -57,4 +57,5 @@ properties:
     type: string
 
   radiography_exams:
+    description: The submitter_id or id of the radiography_exam this dx_series belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"

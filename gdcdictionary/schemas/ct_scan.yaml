@@ -49,5 +49,5 @@ properties:
     type: string
 
   imaging_studies:
-    description: The imaging study of which this CT scan is a part.
+    description: The submitter_id or id of the imaging_study this ct_scan belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
