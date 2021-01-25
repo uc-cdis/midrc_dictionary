@@ -20,17 +20,17 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: subjects
+  - name: cases
     backref: imaging_studies
     label: related_to
-    target_type: subject
+    target_type: case
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - subjects
+  - cases
 
 uniqueKeys:
   - [id]
@@ -67,13 +67,13 @@ properties:
 
   # other properties
   age_at_imaging:
-    description: Age of the study subject in years at the time imaging study was performed.
+    description: Age of the study case in years at the time imaging study was performed.
     type: integer
     maximum: 89
     minimum: 0
 
   age_at_imaging_gt89:
-    description: Indicates whether the age of the subject when the imaging study was performed is greater than 89 years
+    description: Indicates whether the age of the case when the imaging study was performed is greater than 89 years
     enum:
       - "No"
       - "Yes"
@@ -121,89 +121,89 @@ properties:
 
   # For TCIA studies
   latest_bmi:
-    description: The last body-mass index (BMI) recorded for the subject in this study.
+    description: The last body-mass index (BMI) recorded for the case in this study.
     type: number
   latest_weight:
-    description: The last weight (pounds) recorded for the subject in this study.
+    description: The last weight (pounds) recorded for the case in this study.
     type: integer
   latest_height_inches:
-    description: The last height in inches recorded for the subject in this study.
+    description: The last height in inches recorded for the case in this study.
     type: integer
   latest_height_string:
-    description: The last height in feet (') and inches ('') format recorded for the subject in this study.
+    description: The last height in feet (') and inches ('') format recorded for the case in this study.
     type: string
   tuberculosis:
-    description: Has the subject been diagnosed with tuberculosis prior to this study?
+    description: Has the case been diagnosed with tuberculosis prior to this study?
     type: boolean
   systemic_lupus_erythmatosus:
-    description: Has the subject been diagnosed with systemic lupus erythmatosus prior to this study?
+    description: Has the case been diagnosed with systemic lupus erythmatosus prior to this study?
     type: boolean
   rheumatoid_arthritis:
-    description: Has the subject been diagnosed with rheumatoid arthritis prior to this study?
+    description: Has the case been diagnosed with rheumatoid arthritis prior to this study?
     type: boolean
   extensive_burns:
-    description: Has the subject suffered from extensive burns prior to this study?
+    description: Has the case suffered from extensive burns prior to this study?
     type: boolean
   asplenia:
-    description: Has the subject been diagnosed with asplenia prior to this study?
+    description: Has the case been diagnosed with asplenia prior to this study?
     type: boolean
   hyposplenia:
-    description: Has the subject been diagnosed with hyposplenia prior to this study?
+    description: Has the case been diagnosed with hyposplenia prior to this study?
     type: boolean
   measles:
-    description: Has the subject been diagnosed with measles prior to this study?
+    description: Has the case been diagnosed with measles prior to this study?
     type: boolean
   cytomegalovirus:
-    description: Has the subject been diagnosed with cytomegalovirus prior to this study?
+    description: Has the case been diagnosed with cytomegalovirus prior to this study?
     type: boolean
   chicken_pox:
-    description: Has the subject been diagnosed with chicken pox prior to this study?
+    description: Has the case been diagnosed with chicken pox prior to this study?
     type: boolean
   herpes_zoster:
-    description: Has the subject been diagnosed with herpes zoster prior to this study?
+    description: Has the case been diagnosed with herpes zoster prior to this study?
     type: boolean
   malnutrition:
-    description: Has the subject been diagnosed with malnutrition prior to this study?
+    description: Has the case been diagnosed with malnutrition prior to this study?
     type: boolean
   current_pregnant:
-    description: Is the subject currently pregnant for this study?
+    description: Is the case currently pregnant for this study?
     type: boolean
   chronic_kidney_disease:
-    description: Has the subject been diagnosed with chronic kidney disease prior to this study?
+    description: Has the case been diagnosed with chronic kidney disease prior to this study?
     type: boolean
   diabetes_type_1:
-    description: Has the subject been diagnosed with type 1 diabetes prior to this study?
+    description: Has the case been diagnosed with type 1 diabetes prior to this study?
     type: boolean
   diabetes_type_2:
-    description: Has the subject been diagnosed with type 2 diabetes prior to this study?
+    description: Has the case been diagnosed with type 2 diabetes prior to this study?
     type: boolean
   transplant:
-    description: Has the subject had a transplant prior to this study?
+    description: Has the case had a transplant prior to this study?
     type: boolean
   hemodialysis_pre_diagnosis:
-    description: Has the subject had hemodialysis pre diagnosis prior to this study?
+    description: Has the case had hemodialysis pre diagnosis prior to this study?
     type: boolean
   hemodialysis_post_diagnosis:
-    description: Has the subject had hemodialysis post diagnosis prior to this study?
+    description: Has the case had hemodialysis post diagnosis prior to this study?
     type: boolean
   cancer:
-    description: Has the subject been diagnosed with cancer prior to this study?
+    description: Has the case been diagnosed with cancer prior to this study?
     type: boolean
   covid_test_positive:
-    description: Has the subject tested positive for COVID-19?
+    description: Has the case tested positive for COVID-19?
     type: boolean
   covid_test_name:
-    description: The name of the test used to determine a subject's COVID-19 status.
+    description: The name of the test used to determine a case's COVID-19 status.
     type: string
   icu_admit:
-    description: Has the subject been admitted to the ICU for this study?
+    description: Has the case been admitted to the ICU for this study?
     type: boolean
   number_icu_admits:
-    description: The number of ICU admits for the subject in this study.
+    description: The number of ICU admits for the case in this study.
     type: integer
   mortality:
-    description: Is the subject deceased?
+    description: Is the case deceased?
     type: boolean
 
-  subjects:
+  cases:
     $ref: "_definitions.yaml#/to_one"

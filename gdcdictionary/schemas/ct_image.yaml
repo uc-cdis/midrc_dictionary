@@ -74,7 +74,7 @@ properties:
     type: string
 
   days_to_image:
-    description: Days from the subject's index event to the date the image was acquired.
+    description: Days from the case's index event to the date the image was acquired.
     type: integer
 
   file_description:
