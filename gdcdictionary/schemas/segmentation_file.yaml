@@ -32,16 +32,10 @@ links:
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
-      - name: imaging_studies
+      - name: cr_series
         backref: segmentation_file
         label: data_from
-        target_type: imaging_study
-        multiplicity: many_to_many
-        required: false
-      - name: imaging_series
-        backref: segmentation_file
-        label: data_from
-        target_type: imaging_series
+        target_type: cr_series
         multiplicity: many_to_many
         required: false
       - name: ct_series
@@ -50,6 +44,13 @@ links:
         target_type: ct_series
         multiplicity: many_to_many
         required: false
+      - name: dx_series
+        backref: segmentation_file
+        label: data_from
+        target_type: dx_series
+        multiplicity: many_to_many
+        required: false
+
 
 required:
   - submitter_id
@@ -102,9 +103,9 @@ properties:
 
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_one"
-  imaging_series:
-    $ref: "_definitions.yaml#/to_many"
-  imaging_studies:
+  cr_series:
     $ref: "_definitions.yaml#/to_many"
   ct_series:
+    $ref: "_definitions.yaml#/to_many"
+  dx_series:
     $ref: "_definitions.yaml#/to_many"

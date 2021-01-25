@@ -177,4 +177,5 @@ properties:
   core_metadata_collections:
     $ref: "_definitions.yaml#/to_one"
   ct_series:
+    description: The CT series of which this CT image is a part.
     $ref: "_definitions.yaml#/to_one"

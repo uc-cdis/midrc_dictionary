@@ -1,0 +1,60 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "dx_series"
+title: DX Series
+type: object
+namespace: https://data.midrc.org/
+category: medical_history
+program: '*'
+project: '*'
+description: Information related to a DX imaging series to which one or more digital radiographs (x-rays) belong.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: radiography_exams
+    backref: dx_series
+    label: related_to
+    target_type: radiography_exam
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - radiography_exams
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  series_description:
+    description: A general description of or additional information about the imaging series.
+    type: string
+
+  series_id:
+    description: The identification code or scan number of the imaging series.
+    type: string
+
+  series_type:
+    description: The text term describing the type of imaging series.
+    type: string
+
+  series_name:
+    description: The human-readable name of the imaging series or stack of images.
+    type: string
+
+  radiography_exams:
+    $ref: "_definitions.yaml#/to_one"
