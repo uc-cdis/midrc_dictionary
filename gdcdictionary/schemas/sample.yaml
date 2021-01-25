@@ -1,7 +1,7 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "case"
-title: Case
+id: "sample"
+title: Sample
 type: object
 namespace: https://data.midrc.org
 category: biospecimen
