@@ -204,6 +204,9 @@ properties:
   mortality:
     description: Is the case deceased?
     type: boolean
+  study_uid:
+    description: The study instance UID (0020,000D).
+    type: string
 
   cases:
     description: The submitter_id or id of the case observed in this imaging_study, i.e., a link to a record in the parent node.
