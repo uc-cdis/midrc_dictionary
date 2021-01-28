@@ -47,7 +47,7 @@ properties:
 
   age:
     description: The case's age at the time of the study.
-    type: integer
+    type: number
 
   collaboration_id:
     description: For instances in which multiple institutions use the same patient
