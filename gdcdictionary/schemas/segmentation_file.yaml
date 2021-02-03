@@ -32,18 +32,25 @@ links:
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
-      - name: imaging_studies
+      - name: cr_series
         backref: segmentation_file
         label: data_from
-        target_type: imaging_study
+        target_type: cr_series
         multiplicity: many_to_many
         required: false
-      - name: imaging_series
+      - name: ct_series
         backref: segmentation_file
         label: data_from
-        target_type: imaging_series
+        target_type: ct_series
         multiplicity: many_to_many
         required: false
+      - name: dx_series
+        backref: segmentation_file
+        label: data_from
+        target_type: dx_series
+        multiplicity: many_to_many
+        required: false
+
 
 required:
   - submitter_id
@@ -95,8 +102,14 @@ properties:
     type: string
 
   core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the segmentation file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
-  imaging_series:
+  cr_series:
+    description: The submitter_id or id of the cr_series to which the segmentation file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
-  imaging_studies:
+  ct_series:
+    description: The submitter_id or id of the ct_series to which the segmentation file belongs, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+  dx_series:
+    description: The submitter_id or id of the dx_series to which the segmentation file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"

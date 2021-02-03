@@ -98,8 +98,11 @@ properties:
     type: string
 
   samples:
+    description: The submitter_id or id of the sample from which this virus_genome is derived, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
   core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which this virus_genome belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
   datasets:
+    description: The submitter_id or id of the dataset to which this virus_genome belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"

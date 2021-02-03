@@ -77,6 +77,8 @@ properties:
     type: string
 
   core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the supplementary file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
   datasets:
+    description: The submitter_id or id of the dataset to which the supplementary file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"

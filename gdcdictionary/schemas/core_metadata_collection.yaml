@@ -130,4 +130,5 @@ properties:
     type: string
 
   projects:
+    description: The project code for the record in the project node that this core_metadata_collection belongs to, i.e., a link to the parent node.
     $ref: "_definitions.yaml#/to_one_project"

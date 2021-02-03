@@ -1,0 +1,53 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "radiography_exam"
+title: Digital Radiography Exam
+type: object
+namespace: https://data.midrc.org/
+category: medical_history
+program: '*'
+project: '*'
+description: Information related to a digital radiography exam during which CR, DX or other types of digital radiographs are captured.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: imaging_studies
+    backref: radiography_exams
+    label: related_to
+    target_type: imaging_study
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - imaging_studies
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  exam_description:
+    description: General description of the radiography exam.
+    type: string
+
+  exam_notes:
+    description: Notes made by the radiologist during the radiography exam.
+    type: string
+
+  imaging_studies:
+    description: The submitter_id or id of the imaging_study to which this radiography_exam belongs, i.e., a link to a records in the parent node.
+    $ref: "_definitions.yaml#/to_one"

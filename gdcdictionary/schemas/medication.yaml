@@ -9,7 +9,7 @@ category: medical_history
 program: '*'
 project: '*'
 description: Information related to medication prescribed, dispensed or administered to the
-  subject.
+  case.
 additionalProperties: false
 submittable: true
 validators: null
@@ -22,17 +22,17 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: subjects
+  - name: cases
     backref: medications
     label: related_to
-    target_type: subject
+    target_type: case
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - subjects
+  - cases
 
 uniqueKeys:
   - [id]
@@ -43,7 +43,7 @@ properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
   medication_name:
-    description: The name of the specific medication the subject was prescribed or administered.
+    description: The name of the specific medication the case was prescribed or administered.
     type: string
 
   medication_type:
@@ -68,12 +68,13 @@ properties:
       - Not Reported
 
   days_to_medication_start:
-    description: The number of days from the index date to the date the subject started a specific medication.
+    description: The number of days from the index date to the date the case started a specific medication.
     type: integer
 
   days_to_medication_end:
-    description: The number of days from the index date to the date the subject stopped a specific medication.
+    description: The number of days from the index date to the date the case stopped a specific medication.
     type: integer
 
-  subjects:
+  cases:
+    description: The submitter_id or id of the case receiving this medication, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"

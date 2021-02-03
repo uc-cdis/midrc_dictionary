@@ -1,15 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "subject"
-title: Subject
+id: "case"
+title: Case
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
 category: administrative
 program: '*'
 project: '*'
-description: The collection of all data related to a specific subject in the context
-  of a specific experiment.
+description: The collection of all data related to a specific patient or case in the context of a specific dataset or experiment.
 additionalProperties: false
 submittable: true
 validators: null
@@ -23,7 +22,7 @@ systemProperties:
 
 links:
   - name: datasets
-    backref: subjects
+    backref: cases
     label: member_of
     target_type: dataset
     multiplicity: many_to_many
@@ -43,37 +42,12 @@ properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
   accession:
-    description: The subject's accession ID or number.
+    description: The case's accession ID or number.
     type: string
 
   age:
-    description: The subject's age at the time of the study.
-    type: integer
-
-  age_at_enrollment:
-    description: The age of the study subject at enrollment; must be less than 90
-      years.
-    type: integer
-    maximum: 89
-    minimum: 0
-
-  age_at_enrollment_gt89:
-    description: The age of the subject at enrollment is greater than 89 years.
-    enum:
-      - "No"
-      - "Yes"
-
-  age_at_immigration:
-    description: The age of the study subject at immigration, if the age is less than
-      90 years.
-    type: integer
-    maximum: 89
-    minimum: 0
-
-  birth_year:
-    description: The subject's birth year.
-    type: integer
-    minimum: 1928
+    description: The case's age at the time of the study.
+    type: number
 
   collaboration_id:
     description: For instances in which multiple institutions use the same patient
@@ -83,7 +57,7 @@ properties:
     type: string
 
   comments:
-    description: Any extra comments or notes about this subject.
+    description: Any extra comments or notes about this case.
     type: string
 
   covid_status:
@@ -93,27 +67,6 @@ properties:
       - "Negative"
       - "Unknown"
       - "Inconclusive"
-
-  days_to_birth:
-    description: The number of days between the subject's Index Date and the date
-      of birth.
-    type: integer
-    maximum: 0
-    minimum: -32872
-
-  days_to_immigration:
-    description: The number of days between the subject's Index Date and the date
-      subject immigrated To North America.
-    type: integer
-
-  days_to_lost_to_followup:
-    description: The number of days between the date used for index and the date the
-      patient was lost to follow-up.
-    type: integer
-
-  death_year:
-    description: The subject's death year.
-    type: integer
 
   ethnicity:
     term:
@@ -125,12 +78,8 @@ properties:
       - Other (specify)
       - Unknown
 
-  ethnicity_other:
-    description: If 'Other (specify)' was chosen for ethnicity, Ethnicity (free text).
-    type: string
-
   experimental_group:
-    description: The group into which this subject has been classified for this study.
+    description: The group into which this case has been classified for this study.
     type: string
 
   gender:
@@ -142,13 +91,6 @@ properties:
       - Not Reported
       - Unknown
       - Unspecified
-
-  handedness:
-    description: Handedness of the subject.
-    enum:
-      - Left
-      - Mixed
-      - Right
 
   index_date:
     description: The reference or anchor date used during date obfuscation, where
@@ -166,23 +108,6 @@ properties:
     enum:
       - Data-Derived
       - Imputed
-
-  lost_to_followup:
-    description: A yes/no indicator related to whether a patient was unable to be
-      contacted for follow-up.
-    enum:
-      - "No"
-      - Not Applicable
-      - Not Reported
-      - "Yes"
-
-  place_of_birth:
-    description: Place of birth or origin.
-    type: string
-
-  primary_site:
-    description: The primary anatomical site of disease in the subject.
-    type: string
 
   race:
     term:
@@ -202,18 +127,10 @@ properties:
       - Unknown
       - White
 
-  race_other:
-    description: If 'Other' was chosen for race, free text to describe race
-      as collected.
-    type: string
-
-  species:
-    description: Taxonomic species of the subject.
-    type: string
-
   zip:
-    description: The zip code of the subject at the time of the study.
+    description: The zip code of the case at the time of the study.
     type: integer
 
   datasets:
+    description: The submitter_id or id of the dataset this case belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
