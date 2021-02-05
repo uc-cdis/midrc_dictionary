@@ -68,7 +68,7 @@ properties:
   # other properties
   age_at_imaging:
     description: Age of the study case in years at the time imaging study was performed.
-    type: integer
+    type: number
     maximum: 89
     minimum: 0
 
@@ -104,6 +104,10 @@ properties:
 
   series_number:
     description: The number of imaging series performed during the imaging study.
+    type: integer
+
+  image_number:
+    description: The number of individual image files associated with the imaging study.
     type: integer
 
   study_covid_status:
