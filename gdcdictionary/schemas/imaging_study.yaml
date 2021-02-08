@@ -214,6 +214,9 @@ properties:
   specimen_source:
     description: The source of the specimen used for determining the COVID-19 status of the case in this imaging study.
     type: string
+  symptomatic:
+    description: Did the patient/case display symptoms of COVID-19 infection during the imaging study?
+    type: string
 
   cases:
     description: The submitter_id or id of the case observed in this imaging_study, i.e., a link to a record in the parent node.
