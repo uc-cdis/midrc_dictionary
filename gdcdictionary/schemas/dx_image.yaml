@@ -148,7 +148,7 @@ properties:
 
   slice_thickness:
     description: (0018, 0050) Slice Thickness
-    type: string
+    type: number
 
   sop_class_uid:
     description: (0008, 0016) SOP Class UID
