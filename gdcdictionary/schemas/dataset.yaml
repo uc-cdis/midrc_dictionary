@@ -82,7 +82,7 @@ properties:
     description: A brief, free-text description of the data files and associated metadata provided for this dataset.
     type: string
 
-  data_url:
+  data_url_doi:
     description: A URL or DOI for the source of the dataset or the contributing organization's website.
     type: string
 

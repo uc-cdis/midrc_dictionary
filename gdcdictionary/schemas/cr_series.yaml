@@ -100,11 +100,11 @@ properties:
     type: number
 
   series_description:
-    description: A general description of or additional information about the imaging series.
+    description: A general description of or additional information about the imaging series; (0008, 103e) Series Description.
     type: string
 
-  series_id:
-    description: The identification code or scan number of the imaging series.
+  series_uid:
+    description: The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.
     type: string
 
   series_type:
