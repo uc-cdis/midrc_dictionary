@@ -1,0 +1,69 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "procedure"
+title: Procedure
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: medical_history
+program: '*'
+project: '*'
+description: Activities or processes ordered by and/or carried out by a
+healthcare provider on the patient with diagnostic and/or therapeutic purposes.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: conditions
+        backref: procedures
+        label: related_to
+        target_type: condition
+        multiplicity: many_to_one
+        required: false
+      - name: cases
+        backref: procedures
+        label: related_to
+        target_type: case
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - submitter_id
+  - type
+  - cases
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  test_method:
+    description: The test method used to confirm a condition or produce a measurement.
+    enum:
+      - RT-PCR
+      - Rapid COVID19 test
+      - IgM
+      - IgG
+      - Other
+
+  conditions:
+    description: The submitter_id or id of the condition to which this procedure is related, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  cases:
+    description: The submitter_id or id of the case to which this procedure is related, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"

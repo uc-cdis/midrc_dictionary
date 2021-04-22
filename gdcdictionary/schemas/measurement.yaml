@@ -1,0 +1,77 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "measurement"
+title: Measurement
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: medical_history
+program: '*'
+project: '*'
+description: A structured value (numerical or categorical) obtained through
+systematic examination of a person or sample.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: conditions
+        backref: measurements
+        label: related_to
+        target_type: condition
+        multiplicity: many_to_one
+        required: false
+      - name: procedures
+        backref: measurements
+        label: related_to
+        target_type: procedure
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - submitter_id
+  - type
+  - cases
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  test_days_from_index:
+    description: A number of days beginning with the index date and ending with 
+    the date of the test.
+    type: integer
+
+  test_name:
+    description: The name of the test for which this measurement was the result.
+    enum:
+      - COVID-19
+
+  test_result_text:
+    description: The measured result of the test described using a list of enumerations.
+    enum:
+      - Negative
+      - Positive
+      - Not Reported
+
+  conditions:
+    description: The submitter_id or id of the condition this measurement describes, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  procedures:
+    description: The submitter_id or id of the procedure this measurement describes, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"

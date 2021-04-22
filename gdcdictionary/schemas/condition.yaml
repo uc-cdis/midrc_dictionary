@@ -8,7 +8,7 @@ namespace: https://data.midrc.org
 category: medical_history
 program: '*'
 project: '*'
-description: Information related to the condition of a case within the context
+description: Information related to the condition(s) of a case within the context
   of a particular study (e.g., a medical diagnoses, comorbidities). This includes a snapshot of the
   case's status with respect to certain diseases, disorders, symptoms, injuries,
   or illnesses within the context of the study.
@@ -44,91 +44,96 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  # For TCIA studies
-  latest_bmi:
-    description: The last body-mass index (BMI) recorded for the case.
-    type: number
-  latest_weight:
-    description: The last weight (pounds) recorded for the case.
-    type: integer
-  latest_height_inches:
-    description: The last height in inches recorded for the case.
-    type: integer
-  latest_height_string:
-    description: The last height in feet (') and inches ('') format recorded for the case.
-    type: string
-  tuberculosis:
-    description: Has the case been diagnosed with tuberculosis?
-    type: boolean
-  systemic_lupus_erythmatosus:
-    description: Has the case been diagnosed with systemic lupus erythmatosus?
-    type: boolean
-  rheumatoid_arthritis:
-    description: Has the case been diagnosed with rheumatoid arthritis?
-    type: boolean
-  extensive_burns:
-    description: Has the case suffered from extensive burns?
-    type: boolean
-  asplenia:
-    description: Has the case been diagnosed with asplenia?
-    type: boolean
-  hyposplenia:
-    description: Has the case been diagnosed with hyposplenia?
-    type: boolean
-  measles:
-    description: Has the case been diagnosed with measles?
-    type: boolean
-  cytomegalovirus:
-    description: Has the case been diagnosed with cytomegalovirus?
-    type: boolean
-  chicken_pox:
-    description: Has the case been diagnosed with chicken pox?
-    type: boolean
-  herpes_zoster:
-    description: Has the case been diagnosed with herpes zoster?
-    type: boolean
-  malnutrition:
-    description: Has the case been diagnosed with malnutrition?
-    type: boolean
-  current_pregnant:
-    description: Is the case currently pregnant?
-    type: boolean
-  chronic_kidney_disease:
-    description: Has the case been diagnosed with chronic kidney disease?
-    type: boolean
-  diabetes_type_1:
-    description: Has the case been diagnosed with type 1 diabetes?
-    type: boolean
-  diabetes_type_2:
-    description: Has the case been diagnosed with type 2 diabetes?
-    type: boolean
-  transplant:
-    description: Has the case had a transplant?
-    type: boolean
-  hemodialysis_pre_diagnosis:
-    description: Has the case had hemodialysis pre diagnosis?
-    type: boolean
-  hemodialysis_post_diagnosis:
-    description: Has the case had hemodialysis post diagnosis?
-    type: boolean
-  cancer:
-    description: Has the case been diagnosed with cancer?
-    type: boolean
-  covid_test_positive:
-    description: Has the case tested positive for COVID-19?
-    type: boolean
-  covid_test_name:
-    description: The name of the test used to determine a case's COVID-19 status.
-    type: string
-  icu_admit:
-    description: Has the case been admitted to the ICU?
-    type: boolean
-  number_icu_admits:
-    description: The number of ICU admits for the case.
-    type: integer
-  mortality:
-    description: Is the case deceased?
-    type: boolean
+condition_name:
+  description: The name of the condition the patient has experienced.
+  enum:
+    - COVID-19
+
+  # # For TCIA studies
+  # latest_bmi:
+  #   description: The last body-mass index (BMI) recorded for the case.
+  #   type: number
+  # latest_weight:
+  #   description: The last weight (pounds) recorded for the case.
+  #   type: integer
+  # latest_height_inches:
+  #   description: The last height in inches recorded for the case.
+  #   type: integer
+  # latest_height_string:
+  #   description: The last height in feet (') and inches ('') format recorded for the case.
+  #   type: string
+  # tuberculosis:
+  #   description: Has the case been diagnosed with tuberculosis?
+  #   type: boolean
+  # systemic_lupus_erythmatosus:
+  #   description: Has the case been diagnosed with systemic lupus erythmatosus?
+  #   type: boolean
+  # rheumatoid_arthritis:
+  #   description: Has the case been diagnosed with rheumatoid arthritis?
+  #   type: boolean
+  # extensive_burns:
+  #   description: Has the case suffered from extensive burns?
+  #   type: boolean
+  # asplenia:
+  #   description: Has the case been diagnosed with asplenia?
+  #   type: boolean
+  # hyposplenia:
+  #   description: Has the case been diagnosed with hyposplenia?
+  #   type: boolean
+  # measles:
+  #   description: Has the case been diagnosed with measles?
+  #   type: boolean
+  # cytomegalovirus:
+  #   description: Has the case been diagnosed with cytomegalovirus?
+  #   type: boolean
+  # chicken_pox:
+  #   description: Has the case been diagnosed with chicken pox?
+  #   type: boolean
+  # herpes_zoster:
+  #   description: Has the case been diagnosed with herpes zoster?
+  #   type: boolean
+  # malnutrition:
+  #   description: Has the case been diagnosed with malnutrition?
+  #   type: boolean
+  # current_pregnant:
+  #   description: Is the case currently pregnant?
+  #   type: boolean
+  # chronic_kidney_disease:
+  #   description: Has the case been diagnosed with chronic kidney disease?
+  #   type: boolean
+  # diabetes_type_1:
+  #   description: Has the case been diagnosed with type 1 diabetes?
+  #   type: boolean
+  # diabetes_type_2:
+  #   description: Has the case been diagnosed with type 2 diabetes?
+  #   type: boolean
+  # transplant:
+  #   description: Has the case had a transplant?
+  #   type: boolean
+  # hemodialysis_pre_diagnosis:
+  #   description: Has the case had hemodialysis pre diagnosis?
+  #   type: boolean
+  # hemodialysis_post_diagnosis:
+  #   description: Has the case had hemodialysis post diagnosis?
+  #   type: boolean
+  # cancer:
+  #   description: Has the case been diagnosed with cancer?
+  #   type: boolean
+  # covid_test_positive:
+  #   description: Has the case tested positive for COVID-19?
+  #   type: boolean
+  # covid_test_name:
+  #   description: The name of the test used to determine a case's COVID-19 status.
+  #   type: string
+  # icu_admit:
+  #   description: Has the case been admitted to the ICU?
+  #   type: boolean
+  # number_icu_admits:
+  #   description: The number of ICU admits for the case.
+  #   type: integer
+  # mortality:
+  #   description: Is the case deceased?
+  #   type: boolean
 
   cases:
     description: The submitter_id or id of the case this condition describes, i.e., a link to a record in the parent node.

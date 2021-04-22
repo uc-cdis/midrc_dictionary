@@ -40,6 +40,65 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
+  aquisition_type:
+    description: (0018, 9302) Acquisition Type
+    enum:
+      - SEQUENCED
+      - SPIRAL
+      - CONSTANT_ANGLE
+      - STATIONARY
+      - FREE
+
+  contrast_bolus_agent_number:
+    description: "(0018, 0010) Contrast/Bolus Agent"
+    type: string
+
+  convolution_kernel:
+    description: (0018, 1210) Convolution Kernel
+    type: string
+
+  detector_type:
+    description: (0018, 7004) Detector Type
+    enum:
+      - DIRECT
+      - SCINTLLATOR
+      - STORAGE
+      - FILM
+
+  exposure_modulation_type:
+    description: (0018, 9323) Exposure Modulation Type
+    type: string
+
+  image_type:
+    description: (0008, 0008) Image Type
+    type: string
+
+  imager_pixel_spacing:
+    description: (0018, 1164) Imager Pixel Spacing
+    type: number
+
+  lossy_image_compression:
+    description: (0028, 2110) Lossy Image Compression
+    enum:
+      - "00"
+      - "01"
+
+  manufacturer:
+    description: (0008, 0070) Manufacturer
+    type: string
+
+  manufacturer_model_name:
+    description: (0008, 1090) Manufacturer's Model Name
+    type: string
+
+  modality:
+    description: (0008, 0060) Modality
+    type: string
+
+  pixel_spacing:
+    description: (0028, 0030) Pixel Spacing
+    type: number
+
   series_description:
     description: A general description of or additional information about the imaging series.
     type: string
@@ -55,6 +114,30 @@ properties:
   series_name:
     description: The human-readable name of the imaging series or stack of images.
     type: string
+
+  slice_thickness:
+    description: (0018, 0050) Slice Thickness
+    type: number
+
+  spacing_between_slices:
+    description: (0018, 0088) Spacing Between Slices
+    type: number
+
+  spatial_resolution:
+    description: (0018, 1050) Spatial Resolution
+    type: number
+
+  view position:
+    description: (0018, 5101) View Position
+    enum:
+      - AP
+      - PA
+      - LL
+      - RL
+      - RLD
+      - LLD
+      - RLO
+      - LLO
 
   ct_scans:
     description: The submitter_id or id of the ct_scan this ct_series belongs to, i.e., a link to a record in the parent node.
