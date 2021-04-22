@@ -128,7 +128,7 @@ properties:
 
   study_year_shifted:
     description: Indicates whether the study year has been shifted for de-identification.
-    type: integer
+    type: boolean
 
 
   # FOR TCIA STUDIES
