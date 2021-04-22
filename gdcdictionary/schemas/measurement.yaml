@@ -51,8 +51,7 @@ properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
   test_days_from_index:
-    description: A number of days beginning with the index date and ending with 
-    the date of the test.
+    description: A number of days beginning with the index date and ending with the date of the test.
     type: integer
 
   test_name:
