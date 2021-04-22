@@ -39,12 +39,10 @@ uniqueKeys:
 properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
-
   # PROPERTIES FROM TCIA STUDIES
   #days_to_study:
     #description: The number of days between diagnosis and the imaging study.
     #type: number
-
   #hours_to_study:
     #description: The number of hours expired between diagnosis and the imaging study.
     #type: number
