@@ -84,8 +84,7 @@ properties:
       - Not Reported
 
   index_event:
-    description: The event used as the anchor or start date for all temporal data 
-    elements. This acts as day 0 on a timeline of events relating to the patient.
+    description: The event used as the anchor or start date for all temporal data elements. This acts as day 0 on a timeline of events relating to the patient.
 
   # experimental_group:
   #   description: The group into which this case has been classified for this study.
