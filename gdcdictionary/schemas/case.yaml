@@ -119,25 +119,19 @@ properties:
       - Not Reported
 
   sex:
-    description: The biologic character or quality that distinguishes male and female
-    from one another as expressed by analysis of the person's gonadal, morphologic 
-    (internal and external), chromosomal, and hormonal characteristics.
+    description: The biologic character or quality that distinguishes male and female from one another as expressed by analysis of the person's gonadal, morphologic  (internal and external), chromosomal, and hormonal characteristics.
     enum:
       - Female
       - Male
       - Not Reported
 
   site_id:
-    description: A de-identified code used to classify a case as part of a specific data 
-    submission.
+    description: A de-identified code used to classify a case as part of a specific data submission.
 
   zip:
-    description: The three-digit United States zip code for any population greater than 20,000. 
-    For zip codes where the three digit number represents a population less than 20,000 "000" 
-    will be provided. 
+    description: The three-digit United States zip code for any population greater than 20,000. For zip codes where the three digit number represents a population less than 20,000 "000" will be provided. 
     type: integer
 
   datasets:
-    description: The submitter_id or id of the dataset this case belongs to, i.e., a link to a 
-    record in the parent node.
+    description: The submitter_id or id of the dataset this case belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
