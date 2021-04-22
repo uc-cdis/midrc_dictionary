@@ -50,11 +50,11 @@ properties:
     #type: number
 
   study_description:
-    description: General description of the imaging study.
+    description: (0008, 1030) Study Description
     type: string
 
   study_modality:
-    description: The modality used in the imaging study (e.g., CT, CR, DX).
+    description: The modalities of the imaging study (0008, 0060) Modality.
     type: string
 
   #FLO2_percentage:
@@ -107,7 +107,7 @@ properties:
     #type: string
 
   series_count:
-    description: The total number of imaging series performed during the imaging study.
+    description: The total number of imaging series performed during the imaging study or Series Number (0020, 0011).
     type: integer
 
   #image_number:
@@ -123,12 +123,12 @@ properties:
       - "Inconclusive"
 
   study_year:
-    description: The year when imaging study was performed.
+    description: The year when imaging study was performed; year component of Study Date (0008, 0020).
     type: integer
 
   study_year_shifted:
     description: Indicates whether the study year has been shifted for de-identification.
-    type: integer 
+    type: integer
 
 
   # FOR TCIA STUDIES
