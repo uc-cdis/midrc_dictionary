@@ -39,8 +39,6 @@ uniqueKeys:
 properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
-  type:
-    enum: [ "imaging_study" ]
 
   # PROPERTIES FROM TCIA STUDIES
   #days_to_study:
@@ -128,7 +126,7 @@ properties:
     description: The year when imaging study was performed.
     type: integer
 
-   study_year_shifted:
+  study_year_shifted:
     description: Indicates whether the study year has been shifted for de-identification.
     type: integer 
 
