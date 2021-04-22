@@ -8,8 +8,7 @@ namespace: https://data.midrc.org
 category: medical_history
 program: '*'
 project: '*'
-description: Activities or processes ordered by and/or carried out by a
-healthcare provider on the patient with diagnostic and/or therapeutic purposes.
+description: Activities or processes ordered by and/or carried out by a healthcare provider on the patient with diagnostic and/or therapeutic purposes.
 additionalProperties: false
 submittable: true
 validators: null
