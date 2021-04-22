@@ -85,6 +85,7 @@ properties:
 
   index_event:
     description: The event used as the anchor or start date for all temporal data elements. This acts as day 0 on a timeline of events relating to the patient.
+    type: string
 
   # experimental_group:
   #   description: The group into which this case has been classified for this study.
@@ -127,6 +128,7 @@ properties:
 
   site_id:
     description: A de-identified code used to classify a case as part of a specific data submission.
+    type: string
 
   zip:
     description: The three-digit United States zip code for any population greater than 20,000. For zip codes where the three digit number represents a population less than 20,000 "000" will be provided. 

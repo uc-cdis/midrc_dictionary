@@ -44,10 +44,14 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-condition_name:
-  description: The name of the condition the patient has experienced.
-  enum:
-    - COVID-19
+  condition_name:
+    description: The name of the condition the patient has experienced.
+    enum:
+      - COVID-19
+
+  cases:
+    description: The submitter_id or id of the case this condition describes, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
 
   # # For TCIA studies
   # latest_bmi:
@@ -135,6 +139,4 @@ condition_name:
   #   description: Is the case deceased?
   #   type: boolean
 
-  cases:
-    description: The submitter_id or id of the case this condition describes, i.e., a link to a record in the parent node.
-    $ref: "_definitions.yaml#/to_one"
+
