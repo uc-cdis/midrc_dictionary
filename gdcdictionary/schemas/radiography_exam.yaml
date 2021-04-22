@@ -48,6 +48,19 @@ properties:
     description: Notes made by the radiologist during the radiography exam.
     type: string
 
+  # CR/DX only
+  view_position:
+    description: (0018, 5101) View Position
+    enum:
+      - AP
+      - PA
+      - LL
+      - RL
+      - RLD
+      - LLD
+      - RLO
+      - LLO
+
   imaging_studies:
     description: The submitter_id or id of the imaging_study to which this radiography_exam belongs, i.e., a link to a records in the parent node.
     $ref: "_definitions.yaml#/to_one"

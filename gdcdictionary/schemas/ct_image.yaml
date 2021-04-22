@@ -90,9 +90,9 @@ properties:
   #   description: (0018, 0015) Body Part Examined
   #   type: string
 
-  # contrast_bolus_agent_number:
-  #   description: "(0018, 0010) Contrast/Bolus Agent"
-  #   type: string
+  contrast_bolus_agent_number:
+    description: "(0018, 0010) Contrast/Bolus Agent"
+    type: string
 
   # convolution_kernel:
   #   description: "(0018, 1210) Convolution Kernel"
@@ -118,33 +118,35 @@ properties:
   #   description: (0002, 0013) Implementation Version Name
   #   type: string
 
-  # image_type:
-  #   description: (0008, 0008) Image Type
-  #   type: string
+  image_type:
+    description: (0008, 0008) Image Type
+    type: string
 
-  # lossy_image_compression:
-  #   description: (0028, 2110) Lossy Image Compression
-  #   type: string
+  lossy_image_compression:
+    description: (0028, 2110) Lossy Image Compression
+    enum:
+      - "00"
+      - "01"
 
-  # manufacturer:
-  #   description: (0008, 0070) Manufacturer
-  #   type: string
+  manufacturer:
+    description: (0008, 0070) Manufacturer
+    type: string
 
-  # manufacturer_model_name:
-  #   description: (0008, 1090) Manufacturer's Model Name
-  #   type: string
+  manufacturer_model_name:
+    description: (0008, 1090) Manufacturer's Model Name
+    type: string
 
-  # modality:
-  #   description: (0008, 0060) Modality
-  #   type: string
+  modality:
+    description: (0008, 0060) Modality
+    type: string
 
-  # pixel_spacing:
-  #   description: (0028, 0030) Pixel Spacing
-  #   type: string
+  pixel_spacing:
+    description: (0028, 0030) Pixel Spacing
+    type: string
 
-  # series_description:
-  #   description: (0008, 103e) Series Description
-  #   type: string
+  series_description:
+    description: (0008, 103e) Series Description
+    type: string
 
   # slice_thickness:
   #   description: (0018, 0050) Slice Thickness
@@ -170,6 +172,7 @@ properties:
   #   description: (0002, 0010) Transfer Syntax UID
   #   type: string
 
+  # CR/DX only
   # view_position:
   #   description: (0018, 5101)
   #   type: string

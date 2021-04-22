@@ -82,8 +82,12 @@ properties:
     description: A brief, free-text description of the data files and associated metadata provided for this dataset.
     type: string
 
-  data_url:
+  data_url_doi:
     description: A URL or DOI for the source of the dataset or the contributing organization's website.
+    type: string
+
+  disease_type:
+    description: The primary type of disease studied in this dataset, if applicable.
     type: string
 
   license:
@@ -93,6 +97,10 @@ properties:
   longitudinal:
     description: Indicates whether the dataset has longitudinal or time-series data.
     type: boolean
+
+  primary_site:
+    description: The primary body site studied in this dataset.
+    type: string
 
   publication_citation:
     description: The major or main publication(s) associated with the data itself or with the publication that published the dataset.
