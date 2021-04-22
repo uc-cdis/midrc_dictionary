@@ -107,7 +107,7 @@ properties:
     #type: string
 
   series_count:
-    description: The total number of imaging series performed during the imaging study or Series Number (0020, 0011).
+    description: The total number of imaging series performed during the imaging study.
     type: integer
 
   #image_number:
