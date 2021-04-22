@@ -40,14 +40,14 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  # properties from TCIA studies
-  days_to_study:
-    description: The number of days between diagnosis and the imaging study.
-    type: number
+  # PROPERTIES FROM TCIA STUDIES
+  #days_to_study:
+    #description: The number of days between diagnosis and the imaging study.
+    #type: number
 
-  hours_to_study:
-    description: The number of hours expired between diagnosis and the imaging study.
-    type: number
+  #hours_to_study:
+    #description: The number of hours expired between diagnosis and the imaging study.
+    #type: number
 
   study_description:
     description: General description of the imaging study.
@@ -57,58 +57,62 @@ properties:
     description: The modality used in the imaging study (e.g., CT, CR, DX).
     type: string
 
-  FLO2_percentage:
-    description: The percentage of oxygen provided to the patient at the time of the exam.
-    type: number
+  #FLO2_percentage:
+    #description: The percentage of oxygen provided to the patient at the time of the exam.
+    #type: number
 
-  radiologist_notes:
-    description: Notes made by the radiologist during the imaging exam.
-    type: string
+  #radiologist_notes:
+    #description: Notes made by the radiologist during the imaging exam.
+    #type: string
 
-  # other properties
+  # OTHER PROPERTIES
   age_at_imaging:
-    description: Age of the study case in years at the time imaging study was performed.
+    description: Age of the patient in years at the time the imaging study was performed.
     type: number
     maximum: 89
     minimum: 0
 
-  age_at_imaging_gt89:
-    description: Indicates whether the age of the case when the imaging study was performed is greater than 89 years
-    enum:
-      - "No"
-      - "Yes"
+  body_part_examined:
+    description: (0018, 0015) Body Part Examined
+    type: string
+
+  #age_at_imaging_gt89:
+    #description: Indicates whether the age of the case when the imaging study was performed is greater than 89 years
+    #enum:
+      #- "No"
+      #- "Yes"
 
   study_location:
     description: The location or geographical site of imaging, or the name of the clinic that performed the imaging study.
     type: string
 
-  study_start_time:
-    description: The start time of the imaging study.
-    type: string
+  #study_start_time:
+    #description: The start time of the imaging study.
+    #type: string
 
-  study_stop_time:
-    description: The stop time of the imaging study.
-    type: string
+  #study_stop_time:
+    #description: The stop time of the imaging study.
+    #type: string
 
-  study_body_site:
-    description: The site in the body of which the image was taken.
-    type: string
+  #study_body_site:
+    #description: The site in the body of which the image was taken.
+    #type: string
 
-  study_subtype:
-    description: A free-text description that refines the imaging study type down to a sub-type.
-    type: string
+  #study_subtype:
+    #description: A free-text description that refines the imaging study type down to a sub-type.
+    #type: string
 
-  study_type:
-    description: A free-text description of the type of imaging study performed.
-    type: string
+  #study_type:
+    #description: A free-text description of the type of imaging study performed.
+    #type: string
 
-  series_number:
-    description: The number of imaging series performed during the imaging study.
+  series_count:
+    description: The total number of imaging series performed during the imaging study.
     type: integer
 
-  image_number:
-    description: The number of individual image files associated with the imaging study.
-    type: integer
+  #image_number:
+    #description: The number of individual image files associated with the imaging study.
+    #type: integer
 
   study_covid_status:
     description: The COVID-19 test status of the patient at the time the imaging study was performed.
@@ -122,101 +126,105 @@ properties:
     description: The year when imaging study was performed.
     type: integer
 
+  study_year_shifted:
+    description: Indicates whether the study year has been shifted for de-identification.
+    type: integer 
 
-  # For TCIA studies
-  latest_bmi:
-    description: The last body-mass index (BMI) recorded for the case in this study.
-    type: number
-  latest_weight:
-    description: The last weight (pounds) recorded for the case in this study.
-    type: integer
-  latest_height_inches:
-    description: The last height in inches recorded for the case in this study.
-    type: integer
-  latest_height_string:
-    description: The last height in feet (') and inches ('') format recorded for the case in this study.
-    type: string
-  tuberculosis:
-    description: Has the case been diagnosed with tuberculosis prior to this study?
-    type: boolean
-  systemic_lupus_erythmatosus:
-    description: Has the case been diagnosed with systemic lupus erythmatosus prior to this study?
-    type: boolean
-  rheumatoid_arthritis:
-    description: Has the case been diagnosed with rheumatoid arthritis prior to this study?
-    type: boolean
-  extensive_burns:
-    description: Has the case suffered from extensive burns prior to this study?
-    type: boolean
-  asplenia:
-    description: Has the case been diagnosed with asplenia prior to this study?
-    type: boolean
-  hyposplenia:
-    description: Has the case been diagnosed with hyposplenia prior to this study?
-    type: boolean
-  measles:
-    description: Has the case been diagnosed with measles prior to this study?
-    type: boolean
-  cytomegalovirus:
-    description: Has the case been diagnosed with cytomegalovirus prior to this study?
-    type: boolean
-  chicken_pox:
-    description: Has the case been diagnosed with chicken pox prior to this study?
-    type: boolean
-  herpes_zoster:
-    description: Has the case been diagnosed with herpes zoster prior to this study?
-    type: boolean
-  malnutrition:
-    description: Has the case been diagnosed with malnutrition prior to this study?
-    type: boolean
-  current_pregnant:
-    description: Is the case currently pregnant for this study?
-    type: boolean
-  chronic_kidney_disease:
-    description: Has the case been diagnosed with chronic kidney disease prior to this study?
-    type: boolean
-  diabetes_type_1:
-    description: Has the case been diagnosed with type 1 diabetes prior to this study?
-    type: boolean
-  diabetes_type_2:
-    description: Has the case been diagnosed with type 2 diabetes prior to this study?
-    type: boolean
-  transplant:
-    description: Has the case had a transplant prior to this study?
-    type: boolean
-  hemodialysis_pre_diagnosis:
-    description: Has the case had hemodialysis pre diagnosis prior to this study?
-    type: boolean
-  hemodialysis_post_diagnosis:
-    description: Has the case had hemodialysis post diagnosis prior to this study?
-    type: boolean
-  cancer:
-    description: Has the case been diagnosed with cancer prior to this study?
-    type: boolean
-  covid_test_positive:
-    description: Has the case tested positive for COVID-19?
-    type: boolean
-  covid_test_name:
-    description: The name of the test used to determine a case's COVID-19 status.
-    type: string
-  icu_admit:
-    description: Has the case been admitted to the ICU for this study?
-    type: boolean
-  number_icu_admits:
-    description: The number of ICU admits for the case in this study.
-    type: integer
-  mortality:
-    description: Is the case deceased?
-    type: boolean
-  study_uid:
-    description: The study instance UID (0020,000D).
-    type: string
-  specimen_source:
-    description: The source of the specimen used for determining the COVID-19 status of the case in this imaging study.
-    type: string
-  symptomatic:
-    description: Did the patient/case display symptoms of COVID-19 infection during the imaging study?
-    type: string
+
+  # FOR TCIA STUDIES
+  # latest_bmi:
+  #   description: The last body-mass index (BMI) recorded for the case in this study.
+  #   type: number
+  # latest_weight:
+  #   description: The last weight (pounds) recorded for the case in this study.
+  #   type: integer
+  # latest_height_inches:
+  #   description: The last height in inches recorded for the case in this study.
+  #   type: integer
+  # latest_height_string:
+  #   description: The last height in feet (') and inches ('') format recorded for the case in this study.
+  #   type: string
+  # tuberculosis:
+  #   description: Has the case been diagnosed with tuberculosis prior to this study?
+  #   type: boolean
+  # systemic_lupus_erythmatosus:
+  #   description: Has the case been diagnosed with systemic lupus erythmatosus prior to this study?
+  #   type: boolean
+  # rheumatoid_arthritis:
+  #   description: Has the case been diagnosed with rheumatoid arthritis prior to this study?
+  #   type: boolean
+  # extensive_burns:
+  #   description: Has the case suffered from extensive burns prior to this study?
+  #   type: boolean
+  # asplenia:
+  #   description: Has the case been diagnosed with asplenia prior to this study?
+  #   type: boolean
+  # hyposplenia:
+  #   description: Has the case been diagnosed with hyposplenia prior to this study?
+  #   type: boolean
+  # measles:
+  #   description: Has the case been diagnosed with measles prior to this study?
+  #   type: boolean
+  # cytomegalovirus:
+  #   description: Has the case been diagnosed with cytomegalovirus prior to this study?
+  #   type: boolean
+  # chicken_pox:
+  #   description: Has the case been diagnosed with chicken pox prior to this study?
+  #   type: boolean
+  # herpes_zoster:
+  #   description: Has the case been diagnosed with herpes zoster prior to this study?
+  #   type: boolean
+  # malnutrition:
+  #   description: Has the case been diagnosed with malnutrition prior to this study?
+  #   type: boolean
+  # current_pregnant:
+  #   description: Is the case currently pregnant for this study?
+  #   type: boolean
+  # chronic_kidney_disease:
+  #   description: Has the case been diagnosed with chronic kidney disease prior to this study?
+  #   type: boolean
+  # diabetes_type_1:
+  #   description: Has the case been diagnosed with type 1 diabetes prior to this study?
+  #   type: boolean
+  # diabetes_type_2:
+  #   description: Has the case been diagnosed with type 2 diabetes prior to this study?
+  #   type: boolean
+  # transplant:
+  #   description: Has the case had a transplant prior to this study?
+  #   type: boolean
+  # hemodialysis_pre_diagnosis:
+  #   description: Has the case had hemodialysis pre diagnosis prior to this study?
+  #   type: boolean
+  # hemodialysis_post_diagnosis:
+  #   description: Has the case had hemodialysis post diagnosis prior to this study?
+  #   type: boolean
+  # cancer:
+  #   description: Has the case been diagnosed with cancer prior to this study?
+  #   type: boolean
+  # covid_test_positive:
+  #   description: Has the case tested positive for COVID-19?
+  #   type: boolean
+  # covid_test_name:
+  #   description: The name of the test used to determine a case's COVID-19 status.
+  #   type: string
+  # icu_admit:
+  #   description: Has the case been admitted to the ICU for this study?
+  #   type: boolean
+  # number_icu_admits:
+  #   description: The number of ICU admits for the case in this study.
+  #   type: integer
+  # mortality:
+  #   description: Is the case deceased?
+  #   type: boolean
+  # study_uid:
+  #   description: The study instance UID (0020,000D).
+  #   type: string
+  # specimen_source:
+  #   description: The source of the specimen used for determining the COVID-19 status of the case in this imaging study.
+  #   type: string
+  # symptomatic:
+  #   description: Did the patient/case display symptoms of COVID-19 infection during the imaging study?
+  #   type: string
 
   cases:
     description: The submitter_id or id of the case observed in this imaging_study, i.e., a link to a record in the parent node.
