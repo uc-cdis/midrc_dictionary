@@ -127,7 +127,7 @@ properties:
     description: (0018, 1050) Spatial Resolution
     type: number
 
-  view position:
+  view_position:
     description: (0018, 5101) View Position
     enum:
       - AP
