@@ -73,136 +73,14 @@ properties:
       $ref: "_terms.yaml#/data_type"
     type: string
 
-  days_to_image:
-    description: Days from the case's index event to the date the image was acquired.
-    type: integer
-
   file_description:
     description: Any additional text to give this file context in its study.
     type: string
 
-  # # DICOM elements
-  # acquisition_type:
-  #   description: (0018, 9302) Acquisition Type
-  #   type: string
-
-  # body_part_examined:
-  #   description: (0018, 0015) Body Part Examined
-  #   type: string
-
-  contrast_bolus_agent_number:
-    description: "(0018, 0010) Contrast/Bolus Agent"
-    type: string
-
-  # convolution_kernel:
-  #   description: "(0018, 1210) Convolution Kernel"
-  #   type: string
-
-  # detector_type:
-  #   description: (0018, 7004) Detector Type
-  #   type: string
-
-  # exposure_modulation_type:
-  #   description: (0018, 9323) Exposure Modulation Type
-  #   type: string
-
-  # imager_pixel_spacing:
-  #   description: (0018, 1164)
-  #   type: string
-
-  # implementation_class_uid:
-  #   description: (0002, 0012) Implementation Class UID
-  #   type: string
-
-  # implementation_version_name:
-  #   description: (0002, 0013) Implementation Version Name
-  #   type: string
-
-  image_type:
-    description: (0008, 0008) Image Type
-    type: string
-
-  lossy_image_compression:
-    description: (0028, 2110) Lossy Image Compression
-    enum:
-      - "00"
-      - "01"
-
-  manufacturer:
-    description: (0008, 0070) Manufacturer
-    type: string
-
-  manufacturer_model_name:
-    description: (0008, 1090) Manufacturer's Model Name
-    type: string
-
-  modality:
-    description: (0008, 0060) Modality
-    type: string
-
-  pixel_spacing:
-    description: (0028, 0030) Pixel Spacing
-    type: string
-
-  series_description:
-    description: (0008, 103e) Series Description
-    type: string
-
-  # slice_thickness:
-  #   description: (0018, 0050) Slice Thickness
-  #   type: number
-
-  # sop_class_uid:
-  #   description: (0008, 0016) SOP Class UID
-  #   type: string
-
-  # spacing_between_slices:
-  #   description: (0018, 0088) Spacing Between Slices
-  #   type: string
-
-  # spiral_pitch_factor:
-  #   description: (0018, 9311) Spiral Pitch Factor
-  #   type: string
-
-  # study_description:
-  #   description: (0008, 1030) Study Description
-  #   type: string
-
-  # transfer_syntax_uid:
-  #   description: (0002, 0010) Transfer Syntax UID
-  #   type: string
-
-  # CR/DX only
-  # view_position:
-  #   description: (0018, 5101)
-  #   type: string
-
-  # imaging_study_id:
-  #   description: The submitter_id of the corresponding imaging study.
-  #   type: string
-  # imaging_series_id:
-  #   description: The submitter_id of the corresponding imaging series.
-  #   type: string
-
-  # series_uid:
-  #   description: The Series Instance UID (0020, 000e).
-  #   type: string
-  # study_uid:
-  #   description: The Study Instance UID (0020, 000d).
-  #   type: string
-  # series_number:
-  #   description: The Series Number (0020, 0011).
-  #   type: string
-  # study_date:
-  #   description: The Study Date (0008, 0020).
-  #   type: string
-  # acquisition_datetime:
-  #   description: The Acquisition DateTime (0008, 002a).
-  #   type: string
-
   core_metadata_collections:
     description: The submitter_id or id of the core_metadata_collection to which the ct_image belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
+
   ct_series:
     description: The submitter_id or id of the ct_series this ct_image belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
