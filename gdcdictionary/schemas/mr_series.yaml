@@ -1,0 +1,103 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "mr_series"
+title: MR Series
+type: object
+namespace: https://data.midrc.org/
+category: imaging_series
+program: '*'
+project: '*'
+description: Information related to an imaging series to which one or more MR (Magnetic Resonance) images belong.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: mr_exams
+    backref: mr_series
+    label: related_to
+    target_type: mr_exam
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - mr_exams
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  contrast_bolus_agent_number:
+    description: "(0018, 0010) Contrast/Bolus Agent"
+    type: string
+
+  detector_type:
+    description: (0018, 7004) Detector Type
+    enum:
+      - DIRECT
+      - SCINTLLATOR
+      - STORAGE
+      - FILM
+
+  image_type:
+    description: (0008, 0008) Image Type
+    type: string
+
+  imager_pixel_spacing:
+    description: (0018, 1164) Imager Pixel Spacing
+    type: number
+
+  lossy_image_compression:
+    description: (0028, 2110) Lossy Image Compression
+    enum:
+      - "00"
+      - "01"
+
+  manufacturer:
+    description: (0008, 0070) Manufacturer
+    type: string
+
+  manufacturer_model_name:
+    description: (0008, 1090) Manufacturer's Model Name
+    type: string
+
+  modality:
+    description: (0008, 0060) Modality
+    type: string
+
+  pixel_spacing:
+    description: (0028, 0030) Pixel Spacing
+    type: number
+
+  series_description:
+    description: A general description of or additional information about the imaging series; (0008, 103e) Series Description.
+    type: string
+
+  series_uid:
+    description: The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.
+    type: string
+
+  series_type:
+    description: The text term describing the type of imaging series.
+    type: string
+
+  series_name:
+    description: The human-readable name of the imaging series or stack of images.
+    type: string
+
+  mr_exams:
+    description: The submitter_id or id of the mr_exam this mr_series belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
