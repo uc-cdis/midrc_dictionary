@@ -1,13 +1,13 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "radiography_exam"
-title: Digital Radiography Exam
+id: "mr_exam"
+title: Magnetic Resonance Exam
 type: object
 namespace: https://data.midrc.org/
 category: medical_history
 program: '*'
 project: '*'
-description: Information related to a digital radiography exam during which CR, DX or other types of digital radiographs are captured.
+description: Information related to an imaging exam during which magnetic resonance (MR) images are captured.
 additionalProperties: false
 submittable: true
 validators: null
@@ -21,7 +21,7 @@ systemProperties:
 
 links:
   - name: imaging_studies
-    backref: radiography_exams
+    backref: mr_exam
     label: related_to
     target_type: imaging_study
     multiplicity: many_to_one
@@ -48,19 +48,6 @@ properties:
     description: Notes made by the radiologist during the radiography exam.
     type: string
 
-  # CR/DX only
-  view_position:
-    description: (0018, 5101) View Position
-    enum:
-      - AP
-      - PA
-      - LL
-      - RL
-      - RLD
-      - LLD
-      - RLO
-      - LLO
-
   imaging_studies:
-    description: The submitter_id or id of the imaging_study to which this radiography_exam belongs, i.e., a link to a records in the parent node.
+    description: The submitter_id or id of the imaging_study to which this magnetic resonance exam belongs, i.e., a link to a records in the parent node.
     $ref: "_definitions.yaml#/to_one"

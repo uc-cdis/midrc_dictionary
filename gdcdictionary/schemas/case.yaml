@@ -41,32 +41,16 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  accession:
-    description: The case's accession ID or number.
-    type: string
-
-  age:
+  age_at_index:
     description: The case's age at the time of the study.
     type: number
 
-  collaboration_id:
-    description: For instances in which multiple institutions use the same patient
-      for their respective studies, this space is used as a place to enter in the
-      deidentified barcode, id, or other identifier for the patient. Work with your
-      collaborators to decide on the patient's id.
-    type: string
-
-  comments:
-    description: Any extra comments or notes about this case.
-    type: string
-
-  covid_status:
-    description: The COVID-19 test status of the patient at the time the data were collected or for the purpose of the study.
+  covid19_positive:
+    description: An indicator of whether the patient has ever had a positive COVID-19 test.
     enum:
-      - "Positive"
-      - "Negative"
-      - "Unknown"
-      - "Inconclusive"
+      - "Yes"
+      - "No"
+      - Not Reported
 
   ethnicity:
     term:
@@ -75,39 +59,10 @@ properties:
       - Hispanic or Latino
       - Not Hispanic or Latino
       - Not Reported
-      - Other (specify)
-      - Unknown
 
-  experimental_group:
-    description: The group into which this case has been classified for this study.
+  index_event:
+    description: The event used as the anchor or start date for all temporal data elements. This acts as day 0 on a timeline of events relating to the patient.
     type: string
-
-  gender:
-    term:
-      $ref: "_terms.yaml#/gender"
-    enum:
-      - Female
-      - Male
-      - Not Reported
-      - Unknown
-      - Unspecified
-
-  index_date:
-    description: The reference or anchor date used during date obfuscation, where
-      a single date is obscurred by creating one or more date ranges in relation to
-      this date.
-    enum:
-      - Diagnosis
-      - First Patient Visit
-      - Not Reported
-      - Study Enrollment
-
-  index_event_status:
-    description: A measure of our confidence that the logitundinal structure of the
-      study is well described as data-defined or via curation.
-    enum:
-      - Data-Derived
-      - Imputed
 
   race:
     term:
@@ -115,20 +70,24 @@ properties:
     enum:
       - American Indian or Alaska Native
       - Asian
-      - Biracial
       - Black or African American
-      - Caribbean Indian
-      - Hispanic
-      - Jewish
-      - Lebanese/Non-jewish
-      - Multiracial
-      - Native Hawaiian or Other Pacific Islander
-      - Other
-      - Unknown
+      - Native Hawaiian or other Pacific Islander
       - White
+      - Not Reported
+
+  sex:
+    description: The biologic character or quality that distinguishes male and female from one another as expressed by analysis of the person's gonadal, morphologic  (internal and external), chromosomal, and hormonal characteristics.
+    enum:
+      - Female
+      - Male
+      - Not Reported
+
+  site_id:
+    description: A de-identified code used to classify a case as part of a specific data submission.
+    type: string
 
   zip:
-    description: The zip code of the case at the time of the study.
+    description: The three-digit United States zip code for any population greater than 20,000. For zip codes where the three digit number represents a population less than 20,000 "000" will be provided.
     type: integer
 
   datasets:

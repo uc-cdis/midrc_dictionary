@@ -1,14 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "dx_image"
-title: DX Image
+id: "mr_image"
+title: MR Image
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
 category: imaging_data_file
 program: '*'
 project: '*'
-description: A Digital X-Ray (DX) imaging file.
+description: A Magnetic Resonance (MR) imaging file.
 additionalProperties: false
 submittable: true
 validators: null
@@ -27,15 +27,15 @@ links:
     required: true
     subgroup:
       - name: core_metadata_collections
-        backref: dx_images
+        backref: mr_images
         label: data_from
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
-      - name: dx_series
-        backref: dx_images
+      - name: mr_series
+        backref: mr_images
         label: data_from
-        target_type: dx_series
+        target_type: mr_series
         multiplicity: many_to_one
         required: false
 
@@ -80,6 +80,6 @@ properties:
     description: The submitter_id or id of the core_metadata_collection to which the dx_image belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
 
-  dx_series:
-    description: The DX imaging series of which this DX image is a part; a link to the parent node.
+  mr_series:
+    description: The submitter_id or id of the MR imaging series (mr_series) of which this MR image is a part; a link to the parent node.
     $ref: "_definitions.yaml#/to_one"

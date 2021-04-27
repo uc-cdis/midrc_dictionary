@@ -1,13 +1,13 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "cr_series"
-title: CR Series
+id: "mr_series"
+title: MR Series
 type: object
 namespace: https://data.midrc.org/
 category: imaging_series
 program: '*'
 project: '*'
-description: Information related to a CR imaging series to which one or more computed radiographs belong.
+description: Information related to an imaging series to which one or more MR (Magnetic Resonance) images belong.
 additionalProperties: false
 submittable: true
 validators: null
@@ -20,17 +20,17 @@ systemProperties:
   - updated_datetime
 
 links:
-  - name: radiography_exams
-    backref: cr_series
+  - name: mr_exams
+    backref: mr_series
     label: related_to
-    target_type: radiography_exam
+    target_type: mr_exam
     multiplicity: many_to_one
     required: true
 
 required:
   - submitter_id
   - type
-  - radiography_exams
+  - mr_exams
 
 uniqueKeys:
   - [id]
@@ -44,9 +44,21 @@ properties:
     description: "(0018, 0010) Contrast/Bolus Agent"
     type: string
 
+  detector_type:
+    description: (0018, 7004) Detector Type
+    enum:
+      - DIRECT
+      - SCINTLLATOR
+      - STORAGE
+      - FILM
+
   image_type:
     description: (0008, 0008) Image Type
     type: string
+
+  imager_pixel_spacing:
+    description: (0018, 1164) Imager Pixel Spacing
+    type: number
 
   lossy_image_compression:
     description: (0028, 2110) Lossy Image Compression
@@ -86,10 +98,6 @@ properties:
     description: The human-readable name of the imaging series or stack of images.
     type: string
 
-  spatial_resolution:
-    description: (0018, 1050) Spatial Resolution
-    type: number
-
-  radiography_exams:
-    description: The submitter_id or id of the radiography_exam this dx_series belongs to, i.e., a link to a record in the parent node.
+  mr_exams:
+    description: The submitter_id or id of the mr_exam this mr_series belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
