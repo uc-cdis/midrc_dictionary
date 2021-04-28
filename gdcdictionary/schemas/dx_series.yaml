@@ -40,24 +40,9 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  # CT only
-  # aquisition_type:
-  #   description: (0018, 9302) Acquisition Type
-  #   enum:
-  #     - SEQUENCED
-  #     - SPIRAL
-  #     - CONSTANT_ANGLE
-  #     - STATIONARY
-  #     - FREE
-
   contrast_bolus_agent_number:
     description: "(0018, 0010) Contrast/Bolus Agent"
     type: string
-
-  # CT Series only
-  # convolution_kernel:
-  #   description: (0018, 1210) Convolution Kernel
-  #   type: string
 
   detector_type:
     description: (0018, 7004) Detector Type
@@ -66,11 +51,6 @@ properties:
       - SCINTLLATOR
       - STORAGE
       - FILM
-
-  # CT series only
-  # exposure_modulation_type:
-  #   description: (0018, 9323) Exposure Modulation Type
-  #   type: string
 
   image_type:
     description: (0008, 0008) Image Type

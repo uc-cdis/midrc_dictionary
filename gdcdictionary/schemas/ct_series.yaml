@@ -40,7 +40,7 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  aquisition_type:
+  acquisition_type:
     description: (0018, 9302) Acquisition Type
     enum:
       - SEQUENCED
