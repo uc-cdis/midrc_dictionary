@@ -89,7 +89,7 @@ properties:
 
   pixel_spacing:
     description: (0028, 0030) Pixel Spacing
-    type: number
+    type: string
 
   series_description:
     description: A general description of or additional information about the imaging series; (0008, 103e) Series Description.
