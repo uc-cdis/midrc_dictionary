@@ -66,7 +66,7 @@ properties:
     type: string
 
   lossy_image_compression:
-    description: (0028, 2110) Lossy Image Compression
+    description: (0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to "01". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains "01".
     enum:
       - "00"
       - "01"
