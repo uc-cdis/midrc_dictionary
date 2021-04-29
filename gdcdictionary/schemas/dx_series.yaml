@@ -54,11 +54,15 @@ properties:
 
   image_type:
     description: (0008, 0008) Image Type
-    type: string
+    type: array
+    items:
+      type: string
 
   imager_pixel_spacing:
     description: (0018, 1164) Imager Pixel Spacing
-    type: string
+    type: array
+    items:
+      type: string
 
   lossy_image_compression:
     description: (0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to "01". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains "01".
@@ -80,7 +84,9 @@ properties:
 
   pixel_spacing:
     description: (0028, 0030) Pixel Spacing
-    type: string
+    type: array
+    items:
+      type: string
 
   series_description:
     description: A general description of or additional information about the imaging series; (0008, 103e) Series Description.
