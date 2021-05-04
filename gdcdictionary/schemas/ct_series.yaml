@@ -93,7 +93,7 @@ properties:
     description: (0028, 0030) Pixel Spacing
     type: array
     items:
-      type: string
+      type: number
 
   series_description:
     description: A general description of or additional information about the imaging series; (0008, 103e) Series Description.
@@ -119,7 +119,9 @@ properties:
 
   spacing_between_slices:
     description: (0018, 0088) Spacing Between Slices
-    type: number
+    type: array
+    items:
+      type: number
 
   ct_scans:
     description: The submitter_id or id of the ct_scan this ct_series belongs to, i.e., a link to a record in the parent node.
