@@ -78,6 +78,10 @@ properties:
       - "Unknown"
       - "Inconclusive"
 
+  study_uid:
+    description: (0020, 000d) Study Instance UID
+    type: string
+
   study_year:
     description: The year when imaging study was performed; year component of Study Date (0008, 0020).
     type: integer
