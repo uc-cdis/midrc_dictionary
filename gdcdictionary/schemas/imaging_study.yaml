@@ -55,7 +55,7 @@ properties:
   age_at_imaging:
     description: Age of the patient in years at the time the imaging study was performed.
     type: number
-    maximum: 89
+    maximum: 90
     minimum: 0
 
   body_part_examined:
