@@ -51,11 +51,15 @@ properties:
 
   contrast_bolus_agent_number:
     description: "(0018, 0010) Contrast/Bolus Agent"
-    type: string
+    type: array
+    items:
+      type: string
 
   convolution_kernel:
     description: (0018, 1210) Convolution Kernel
-    type: string
+    type: array
+    items:
+      type: string
 
   exposure_modulation_type:
     description: (0018, 9323) Exposure Modulation Type
