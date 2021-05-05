@@ -41,7 +41,7 @@ properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
   contrast_bolus_agent_number:
-    description: "(0018, 0010) Contrast/Bolus Agent"
+    description: (0018, 0010) Contrast/Bolus Agent
     type: string
 
   detector_type:
@@ -70,6 +70,10 @@ properties:
       - "00"
       - "01"
 
+  magnetic_field_strength:
+    description: (0018,0087) Magnetic Field Strength
+    type: string
+
   manufacturer:
     description: (0008, 0070) Manufacturer
     type: string
@@ -82,27 +86,51 @@ properties:
     description: (0008, 0060) Modality
     type: string
 
+  mr_acquisition_type:
+    description: (0018, 0023) MR Acquisition Type
+    type: string
+
   pixel_spacing:
     description: (0028, 0030) Pixel Spacing
     type: array
     items:
       type: number
 
+  scanning_sequence:
+    description: (0018, 0020) Scanning Sequence
+    type: string
+
+  sequence_name:
+    description: (0018, 0024) Sequence Name
+    type: string
+
   series_description:
-    description: A general description of or additional information about the imaging series; (0008, 103e) Series Description.
+    description: (0008, 103e) Series Description; a general description of or additional information about the imaging series.
     type: string
 
   series_uid:
-    description: The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.
+    description: (0020, 000e) Series Instance UID; the UID or unique identification code of the imaging series.
     type: string
 
   series_type:
-    description: The text term describing the type of imaging series.
+    description: (0054,1000) Series Type; the text term describing the type of imaging series.
     type: string
 
   series_name:
     description: The human-readable name of the imaging series or stack of images.
     type: string
+
+  slice_thickness:
+    description: (0018, 0050) Slice Thickness
+    type: array
+    items:
+      type: number
+
+  spacing_between_slices:
+    description: (0018, 0088) Spacing Between Slices
+    type: array
+    items:
+      type: number
 
   mr_exams:
     description: The submitter_id or id of the mr_exam this mr_series belongs to, i.e., a link to a record in the parent node.
