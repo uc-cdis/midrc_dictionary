@@ -42,7 +42,9 @@ properties:
 
   contrast_bolus_agent_number:
     description: "(0018, 0010) Contrast/Bolus Agent"
-    type: string
+    type: array
+    items:
+      type: string
 
   image_type:
     description: (0008, 0008) Image Type
