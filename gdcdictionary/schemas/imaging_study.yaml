@@ -50,17 +50,21 @@ properties:
 
   study_modality:
     description: The modalities of the imaging study; derived from (0008, 0060) Modality.
-    type: string
+    type: array
+    items:
+      type: string
 
   age_at_imaging:
     description: Age of the patient in years at the time the imaging study was performed.
     type: number
-    maximum: 89
+    maximum: 90
     minimum: 0
 
   body_part_examined:
     description: (0018, 0015) Body Part Examined.
-    type: string
+    type: array
+    items:
+      type: string
 
   study_location:
     description: The location or geographical site of imaging, or the name of the clinic that performed the imaging study.

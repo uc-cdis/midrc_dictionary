@@ -73,7 +73,8 @@ properties:
     type: string
 
   date:
-    $ref: "_definitions.yaml#/datetime"
+    description: The date the collection of data was created.
+    type: string
 
   description:
     description: An account of the resource. Description may include but is not limited
