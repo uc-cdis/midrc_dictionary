@@ -103,7 +103,7 @@ properties:
     type: string
 
   sequence_name:
-    description: (0018, 0024) Sequence Name
+    description: (0018, 0024) Sequence Name; user defined name for the combination of Scanning Sequence (0018,0020) and Sequence Variant (0018,0021).
     type: string
 
   series_description:
