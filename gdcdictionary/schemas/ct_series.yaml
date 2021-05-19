@@ -77,10 +77,6 @@ properties:
       - "00"
       - "01"
 
-  magnetic_field_sequence:
-    description: (0018, 0087) Magnetic Field Sequence
-    type: string
-
   manufacturer:
     description: (0008, 0070) Manufacturer
     type: string
@@ -102,10 +98,6 @@ properties:
     type: array
     items:
       type: number
-
-  scanning_sequence:
-    description: (0018, 0020) Scanning Sequence
-    type: string
 
   series_description:
     description: (0008, 103e) Series Description; a general description of or additional information about the imaging series.
