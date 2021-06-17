@@ -49,6 +49,16 @@ properties:
     enum:
       - COVID-19
 
+  days_to_condition_end:
+    description: The number of days from the index date to the date the subject no
+      longer experienced the condition.
+    type: integer
+
+  days_to_condition_start:
+    description: The number of days from the index date to the date the subject was
+      diagnosed with or began experiencing the condition.
+    type: integer
+
   cases:
     description: The submitter_id or id of the case this condition describes, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
