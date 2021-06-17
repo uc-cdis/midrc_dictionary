@@ -304,17 +304,6 @@ properties:
       - Samoa
       - Yemen
 
-  covid19_icu_indicator:
-    description: Indicates whether the subject was admitted to the ICU due to COVID-19.
-    type: boolean
-
-  covid19_positive:
-    description: Indicates whether the subject has ever had a positive COVID-19 test.
-    enum:
-      - "Yes"
-      - "No"
-      - Not Reported
-
   covid19_treatment_info:
     description: Indicates whether detailed treatment information is available for the subject.
     type: boolean
@@ -330,6 +319,10 @@ properties:
       - Hispanic or Latino
       - Not Hispanic or Latino
       - Not Reported
+
+  icu_indicator:
+    description: Indicates whether the subject has been admitted to the ICU.
+    type: boolean
 
   index_event:
     description: The event used as the anchor or start date for all temporal data elements. This acts as day 0 on a timeline of events relating to the patient.
@@ -356,6 +349,14 @@ properties:
   site_id:
     description: A de-identified code used to classify a case as part of a specific data submission.
     type: string
+
+  treatment_info:
+    description: Indicates whether detailed treatment information is available for the subject.
+    type: boolean
+
+  ventilator_indicator:
+    description: Indicates whether the subject has been on a ventilator.
+    type: boolean
 
   zip:
     description: The three-digit United States zip code for any population greater than 20,000. For zip codes where the three digit number represents a population less than 20,000 "000" will be provided.
