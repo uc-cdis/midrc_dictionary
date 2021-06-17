@@ -303,15 +303,7 @@ properties:
       - Wallis and Futuna
       - Samoa
       - Yemen
-
-  covid19_treatment_info:
-    description: Indicates whether detailed treatment information is available for the subject.
-    type: boolean
-
-  covid19_ventilator_indicator:
-    description: Indicates whether the subject has been on a ventilator as part of their COVID-19 treatment.
-    type: boolean
-
+      
   ethnicity:
     term:
       $ref: "_terms.yaml#/ethnicity"
