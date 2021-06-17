@@ -317,13 +317,11 @@ properties:
       - Not Reported
 
   covid19_treatment_info:
-    description: Indicates whether detailed treatment information is available for
-      the subject.
+    description: Indicates whether detailed treatment information is available for the subject.
     type: boolean
 
   covid19_ventilator_indicator:
-    description: Indicates whether the subject has been on a ventilator as part of
-      their COVID-19 treatment.
+    description: Indicates whether the subject has been on a ventilator as part of their COVID-19 treatment.
     type: boolean
 
   ethnicity:
