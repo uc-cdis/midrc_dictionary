@@ -77,6 +77,14 @@ properties:
       - "00"
       - "01"
 
+  magnetic_field_strength:
+    description:
+    type: string
+
+  scanning_sequence:
+    description:
+    type: string
+
   manufacturer:
     description: (0008, 0070) Manufacturer
     type: string
