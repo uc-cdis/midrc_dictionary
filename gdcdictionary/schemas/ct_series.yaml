@@ -49,7 +49,7 @@ properties:
       - STATIONARY
       - FREE
 
-  contrast_bolus_agent_number:
+  contrast_bolus_agent:
     description: "(0018, 0010) Contrast/Bolus Agent"
     type: array
     items:
