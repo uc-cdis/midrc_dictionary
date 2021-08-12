@@ -55,6 +55,12 @@ properties:
     items:
       type: string
 
+  contrast_bolus_agent_number:
+    description: "to remove"
+    type: array
+    items:
+      type: string
+
   convolution_kernel:
     description: (0018, 1210) Convolution Kernel
     type: array

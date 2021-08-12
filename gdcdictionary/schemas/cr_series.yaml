@@ -46,6 +46,12 @@ properties:
     items:
       type: string
 
+  contrast_bolus_agent_number:
+    description: "to remove"
+    type: array
+    items:
+      type: string
+
   image_type:
     description: (0008, 0008) Image Type
     type: array
