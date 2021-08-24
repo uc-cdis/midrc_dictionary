@@ -112,6 +112,10 @@ properties:
     description: The human-readable name of the imaging series or stack of images.
     type: string
 
+  spatial_resolution:
+    description: (0018, 1050) Spatial Resolution
+    type: number
+
   # CR/DX only
   view_position:
     description: (0018, 5101) View Position
