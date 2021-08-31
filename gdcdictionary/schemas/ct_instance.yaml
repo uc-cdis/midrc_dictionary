@@ -1,0 +1,86 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "ct_instance"
+title: CT Instance
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: imaging_data_file
+program: '*'
+project: '*'
+description: A Computed Tomography (CT) imaging file. Typically, a single DICOM instance or file within a CT imaging series.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+  - file_state
+  - error_type
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: ct_instances
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: ct_series
+        backref: ct_istances
+        label: data_from
+        target_type: ct_series
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - submitter_id
+  - type
+  - file_name
+  - file_size
+  - md5sum
+  - data_format
+  - data_type
+  - data_category
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  # gen3 properties
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    type: string
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    type: string
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    type: string
+
+  file_description:
+    description: Any additional text to give this file context in its study.
+    type: string
+
+  core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the ct_instance belongs, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  ct_series:
+    description: The submitter_id or id of the ct_series this ct_instance belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
