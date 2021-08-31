@@ -1,0 +1,85 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "mr_instance"
+title: MR Instance
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: imaging_data_file
+program: '*'
+project: '*'
+description: A Magnetic Resonance (MR) imaging file.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+  - file_state
+  - error_type
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: mr_instances
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: mr_series
+        backref: mr_instances
+        label: data_from
+        target_type: mr_series
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - submitter_id
+  - type
+  - file_name
+  - file_size
+  - md5sum
+  - data_format
+  - data_type
+  - data_category
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    type: string
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    type: string
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    type: string
+
+  file_description:
+    description: Any additional text to give this file context in its study.
+    type: string
+
+  core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the mr_instance belongs, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  mr_series:
+    description: The submitter_id or id of the MR imaging series (mr_series) of which this mr_instance is a part; a link to the parent node.
+    $ref: "_definitions.yaml#/to_one"
