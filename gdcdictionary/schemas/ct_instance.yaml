@@ -33,7 +33,7 @@ links:
         multiplicity: many_to_one
         required: false
       - name: ct_series
-        backref: ct_istances
+        backref: ct_instances
         label: data_from
         target_type: ct_series
         multiplicity: many_to_one
