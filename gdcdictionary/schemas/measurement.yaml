@@ -77,6 +77,10 @@ properties:
       - RT-PCR
       - Rapid antigen test
 
+  cases:
+    description: The submitter_id or id of the case(s) this measurement describes, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
   conditions:
     description: The submitter_id or id of the condition this measurement describes, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
