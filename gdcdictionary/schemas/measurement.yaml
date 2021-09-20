@@ -41,6 +41,7 @@ links:
         label: related_to
         target_type: case
         multiplicity: many_to_one
+        required: false
 
 required:
   - submitter_id
@@ -69,7 +70,7 @@ properties:
       - Negative
       - Positive
       - Not Reported
-  
+
   test_method:
     description: The test method used to confirm a condition or produce a measurement.
     enum:
