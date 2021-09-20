@@ -36,6 +36,11 @@ links:
         target_type: procedure
         multiplicity: many_to_one
         required: false
+      - name: cases
+        backref: measurements
+        label: related_to
+        target_type: case
+        multiplicity: many_to_one
 
 required:
   - submitter_id
@@ -64,6 +69,12 @@ properties:
       - Negative
       - Positive
       - Not Reported
+  
+  test_method:
+    description: The test method used to confirm a condition or produce a measurement.
+    enum:
+      - RT-PCR
+      - Rapid antigen test
 
   conditions:
     description: The submitter_id or id of the condition this measurement describes, i.e., a link to a record in the parent node.
