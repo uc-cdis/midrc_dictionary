@@ -1,0 +1,2 @@
+*type	project_id	*submitter_id	*ct_scans.submitter_id	acquisition_type	case_ids	contrast_bolus_agent	convolution_kernel	exposure_modulation_type	image_type	lossy_image_compression	magnetic_field_strength	manufacturer	manufacturer_model_name	modality	patient_position	pixel_spacing	scanning_sequence	series_description	series_name	series_type	series_uid	slice_thickness	spacing_between_slices
+ct_series																							
