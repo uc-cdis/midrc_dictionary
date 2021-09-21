@@ -40,7 +40,7 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  contrast_bolus_agent_number:
+  contrast_bolus_agent:
     description: "(0018, 0010) Contrast/Bolus Agent"
     type: array
     items:
@@ -105,6 +105,10 @@ properties:
   series_name:
     description: The human-readable name of the imaging series or stack of images.
     type: string
+
+  spatial_resolution:
+    description: (0018, 1050) Spatial Resolution
+    type: number
 
   # CR/DX only
   view_position:

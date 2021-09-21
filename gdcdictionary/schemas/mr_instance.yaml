@@ -1,14 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "cr_image"
-title: CR Image
+id: "mr_instance"
+title: MR Instance
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
 category: imaging_data_file
 program: '*'
 project: '*'
-description: A Computed Radiography (CR) imaging file.
+description: A Magnetic Resonance (MR) imaging file.
 additionalProperties: false
 submittable: true
 validators: null
@@ -27,15 +27,15 @@ links:
     required: true
     subgroup:
       - name: core_metadata_collections
-        backref: cr_images
+        backref: mr_instances
         label: data_from
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
-      - name: cr_series
-        backref: cr_images
+      - name: mr_series
+        backref: mr_instances
         label: data_from
-        target_type: cr_series
+        target_type: mr_series
         multiplicity: many_to_one
         required: false
 
@@ -57,30 +57,34 @@ properties:
 
   $ref: "_definitions.yaml#/data_file_properties"
 
-  # gen3 properties
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
-    type: string
+    enum:
+      - "MR"
 
   data_format:
     term:
       $ref: "_terms.yaml#/data_format"
-    type: string
+    enum:
+      - "DCM"
+      - "nii.gz"
 
   data_type:
     term:
       $ref: "_terms.yaml#/data_type"
-    type: string
+    enum:
+      - "DICOM"
+      - "NIfTI"
 
   file_description:
     description: Any additional text to give this file context in its study.
     type: string
 
   core_metadata_collections:
-    description: The submitter_id or id of the core_metadata_collection to which the cr_image belongs, i.e., a link to a record in the parent node.
+    description: The submitter_id or id of the core_metadata_collection to which the mr_instance belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
 
-  cr_series:
-    description: The submitter_id or id of the cr_series this cr_image belongs to, i.e., a link to a record in the parent node.
+  mr_series:
+    description: The submitter_id or id of the MR imaging series (mr_series) of which this mr_instance is a part; a link to the parent node.
     $ref: "_definitions.yaml#/to_one"

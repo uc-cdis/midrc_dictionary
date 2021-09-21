@@ -74,14 +74,6 @@ properties:
     description: The total number of imaging series performed during the imaging study.
     type: integer
 
-  study_covid_status:
-    description: The COVID-19 test status of the patient at the time the imaging study was performed.
-    enum:
-      - "Positive"
-      - "Negative"
-      - "Unknown"
-      - "Inconclusive"
-
   study_uid:
     description: (0020, 000d) Study Instance UID
     type: string

@@ -303,7 +303,7 @@ properties:
       - Wallis and Futuna
       - Samoa
       - Yemen
-      
+
   ethnicity:
     term:
       $ref: "_terms.yaml#/ethnicity"
@@ -328,6 +328,7 @@ properties:
       - Asian
       - Black or African American
       - Native Hawaiian or other Pacific Islander
+      - Other
       - White
       - Not Reported
 

@@ -49,7 +49,7 @@ properties:
       - STATIONARY
       - FREE
 
-  contrast_bolus_agent_number:
+  contrast_bolus_agent:
     description: "(0018, 0010) Contrast/Bolus Agent"
     type: array
     items:
@@ -77,6 +77,10 @@ properties:
       - "00"
       - "01"
 
+  magnetic_field_strength:
+    description: (0018,0087) Magnetic Field Strength
+    type: string
+
   manufacturer:
     description: (0008, 0070) Manufacturer
     type: string
@@ -99,12 +103,16 @@ properties:
     items:
       type: number
 
+  scanning_sequence:
+    description: (0018,0020) Scanning Sequence
+    type: string
+
   series_description:
-    description: A general description of or additional information about the imaging series; (0008, 103e) Series Description.
+    description: (0008, 103e) Series Description
     type: string
 
   series_uid:
-    description: The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.
+    description: (0020, 000e) Series Instance UID
     type: string
 
   series_type:

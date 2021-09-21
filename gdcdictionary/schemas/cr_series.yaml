@@ -40,17 +40,31 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  contrast_bolus_agent_number:
+  contrast_bolus_agent:
     description: "(0018, 0010) Contrast/Bolus Agent"
     type: array
     items:
       type: string
+
+  detector_type:
+    description: (0018, 7004) Detector Type
+    enum:
+      - DIRECT
+      - SCINTILLATOR
+      - STORAGE
+      - FILM
 
   image_type:
     description: (0008, 0008) Image Type
     type: array
     items:
       type: string
+
+  imager_pixel_spacing:
+    description: (0018, 1164) Imager Pixel Spacing
+    type: array
+    items:
+      type: number
 
   lossy_image_compression:
     description: (0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to "01". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains "01".

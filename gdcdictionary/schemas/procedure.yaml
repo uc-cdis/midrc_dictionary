@@ -50,14 +50,9 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  test_method:
-    description: The test method used to confirm a condition or produce a measurement.
-    enum:
-      - RT-PCR
-      - Rapid COVID19 test
-      - IgM
-      - IgG
-      - Other
+  procedure_name:
+    description: The name of the procedure performed.
+    type: string
 
   conditions:
     description: The submitter_id or id of the condition to which this procedure is related, i.e., a link to a record in the parent node.
