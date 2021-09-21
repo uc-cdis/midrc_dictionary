@@ -1,0 +1,24 @@
+{
+  "case_ids": null, 
+  "contrast_bolus_agent": null, 
+  "manufacturer": null, 
+  "manufacturer_model_name": null, 
+  "series_type": null, 
+  "series_name": null, 
+  "series_uid": null, 
+  "modality": null, 
+  "spatial_resolution": null, 
+  "view_position": null, 
+  "series_description": null, 
+  "*type": "cr_series", 
+  "imager_pixel_spacing": null, 
+  "*radiography_exams": {
+    "submitter_id": null
+  }, 
+  "lossy_image_compression": null, 
+  "image_type": null, 
+  "pixel_spacing": null, 
+  "*submitter_id": null, 
+  "project_id": null, 
+  "detector_type": null
+}

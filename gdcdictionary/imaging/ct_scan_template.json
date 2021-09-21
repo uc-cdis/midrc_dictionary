@@ -1,0 +1,11 @@
+{
+  "case_ids": null, 
+  "*imaging_studies": {
+    "submitter_id": null
+  }, 
+  "*type": "ct_scan", 
+  "scan_notes": null, 
+  "scan_description": null, 
+  "*submitter_id": null, 
+  "project_id": null
+}

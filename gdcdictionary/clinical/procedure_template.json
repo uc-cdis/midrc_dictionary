@@ -1,0 +1,13 @@
+{
+  "procedure_name": null, 
+  "case_ids": null, 
+  "*type": "procedure", 
+  "*submitter_id": null, 
+  "project_id": null, 
+  "conditions": {
+    "submitter_id": null
+  }, 
+  "*cases": {
+    "submitter_id": null
+  }
+}

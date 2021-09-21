@@ -1,0 +1,14 @@
+{
+  "medication_type": null, 
+  "days_to_medication_end": null, 
+  "case_ids": null, 
+  "medication_name": null, 
+  "*type": "medication", 
+  "medication_status": null, 
+  "*submitter_id": null, 
+  "project_id": null, 
+  "days_to_medication_start": null, 
+  "*cases": {
+    "submitter_id": null
+  }
+}

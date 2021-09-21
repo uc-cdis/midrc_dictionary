@@ -1,0 +1,28 @@
+{
+  "scanning_sequence": null, 
+  "contrast_bolus_agent": null, 
+  "series_name": null, 
+  "series_type": null, 
+  "*type": "ct_series", 
+  "modality": null, 
+  "series_description": null, 
+  "image_type": null, 
+  "exposure_modulation_type": null, 
+  "project_id": null, 
+  "slice_thickness": null, 
+  "patient_position": null, 
+  "*ct_scans": {
+    "submitter_id": null
+  }, 
+  "lossy_image_compression": null, 
+  "acquisition_type": null, 
+  "pixel_spacing": null, 
+  "case_ids": null, 
+  "magnetic_field_strength": null, 
+  "convolution_kernel": null, 
+  "manufacturer": null, 
+  "manufacturer_model_name": null, 
+  "spacing_between_slices": null, 
+  "series_uid": null, 
+  "*submitter_id": null
+}

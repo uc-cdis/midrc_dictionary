@@ -1,0 +1,21 @@
+{
+  "age_at_index": null, 
+  "sex": null, 
+  "ethnicity": null, 
+  "case_ids": null, 
+  "race": null, 
+  "*type": "case", 
+  "covid19_positive": null, 
+  "zip": null, 
+  "country_of_origin": null, 
+  "ventilator_indicator": null, 
+  "icu_indicator": null, 
+  "*submitter_id": null, 
+  "project_id": null, 
+  "treatment_info": null, 
+  "*datasets": {
+    "submitter_id": null
+  }, 
+  "site_id": null, 
+  "index_event": null
+}

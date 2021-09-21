@@ -1,0 +1,12 @@
+{
+  "case_ids": null, 
+  "*imaging_studies": {
+    "submitter_id": null
+  }, 
+  "*type": "radiography_exam", 
+  "exam_description": null, 
+  "*submitter_id": null, 
+  "exam_notes": null, 
+  "project_id": null, 
+  "view_position": null
+}
