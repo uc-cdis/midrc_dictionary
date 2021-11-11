@@ -30,7 +30,7 @@ links:
 required:
   - submitter_id
   - type
-  - imaging_study
+  - imaging_studies
 
 uniqueKeys:
   - [id]
