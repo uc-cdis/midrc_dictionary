@@ -23,12 +23,21 @@ systemProperties:
   - error_type
 
 links:
-  - name: annotations
-    backref: annotation_files
-    label: related_to
-    target_type: annotation
-    multiplicity: many_to_many
+  - exclusive: false
     required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: cr_instances
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: annotations
+        backref: annotation_files
+        label: related_to
+        target_type: annotation
+        multiplicity: many_to_many
+        required: false
 
 required:
   - submitter_id

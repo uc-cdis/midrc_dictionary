@@ -56,7 +56,7 @@ links:
       - name: mr_instances
         backref: annotations
         label: related_to
-        target_type: mr_insance
+        target_type: mr_instance
         multiplicity: many_to_many
         required: false
       - name: cr_instances
