@@ -27,7 +27,7 @@ links:
     required: true
     subgroup:
       - name: core_metadata_collections
-        backref: cr_instances
+        backref: annotation_files
         label: data_from
         target_type: core_metadata_collection
         multiplicity: many_to_one
@@ -77,3 +77,7 @@ properties:
   annotations:
     description: The submitter_id or id of the annotation(s) this annotation file belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
+
+  core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the annotation_file belongs, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
