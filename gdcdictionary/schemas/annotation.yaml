@@ -1,0 +1,146 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "annotation"
+title: Annotation
+type: object
+namespace: https://data.midrc.org/
+category: imaging_series
+program: '*'
+project: '*'
+description: An imaging annotation related to an image, series of images, imaging study or a case.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links: 
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: cases
+        backref: annotations
+        label: related_to
+        target_type: case
+        multiplicity: many_to_many
+        required: false
+      - name: mr_series
+        backref: annotations
+        label: related_to
+        target_type: mr_series
+        multiplicity: many_to_many
+        required: false
+      - name: cr_series
+        backref: annotations
+        label: related_to
+        target_type: cr_series
+        multiplicity: many_to_many
+        required: false
+      - name: ct_series
+        backref: annotations
+        label: related_to
+        target_type: ct_series
+        multiplicity: many_to_many
+        required: false
+      - name: dx_series
+        backref: annotations
+        label: related_to
+        target_type: dx_series
+        multiplicity: many_to_many
+        required: false
+      - name: mr_instances
+        backref: annotations
+        label: related_to
+        target_type: mr_insance
+        multiplicity: many_to_many
+        required: false
+      - name: cr_instances
+        backref: annotations
+        label: related_to
+        target_type: cr_instance
+        multiplicity: many_to_many
+        required: false
+      - name: ct_instances
+        backref: annotations
+        label: related_to
+        target_type: ct_instance
+        multiplicity: many_to_many
+        required: false
+      - name: dx_instances
+        backref: annotations
+        label: related_to
+        target_type: dx_instance
+        multiplicity: many_to_many
+        required: false
+
+required:
+  - submitter_id
+  - type
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+
+  annotation_type:
+    description: need detail here - is this the "key" in a key-value pair?.
+    enum:
+      - Portable
+
+  annotation_text:
+    description: need detail here - is this the "value" in a key-value pair?
+    type: string
+
+  annotation_name:
+    description: need detail here
+    enum:
+      - "gen3portable"
+
+  cases:
+    description: The submitter_id or id of the case(s) this annotation belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+
+  imaging_studies:
+    description: The submitter_id or id of the imaging study(ies) this annotation belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+
+  mr_series:
+    description: The submitter_id or id of the mr_series this annotation belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+    
+  cr_series:
+    description: The submitter_id or id of the cr_series this annotation belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+    
+  ct_series:
+    description: The submitter_id or id of the ct_series this annotation belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+    
+  dx_series:
+    description: The submitter_id or id of the dx_series this annotation belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+    
+  mr_instances:
+    description: The submitter_id or id of the mr_instance(s) this annotation belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+    
+  cr_instances:
+    description: The submitter_id or id of the cr_instance(s) this annotation belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+    
+  ct_instances:
+    description: The submitter_id or id of the ct_instance(s) this annotation belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+    
+  dx_instances:
+    description: The submitter_id or id of the dx_instance(s) this annotation belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
