@@ -49,6 +49,7 @@ links:
         label: related_to
         target_type: dx_instance
         multiplicity: many_to_many
+        required: false
       - name: mr_instances
         backref: instance_annotation_files
         label: related_to

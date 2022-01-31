@@ -49,6 +49,7 @@ links:
         label: related_to
         target_type: dx_series
         multiplicity: many_to_many
+        required: false
       - name: mr_series
         backref: series_annotation_files
         label: related_to

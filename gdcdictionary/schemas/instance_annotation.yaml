@@ -40,6 +40,7 @@ links:
         label: related_to
         target_type: dx_instance
         multiplicity: many_to_many
+        required: false
       - name: mr_instances
         backref: instance_annotations
         label: related_to
