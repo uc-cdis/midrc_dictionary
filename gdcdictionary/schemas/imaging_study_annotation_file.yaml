@@ -1,0 +1,99 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "imaging_study_annotation_file"
+title: Imaging Study Annotation File
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: annotation
+program: '*'
+project: '*'
+description: An object file related to an imaging study.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+  - file_state
+  - error_type
+
+links: 
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: imaging_study_annotation_files
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: imaging_studies
+        backref: imaging_study_annotation_files
+        label: related_to
+        target_type: imaging_study
+        multiplicity: many_to_many
+        required: false
+      - name: imaging_study_annotations
+        backref: imaging_study_annotation_files
+        label: related_to
+        target_type: imaging_study_annotation
+        multiplicity: many_to_many
+        required: false
+
+required:
+  - submitter_id
+  - type
+  - file_name
+  - file_size
+  - md5sum
+  - data_format
+  - data_type
+  - data_category
+  - annotation_name
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  annotation_name:
+    description: Predefined description of the annotation.
+    enum:
+      - We need a list of enums here.
+
+  # gen3 properties
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    type: string
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    type: string
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    type: string
+
+  # links to other nodes
+  imaging_studies:
+    description: The submitter_id or id of the imaging study(ies) this annotation file belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+
+  imaging_study_annotations:
+    description: The submitter_id or id of the annotation(s) this annotation file belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+
+  core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the annotation_file belongs, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"

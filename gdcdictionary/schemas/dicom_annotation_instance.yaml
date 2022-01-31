@@ -1,14 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "annotation_instance"
-title: Annotation Instance
+id: "dicom_annotation_instance"
+title: DICOM Annotation Instance
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
 category: imaging_data_file
 program: '*'
 project: '*'
-description: An annotation imaging file.
+description: A DICOM annotation imaging file.
 additionalProperties: false
 submittable: true
 validators: null

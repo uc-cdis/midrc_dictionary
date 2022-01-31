@@ -1,13 +1,13 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "annotation_series"
-title: Annotation Series
+id: "dicom_annotation_series"
+title: DICOM Annotation Series
 type: object
 namespace: https://data.midrc.org/
 category: imaging_series
 program: '*'
 project: '*'
-description: Information related to an annotation imaging series to which one or more annotations belong.
+description: Information related to a DICOM annotation imaging series to which one or more annotations belong.
 additionalProperties: false
 submittable: true
 validators: null

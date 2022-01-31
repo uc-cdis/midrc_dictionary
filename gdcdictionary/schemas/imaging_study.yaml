@@ -44,6 +44,23 @@ properties:
     description: The number of days between the case's index date and the date of the imaging study.
     type: number
 
+  days_from_study_to_pos_covid_test:
+    description: The number of days from the imaging study to the patient's positive COVID-19 test(s).
+    type: array
+    items:
+      type: integer
+
+  days_from_study_to_neg_covid_test:
+    description: The number of days from the imaging study to the patient's negative COVID-19 test(s).
+    type: array
+    items:
+      type: integer
+
+  midrc_harmonized_study_description:
+    description: A standardized representation mapped by MIDRC Data Quality and Harmonization subcommittee to the study_description property in submitted imaging data.
+    enum:
+      - TBD
+
   study_description:
     description: (0008, 1030) Study Description.
     type: string
