@@ -116,7 +116,7 @@ properties:
     description: The submitter_id or id of the instance this annotation file belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
 
-  dx_instances
+  dx_instances:
     description: The submitter_id or id of the instance this annotation file belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
 
