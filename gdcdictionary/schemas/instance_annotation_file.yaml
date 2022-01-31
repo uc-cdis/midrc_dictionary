@@ -108,19 +108,19 @@ properties:
     description: The submitter_id or id of the instance annotation this annotation file belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
 
-  cr_instance:
+  cr_instances:
     description: The submitter_id or id of the instance this annotation file belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
 
-  ct_instance:
+  ct_instances:
     description: The submitter_id or id of the instance this annotation file belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
 
-  dx_instance:
+  dx_instances
     description: The submitter_id or id of the instance this annotation file belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
 
-  mr_instance:
+  mr_instances:
     description: The submitter_id or id of the instance this annotation file belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
 
