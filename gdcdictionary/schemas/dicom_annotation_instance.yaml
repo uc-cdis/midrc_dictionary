@@ -27,15 +27,15 @@ links:
     required: true
     subgroup:
       - name: core_metadata_collections
-        backref: annotation_instances
+        backref: dicom_annotation_instances
         label: data_from
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
-      - name: annotation_series
-        backref: annotation_instances
+      - name: dicom_annotation_series
+        backref: dicom_annotation_instances
         label: data_from
-        target_type: annotation_series
+        target_type: dicom_annotation_series
         multiplicity: many_to_one
         required: false
 
