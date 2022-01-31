@@ -77,6 +77,6 @@ properties:
     description: The submitter_id or id of the core_metadata_collection to which the annotation_instance belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
 
-  annotation_series:
+  dicom_annotation_series:
     description: The submitter_id or id of the annotation series this annotation_instance belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
