@@ -50,9 +50,22 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
+  breathing_support_type:
+    description: The type of breathing support the patient received.
+    type: string
+
+  days_to_procedure_start:
+    description: The number of days between the case's index date and the start date of the procedure.
+    type: integer  
+
+  days_to_procedure_end:
+    description: The number of days between the case's index date and the end date of the procedure.
+    type: integer  
+
   procedure_name:
     description: The name of the procedure performed.
-    type: string
+    enum:
+      - Breathing Support
 
   conditions:
     description: The submitter_id or id of the condition to which this procedure is related, i.e., a link to a record in the parent node.

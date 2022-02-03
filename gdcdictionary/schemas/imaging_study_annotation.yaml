@@ -1,0 +1,59 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "imaging_study_annotation"
+title: Imaging Study Annotation
+type: object
+namespace: https://data.midrc.org/
+category: annotation
+program: '*'
+project: '*'
+description: An imaging annotation related to a imaging study.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: imaging_studies
+    backref: imaging_study_annotations
+    label: related_to
+    target_type: imaging_study
+    multiplicity: many_to_many
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - annotation_name
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  annotation_name:
+    description: Predefined description of the annotation.
+    enum:
+      - We need a list of enums here.
+
+  annotation_value:
+    description: need detail here
+    type: string
+
+  annotation_key:
+    description: need detail here
+    enum:
+      - "gen3portable"
+
+  imaging_studies:
+    description: The submitter_id or id of the imaging study(ies) this annotation belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"

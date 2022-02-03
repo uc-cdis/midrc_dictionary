@@ -1,0 +1,66 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "visit"
+title: Visit
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: administrative
+program: '*'
+project: '*'
+description: Information about a specific visit for a specific case or patient.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - name: cases
+    backref: visits
+    label: member_of
+    target_type: case
+    multiplicity: many_to_one
+    required: true
+
+required:
+  - submitter_id
+  - type
+  - cases
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  days_to_hospital_admission:
+    description: The number of days between the case's index date and the date of the patient's hospital admission.
+    type: integer
+
+  days_to_hospital_discharge:
+    description: The number of days between the case's index date and the date of the patient's hospital discharge.
+    type: integer
+
+  days_to_icu_admission:
+    description: The number of days between the case's index date and the date of the patient's ICU admission.
+    type: integer
+
+  days_to_icu_discharge:
+    description: The number of days between the case's index date and the date of the patient's ICU discharge..
+    type: integer    
+
+  discharge_type:
+    description: The status or destination of the patient at the time of discharge.
+    type: string      
+
+  cases:
+    description: The submitter_id or id of the case this visit belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"

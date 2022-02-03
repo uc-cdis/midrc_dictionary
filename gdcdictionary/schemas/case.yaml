@@ -304,6 +304,10 @@ properties:
       - Samoa
       - Yemen
 
+  data_submission_guid:
+    description: A Globally Unique IDentifier (GUID) provided by the data submitter, used to identify this case/patient across multiple projects, commons, etc.
+    type: string
+
   ethnicity:
     term:
       $ref: "_terms.yaml#/ethnicity"
