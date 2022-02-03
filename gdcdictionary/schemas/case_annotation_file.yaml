@@ -1,14 +1,14 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "annotation_file"
-title: Annotation File
+id: "case_annotation_file"
+title: Case Annotation File
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
-category: imaging_data_file
+category: annotation
 program: '*'
 project: '*'
-description: An object file related to an annotation.
+description: An object file related to a case annotation.
 additionalProperties: false
 submittable: true
 validators: null
@@ -22,20 +22,26 @@ systemProperties:
   - file_state
   - error_type
 
-links:
+links: 
   - exclusive: false
     required: true
     subgroup:
       - name: core_metadata_collections
-        backref: annotation_files
+        backref: case_annotation_files
         label: data_from
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
-      - name: annotations
-        backref: annotation_files
+      - name: cases
+        backref: case_annotation_files
         label: related_to
-        target_type: annotation
+        target_type: case
+        multiplicity: many_to_many
+        required: false
+      - name: case_annotations
+        backref: case_annotation_files
+        label: related_to
+        target_type: case_annotation
         multiplicity: many_to_many
         required: false
 
@@ -48,6 +54,7 @@ required:
   - data_format
   - data_type
   - data_category
+  - annotation_name
 
 uniqueKeys:
   - [id]
@@ -56,6 +63,11 @@ uniqueKeys:
 properties:
 
   $ref: "_definitions.yaml#/data_file_properties"
+
+  annotation_name:
+    description: Predefined description of the annotation.
+    enum:
+      - We need a list of enums here.
 
   # gen3 properties
   data_category:
@@ -73,9 +85,13 @@ properties:
       $ref: "_terms.yaml#/data_type"
     type: string
 
-
-  annotations:
+  # links to other nodes
+  case_annotations:
     description: The submitter_id or id of the annotation(s) this annotation file belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+
+  cases:
+    description: The submitter_id or id of the case(s) this annotation belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_many"
 
   core_metadata_collections:

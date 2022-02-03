@@ -1,0 +1,93 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "instance_annotation"
+title: Instance Annotation
+type: object
+namespace: https://data.midrc.org/
+category: annotation
+program: '*'
+project: '*'
+description: An imaging annotation related to an instance.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: cr_instances
+        backref: instance_annotations
+        label: related_to
+        target_type: cr_instance
+        multiplicity: many_to_many
+        required: false
+      - name: ct_instances
+        backref: instance_annotations
+        label: related_to
+        target_type: ct_instance
+        multiplicity: many_to_many
+        required: false
+      - name: dx_instances
+        backref: instance_annotations
+        label: related_to
+        target_type: dx_instance
+        multiplicity: many_to_many
+        required: false
+      - name: mr_instances
+        backref: instance_annotations
+        label: related_to
+        target_type: mr_instance
+        multiplicity: many_to_many
+        required: false
+
+required:
+  - submitter_id
+  - type
+  - annotation_name
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+
+  annotation_name:
+    description: Predefined description of the annotation.
+    enum:
+      - We need a list of enums here.
+
+  annotation_value:
+    description: need detail here
+    type: string
+
+  annotation_key:
+    description: need detail here
+    enum:
+      - "gen3portable"
+
+  cr_instances:
+    description: The submitter_id or id of the instance this annotation file belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+
+  ct_instances:
+    description: The submitter_id or id of the instance this annotation file belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+
+  dx_instances:
+    description: The submitter_id or id of the instance this annotation file belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
+
+  mr_instances:
+    description: The submitter_id or id of the instance this annotation file belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
