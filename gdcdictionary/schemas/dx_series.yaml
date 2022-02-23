@@ -4,10 +4,10 @@ id: "dx_series"
 title: DX Series
 type: object
 namespace: https://data.midrc.org/
-category: imaging_series
+category: imaging_data_file
 program: '*'
 project: '*'
-description: Information related to a DX imaging series to which one or more digital radiographs (x-rays) belong.
+description: The image files and metadata related to a series of DX images to which one or more digital radiographs (x-rays) belong.
 additionalProperties: false
 submittable: true
 validators: null
@@ -18,19 +18,35 @@ systemProperties:
   - state
   - created_datetime
   - updated_datetime
+  - file_state
+  - error_type
 
 links:
-  - name: radiography_exams
-    backref: dx_series
-    label: related_to
-    target_type: radiography_exam
-    multiplicity: many_to_one
+  - exclusive: false
     required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: dx_instances
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: radiography_exams
+        backref: dx_series
+        label: related_to
+        target_type: radiography_exam
+        multiplicity: many_to_one
+        required: false
 
 required:
   - submitter_id
   - type
-  - radiography_exams
+  - file_name
+  - file_size
+  - md5sum
+  - data_format
+  - data_type
+  - data_category
 
 uniqueKeys:
   - [id]
@@ -38,13 +54,33 @@ uniqueKeys:
 
 properties:
 
-  $ref: "_definitions.yaml#/ubiquitous_properties"
+  $ref: "_definitions.yaml#/data_file_properties"
 
   contrast_bolus_agent:
     description: "(0018, 0010) Contrast/Bolus Agent"
     type: array
     items:
       type: string
+
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    enum:
+      - "DX"
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    enum:
+      - "DCM"
+      - "nii.gz"
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    enum:
+      - "DICOM"
+      - "NIfTI"
 
   detector_type:
     description: (0018, 7004) Detector Type
@@ -53,6 +89,10 @@ properties:
       - SCINTILLATOR
       - STORAGE
       - FILM
+
+  file_description:
+    description: Any additional text to give this file context in its study.
+    type: string
 
   image_type:
     description: (0008, 0008) Image Type
@@ -123,6 +163,10 @@ properties:
       - RLO
       - LLO
 
+  core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the DX series belongs, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
   radiography_exams:
-    description: The submitter_id or id of the radiography_exam this dx_series belongs to, i.e., a link to a record in the parent node.
+    description: The submitter_id or id of the radiography_exam this DX series belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"

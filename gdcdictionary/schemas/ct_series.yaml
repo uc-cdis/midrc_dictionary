@@ -4,10 +4,10 @@ id: "ct_series"
 title: CT Series
 type: object
 namespace: https://data.midrc.org/
-category: imaging_series
+category: imaging_data_file
 program: '*'
 project: '*'
-description: Information related to a CT imaging series consisting of a stack of CT slices.
+description: The image files and metadata related to a series of CT images consisting of a stack of CT slices.
 additionalProperties: false
 submittable: true
 validators: null
@@ -18,19 +18,35 @@ systemProperties:
   - state
   - created_datetime
   - updated_datetime
+  - file_state
+  - error_type
 
 links:
-  - name: ct_scans
-    backref: ct_series
-    label: related_to
-    target_type: ct_scan
-    multiplicity: many_to_one
+  - exclusive: false
     required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: ct_instances
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: ct_scans
+        backref: ct_series
+        label: related_to
+        target_type: ct_scan
+        multiplicity: many_to_one
+        required: false
 
 required:
   - submitter_id
   - type
-  - ct_scans
+  - file_name
+  - file_size
+  - md5sum
+  - data_format
+  - data_type
+  - data_category
 
 uniqueKeys:
   - [id]
@@ -38,7 +54,7 @@ uniqueKeys:
 
 properties:
 
-  $ref: "_definitions.yaml#/ubiquitous_properties"
+  $ref: "_definitions.yaml#/data_file_properties"
 
   acquisition_type:
     description: (0018, 9302) Acquisition Type
@@ -48,6 +64,26 @@ properties:
       - CONSTANT_ANGLE
       - STATIONARY
       - FREE
+
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    enum:
+      - "CT"
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    enum:
+      - "DCM"
+      - "nii.gz"
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    enum:
+      - "DICOM"
+      - "NIfTI"
 
   contrast_bolus_agent:
     description: "(0018, 0010) Contrast/Bolus Agent"
@@ -63,6 +99,10 @@ properties:
 
   exposure_modulation_type:
     description: (0018, 9323) Exposure Modulation Type
+    type: string
+
+  file_description:
+    description: Any additional text to give this file context in its study.
     type: string
 
   image_type:
@@ -134,6 +174,10 @@ properties:
     type: array
     items:
       type: number
+
+  core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the CT series belongs, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
 
   ct_scans:
     description: The submitter_id or id of the ct_scan this ct_series belongs to, i.e., a link to a record in the parent node.
