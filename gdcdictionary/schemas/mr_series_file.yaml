@@ -1,0 +1,183 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "mr_series_file"
+title: MR Series File
+type: object
+namespace: https://data.midrc.org/
+category: imaging_series
+program: '*'
+project: '*'
+description: A package of image files and metadata related to an MR imaging series to which one or more MR (magnetic resonance) images belong.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+  - file_state
+  - error_type
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: mr_series_files
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: imaging_studies
+        backref: mr_series_files
+        label: related_to
+        target_type: imaging_study
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - submitter_id
+  - type
+  - file_name
+  - file_size
+  - md5sum
+  - data_format
+  - data_type
+  - data_category
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  contrast_bolus_agent:
+    description: (0018, 0010) Contrast/Bolus Agent
+    type: array
+    items:
+      type: string
+
+  detector_type:
+    description: (0018, 7004) Detector Type
+    enum:
+      - DIRECT
+      - SCINTILLATOR
+      - STORAGE
+      - FILM
+
+  image_type:
+    description: (0008, 0008) Image Type
+    type: array
+    items:
+      type: string
+
+  imager_pixel_spacing:
+    description: (0018, 1164) Imager Pixel Spacing
+    type: array
+    items:
+      type: number
+
+  lossy_image_compression:
+    description: (0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to "01". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains "01".
+    enum:
+      - "00"
+      - "01"
+
+  magnetic_field_strength:
+    description: (0018,0087) Magnetic Field Strength
+    type: string
+
+  manufacturer:
+    description: (0008, 0070) Manufacturer
+    type: string
+
+  manufacturer_model_name:
+    description: (0008, 1090) Manufacturer's Model Name
+    type: string
+
+  modality:
+    description: (0008, 0060) Modality
+    type: string
+
+  mr_acquisition_type:
+    description: (0018, 0023) MR Acquisition Type
+    type: string
+
+  pixel_spacing:
+    description: (0028, 0030) Pixel Spacing
+    type: array
+    items:
+      type: number
+
+  scanning_sequence:
+    description: (0018, 0020) Scanning Sequence
+    type: string
+
+  sequence_name:
+    description: (0018, 0024) Sequence Name
+    type: string
+
+  series_description:
+    description: (0008, 103e) Series Description; a general description of or additional information about the imaging series.
+    type: string
+
+  series_uid:
+    description: (0020, 000e) Series Instance UID; the UID or unique identification code of the imaging series.
+    type: string
+
+  series_type:
+    description: (0054,1000) Series Type; the text term describing the type of imaging series.
+    type: string
+
+  series_name:
+    description: The human-readable name of the imaging series or stack of images.
+    type: string
+
+  slice_thickness:
+    description: (0018, 0050) Slice Thickness
+    type: array
+    items:
+      type: number
+
+  spacing_between_slices:
+    description: (0018, 0088) Spacing Between Slices
+    type: array
+    items:
+      type: number
+
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    enum:
+      - "MR"
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    enum:
+      - "DCM"
+      - "nii.gz"
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    enum:
+      - "DICOM"
+      - "NIfTI"
+
+  file_description:
+    description: Any additional text to give this file context in its study.
+    type: string
+
+  core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the mr_series_file belongs, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  imaging_studies:
+    description: The submitter_id or id of the imaging_study this mr_series_file belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
