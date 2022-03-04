@@ -129,15 +129,18 @@ properties:
   # CR/DX only
   view_position:
     description: (0018, 5101) View Position
-    enum:
-      - AP
-      - PA
-      - LL
-      - RL
-      - RLD
-      - LLD
-      - RLO
-      - LLO
+    type: array
+    items:
+      type: string
+    # enum:
+    #   - AP
+    #   - PA
+    #   - LL
+    #   - RL
+    #   - RLD
+    #   - LLD
+    #   - RLO
+    #   - LLO
 
 
   data_category:
