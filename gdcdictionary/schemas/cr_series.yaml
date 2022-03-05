@@ -113,15 +113,18 @@ properties:
   # CR/DX only
   view_position:
     description: (0018, 5101) View Position
-    enum:
-      - AP
-      - PA
-      - LL
-      - RL
-      - RLD
-      - LLD
-      - RLO
-      - LLO
+    type: array
+    items:
+      type: string
+    # enum:
+    #   - AP
+    #   - PA
+    #   - LL
+    #   - RL
+    #   - RLD
+    #   - LLD
+    #   - RLO
+    #   - LLO
 
   radiography_exams:
     description: The submitter_id or id of the radiography_exam this dx_series belongs to, i.e., a link to a record in the parent node.
