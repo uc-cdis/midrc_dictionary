@@ -1,0 +1,2 @@
+*type	project_id	*submitter_id	*cases.submitter_id	case_ids	days_to_hospital_admission	days_to_hospital_discharge	days_to_icu_admission	days_to_icu_discharge	discharge_type
+visit
