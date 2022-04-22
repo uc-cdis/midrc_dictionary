@@ -1,13 +1,13 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "dx_series_file"
-title: DX Series File
+id: "dr_series_file"
+title: DR Series File
 type: object
 namespace: https://data.midrc.org/
 category: imaging_data_file
 program: '*'
 project: '*'
-description: A package of image files and metadata related to a DX imaging series to which one or more digital radiograph (x-rays) instances belong.
+description: Information related to a DR imaging series.
 additionalProperties: false
 submittable: true
 validators: null
@@ -26,13 +26,13 @@ links:
     required: true
     subgroup:
       - name: core_metadata_collections
-        backref: dx_series_files
+        backref: dr_series_files
         label: data_from
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
       - name: imaging_studies
-        backref: dx_series_files
+        backref: dr_series_files
         label: related_to
         target_type: imaging_study
         multiplicity: many_to_one
@@ -56,31 +56,11 @@ properties:
 
   $ref: "_definitions.yaml#/data_file_properties"
 
-  contrast_bolus_agent:
-    description: "(0018, 0010) Contrast/Bolus Agent"
-    type: array
-    items:
-      type: string
-
-  detector_type:
-    description: (0018, 7004) Detector Type
-    enum:
-      - DIRECT
-      - SCINTILLATOR
-      - STORAGE
-      - FILM
-
   image_type:
     description: (0008, 0008) Image Type
     type: array
     items:
       type: string
-
-  imager_pixel_spacing:
-    description: (0018, 1164) Imager Pixel Spacing
-    type: array
-    items:
-      type: number
 
   lossy_image_compression:
     description: (0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to "01". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains "01".
@@ -100,12 +80,6 @@ properties:
     description: (0008, 0060) Modality
     type: string
 
-  pixel_spacing:
-    description: (0028, 0030) Pixel Spacing
-    type: array
-    items:
-      type: number
-
   series_description:
     description: A general description of or additional information about the imaging series; (0008, 103e) Series Description.
     type: string
@@ -114,29 +88,11 @@ properties:
     description: The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.
     type: string
 
-  series_type:
-    description: The text term describing the type of imaging series.
-    type: string
-
-  series_name:
-    description: The human-readable name of the imaging series or stack of images.
-    type: string
-
-  spatial_resolution:
-    description: (0018, 1050) Spatial Resolution
-    type: number
-
-  view_position:
-    description: (0018, 5101) View Position
-    type: array
-    items:
-      type: string
-
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
     enum:
-      - "DX"
+      - "DR"
 
   data_format:
     term:
@@ -157,9 +113,9 @@ properties:
     type: string
 
   core_metadata_collections:
-    description: The submitter_id or id of the core_metadata_collection to which the dx_series_file belongs, i.e., a link to a record in the parent node.
+    description: The submitter_id or id of the core_metadata_collection to which the file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
 
   imaging_studies:
-    description: The submitter_id or id of the imaging_study this dx_series_file belongs to, i.e., a link to a record in the parent node.
+    description: The submitter_id or id of the imaging_study this file belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
