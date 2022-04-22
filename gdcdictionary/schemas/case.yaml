@@ -316,6 +316,10 @@ properties:
       - Not Hispanic or Latino
       - Not Reported
 
+  gen3_linked_subjects_available:
+    description: Indicates whether there is data available for the subject in other data resources.
+    type: boolean
+
   icu_indicator:
     description: Indicates whether the subject has been admitted to the ICU.
     type: boolean

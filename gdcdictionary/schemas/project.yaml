@@ -92,6 +92,9 @@ properties:
     type: string
     description: "Display name/brief description for the project." # TOREVIEW
 
+  project_id:
+    $ref: "_definitions.yaml#/project_id"
+
   releasable:
     description: |
       A project can only be released by the user when `releasable` is true.
@@ -154,6 +157,63 @@ properties:
         - closed
 
   type:
+    type: string
+
+  # additional properties to describe the dataset
+  acknowledgement:
+    description: Publication acknowledgement(s) for the published dataset.
+    type: string
+
+  data_citation:
+    description: The citation for the published dataset.
+    type: string
+
+  data_contributor:
+    description: The name of the organization or individual that the contributed dataset belongs to.
+    type: string
+
+  data_description:
+    description: A brief, free-text description of the data files and associated metadata provided for this dataset.
+    type: string
+
+  data_url_doi:
+    description: A URL or DOI for the source of the dataset or the contributing organization's website.
+    type: string
+
+  disease_type:
+    description: The primary type of disease studied in this dataset, if applicable.
+    type: string
+
+  license:
+    description: The license under which the daaset has been published.
+    type: string
+
+  longitudinal:
+    description: Indicates whether the dataset has longitudinal or time-series data.
+    type: boolean
+
+  primary_site:
+    description: The primary body site studied in this dataset.
+    type: string
+
+  publication_citation:
+    description: The major or main publication(s) associated with the data itself or with the publication that published the dataset.
+    type: string
+
+  research_description:
+    description: If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results.
+    type: string
+
+  research_design:
+    description: A summary of the goals of the research or a general description of the research's relationship to a clinical application.
+    type: string
+
+  research_objective:
+    description: The general objective of the research; what the researchers hope to discover or determine.
+    type: string
+
+  research_setup:
+    description: A high level description of the setup used to achieve the research objectives.
     type: string
 
   programs:
