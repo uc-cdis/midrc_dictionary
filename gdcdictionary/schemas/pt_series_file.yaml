@@ -102,6 +102,10 @@ properties:
     items:
       type: number
 
+  series_type:
+    description: The type of PET series.
+    type: string
+
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"

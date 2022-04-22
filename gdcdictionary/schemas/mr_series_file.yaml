@@ -62,14 +62,6 @@ properties:
     items:
       type: string
 
-  detector_type:
-    description: (0018, 7004) Detector Type
-    enum:
-      - DIRECT
-      - SCINTILLATOR
-      - STORAGE
-      - FILM
-
   image_type:
     description: (0008, 0008) Image Type
     type: array
@@ -128,14 +120,6 @@ properties:
 
   series_uid:
     description: (0020, 000e) Series Instance UID; the UID or unique identification code of the imaging series.
-    type: string
-
-  series_type:
-    description: (0054,1000) Series Type; the text term describing the type of imaging series.
-    type: string
-
-  series_name:
-    description: The human-readable name of the imaging series or stack of images.
     type: string
 
   slice_thickness:
