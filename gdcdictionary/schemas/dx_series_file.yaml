@@ -120,22 +120,11 @@ properties:
     description: (0018, 1050) Spatial Resolution
     type: number
 
-  # CR/DX only
   view_position:
     description: (0018, 5101) View Position
     type: array
     items:
       type: string
-    # enum:
-    #   - AP
-    #   - PA
-    #   - LL
-    #   - RL
-    #   - RLD
-    #   - LLD
-    #   - RLO
-    #   - LLO
-
 
   data_category:
     term:

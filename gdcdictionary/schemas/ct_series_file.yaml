@@ -93,10 +93,6 @@ properties:
       - "00"
       - "01"
 
-  magnetic_field_strength:
-    description: (0018,0087) Magnetic Field Strength
-    type: number
-
   manufacturer:
     description: (0008, 0070) Manufacturer
     type: string
@@ -118,12 +114,6 @@ properties:
     type: array
     items:
       type: number
-
-  scanning_sequence:
-    description: (0018,0020) Scanning Sequence
-    type: array
-    items:
-      type: string
 
   series_description:
     description: (0008, 103e) Series Description

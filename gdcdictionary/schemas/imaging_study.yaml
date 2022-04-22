@@ -87,10 +87,6 @@ properties:
     description: The location or geographical site of imaging, or the name of the clinic that performed the imaging study.
     type: string
 
-  series_count:
-    description: The total number of imaging series performed during the imaging study.
-    type: integer
-
   study_uid:
     description: (0020, 000d) Study Instance UID
     type: string
