@@ -62,14 +62,6 @@ properties:
     items:
       type: string
 
-  detector_type:
-    description: (0018, 7004) Detector Type
-    enum:
-      - DIRECT
-      - SCINTILLATOR
-      - STORAGE
-      - FILM
-
   image_type:
     description: (0008, 0008) Image Type
     type: array
