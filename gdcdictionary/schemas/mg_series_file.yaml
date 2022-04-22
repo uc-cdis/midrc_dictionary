@@ -1,13 +1,13 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "mr_series_file"
-title: MR Series File
+id: "mg_series_file"
+title: MG Series File
 type: object
 namespace: https://data.midrc.org/
 category: imaging_data_file
 program: '*'
 project: '*'
-description: A package of image files and metadata related to an MR imaging series to which one or more MR (magnetic resonance) images belong.
+description: Information related to a mammography (MG) imaging series to which one or more mammography images belong.
 additionalProperties: false
 submittable: true
 validators: null
@@ -18,21 +18,19 @@ systemProperties:
   - state
   - created_datetime
   - updated_datetime
-  - file_state
-  - error_type
 
 links:
   - exclusive: false
     required: true
     subgroup:
       - name: core_metadata_collections
-        backref: mr_series_files
+        backref: mg_series_files
         label: data_from
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
       - name: imaging_studies
-        backref: mr_series_files
+        backref: mg_series_files
         label: related_to
         target_type: imaging_study
         multiplicity: many_to_one
@@ -57,10 +55,18 @@ properties:
   $ref: "_definitions.yaml#/data_file_properties"
 
   contrast_bolus_agent:
-    description: (0018, 0010) Contrast/Bolus Agent
+    description: "(0018, 0010) Contrast/Bolus Agent"
     type: array
     items:
       type: string
+
+  detector_type:
+    description: (0018, 7004) Detector Type
+    enum:
+      - DIRECT
+      - SCINTILLATOR
+      - STORAGE
+      - FILM
 
   image_type:
     description: (0008, 0008) Image Type
@@ -80,10 +86,6 @@ properties:
       - "00"
       - "01"
 
-  magnetic_field_strength:
-    description: (0018,0087) Magnetic Field Strength
-    type: number
-
   manufacturer:
     description: (0008, 0070) Manufacturer
     type: string
@@ -96,51 +98,51 @@ properties:
     description: (0008, 0060) Modality
     type: string
 
-  mr_acquisition_type:
-    description: (0018, 0023) MR Acquisition Type
-    type: string
-
   pixel_spacing:
     description: (0028, 0030) Pixel Spacing
     type: array
     items:
       type: number
 
-  scanning_sequence:
-    description: (0018, 0020) Scanning Sequence
-    type: array
-    items:
-      type: string
-
-  sequence_name:
-    description: (0018, 0024) Sequence Name
-    type: string
+  screening_diagnostic:
+    description: Indicates whether the mammography was completed for screening or diagnostic purposes. IS THERE A DICOM ATTRIBUTE FOR THIS?
+    enum:
+      - Screening
+      - Diagnostic
 
   series_description:
-    description: (0008, 103e) Series Description; a general description of or additional information about the imaging series.
+    description: A general description of or additional information about the imaging series; (0008, 103e) Series Description.
     type: string
 
   series_uid:
-    description: (0020, 000e) Series Instance UID; the UID or unique identification code of the imaging series.
+    description: The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.
     type: string
 
-  slice_thickness:
-    description: (0018, 0050) Slice Thickness
-    type: array
-    items:
-      type: number
+  spatial_resolution:
+    description: (0018, 1050) Spatial Resolution
+    type: number
 
-  spacing_between_slices:
-    description: (0018, 0088) Spacing Between Slices
+  spot_compression_spot_magnification:
+    description: Indicates whether the mammography image is a spot compression or spot magnification. IS THERE A DICOM ATTRIBUTE FOR THIS SHOULD WE USE View Modifier Code Seqeuence (0054,0222)?
+    enum:
+      - Spot compression
+      - Spot magnification
+
+  tomosynthesis_images:
+    description: Indicates whether the series contains tomosynthesis images.
+    type: boolean
+
+  view_position:
+    description: (0018, 5101) View Position - found additional values at https://dicom.innolitics.com/ciods/digital-mammography-x-ray-image/dx-positioning/00185101 - need confirmation
     type: array
     items:
-      type: number
+      type: string
 
   data_category:
     term:
       $ref: "_terms.yaml#/data_category"
     enum:
-      - "MR"
+      - "MG"
 
   data_format:
     term:
@@ -161,9 +163,9 @@ properties:
     type: string
 
   core_metadata_collections:
-    description: The submitter_id or id of the core_metadata_collection to which the mr_series_file belongs, i.e., a link to a record in the parent node.
+    description: The submitter_id or id of the core_metadata_collection to which the mg_series_file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
 
   imaging_studies:
-    description: The submitter_id or id of the imaging_study this mr_series_file belongs to, i.e., a link to a record in the parent node.
+    description: The submitter_id or id of the imaging study this mg_series belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"

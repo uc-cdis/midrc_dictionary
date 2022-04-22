@@ -114,34 +114,15 @@ properties:
     description: The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.
     type: string
 
-  series_type:
-    description: The text term describing the type of imaging series.
-    type: string
-
-  series_name:
-    description: The human-readable name of the imaging series or stack of images.
-    type: string
-
   spatial_resolution:
     description: (0018, 1050) Spatial Resolution
     type: number
 
-  # CR/DX only
   view_position:
     description: (0018, 5101) View Position
     type: array
     items:
       type: string
-    # enum:
-    #   - AP
-    #   - PA
-    #   - LL
-    #   - RL
-    #   - RLD
-    #   - LLD
-    #   - RLO
-    #   - LLO
-
 
   data_category:
     term:
