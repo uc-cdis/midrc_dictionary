@@ -133,14 +133,6 @@ properties:
     description: (0020, 000e) Series Instance UID
     type: string
 
-  series_type:
-    description: The text term describing the type of imaging series.
-    type: string
-
-  series_name:
-    description: The human-readable name of the imaging series or stack of images.
-    type: string
-
   slice_thickness:
     description: (0018, 0050) Slice Thickness
     type: array
