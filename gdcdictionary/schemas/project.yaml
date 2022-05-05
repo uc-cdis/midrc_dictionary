@@ -156,9 +156,6 @@ properties:
   type:
     type: string
 
-  project_id:
-    $ref: "_definitions.yaml#/project_id"
-
   # additional properties to describe the dataset
 
   acknowledgement:
