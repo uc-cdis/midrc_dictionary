@@ -4,7 +4,7 @@ id: "nm_series_file"
 title: NM Series File
 type: object
 namespace: https://data.midrc.org/
-category: imaging_series
+category: imaging_data_file
 program: '*'
 project: '*'
 description: Information related to a NM imaging series to which one or more nuclear medicine images belong.
