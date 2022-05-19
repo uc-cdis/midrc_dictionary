@@ -118,12 +118,7 @@ properties:
 
   series_uid:
     description: The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.
-    enum:
-      - 1.2.840.10008.5.1.4.1.1.1.2
-      - 1.2.840.10008.5.1.4.1.1.1.2.1
-      - 1.2.840.10008.5.1.4.1.1.13.1.3
-      - 1.2.840.10008.5.1.4.1.1.13.1.4
-      - 1.2.840.10008.5.1.4.1.1.13.1.5
+    type: string
 
   sop_class_name:
     description: The textual description for the (0008, 0016) SOP Class UID Attribute.
@@ -136,7 +131,12 @@ properties:
 
   sop_class_uid:
     description: (0008, 0016) SOP Class UID Attribute.
-    type: string
+    enum:
+      - 1.2.840.10008.5.1.4.1.1.1.2
+      - 1.2.840.10008.5.1.4.1.1.1.2.1
+      - 1.2.840.10008.5.1.4.1.1.13.1.3
+      - 1.2.840.10008.5.1.4.1.1.13.1.4
+      - 1.2.840.10008.5.1.4.1.1.13.1.5
 
   spatial_resolution:
     description: (0018, 1050) Spatial Resolution
