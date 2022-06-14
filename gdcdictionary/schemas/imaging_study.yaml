@@ -72,10 +72,16 @@ properties:
       type: string
 
   age_at_imaging:
-    description: Age of the patient in years at the time the imaging study was performed.
+    description: Age of the patient in years at the time the imaging study was performed. To indicate ages greater than 89 years, please use the property 'age_at_imaging_gt89'.
     type: number
-    maximum: 90
+    maximum: 89
     minimum: 0
+
+  age_at_imaging_gt89:
+    description: Indicates whether the age of the patient in years at the time the imaging study was performed is greater than 89 years.
+    enum:
+      - "Yes"
+      - "No"
 
   body_part_examined:
     description: (0018, 0015) Body Part Examined.

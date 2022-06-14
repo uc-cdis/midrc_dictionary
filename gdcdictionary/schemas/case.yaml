@@ -42,8 +42,16 @@ properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
   age_at_index:
-    description: The subject's age at the time of the study.
+    description: The subject's age at the time of the study. To indicate ages greater than 89 years, please use the property 'age_at_index_gt89'.
     type: number
+    maximum: 89
+    minimum: 0
+
+  age_at_index_gt89:
+    description: Indicates whether the subject's age at the time of the study was greater than 89 years.
+    enum:
+      - "Yes"
+      - "No"
 
   covid19_positive:
     description: An indicator of whether the patient has ever had a positive COVID-19 test.
