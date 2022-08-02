@@ -64,8 +64,8 @@ properties:
     description: The country where the subject is from.
     type: string
 
-  data_submission_guid:
-    description: A Globally Unique IDentifier (GUID) provided by the data submitter, used to identify this case/patient across multiple projects, commons, etc.
+  token_record_id:
+    description: An ID used to link a de-identified case in MIDRC to the same case in an external data resource.
     type: string
 
   ethnicity:
@@ -87,6 +87,12 @@ properties:
   index_event:
     description: The event used as the anchor or start date for all temporal data elements. This acts as day 0 on a timeline of events relating to the patient.
     type: string
+
+  linked_external_data:
+    description: A list of all external data resources that are confirmed to have data for the case.
+    type: array
+    items:
+      type: string
 
   race:
     term:
