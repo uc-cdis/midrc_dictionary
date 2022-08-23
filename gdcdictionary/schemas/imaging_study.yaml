@@ -40,37 +40,6 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  days_to_study:
-    description: The number of days between the case's index date and the date of the imaging study.
-    type: number
-
-  days_from_study_to_pos_covid_test:
-    description: The number of days from the imaging study to the patient's positive COVID-19 test(s).
-    type: array
-    items:
-      type: integer
-
-  days_from_study_to_neg_covid_test:
-    description: The number of days from the imaging study to the patient's negative COVID-19 test(s).
-    type: array
-    items:
-      type: integer
-
-  midrc_harmonized_study_description:
-    description: A standardized representation mapped by MIDRC Data Quality and Harmonization subcommittee to the study_description property in submitted imaging data.
-    enum:
-      - TBD
-
-  study_description:
-    description: (0008, 1030) Study Description.
-    type: string
-
-  study_modality:
-    description: The modalities of the imaging study; derived from (0008, 0060) Modality.
-    type: array
-    items:
-      type: string
-
   age_at_imaging:
     description: Age of the patient in years at the time the imaging study was performed. To indicate ages greater than 89 years, please use the property 'age_at_imaging_gt89'.
     type: number
@@ -89,9 +58,60 @@ properties:
     items:
       type: string
 
+  days_from_study_to_neg_covid_test:
+    description: The number of days from the imaging study to the patient's negative COVID-19 test(s).
+    type: array
+    items:
+      type: integer
+
+  days_from_study_to_pos_covid_test:
+    description: The number of days from the imaging study to the patient's positive COVID-19 test(s).
+    type: array
+    items:
+      type: integer
+ 
+  days_to_study:
+    description: The number of days between the case's index date and the date of the imaging study.
+    type: number
+
+  loinc_code:
+    description: The LOINC code assigned based on the study description provided.
+    type: string
+
+  loinc_contrast:
+    description: The LOINC indicator noting whether the image was completed with or without contrast, as associated with the assigned LOINC code.
+    type: string
+
+  loinc_long_common_name:
+    description: The LOINC long common name associated with the assigned LOINC code.
+    type: string
+
+  loinc_method:
+    description: The LOINC method or imaging modality associated with the assigned LOINC code.
+    type: string
+
+  loinc_system:
+    description: The LOINC system or body part examined associated with the assigned LOINC code.
+    type: string
+
+  midrc_harmonized_study_description:
+    description: A standardized representation mapped by MIDRC Data Quality and Harmonization subcommittee to the study_description property in submitted imaging data.
+    enum:
+      - TBD
+
+  study_description:
+    description: (0008, 1030) Study Description.
+    type: string
+
   study_location:
     description: The location or geographical site of imaging, or the name of the clinic that performed the imaging study.
     type: string
+
+  study_modality:
+    description: The modalities of the imaging study; derived from (0008, 0060) Modality.
+    type: array
+    items:
+      type: string
 
   study_uid:
     description: (0020, 000d) Study Instance UID
