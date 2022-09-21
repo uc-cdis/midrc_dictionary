@@ -58,6 +58,7 @@ properties:
     enum:
       - "Yes"
       - "No"
+      - "Indeterminate"
       - Not Reported
 
   country_of_origin:

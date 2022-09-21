@@ -67,6 +67,7 @@ properties:
   test_result_text:
     description: The measured result of the test described using a list of enumerations.
     enum:
+      - Indeterminate
       - Negative
       - Positive
       - Not Reported

@@ -94,11 +94,6 @@ properties:
     description: The LOINC system or body part examined associated with the assigned LOINC code.
     type: string
 
-  midrc_harmonized_study_description:
-    description: A standardized representation mapped by MIDRC Data Quality and Harmonization subcommittee to the study_description property in submitted imaging data.
-    enum:
-      - TBD
-
   study_description:
     description: (0008, 1030) Study Description.
     type: string
