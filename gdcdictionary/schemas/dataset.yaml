@@ -91,7 +91,7 @@ properties:
     type: string
 
   full_name:
-    description: The full name of the dataset or publication.
+    description: The full name or title of the dataset or publication.
     type: string
 
   license:
