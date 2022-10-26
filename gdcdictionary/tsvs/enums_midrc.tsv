@@ -1,0 +1,167 @@
+<node>	<property>	<enum_value>	<enum_def>	<deprecated>
+case	age_at_index_gt89	Yes
+case	age_at_index_gt89	No
+case	covid19_positive	Yes
+case	covid19_positive	No
+case	covid19_positive	Not Reported
+case	ethnicity	Hispanic or Latino
+case	ethnicity	Not Hispanic or Latino
+case	ethnicity	Not Reported
+case	race	American Indian or Alaska Native
+case	race	Asian
+case	race	Black or African American
+case	race	Native Hawaiian or other Pacific Islander
+case	race	Other
+case	race	White
+case	race	Not Reported
+case	sex	Female
+case	sex	Male
+case	sex	Not Reported
+cr_series_file	detector_type	DIRECT
+cr_series_file	detector_type	SCINTILLATOR
+cr_series_file	detector_type	STORAGE
+cr_series_file	detector_type	FILM
+cr_series_file	lossy_image_compression	00
+cr_series_file	lossy_image_compression	01
+cr_series_file	data_category	CR
+cr_series_file	data_format	DCM
+cr_series_file	data_format	nii.gz
+cr_series_file	data_type	DICOM
+cr_series_file	data_type	NIfTI
+ct_series_file	acquisition_type	SEQUENCED
+ct_series_file	acquisition_type	SPIRAL
+ct_series_file	acquisition_type	CONSTANT_ANGLE
+ct_series_file	acquisition_type	STATIONARY
+ct_series_file	acquisition_type	FREE
+ct_series_file	lossy_image_compression	00
+ct_series_file	lossy_image_compression	01
+ct_series_file	data_category	CT
+ct_series_file	data_format	DCM
+ct_series_file	data_format	nii.gz
+ct_series_file	data_type	DICOM
+ct_series_file	data_type	NIfTI
+dataset	type	dataset
+dx_series_file	detector_type	DIRECT
+dx_series_file	detector_type	SCINTILLATOR
+dx_series_file	detector_type	STORAGE
+dx_series_file	detector_type	FILM
+dx_series_file	lossy_image_compression	00
+dx_series_file	lossy_image_compression	01
+dx_series_file	data_category	DX
+dx_series_file	data_format	DCM
+dx_series_file	data_format	nii.gz
+dx_series_file	data_type	DICOM
+dx_series_file	data_type	NIfTI
+imaging_study	midrc_harmonized_study_description	TBD
+imaging_study	age_at_imaging_gt89	Yes
+imaging_study	age_at_imaging_gt89	No
+measurement	test_name	COVID-19
+measurement	test_result_text	Negative
+measurement	test_result_text	Positive
+measurement	test_result_text	Not Reported
+measurement	test_method	RT-PCR
+measurement	test_method	Rapid antigen test
+medication	medication_type	ACE inhibitors
+medication	medication_type	Bronchodilator
+medication	medication_type	Chemotherapy
+medication	medication_type	Immunosuppressive medication
+medication	medication_type	Immunotherapy
+medication	medication_type	Inhaled steroids
+medication	medication_type	NSAID
+medication	medication_type	Protease inhibitor
+medication	medication_type	Supplemental oxygen
+medication	medication_type	Systemic steroids
+medication	medication_status	Active
+medication	medication_status	Inactive
+medication	medication_status	Not Reported
+mg_series_file	detector_type	DIRECT
+mg_series_file	detector_type	SCINTILLATOR
+mg_series_file	detector_type	STORAGE
+mg_series_file	detector_type	FILM
+mg_series_file	lossy_image_compression	00
+mg_series_file	lossy_image_compression	01
+mg_series_file	sop_class_name	Digital Mammography X-Ray Image Storage - For Presentation
+mg_series_file	sop_class_name	Digital Mammography X-Ray Image Storage - For Processing
+mg_series_file	sop_class_name	Breast Tomosynthesis Image Storage
+mg_series_file	sop_class_name	Breast Projection X-Ray Image Storage - For Presentation
+mg_series_file	sop_class_name	Breast Projection X-Ray Image Storage - For Processing
+mg_series_file	sop_class_uid	1.2.840.10008.5.1.4.1.1.1.2
+mg_series_file	sop_class_uid	1.2.840.10008.5.1.4.1.1.1.2.1
+mg_series_file	sop_class_uid	1.2.840.10008.5.1.4.1.1.13.1.3
+mg_series_file	sop_class_uid	1.2.840.10008.5.1.4.1.1.13.1.4
+mg_series_file	sop_class_uid	1.2.840.10008.5.1.4.1.1.13.1.5
+mg_series_file	data_category	MG
+mg_series_file	data_format	DCM
+mg_series_file	data_format	nii.gz
+mg_series_file	data_type	DICOM
+mg_series_file	data_type	NIfTI
+mr_series_file	lossy_image_compression	00
+mr_series_file	lossy_image_compression	01
+mr_series_file	data_category	MR
+mr_series_file	data_format	DCM
+mr_series_file	data_format	nii.gz
+mr_series_file	data_type	DICOM
+mr_series_file	data_type	NIfTI
+nm_series_file	lossy_image_compression	00
+nm_series_file	lossy_image_compression	01
+nm_series_file	data_category	NM
+nm_series_file	data_format	DCM
+nm_series_file	data_format	nii.gz
+nm_series_file	data_type	DICOM
+nm_series_file	data_type	NIfTI
+procedure	procedure_name	Breathing Support
+project	availability_type	Open
+project	availability_type	Restricted
+project	complete	Complete
+project	complete	Incomplete
+project	state	open
+project	state	review
+project	state	submitted
+project	state	processing
+project	state	closed
+pt_series_file	lossy_image_compression	00
+pt_series_file	lossy_image_compression	01
+pt_series_file	data_category	PT
+pt_series_file	data_format	DCM
+pt_series_file	data_format	nii.gz
+pt_series_file	data_type	DICOM
+pt_series_file	data_type	NIfTI
+rf_series_file	detector_type	DIRECT
+rf_series_file	detector_type	SCINTILLATOR
+rf_series_file	detector_type	STORAGE
+rf_series_file	detector_type	FILM
+rf_series_file	data_category	RF
+rf_series_file	data_format	DCM
+rf_series_file	data_format	nii.gz
+rf_series_file	data_type	DICOM
+rf_series_file	data_type	NIfTI
+us_series_file	lossy_image_compression	00
+us_series_file	lossy_image_compression	01
+us_series_file	transducer_type	SECTOR_PHASED
+us_series_file	transducer_type	SECTOR_MECH
+us_series_file	transducer_type	SECTOR_ANNULAR
+us_series_file	transducer_type	LINEAR
+us_series_file	transducer_type	CURVED LINEAR
+us_series_file	transducer_type	SINGLE CRYSTAL
+us_series_file	transducer_type	SPLIT XTAL CWD
+us_series_file	transducer_type	IV_PHASED
+us_series_file	transducer_type	IV_ROT XTAL
+us_series_file	transducer_type	IV_ROT MIRROR
+us_series_file	transducer_type	ENDOCAV_PA
+us_series_file	transducer_type	ENDOCAV_MECH
+us_series_file	transducer_type	ENDOCAV_CLA
+us_series_file	transducer_type	ENDOCAV_AA
+us_series_file	transducer_type	ENDOCAV_LINEAR
+us_series_file	transducer_type	VECTOR_PHASED
+us_series_file	data_category	US
+us_series_file	data_format	DCM
+us_series_file	data_format	nii.gz
+us_series_file	data_type	DICOM
+us_series_file	data_type	NIfTI
+xa_series_file	lossy_image_compression	00
+xa_series_file	lossy_image_compression	01
+xa_series_file	data_category	XA
+xa_series_file	data_format	DCM
+xa_series_file	data_format	nii.gz
+xa_series_file	data_type	DICOM
+xa_series_file	data_type	NIfTI
