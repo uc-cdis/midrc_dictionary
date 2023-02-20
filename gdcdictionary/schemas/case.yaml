@@ -61,8 +61,8 @@ properties:
       - "Indeterminate"
       - Not Reported
 
-  country_of_origin:
-    description: The country where the subject is from.
+  country_of_residence:
+    description: The country where the subject resides.
     type: string
 
   token_record_id:
@@ -127,7 +127,7 @@ properties:
     type: boolean
 
   zip:
-    description: The three-digit United States zip code for any population greater than 20,000. For zip codes where the three digit number represents a population less than 20,000 "000" will be provided.
+    description: The three-digit United States zip code of residence for any population greater than 20,000. For zip codes where the three digit number represents a population less than 20,000 "000" will be provided.
     type: integer
 
   datasets:
