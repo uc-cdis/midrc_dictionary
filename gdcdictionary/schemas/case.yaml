@@ -65,10 +65,6 @@ properties:
     description: The country where the subject resides.
     type: string  
   
-  country_of_origin:
-    description: The country where the subject is from.
-    type: string
-
   token_record_id:
     description: An ID used to link a de-identified case in MIDRC to the same case in an external data resource.
     type: string
