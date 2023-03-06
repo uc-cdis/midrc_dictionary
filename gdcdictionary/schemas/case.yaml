@@ -128,7 +128,7 @@ properties:
 
   zip:
     description: The three-digit United States zip code of residence for any population greater than 20,000. For zip codes where the three digit number represents a population less than 20,000 "000" will be provided.
-    type: integer
+    type: string
 
   datasets:
     description: The submitter_id or id of the dataset this case belongs to, i.e., a link to a record in the parent node.
