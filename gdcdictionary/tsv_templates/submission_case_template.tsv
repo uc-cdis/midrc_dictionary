@@ -1,2 +1,2 @@
-*type	project_id	*submitter_id	*datasets.submitter_id	age_at_index	age_at_index_gt89	case_ids	country_of_origin	covid19_positive	ethnicity	gen3_linked_subjects_available	icu_indicator	index_event	linked_external_data	race	sex	site_id	token_record_id	treatment_info	ventilator_indicator	zip
+*type	project_id	*submitter_id	*datasets.submitter_id	age_at_index	age_at_index_gt89	case_ids	country_of_residence	covid19_positive	ethnicity	gen3_linked_subjects_available	icu_indicator	index_event	linked_external_data	race	sex	site_id	token_record_id	treatment_info	ventilator_indicator	zip
 case
