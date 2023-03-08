@@ -5,7 +5,7 @@ title: Annotation
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
-category: administrative
+category: annotation
 program: '*'
 project: '*'
 description: The annotation node provides the ability to link key-value pairs to cases, imaging studies, imaging series or instances within an imaging series.

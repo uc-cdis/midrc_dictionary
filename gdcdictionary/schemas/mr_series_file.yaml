@@ -167,3 +167,52 @@ properties:
   imaging_studies:
     description: The submitter_id or id of the imaging_study this mr_series_file belongs to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
+
+  # draft MR properties, 2023-03-08
+  angio_flag:
+    description: (0018, 0025) Angio Flag
+    type: string
+
+  diffusion_b_value:
+    description: (0018, 9087) Diffusion b-value
+    type: number
+
+  diffusion_gradient_orientation:
+    description: (0018, 9089) Diffusion Gradient Orientation
+    type: number
+
+  echo_number:
+    description: (0018, 0086) Echo Number
+    type: integer
+
+  echo_time:
+    description: (0018, 0081) Echo Time
+    type: string
+
+  echo_train_length:
+    description: (0018, 0091) Echo Train Length
+    type: string
+
+  imaged_nucleus:
+    description: (0018, 0085) Imaged Nucleus
+    type: string
+
+  number_of_temporal_positions:
+    description: (0020, 0105) Number of Temporal Positions
+    type: string
+
+  repetition_time:
+    description: (0018, 0080) Repetition Time
+    type: string
+
+  scan_options:
+    description: (0018, 0022) Scan Options
+    type: string
+
+  sequence_variant:
+    description: (0018, 0021) Sequence Variant
+    type: string
+
+  software_version:
+    description: (0018, 1020) Software Version(s)
+    type: string
