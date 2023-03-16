@@ -82,7 +82,9 @@ properties:
 
   magnetic_field_strength:
     description: (0018,0087) Magnetic Field Strength
-    type: number
+    type: array
+    items:
+      type: number
 
   manufacturer:
     description: (0008, 0070) Manufacturer
@@ -98,7 +100,9 @@ properties:
 
   mr_acquisition_type:
     description: (0018, 0023) MR Acquisition Type
-    type: string
+    type: array
+    items:
+      type: string
 
   pixel_spacing:
     description: (0028, 0030) Pixel Spacing
@@ -114,7 +118,9 @@ properties:
 
   sequence_name:
     description: (0018, 0024) Sequence Name
-    type: string
+    type: array
+    items:
+      type: string
 
   series_description:
     description: (0008, 103e) Series Description; a general description of or additional information about the imaging series.
@@ -156,9 +162,9 @@ properties:
       - "DICOM"
       - "NIfTI"
 
-  file_description:
-    description: Any additional text to give this file context in its study.
-    type: string
+  # file_description:
+  #   description: Any additional text to give this file context in its study.
+  #   type: string
 
   core_metadata_collections:
     description: The submitter_id or id of the core_metadata_collection to which the mr_series_file belongs, i.e., a link to a record in the parent node.
@@ -171,7 +177,9 @@ properties:
   # draft MR properties, 2023-03-08
   angio_flag:
     description: (0018, 0025) Angio Flag
-    type: string
+    type: array
+    items:
+      type: string
 
   diffusion_b_value:
     description: (0018, 9087) Diffusion b-value
@@ -183,35 +191,51 @@ properties:
 
   echo_number:
     description: (0018, 0086) Echo Number
-    type: integer
+    type: array
+    items:
+      type: integer
 
   echo_time:
     description: (0018, 0081) Echo Time
-    type: string
+    type: array
+    items:
+      type: number
 
   echo_train_length:
     description: (0018, 0091) Echo Train Length
-    type: string
+    type: array
+    items:
+      type: integer
 
   imaged_nucleus:
     description: (0018, 0085) Imaged Nucleus
-    type: string
+    type: array
+    items:
+      type: string
 
   number_of_temporal_positions:
     description: (0020, 0105) Number of Temporal Positions
-    type: string
+    type: array
+    items:
+      type: integer
 
   repetition_time:
     description: (0018, 0080) Repetition Time
-    type: string
+    type: array
+    items:
+      type: numbers
 
   scan_options:
     description: (0018, 0022) Scan Options
-    type: string
+    type: array
+    items:
+      type: string
 
   sequence_variant:
     description: (0018, 0021) Sequence Variant
-    type: string
+    type: array
+    items:
+      type: string
 
   software_version:
     description: (0018, 1020) Software Version(s)

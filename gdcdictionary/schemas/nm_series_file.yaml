@@ -113,9 +113,9 @@ properties:
       - "DICOM"
       - "NIfTI"
 
-  file_description:
-    description: Any additional text to give this file context in its study.
-    type: string
+  # file_description:
+  #   description: Any additional text to give this file context in its study.
+  #   type: string
 
   core_metadata_collections:
     description: The submitter_id or id of the core_metadata_collection to which the dx_series_file belongs, i.e., a link to a record in the parent node.
