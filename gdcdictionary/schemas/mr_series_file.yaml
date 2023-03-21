@@ -223,7 +223,7 @@ properties:
     description: (0018, 0080) Repetition Time
     type: array
     items:
-      type: numbers
+      type: number
 
   scan_options:
     description: (0018, 0022) Scan Options
