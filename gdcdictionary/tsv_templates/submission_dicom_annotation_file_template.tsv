@@ -1,2 +1,0 @@
-*type	project_id	*submitter_id	core_metadata_collections.submitter_id	*imaging_studies.submitter_id	*annotation_name	*case_ids	*data_category	*data_format	*data_type	*file_name	*file_size	*md5sum	*modality	*series_description	*series_uid	associated_ids	manufacturer	manufacturer_model_name	object_id	software_versions	storage_urls
-dicom_annotation_file
