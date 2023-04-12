@@ -49,7 +49,7 @@ properties:
     type: string
 
   condition_code_system:
-    description: The system that assigned the code for a specific medication.
+    description: The system that assigned the code for a specific condition.
     type: string
 
   condition_name:
