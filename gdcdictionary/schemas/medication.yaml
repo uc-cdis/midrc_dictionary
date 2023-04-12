@@ -42,6 +42,10 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
+  dose_sequence_number:
+    description: The sequence number of a specific dose of a medication given in a series of doses.
+    type: integer
+
   medication_code:
     description: The code for a specific medication, assigned by the code system.
     type: string
