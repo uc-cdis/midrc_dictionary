@@ -44,6 +44,14 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
+  condition_code:
+    description: The code for a specific codition, assigned by the code system.
+    type: string
+
+  condition_code_system:
+    description: The system that assigned the code for a specific condition.
+    type: string
+
   condition_name:
     description: The name of the condition the patient has experienced.
     type: string
