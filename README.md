@@ -147,11 +147,11 @@ If you would like to test locally they are run via [tox](https://tox.readthedocs
 
 ### Versioning
 
-The data dictionary should follow [Semantic Versioning](http://semver.org/) by updating the line in setup.py file to `MAJOR.MINOR.PATCH` accordingly:
+When updating the data dictionary version number, use the following guidelines to make decisions about what tag to use next:
 
-1. MAJOR: version when you make incompatible API changes: **Breaking Changes**
+1. MAJOR: update to a new major version when many changes have been made, especially if the changes are breaking changes (listed above) leading to backward incompatibility. A major change could constitute the addition of a handful of new nodes or properties for capturing a new type of data that wasn't in the model before or changing the structure / relationships of major nodes in the model. Also use the major version update if a large number of minor updates have been made since the last major update.
    - e.g. 1.2.4 -> 2.0.0
-2. MINOR: version when you add functionality in a backwards-compatible manner: **Relationship Additions**, **Schema Additions**
+2. MINOR: a minor update constitutes a large change or handful of smaller changes that nonetheless result in a dictionary that is backwards compatible or mostly so with the previous version. These changes could include smaller additions or modifications to support a new type of data, or the migration of one type of data to a new structure. Also use a minor version update if a large number of patches have been made since the last minor update.
    - e.g. 1.2.4 -> 1.3.0
-3. PATCH: version when you make backwards-compatible bug fixes: **Cosmetic Corrections**
+3. PATCH: a patch is an update that is backwards compatible and addresses a single issue or small number of issues, including fixing typos, updating descriptions, non-breaking property type updates, adding enumeration values, or adding a new property or node to the model. Also use patch version updates for smaller changes that will eventually support a major change, for example, when actively developing or mocking up a larger change that isn't ready for deployment to production.
    - e.g. 1.2.4 -> 1.2.5
