@@ -1,0 +1,122 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "dicom_annotation_file"
+title: DICOM Annotation Series File
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: annotation
+program: '*'
+project: '*'
+description: The dicom_annotation_file node provides the ability to link a DICOM series file containing annotation information to an imaging study.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+  - file_state
+  - error_type
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: dicom_annotation_files
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: imaging_studies
+        backref: dicom_annotation_files
+        label: related_to
+        target_type: imaging_study
+        multiplicity: many_to_one
+        required: true
+
+required:
+  - submitter_id
+  - type
+  - file_name
+  - file_size
+  - md5sum
+  - data_format
+  - data_type
+  - data_category
+  - annotation_name
+  - case_ids
+  - modality
+  - series_description
+  - series_uid
+  - imaging_studies
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  annotation_name:
+    description: The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected.  All MIDRC created annotations start with ‘midrc_’.
+    type: string
+
+  data_category:
+    description: The category of the annotation file. Must be "DICOM Annotation Series File".
+    enum:
+      - "DICOM Annotation Series File"
+
+  data_format:
+    description: The file format of the annotation file, e.g., JSON.
+    enum:
+      - DCM
+
+  data_type:
+    description: The type of annotation file.
+    enum:
+      - MIDRC Annotation
+      - Other Annotation
+
+  manufacturer:
+    description: (0008, 0070) Manufacturer
+    type: string
+
+  manufacturer_model_name:
+    description: (0008, 1090) Manufacturer's Model Name
+    type: string
+
+  modality:
+    description: (0008, 0060) Modality
+    enum:
+      - RTSTRUCT
+      - PR
+      - SR
+      - SEG
+      - DOC
+      - OT
+
+  series_description:
+    description: (0008, 103e) Series Description; a general description of or additional information about the imaging series.
+    type: string
+
+  series_uid:
+    description: (0020, 000e) Series Instance UID; the UID or unique identification code of the imaging series.
+    type: string
+
+  software_versions:
+    description: (0018,1020) Software Versions. This is the software version of the application where the annotation series was created.
+    type: string
+
+  core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the rf_series_file belongs, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  imaging_studies:
+    description: The submitter_id or id of the imaging_study this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"

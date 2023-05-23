@@ -1,0 +1,209 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "annotation"
+title: Annotation
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: annotation
+program: '*'
+project: '*'
+description: The annotation node provides the ability to link key-value pairs to cases, imaging studies, imaging series or instances within an imaging series.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: cases
+        backref: annotations
+        label: related_to
+        target_type: case
+        multiplicity: many_to_one
+        required: false
+      - name: imaging_studies
+        backref: annotations
+        label: related_to
+        target_type: imaging_study
+        multiplicity: many_to_one
+        required: false
+      - name: cr_series_files
+        backref: annotations
+        label: related_to
+        target_type: cr_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: ct_series_files
+        backref: annotations
+        label: related_to
+        target_type: ct_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: dx_series_files
+        backref: annotations
+        label: related_to
+        target_type: dx_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: mg_series_files
+        backref: annotations
+        label: related_to
+        target_type: mg_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: mr_series_files
+        backref: annotations
+        label: related_to
+        target_type: mr_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: nm_series_files
+        backref: annotations
+        label: related_to
+        target_type: nm_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: pt_series_files
+        backref: annotations
+        label: related_to
+        target_type: pt_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: rf_series_files
+        backref: annotations
+        label: related_to
+        target_type: rf_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: us_series_files
+        backref: annotations
+        label: related_to
+        target_type: us_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: xa_series_files
+        backref: annotations
+        label: related_to
+        target_type: xa_series_file
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - submitter_id
+  - type
+  # - associated_id
+  # - associated_type
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+
+  annotation_name:
+    description: The name of the annotation, e.g., "midrc_COVID_progression". The associated value of the annotation named here is in "annotation_value".
+    type: string
+
+  annotation_value:
+    description: The value of the annotation, e.g., "No – less than 15%". The associated name of the annotation here is in "annotation_name".
+    type: string
+
+  associated_id:
+    description: The submitter_id of the record associated with this data. For example, if this annotation is associated with an imaging_study record, the value of this property would be the submitter_id of that imaging study. Only one submitter_id is allowed per annotation row. To submit the same enumerated value for a second submitter_id, an additional annotation record is required.
+    type: string
+
+  associated_type:
+    description: The node ID where the 'associated_id' can be found. For example, if this annotation is associated with a particular Imaging Study, 'imaging_study' would be used as the 'associated_type', while 'associated_id' would contain the specific submitter_id of the associated record in the imaging_study node.
+    enum:
+      - case
+      - imaging_study
+      - cr_series_file
+      - ct_series_file
+      - dx_series_file
+      - mg_series_file
+      - mr_series_file
+      - nm_series_file
+      - pt_series_file
+      - rf_series_file
+      - us_series_file
+      - xa_series_file
+
+  flanders_note:
+    description: By using a Chest Radiograph fused to a CT Chest, the Flanders Coefficient for the patient was returned and a subsequent Flanders COVID likelihood determined.
+    enum:
+      - "1. COVID impact less than 1"
+      - "2. COVID impact 25"
+      - "3. COVID impact 50"
+      - "4. COVID impact 75"
+      - "5. COVID impact 99"
+
+  instance_uids:
+    description: Used to denote that this annotation applies only to specific images (image instances) in a series.  When absent, the annotation when referencing an imaging series node applies to the entire imaging series.
+    type: array
+    items:
+      type: string
+
+  midrc_COVID_progression:
+    description: This annotation was derived by review of at least 2 imaging timepoints that occurred at least 7 days apart where the area of COVID coverage increased by at least 15%.
+    enum:
+      - "Yes – greater than or equal to 15%"
+      - "No – less than 15%"
+
+  cases:
+    description: The submitter_id or id of the case this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  imaging_studies:
+    description: The submitter_id or id of the imaging_study this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  cr_series_files:
+    description: The submitter_id or id of the CR imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  ct_series_files:
+    description: The submitter_id or id of the CT imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  dx_series_files:
+    description: The submitter_id or id of the DX imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  mg_series_files:
+    description: The submitter_id or id of the MG imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  mr_series_files:
+    description: The submitter_id or id of the MR imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  nm_series_files:
+    description: The submitter_id or id of the NM imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  pt_series_files:
+    description: The submitter_id or id of the PT imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  rf_series_files:
+    description: The submitter_id or id of the RF imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  us_series_files:
+    description: The submitter_id or id of the US imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  xa_series_files:
+    description: The submitter_id or id of the XA imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
