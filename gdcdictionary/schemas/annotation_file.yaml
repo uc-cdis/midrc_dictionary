@@ -5,7 +5,7 @@ title: Annotation File
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
-category: annotation
+category: annotation_data_file
 program: '*'
 project: '*'
 description: The annotation_file node provides the ability to link a file containing annotation information to a case, imaging study or imaging series.
@@ -109,8 +109,6 @@ required:
   - submitter_id
   - type
   - annotation_name
-  # - associated_id
-  # - associated_type
   - file_name
   - file_size
   - md5sum
@@ -126,30 +124,32 @@ properties:
 
   $ref: "_definitions.yaml#/data_file_properties"
 
+# ## New annotation properties 2023-5-24
   annotation_name:
     description: The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected.  All MIDRC created annotations start with ‘midrc_’.
+    enum:
+        - midrc_mdai_chestxr
+        - mRALE_Mastermind_Challenge
+
+  annotation_method:
+    description: Defines the method by which the annotation was created.
+    enum:
+        - Clinically_derived
+        - Post_clinical_expert
+        - Post_clinical_general
+        - Post_clinical_auto
+
+  annotator_id:
+    description: Coded value to represent a particular annotator in a group. These need only be unique per annotation.
     type: string
 
-  # associated_id:
-  #   description: The submitter_id of the record associated with this data. For example, if this annotation is associated with an imaging_study record, the value of this property would be the submitter_id of that imaging study. Only one submitter_id is allowed per annotation row. To submit the same enumerated value for a second submitter_id, an additional annotation record is required.
-  #   type: string
-  #
-  # associated_type:
-  #   description: The node ID where the 'associated_id' can be found. For example, if this annotation is associated with a particular Imaging Study, 'imaging_study' would be used as the 'associated_type', while 'associated_id' would contain the specific submitter_id of the associated record in the imaging_study node.
-  #   enum:
-  #     - case
-  #     - imaging_study
-  #     - cr_series_file
-  #     - ct_series_file
-  #     - dx_series_file
-  #     - mg_series_file
-  #     - mr_series_file
-  #     - nm_series_file
-  #     - pt_series_file
-  #     - rf_series_file
-  #     - us_series_file
-  #     - xa_series_file
+  instance_uids:
+    description: Used to denote that this annotation applies only to specific images (image instances) in a series.  When absent, the annotation when referencing an imaging series node applies to the entire imaging series.
+    type: array
+    items:
+        type: string
 
+# ## File properties:
   data_category:
     description: The category of the file; must be "annotation_file".
     enum:
@@ -171,13 +171,7 @@ properties:
       - MIDRC Annotation
       - Other Annotation
 
-  instance_uids:
-    description: Used to denote that this annotation applies only to specific images (image instances) in a series.  When absent, the annotation when referencing an imaging series node applies to the entire imaging series.
-    type: array
-    items:
-      type: string
-
-
+# ## LINKS
   core_metadata_collections:
     description: The submitter_id or id of the core_metadata_collection to which the rf_series_file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
@@ -229,3 +223,29 @@ properties:
   xa_series_files:
     description: The submitter_id or id of the XA imaging series this annotation relates to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
+
+
+# ## DEPRECATED PROPERTIES
+  # annotation_name:
+  #   description: The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected.  All MIDRC created annotations start with ‘midrc_’.
+  #   type: string
+  #
+  # associated_id:
+  #   description: The submitter_id of the record associated with this data. For example, if this annotation is associated with an imaging_study record, the value of this property would be the submitter_id of that imaging study. Only one submitter_id is allowed per annotation row. To submit the same enumerated value for a second submitter_id, an additional annotation record is required.
+  #   type: string
+  #
+  # associated_type:
+  #   description: The node ID where the 'associated_id' can be found. For example, if this annotation is associated with a particular Imaging Study, 'imaging_study' would be used as the 'associated_type', while 'associated_id' would contain the specific submitter_id of the associated record in the imaging_study node.
+  #   enum:
+  #     - case
+  #     - imaging_study
+  #     - cr_series_file
+  #     - ct_series_file
+  #     - dx_series_file
+  #     - mg_series_file
+  #     - mr_series_file
+  #     - nm_series_file
+  #     - pt_series_file
+  #     - rf_series_file
+  #     - us_series_file
+  #     - xa_series_file
