@@ -1,0 +1,235 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "annotation"
+title: Annotation
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: annotation
+program: '*'
+project: '*'
+description: The annotation node provides the ability to link key-value pairs to cases, imaging studies, imaging series or instances within an imaging series.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: cases
+        backref: annotations
+        label: related_to
+        target_type: case
+        multiplicity: many_to_one
+        required: false
+      - name: imaging_studies
+        backref: annotations
+        label: related_to
+        target_type: imaging_study
+        multiplicity: many_to_one
+        required: false
+      - name: cr_series_files
+        backref: annotations
+        label: related_to
+        target_type: cr_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: ct_series_files
+        backref: annotations
+        label: related_to
+        target_type: ct_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: dx_series_files
+        backref: annotations
+        label: related_to
+        target_type: dx_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: mg_series_files
+        backref: annotations
+        label: related_to
+        target_type: mg_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: mr_series_files
+        backref: annotations
+        label: related_to
+        target_type: mr_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: nm_series_files
+        backref: annotations
+        label: related_to
+        target_type: nm_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: pt_series_files
+        backref: annotations
+        label: related_to
+        target_type: pt_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: rf_series_files
+        backref: annotations
+        label: related_to
+        target_type: rf_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: us_series_files
+        backref: annotations
+        label: related_to
+        target_type: us_series_file
+        multiplicity: many_to_one
+        required: false
+      - name: xa_series_files
+        backref: annotations
+        label: related_to
+        target_type: xa_series_file
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - submitter_id
+  - type
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/ubiquitous_properties"
+# ## NEW PROPERTIES for v1.1.7 (updated 2023-5-23)
+# based on this Confluence PAge: https://midrc.atlassian.net/wiki/spaces/COMMITTEES/pages/1413742593/Annotation+list+of+properties+and+descriptions
+
+  airspace_disease_grading:
+    description: Values are extracted from the annotation file midrc_mdai_chestxr. Accepted values are "mild" opacities (1-2 lung zones), "moderate" opacities (3-4 lung zones), and "severe" opacities (>4 lung zones).
+    enum:
+        - mild
+        - moderate
+        - severe
+
+  class_covid19_pneumonia:
+    description: Values are extracted from the annotation file midrc_mdai_chestxr; Accepted values include "typical" appearance, which is multifocal bilateral, peripheral opacities, or opacities with rounded morphology, lower lung-predominant distribution;  "indeterminate" appearance, which is absence of typical findings and unilateral, central or upper lung predominant distribution of airspace disease; "atypical" appearance, which is pneumothorax or pleural effusion, pulmonary edema, lobar consolidation, solitary lung nodule, or mass diffuse tiny nodules cavity; "negative" for pneumonia, which is no lung opacities.
+    enum:
+        - atypical
+        - indeterminate
+        - negative
+        - typical
+
+  midrc_mRALE_score:
+    description: Values are extracted from the annotation file mRALE_Mastermind_Challenge. The Radiographic Assessment of Lung Edema (RALE) score is provided as a reference standard assessment of disease severity on chest radiograph.  A normal chest radiograph receives a score of 0, while a chest radiograph with complete consolidation of both lungs receives the maximum score of 24.
+    type: integer
+    maximum: 24
+    minimum: 0
+
+  annotation_method:
+    description: Defines method by which annotation was created.
+    enum:
+        - Clinically_derived
+        - Post_clinical_auto
+        - Post_clinical_expert
+        - Post_clinical_general
+
+  annotator_id:
+    description: Coded value to represent a particular annotator in a group. These need only be unique per annotation.
+    type: string
+
+  # :
+  #   description:
+  #   type:
+  #
+
+# ## OTHER PROPERTIES
+  instance_uids:
+    description: Used to denote that this annotation applies only to specific images (image instances) in a series.  When absent, the annotation when referencing an imaging series node applies to the entire imaging series.
+    type: array
+    items:
+        type: string
+
+# # LINKS:
+  cases:
+    description: The submitter_id or id of the case this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  imaging_studies:
+    description: The submitter_id or id of the imaging_study this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  cr_series_files:
+    description: The submitter_id or id of the CR imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  ct_series_files:
+    description: The submitter_id or id of the CT imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  dx_series_files:
+    description: The submitter_id or id of the DX imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  mg_series_files:
+    description: The submitter_id or id of the MG imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  mr_series_files:
+    description: The submitter_id or id of the MR imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  nm_series_files:
+    description: The submitter_id or id of the NM imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  pt_series_files:
+    description: The submitter_id or id of the PT imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  rf_series_files:
+    description: The submitter_id or id of the RF imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  us_series_files:
+    description: The submitter_id or id of the US imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  xa_series_files:
+    description: The submitter_id or id of the XA imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+# ## Deprecated properties:
+  # annotation_name:
+  #   description: The name of the annotation, e.g., "midrc_COVID_progression". The associated value of the annotation named here is in "annotation_value".
+  #   type: string
+  #
+  # annotation_value:
+  #   description: The value of the annotation, e.g., "No – less than 15%". The associated name of the annotation here is in "annotation_name".
+  #   type: string
+  #
+  # associated_id:
+  #   description: The submitter_id of the record associated with this data. For example, if this annotation is associated with an imaging_study record, the value of this property would be the submitter_id of that imaging study. Only one submitter_id is allowed per annotation row. To submit the same enumerated value for a second submitter_id, an additional annotation record is required.
+  #   type: string
+  #
+  # associated_type:
+  #   description: The node ID where the 'associated_id' can be found. For example, if this annotation is associated with a particular Imaging Study, 'imaging_study' would be used as the 'associated_type', while 'associated_id' would contain the specific submitter_id of the associated record in the imaging_study node.
+  #   enum:
+  #       - case
+  #       - imaging_study
+  #       - cr_series_file
+  #       - ct_series_file
+  #       - dx_series_file
+  #       - mg_series_file
+  #       - mr_series_file
+  #       - nm_series_file
+  #       - pt_series_file
+  #       - rf_series_file
+  #       - us_series_file
+  #       - xa_series_file
