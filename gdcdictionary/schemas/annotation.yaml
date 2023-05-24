@@ -119,7 +119,7 @@ properties:
         - severe
 
   class_covid19_pneumonia:
-    description: Values are extracted from the annotation file midrc_mdai_chestxr. "Typical" Appearance: Multifocal bilateral, peripheral opacities, or opacities with rounded morphology. Lower lung-predominant distribution.  "Indeterminate" Appearance: Absence of typical findings and Unilateral, central or upper lung predominant distribution of airspace disease. "Atypical" Appearance: Pneumothorax or pleural effusion Pulmonary Edema Lobar Consolidation Solitary lung nodule or mass Diffuse tiny nodules Cavity. "Negative" for Pneumonia: No lung opacities.
+    description: Values are extracted from the annotation file midrc_mdai_chestxr; Accepted values include "typical" appearance, which is multifocal bilateral, peripheral opacities, or opacities with rounded morphology, lower lung-predominant distribution;  "indeterminate" appearance, which is absence of typical findings and unilateral, central or upper lung predominant distribution of airspace disease; "atypical" appearance, which is pneumothorax or pleural effusion, pulmonary edema, lobar consolidation, solitary lung nodule, or mass diffuse tiny nodules cavity; "negative" for pneumonia, which is no lung opacities.
     enum:
         - atypical
         - indeterminate
