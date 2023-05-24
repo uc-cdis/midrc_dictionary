@@ -109,13 +109,7 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  instance_uids:
-    description: Used to denote that this annotation applies only to specific images (image instances) in a series.  When absent, the annotation when referencing an imaging series node applies to the entire imaging series.
-    type: array
-    items:
-        type: string
-
-# # New properties as of May 23, 2023, HBD Alexa!
+# ## NEW PROPERTIES for v1.1.7 (updated 2023-5-23)
 # based on this Confluence PAge: https://midrc.atlassian.net/wiki/spaces/COMMITTEES/pages/1413742593/Annotation+list+of+properties+and+descriptions
 
   airspace_disease_grading:
@@ -155,6 +149,13 @@ properties:
   #   description:
   #   type:
   #
+
+# ## OTHER PROPERTIES
+  instance_uids:
+    description: Used to denote that this annotation applies only to specific images (image instances) in a series.  When absent, the annotation when referencing an imaging series node applies to the entire imaging series.
+    type: array
+    items:
+        type: string
 
 # # LINKS:
   cases:

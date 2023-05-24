@@ -63,25 +63,31 @@ properties:
 
   $ref: "_definitions.yaml#/data_file_properties"
 
+# ## NEW PROPERTIES for v1.1.7 (updated 2023-5-23)
+  annotation_method:
+    description: Defines method by which annotation was created.
+    enum:
+        - Clinically_derived
+        - Post_clinical_auto
+        - Post_clinical_expert
+        - Post_clinical_general
+
+  annotator_id:
+    description: Coded value to represent a particular annotator in a group. These need only be unique per annotation.
+    type: string
+
+  series_description:
+    description: (0008, 103e) Series Description; a general description of or additional information about the imaging series.
+    enum:
+        - midrc_lung_segs
+        - midrc_lung_measures
+        - midrc_bpr_landmarks
+        - midrc_bpr_regions
+
+# ## OTHER PROPERTIES
   annotation_name:
     description: The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected.  All MIDRC created annotations start with ‘midrc_’.
     type: string
-
-  data_category:
-    description: The category of the annotation file. Must be "DICOM Annotation Series File".
-    enum:
-      - "DICOM Annotation Series File"
-
-  data_format:
-    description: The file format of the annotation file, e.g., JSON.
-    enum:
-      - DCM
-
-  data_type:
-    description: The type of annotation file.
-    enum:
-      - MIDRC Annotation
-      - Other Annotation
 
   manufacturer:
     description: (0008, 0070) Manufacturer
@@ -101,10 +107,6 @@ properties:
       - DOC
       - OT
 
-  series_description:
-    description: (0008, 103e) Series Description; a general description of or additional information about the imaging series.
-    type: string
-
   series_uid:
     description: (0020, 000e) Series Instance UID; the UID or unique identification code of the imaging series.
     type: string
@@ -113,6 +115,24 @@ properties:
     description: (0018,1020) Software Versions. This is the software version of the application where the annotation series was created.
     type: string
 
+# ## FILE PROPERTIES
+  data_category:
+    description: The category of the annotation file. Must be "DICOM Annotation Series File".
+    enum:
+      - "DICOM Annotation Series File"
+
+  data_format:
+    description: The file format of the annotation file, e.g., JSON.
+    enum:
+      - DCM
+
+  data_type:
+    description: The type of annotation file.
+    enum:
+      - MIDRC Annotation
+      - Other Annotation
+
+# ## LINKS
   core_metadata_collections:
     description: The submitter_id or id of the core_metadata_collection to which the rf_series_file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
