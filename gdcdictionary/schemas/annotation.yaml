@@ -108,12 +108,11 @@ uniqueKeys:
 properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
-
 # ## NEW PROPERTIES for v1.1.7 (updated 2023-5-23)
 # based on this Confluence PAge: https://midrc.atlassian.net/wiki/spaces/COMMITTEES/pages/1413742593/Annotation+list+of+properties+and+descriptions
 
   airspace_disease_grading:
-    description: Values are extracted from the annotation file midrc_mdai_chestxr: Mild Opacities  (1-2 lung zones), Moderate Opacities (3-4 lung zones), and Severe Opacities (>4 lung zones).
+    description: Values are extracted from the annotation file midrc_mdai_chestxr: "Mild" Opacities (1-2 lung zones), "Moderate" Opacities (3-4 lung zones), and "Severe" Opacities (>4 lung zones).
     enum:
         - mild
         - moderate
