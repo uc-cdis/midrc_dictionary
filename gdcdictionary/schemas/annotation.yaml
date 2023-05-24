@@ -100,8 +100,6 @@ links:
 required:
   - submitter_id
   - type
-  # - associated_id
-  # - associated_type
 
 uniqueKeys:
   - [id]
@@ -111,55 +109,54 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  annotation_name:
-    description: The name of the annotation, e.g., "midrc_COVID_progression". The associated value of the annotation named here is in "annotation_value".
-    type: string
-
-  annotation_value:
-    description: The value of the annotation, e.g., "No – less than 15%". The associated name of the annotation here is in "annotation_name".
-    type: string
-
-  associated_id:
-    description: The submitter_id of the record associated with this data. For example, if this annotation is associated with an imaging_study record, the value of this property would be the submitter_id of that imaging study. Only one submitter_id is allowed per annotation row. To submit the same enumerated value for a second submitter_id, an additional annotation record is required.
-    type: string
-
-  associated_type:
-    description: The node ID where the 'associated_id' can be found. For example, if this annotation is associated with a particular Imaging Study, 'imaging_study' would be used as the 'associated_type', while 'associated_id' would contain the specific submitter_id of the associated record in the imaging_study node.
-    enum:
-      - case
-      - imaging_study
-      - cr_series_file
-      - ct_series_file
-      - dx_series_file
-      - mg_series_file
-      - mr_series_file
-      - nm_series_file
-      - pt_series_file
-      - rf_series_file
-      - us_series_file
-      - xa_series_file
-
-  flanders_note:
-    description: By using a Chest Radiograph fused to a CT Chest, the Flanders Coefficient for the patient was returned and a subsequent Flanders COVID likelihood determined.
-    enum:
-      - "1. COVID impact less than 1"
-      - "2. COVID impact 25"
-      - "3. COVID impact 50"
-      - "4. COVID impact 75"
-      - "5. COVID impact 99"
-
   instance_uids:
     description: Used to denote that this annotation applies only to specific images (image instances) in a series.  When absent, the annotation when referencing an imaging series node applies to the entire imaging series.
     type: array
     items:
-      type: string
+        type: string
 
-  midrc_COVID_progression:
-    description: This annotation was derived by review of at least 2 imaging timepoints that occurred at least 7 days apart where the area of COVID coverage increased by at least 15%.
+# # New properties as of May 23, 2023, HBD Alexa!
+# based on this Confluence PAge: https://midrc.atlassian.net/wiki/spaces/COMMITTEES/pages/1413742593/Annotation+list+of+properties+and+descriptions
+
+  airspace_disease_grading:
+    description: Values are extracted from the annotation file midrc_mdai_chestxr: Mild Opacities  (1-2 lung zones), Moderate Opacities (3-4 lung zones), and Severe Opacities (>4 lung zones).
     enum:
-      - "Yes – greater than or equal to 15%"
-      - "No – less than 15%"
+        - mild
+        - moderate
+        - severe
 
+  class_covid19_pneumonia:
+    description: Values are extracted from the annotation file midrc_mdai_chestxr. "Typical" Appearance: Multifocal bilateral, peripheral opacities, or opacities with rounded morphology. Lower lung-predominant distribution.  "Indeterminate" Appearance: Absence of typical findings and Unilateral, central or upper lung predominant distribution of airspace disease. "Atypical" Appearance: Pneumothorax or pleural effusion Pulmonary Edema Lobar Consolidation Solitary lung nodule or mass Diffuse tiny nodules Cavity. "Negative" for Pneumonia: No lung opacities.
+    enum:
+        - atypical
+        - indeterminate
+        - negative
+        - typical
+
+  midrc_mRALE_score:
+    description: Values are extracted from the annotation file mRALE_Mastermind_Challenge. The Radiographic Assessment of Lung Edema (RALE) score is provided as a reference standard assessment of disease severity on chest radiograph.  A normal chest radiograph receives a score of 0, while a chest radiograph with complete consolidation of both lungs receives the maximum score of 24.
+    type: integer
+    maximum: 24
+    minimum: 0
+
+  annotation_method:
+    description: Defines method by which annotation was created.
+    enum:
+        - Clinically_derived
+        - Post_clinical_auto
+        - Post_clinical_expert
+        - Post_clinical_general
+
+  annotator_id:
+    description: Coded value to represent a particular annotator in a group. These need only be unique per annotation.
+    type: string
+
+  # :
+  #   description:
+  #   type:
+  #
+
+# # LINKS:
   cases:
     description: The submitter_id or id of the case this annotation relates to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
@@ -207,3 +204,32 @@ properties:
   xa_series_files:
     description: The submitter_id or id of the XA imaging series this annotation relates to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
+
+# ## Deprecated properties:
+  # annotation_name:
+  #   description: The name of the annotation, e.g., "midrc_COVID_progression". The associated value of the annotation named here is in "annotation_value".
+  #   type: string
+  #
+  # annotation_value:
+  #   description: The value of the annotation, e.g., "No – less than 15%". The associated name of the annotation here is in "annotation_name".
+  #   type: string
+  #
+  # associated_id:
+  #   description: The submitter_id of the record associated with this data. For example, if this annotation is associated with an imaging_study record, the value of this property would be the submitter_id of that imaging study. Only one submitter_id is allowed per annotation row. To submit the same enumerated value for a second submitter_id, an additional annotation record is required.
+  #   type: string
+  #
+  # associated_type:
+  #   description: The node ID where the 'associated_id' can be found. For example, if this annotation is associated with a particular Imaging Study, 'imaging_study' would be used as the 'associated_type', while 'associated_id' would contain the specific submitter_id of the associated record in the imaging_study node.
+  #   enum:
+  #       - case
+  #       - imaging_study
+  #       - cr_series_file
+  #       - ct_series_file
+  #       - dx_series_file
+  #       - mg_series_file
+  #       - mr_series_file
+  #       - nm_series_file
+  #       - pt_series_file
+  #       - rf_series_file
+  #       - us_series_file
+  #       - xa_series_file
