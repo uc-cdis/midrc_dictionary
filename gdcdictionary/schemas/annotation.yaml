@@ -24,6 +24,12 @@ links:
   - exclusive: false
     required: true
     subgroup:
+      - name: datasets
+        backref: annotations
+        label: related_to
+        target_type: dataset
+        multiplicity: many_to_one
+        required: false
       - name: cases
         backref: annotations
         label: related_to
@@ -157,6 +163,10 @@ properties:
         type: string
 
 # # LINKS:
+  datasets:
+    description: The submitter_id or id of the case this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
   cases:
     description: The submitter_id or id of the case this annotation relates to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"

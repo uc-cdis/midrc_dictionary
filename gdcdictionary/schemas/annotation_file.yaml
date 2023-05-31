@@ -32,6 +32,12 @@ links:
         target_type: core_metadata_collection
         multiplicity: many_to_one
         required: false
+      - name: datasets
+        backref: annotations
+        label: related_to
+        target_type: dataset
+        multiplicity: many_to_one
+        required: false
       - name: cases
         backref: annotation_files
         label: related_to
@@ -174,6 +180,10 @@ properties:
 # ## LINKS
   core_metadata_collections:
     description: The submitter_id or id of the core_metadata_collection to which the rf_series_file belongs, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  datasets:
+    description: The submitter_id or id of the case this annotation relates to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
 
   cases:
