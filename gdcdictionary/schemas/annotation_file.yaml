@@ -33,7 +33,7 @@ links:
         multiplicity: many_to_one
         required: false
       - name: datasets
-        backref: annotations
+        backref: annotation_files
         label: related_to
         target_type: dataset
         multiplicity: many_to_one
