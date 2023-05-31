@@ -150,11 +150,6 @@ properties:
     description: Coded value to represent a particular annotator in a group. These need only be unique per annotation.
     type: string
 
-  # :
-  #   description:
-  #   type:
-  #
-
 # ## OTHER PROPERTIES
   instance_uids:
     description: Used to denote that this annotation applies only to specific images (image instances) in a series.  When absent, the annotation when referencing an imaging series node applies to the entire imaging series.
@@ -214,32 +209,3 @@ properties:
   xa_series_files:
     description: The submitter_id or id of the XA imaging series this annotation relates to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
-
-# ## Deprecated properties:
-  # annotation_name:
-  #   description: The name of the annotation, e.g., "midrc_COVID_progression". The associated value of the annotation named here is in "annotation_value".
-  #   type: string
-  #
-  # annotation_value:
-  #   description: The value of the annotation, e.g., "No – less than 15%". The associated name of the annotation here is in "annotation_name".
-  #   type: string
-  #
-  # associated_id:
-  #   description: The submitter_id of the record associated with this data. For example, if this annotation is associated with an imaging_study record, the value of this property would be the submitter_id of that imaging study. Only one submitter_id is allowed per annotation row. To submit the same enumerated value for a second submitter_id, an additional annotation record is required.
-  #   type: string
-  #
-  # associated_type:
-  #   description: The node ID where the 'associated_id' can be found. For example, if this annotation is associated with a particular Imaging Study, 'imaging_study' would be used as the 'associated_type', while 'associated_id' would contain the specific submitter_id of the associated record in the imaging_study node.
-  #   enum:
-  #       - case
-  #       - imaging_study
-  #       - cr_series_file
-  #       - ct_series_file
-  #       - dx_series_file
-  #       - mg_series_file
-  #       - mr_series_file
-  #       - nm_series_file
-  #       - pt_series_file
-  #       - rf_series_file
-  #       - us_series_file
-  #       - xa_series_file
