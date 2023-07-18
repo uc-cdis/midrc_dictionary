@@ -1,0 +1,13 @@
+name: Build midrc dictionary
+
+on: push
+
+jobs:
+  dictionary:
+    name: Build and Deploy Dictionary
+    uses: uc-cdis/.github/.github/workflows/dictionary_push.yaml@master
+    with:
+      DIRECTORY: "midrc_dictionary"
+    secrets:
+      DICT_AWS_ACCESS_KEY_ID: ${{ secrets.DICT_AWS_ACCESS_KEY_ID }}
+      DICT_AWS_SECRET_ACCESS_KEY: ${{ secrets.DICT_AWS_SECRET_ACCESS_KEY }}
