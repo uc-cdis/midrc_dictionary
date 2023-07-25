@@ -42,7 +42,7 @@ properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
   age_at_index:
-    description: The study participant’s age, in years, at the index event. The index event is determined by the data submitter and used as an anchor date for all temporal variables. Note that an age of 0 indicates a participant who is younger than 1 year old. For participants with ages greater than 89 years, please use the property 'age_at_index_gt89'.
+    description: The study participant's age, in years, at the index event. The index event is determined by the data submitter and used as an anchor date for all temporal variables. Note that an age of 0 indicates a participant who is younger than 1 year old. For participants with ages greater than 89 years, please use the property 'age_at_index_gt89'.
     type: number
     maximum: 89
     minimum: 0
@@ -63,8 +63,8 @@ properties:
 
   country_of_residence:
     description: The country where the subject resides.
-    type: string  
-  
+    type: string
+
   token_record_id:
     description: An ID used to link a de-identified case in MIDRC to the same case in an external data resource.
     type: string

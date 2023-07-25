@@ -139,12 +139,12 @@ properties:
     minimum: 0
 
   annotation_method:
-    description: Defines method by which annotation was created.
+    description: Defines the method by which the annotation was created. Clinically_derived - Based on information produced in the process of the subject's medical care; Retrospective_expert - Based on information produced retrospective to the subject's care by annotators with relevant special clinical expertise; Retrospective_general - Based on information produced retrospective to the subject's care by annotators without relevant special clinical expertise; Retrospective_auto - Based on information produced retrospective to the subject's care using automated means.
     enum:
         - Clinically_derived
-        - Post_clinical_auto
-        - Post_clinical_expert
-        - Post_clinical_general
+        - Retrospective_expert
+        - Retrospective_general
+        - Retrospective_auto
 
   annotator_id:
     description: Coded value to represent a particular annotator in a group. These need only be unique per annotation.

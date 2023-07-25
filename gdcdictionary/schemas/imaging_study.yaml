@@ -41,7 +41,7 @@ properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
   age_at_imaging:
-    description: The study participant’s age, in years, at the time the imaging study was performed. Note that an age of 0 indicates a participant who is younger than 1 year old. For participants with ages greater than 89 years, please use the property 'age_at_index_gt89'.
+    description: The study participant's age, in years, at the time the imaging study was performed. Note that an age of 0 indicates a participant who is younger than 1 year old. For participants with ages greater than 89 years, please use the property 'age_at_index_gt89'.
     type: number
     maximum: 89
     minimum: 0
