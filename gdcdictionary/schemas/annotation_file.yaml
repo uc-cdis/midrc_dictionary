@@ -1,6 +1,6 @@
 $schema: "http://json-schema.org/draft-04/schema#"
 
-id: "data_file"
+id: "annotation_file"
 title: Annotation File
 type: object
 nodeTerms: null
