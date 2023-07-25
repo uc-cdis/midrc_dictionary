@@ -4,7 +4,7 @@ id: "ct_series_file"
 title: CT Series File
 type: object
 namespace: https://data.midrc.org/
-category: data_file
+category: imaging_data_file
 program: '*'
 project: '*'
 description: A package of image files and metadata related to a CT imaging series to which one or more computed tomography instances belong.

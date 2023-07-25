@@ -4,7 +4,7 @@ id: "dx_series_file"
 title: DX Series File
 type: object
 namespace: https://data.midrc.org/
-category: data_file
+category: imaging_data_file
 program: '*'
 project: '*'
 description: A package of image files and metadata related to a DX imaging series to which one or more digital radiograph (x-rays) instances belong.
