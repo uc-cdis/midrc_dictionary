@@ -5,7 +5,7 @@ title: Annotation File
 type: object
 nodeTerms: null
 namespace: https://data.midrc.org
-category: data_file
+category: annotation_data_file
 program: '*'
 project: '*'
 description: The annotation_file node provides the ability to link a file containing annotation information to a case, imaging study or imaging series.

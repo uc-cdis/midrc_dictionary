@@ -4,7 +4,7 @@ id: "pt_series_file"
 title: PT Series File
 type: object
 namespace: https://data.midrc.org/
-category: data_file
+category: imaging_data_file
 program: '*'
 project: '*'
 description: Information related to a PT imaging series to which one or more positron emission tomography (PET) images belong.
