@@ -54,12 +54,12 @@ properties:
       - "No"
 
   covid19_positive:
-    description: An indicator of whether the patient has ever had a positive COVID-19 test.
+    description: "An indicator of whether the patient has ever had a positive COVID-19 test or been diagnosed with one of the following ICD-10 COVID-19 conditions: COVID-19 (U07. 1), Influenza due to unidentified influenza virus with other manifestations (J11.8), Post COVID-19 condition (U09.9), Myalgic encephalomyelitis/chronic fatigue syndrome (G93.32), or Sequelae of other specified infectious and parasitic diseases (B94.8). For more information about a patient's specific COVID-19 diagnosis, details can be found under Condition."
     enum:
       - "Yes"
       - "No"
       - "Indeterminate"
-      - Not Reported
+      - "Not Reported"
 
   country_of_residence:
     description: The country where the subject resides.
