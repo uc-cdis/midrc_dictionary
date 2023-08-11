@@ -4,7 +4,7 @@ id: "us_series_file"
 title: US Series File
 type: object
 namespace: https://data.midrc.org/
-category: imaging_data_file
+category: data_file
 program: '*'
 project: '*'
 description: Information related to a US imaging series to which one or more Ultrasound image belong.

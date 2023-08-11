@@ -4,7 +4,7 @@ id: "mg_series_file"
 title: MG Series File
 type: object
 namespace: https://data.midrc.org/
-category: imaging_data_file
+category: data_file
 program: '*'
 project: '*'
 description: Information related to a mammography (MG) imaging series to which one or more mammography images belong.

@@ -4,7 +4,7 @@ id: "xa_series_file"
 title: XA Series File
 type: object
 namespace: https://data.midrc.org/
-category: imaging_data_file
+category: data_file
 program: '*'
 project: '*'
 description: Information related to a DR imaging series.
