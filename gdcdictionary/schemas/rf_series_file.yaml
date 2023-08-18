@@ -4,7 +4,7 @@ id: "rf_series_file"
 title: RF Series File
 type: object
 namespace: https://data.midrc.org/
-category: imaging_data_file
+category: data_file
 program: '*'
 project: '*'
 description: Information related to a RF imaging series to which one or more X-ray Radiofluoroscopic image belong.
