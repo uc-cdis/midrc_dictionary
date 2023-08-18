@@ -56,6 +56,12 @@ properties:
 
   $ref: "_definitions.yaml#/data_file_properties"
 
+  code_meaning:
+    description: "(0008,0104) Code Meaning. Note that code_meaning is pulled from the View Code Sequence (0054,0220)"
+    type: array
+    items:
+      type: string
+  
   contrast_bolus_agent:
     description: "(0018, 0010) Contrast/Bolus Agent"
     type: array

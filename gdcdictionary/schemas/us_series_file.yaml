@@ -56,10 +56,6 @@ properties:
 
   $ref: "_definitions.yaml#/data_file_properties"
 
-  doppler_images:
-    description: Indicates whether this series includes Doppler images included (can we use DICOM (0018, 6012) for this?)
-    type: boolean
-
   lossy_image_compression:
     description: (0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to "01". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains "01".
     enum:
@@ -78,9 +74,17 @@ properties:
     description: (0008, 0060) Modality
     type: string
 
-  multiframe_images:
-    description: Indicates whether this series includes multiframe images.
-    type: boolean
+  region_spacial_format:
+    description: (0018,6012) Region Spatial Format
+    type: array
+    items:
+      enum:
+        - "0000H: None or not applicable"
+        - "0001H: 2D (tissue or flow)"
+        - "0002H: M-Mode (tissue or flow)"
+        - "0003H: Spectral (CW or PW Doppler"
+        - "0004H: Wave form (physiological traces, Doppler traces,...)"
+        - "0005H: Graphics"
 
   series_description:
     description: A general description of or additional information about the imaging series; (0008, 103e) Series Description.
