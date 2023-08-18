@@ -74,7 +74,7 @@ properties:
     description: (0008, 0060) Modality
     type: string
 
-  region_spacial_format:
+  region_spatial_format:
     description: (0018,6012) Region Spatial Format
     type: array
     items:
@@ -82,7 +82,7 @@ properties:
         - "0000H: None or not applicable"
         - "0001H: 2D (tissue or flow)"
         - "0002H: M-Mode (tissue or flow)"
-        - "0003H: Spectral (CW or PW Doppler"
+        - "0003H: Spectral (CW or PW Doppler)"
         - "0004H: Wave form (physiological traces, Doppler traces,...)"
         - "0005H: Graphics"
 
@@ -133,10 +133,6 @@ properties:
     enum:
       - "DICOM"
       - "NIfTI"
-
-  # file_description:
-  #   description: Any additional text to give this file context in its study.
-  #   type: string
 
   core_metadata_collections:
     description: The submitter_id or id of the core_metadata_collection to which the us_series_file belongs, i.e., a link to a record in the parent node.
