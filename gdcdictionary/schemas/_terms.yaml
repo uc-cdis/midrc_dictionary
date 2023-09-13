@@ -273,6 +273,16 @@ ann_arbor_tumor_stage:
     cde_version: null
     term_url: null
 
+annotation_name:
+  description: >
+    The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected.  All MIDRC created annotations start with "midrc_".
+  termDef:
+    term: Annotation Name
+    source: MIDRC
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.midrc.org/annotations"
+
 base_caller_name: # TOREVIEW
   description: >
     Name of the base caller.

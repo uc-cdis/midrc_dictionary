@@ -77,17 +77,21 @@ properties:
     type: string
 
   series_description:
-    description: (0008, 103e) Series Description; a general description of or additional information about the imaging series.
-    enum:
-        - midrc_lung_segs
-        - midrc_lung_measures
-        - midrc_bpr_landmarks
-        - midrc_bpr_regions
+    description: (0008, 103e) Series Description; a general description of or additional information about the imaging series. If possible, the Series Description should match the annotation_name provided.
+    type: string
 
 # ## OTHER PROPERTIES
   annotation_name:
-    description: The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected.  All MIDRC created annotations start with "midrc_".
-    type: string
+    term:
+      $ref: "_terms.yaml#/annotation_name"
+    enum:
+        - midrc_bpr_landmarks
+        - midrc_bpr_regions
+        - midrc_lung_segs
+        - midrc_lung_measures
+        - midrc_mdai_chestxr
+        - mRALE_Mastermind_Challenge
+        - SIFT
 
   manufacturer:
     description: (0008, 0070) Manufacturer
