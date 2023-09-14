@@ -102,6 +102,18 @@ links:
         target_type: xa_series_file
         multiplicity: many_to_one
         required: false
+      - name: annotation_files
+        backref: annotations
+        label: related_to
+        target_type: annotation_file
+        multiplicity: many_to_one
+        required: false
+      - name: dicom_annotation_files
+        backref: annotations
+        label: related_to
+        target_type: dicom_annotation_file
+        multiplicity: many_to_one
+        required: false
 
 required:
   - submitter_id
@@ -208,4 +220,12 @@ properties:
 
   xa_series_files:
     description: The submitter_id or id of the XA imaging series this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  annotation_files:
+    description: The submitter_id or id of the annotation_file this annotation relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  dicom_annotation_files:
+    description: The submitter_id or id of the dicom_annotation_file this annotation relates to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
