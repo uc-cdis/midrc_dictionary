@@ -8,10 +8,7 @@ namespace: https://data.midrc.org
 category: medical_history
 program: '*'
 project: '*'
-description: Information related to the condition(s) of a case within the context
-  of a particular study (e.g., a medical diagnoses, comorbidities). This includes a snapshot of the
-  case's status with respect to certain diseases, disorders, symptoms, injuries,
-  or illnesses within the context of the study.
+description: Information pertaining to relevant medical condition(s) of a case's subject (e.g., medical diagnoses, diseases, disorders, symptoms, injuries, illnesses, comorbidities) recorded in the process of clinical care (e.g., data extracted from the electronic medical record).
 additionalProperties: false
 submittable: true
 validators: null
