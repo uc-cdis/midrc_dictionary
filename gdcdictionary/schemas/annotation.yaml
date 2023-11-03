@@ -8,7 +8,7 @@ namespace: https://data.midrc.org
 category: annotation
 program: '*'
 project: '*'
-description: The annotation node provides the ability to link key-value pairs to cases, imaging studies, imaging series or instances within an imaging series.
+description: Information describing characteristics of imaging studies, series and instances (e.g., segmentations, bounding boxes, feature labels) and inferences based on those characteristics (e.g., predicted diagnoses). Annotations may be recorded in the course of clinical care or retrospectively for purposes of research (e.g., imaging annotations from PACS or retrospective labeling tools). Please refer to https://midrc.org/annotations to learn more about a particular batch of annotations.
 additionalProperties: false
 submittable: true
 validators: null
@@ -126,8 +126,6 @@ uniqueKeys:
 properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
-# ## NEW PROPERTIES for v1.1.7 (updated 2023-5-23)
-# based on this Confluence PAge: https://midrc.atlassian.net/wiki/spaces/COMMITTEES/pages/1413742593/Annotation+list+of+properties+and+descriptions
 
   airspace_disease_grading:
     description: Values are extracted from the annotation file midrc_mdai_chestxr. Accepted values are "mild" opacities (1-2 lung zones), "moderate" opacities (3-4 lung zones), and "severe" opacities (>4 lung zones).
@@ -136,19 +134,9 @@ properties:
         - moderate
         - severe
 
-  class_covid19_pneumonia:
-    description: Values are extracted from the annotation file midrc_mdai_chestxr; Accepted values include "typical" appearance, which is multifocal bilateral, peripheral opacities, or opacities with rounded morphology, lower lung-predominant distribution;  "indeterminate" appearance, which is absence of typical findings and unilateral, central or upper lung predominant distribution of airspace disease; "atypical" appearance, which is pneumothorax or pleural effusion, pulmonary edema, lobar consolidation, solitary lung nodule, or mass diffuse tiny nodules cavity; "negative" for pneumonia, which is no lung opacities.
-    enum:
-        - atypical
-        - indeterminate
-        - negative
-        - typical
-
-  midrc_mRALE_score:
-    description: Values are extracted from the annotation file mRALE_Mastermind_Challenge. The Radiographic Assessment of Lung Edema (RALE) score is provided as a reference standard assessment of disease severity on chest radiograph.  A normal chest radiograph receives a score of 0, while a chest radiograph with complete consolidation of both lungs receives the maximum score of 24.
-    type: integer
-    maximum: 24
-    minimum: 0
+  annotator_id:
+    description: Coded value to represent a particular annotator in a group. These need only be unique per annotation.
+    type: string
 
   annotation_method:
     description: Defines the method by which the annotation was created. Clinically_derived - Based on information produced in the process of the subject's medical care; Retrospective_expert - Based on information produced retrospective to the subject's care by annotators with relevant special clinical expertise; Retrospective_general - Based on information produced retrospective to the subject's care by annotators without relevant special clinical expertise; Retrospective_auto - Based on information produced retrospective to the subject's care using automated means.
@@ -158,16 +146,38 @@ properties:
         - Retrospective_general
         - Retrospective_auto
 
-  annotator_id:
-    description: Coded value to represent a particular annotator in a group. These need only be unique per annotation.
-    type: string
+  class_covid19_pneumonia:
+    description: Values are extracted from the annotation file midrc_mdai_chestxr; Accepted values include "typical" appearance, which is multifocal bilateral, peripheral opacities, or opacities with rounded morphology, lower lung-predominant distribution;  "indeterminate" appearance, which is absence of typical findings and unilateral, central or upper lung predominant distribution of airspace disease; "atypical" appearance, which is pneumothorax or pleural effusion, pulmonary edema, lobar consolidation, solitary lung nodule, or mass diffuse tiny nodules cavity; "negative" for pneumonia, which is no lung opacities.
+    enum:
+        - atypical
+        - indeterminate
+        - negative
+        - typical
 
-# ## OTHER PROPERTIES
   instance_uids:
     description: Used to denote that this annotation applies only to specific images (image instances) in a series.  When absent, the annotation when referencing an imaging series node applies to the entire imaging series.
     type: array
     items:
         type: string
+
+  midrc_mRALE_score:
+    description: Values are extracted from the annotation file mRALE_Mastermind_Challenge. The Radiographic Assessment of Lung Edema (RALE) score is provided as a reference standard assessment of disease severity on chest radiograph.  A normal chest radiograph receives a score of 0, while a chest radiograph with complete consolidation of both lungs receives the maximum score of 24.
+    type: integer
+    maximum: 24
+    minimum: 0
+
+  sift_image_quality_index:
+    description: A score of image quality based on the SIFT annotation software.
+    enum:
+        - A
+        - B
+        - C
+        - D
+        - Not Reported
+
+  software_version:
+    description: The version of the software being used to generate the annotations.
+    type: string
 
 # # LINKS:
   datasets:
