@@ -176,7 +176,8 @@ properties:
         - Not Reported
 
   software_version:
-    description: The version of the software being used to generate the annotations.
+    term:
+      $ref: "_terms.yaml#/software_version"
     type: string
 
 # # LINKS:
