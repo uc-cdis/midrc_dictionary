@@ -1577,6 +1577,14 @@ smoking_intensity:
     cde_version: 1.0
     term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=2955385&version=1.0"
 
+software_version:
+  description: >
+    The version of the software being used to generate the annotations. For more information see https://midrc.org/annotations
+  termDef:
+    term: software_version
+    source: MIDRC
+    term_url: "https://midrc.org/annotations"
+
 source_center: # TOREVIEW
   description: >
     Name of the center that provided the item.
