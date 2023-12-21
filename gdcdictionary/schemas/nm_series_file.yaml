@@ -62,6 +62,21 @@ properties:
     items:
       type: string
 
+  image_data_modification_method:
+    description: A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org. 
+    type: integer
+
+  image_data_modification_type:
+    description: A categorical description of the type of image modification performed on the study series.
+    enum:
+      - Removal of alphanumeric characters
+      - Defacing
+      - Skull-stripping
+
+  image_data_modified:
+    description: An indicator of whether any post-clinical modification of image pixel data has been performed on the study series.
+    type: boolean
+
   lossy_image_compression:
     description: (0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to "01". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains "01".
     enum:

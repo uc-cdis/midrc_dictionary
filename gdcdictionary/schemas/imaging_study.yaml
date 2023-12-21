@@ -74,6 +74,10 @@ properties:
     description: The number of days between the case's index date and the date of the imaging study.
     type: number
 
+  image_data_modified:
+    description: An indicator of whether any post-clinical modification of image pixel data has been performed on the study.
+    type: boolean
+
   loinc_code:
     description: The LOINC code assigned based on the study description provided.
     type: string
