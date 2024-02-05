@@ -38,7 +38,6 @@ uniqueKeys:
   - [project_id, submitter_id]
 
 properties:
-
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
   contributor:
