@@ -2,7 +2,6 @@ name: Build midrc dictionary
 
 on: push
 
-
 jobs:
   dictionary:
     name: Build and Deploy Dictionary
