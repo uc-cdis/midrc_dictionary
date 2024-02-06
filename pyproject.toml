@@ -1,8 +1,9 @@
 [tool.poetry]
 name = "gdcdictionary"
 version = "0.0.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+description = "Data Dictionary for MIDRC"
+authors = ["Center for Translational Data Science at the University of Chicago <support@datacommons.io>"]
+license = "Apache-2.0"
 readme = "README.md"
 
 
