@@ -5,7 +5,7 @@ on: push
 jobs:
   dictionary:
     name: Build and Deploy Dictionary
-    uses: uc-cdis/.github/.github/workflows/dictionary_push.yaml@mfshao-test
+    uses: uc-cdis/.github/.github/workflows/dictionary_push.yaml@master
     with:
       DIRECTORY: "midrc_dictionary"
     secrets:
