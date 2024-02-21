@@ -26,6 +26,12 @@ links:
     target_type: case
     multiplicity: many_to_one
     required: true
+  - name: datasets
+    backref: imaging_studies
+    label: member_of
+    target_type: dataset
+    multiplicity: many_to_many
+    required: true
 
 required:
   - submitter_id
@@ -127,3 +133,7 @@ properties:
   cases:
     description: The submitter_id or id of the case observed in this imaging_study, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
+
+  datasets:
+    description: The submitter_id or id of the dataset this case belongs to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_many"
