@@ -130,17 +130,9 @@ properties:
 
   $ref: "_definitions.yaml#/data_file_properties"
 
-  annotation_name:
-    term:
-      $ref: "_terms.yaml#/annotation_name"
-    enum:
-        - midrc_bpr_landmarks
-        - midrc_bpr_regions
-        - midrc_lung_segs
-        - midrc_lung_measures
-        - midrc_mdai_chestxr
-        - mRALE_Mastermind_Challenge
-        - SIFT
+  annotation_long_name:
+    description: The long name of the annotation provides more information about the specific annotation.
+    type: string
 
   annotation_method:
     description: Defines the method by which the annotation was created. Clinically_derived - Based on information produced in the process of the subject's medical care; Retrospective_expert - Based on information produced retrospective to the subject's care by annotators with relevant special clinical expertise; Retrospective_general - Based on information produced retrospective to the subject's care by annotators without relevant special clinical expertise; Retrospective_auto - Based on information produced retrospective to the subject's care using automated means.
@@ -149,6 +141,17 @@ properties:
         - Retrospective_expert
         - Retrospective_general
         - Retrospective_auto
+
+  annotation_name:
+    description: The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected. All MIDRC created annotations start with "midrc_".
+    enum:
+        - midrc_bpr_landmarks
+        - midrc_bpr_regions
+        - midrc_lung_segs
+        - midrc_lung_measures
+        - midrc_mdai_chestxr
+        - mRALE_Mastermind_Challenge
+        - SIFT
 
   annotator_id:
     description: Coded value to represent a particular annotator in a group. These need only be unique per annotation.

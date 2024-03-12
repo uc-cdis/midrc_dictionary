@@ -81,11 +81,11 @@ properties:
     description: (0018, 9323) Exposure Modulation Type
     type: string
 
-  image_data_modification_method:
+  image_data_modification_name:
     description: A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org. 
     type: integer
 
-  image_data_modification_type:
+  image_data_modification_method:
     description: A categorical description of the type of image modification performed on the study series.
     enum:
       - Removal of alphanumeric characters
