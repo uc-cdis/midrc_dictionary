@@ -92,7 +92,7 @@ properties:
       type: string
 
   long_covid_diagnosis:
-    description: "An indicator of whether the patient has ever been diagnosed with one of the following ICD-10 long COVID-19 conditions: U09.9 (Post COVID-19 condition, unspecified), G93.32 (Myalgic encephalomyelitis/chronic fatigue syndrome), and B94.8 (Sequelae of other specified infectious and parasitic diseases).  Positivemeans the patient was diagnosed with a long COVID condition, while Not reported means the patient has never been diagnosed with a long COVID condition."
+    description: "An indicator of whether the patient has ever been diagnosed with one of the following ICD-10 long COVID-19 conditions: U09.9 (Post COVID-19 condition, unspecified), G93.32 (Myalgic encephalomyelitis/chronic fatigue syndrome), and B94.8 (Sequelae of other specified infectious and parasitic diseases).  'Positive' means the patient was diagnosed with a long COVID condition, while 'Not Reported' means the patient has never been diagnosed with a long COVID condition."
     enum:
       - Positive
       - Not Reported
