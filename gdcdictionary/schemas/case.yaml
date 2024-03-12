@@ -65,10 +65,6 @@ properties:
     description: The country where the subject resides.
     type: string
 
-  token_record_id:
-    description: An ID used to link a de-identified case in MIDRC to the same case in an external data resource.
-    type: string
-
   ethnicity:
     term:
       $ref: "_terms.yaml#/ethnicity"
@@ -95,6 +91,12 @@ properties:
     items:
       type: string
 
+  long_covid_diagnosis:
+    description: "An indicator of whether the patient has ever been diagnosed with one of the following ICD-10 long COVID-19 conditions: U09.9 (Post COVID-19 condition, unspecified), G93.32 (Myalgic encephalomyelitis/chronic fatigue syndrome), and B94.8 (Sequelae of other specified infectious and parasitic diseases).  'Positive' means the patient was diagnosed with a long COVID condition, while 'Not Reported' means the patient has never been diagnosed with a long COVID condition."
+    enum:
+      - Positive
+      - Not Reported
+
   race:
     term:
       $ref: "_terms.yaml#/race"
@@ -116,6 +118,10 @@ properties:
 
   site_id:
     description: A de-identified code used to classify a case as part of a specific data submission.
+    type: string
+
+  token_record_id:
+    description: An ID used to link a de-identified case in MIDRC to the same case in an external data resource.
     type: string
 
   treatment_info:
