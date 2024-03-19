@@ -37,6 +37,7 @@ required:
   - submitter_id
   - type
   - cases
+  - datasets
 
 uniqueKeys:
   - [id]
