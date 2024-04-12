@@ -202,7 +202,7 @@ properties:
 
   diffusion_gradient_orientation:
     description: (0018, 9089) Diffusion Gradient Orientation
-    type: number
+    type: string
 
   echo_number:
     description: (0018, 0086) Echo Number
