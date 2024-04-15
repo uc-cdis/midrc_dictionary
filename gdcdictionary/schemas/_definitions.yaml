@@ -203,16 +203,6 @@ data_file_properties:
     $ref: "#/md5sum"
   object_id:
     $ref: "#/object_id"
-  storage_urls:
-    description: A list of URLs where the file is stored in the cloud.
-    type: array
-    items:
-      type: string
-  associated_ids:
-    description: A list of UUIDs or submitter_ids associated with this file.
-    type: array
-    items:
-      type: string
   file_state:
     $ref: "#/file_state"
   error_type:

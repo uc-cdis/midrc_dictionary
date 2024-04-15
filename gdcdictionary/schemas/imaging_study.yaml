@@ -109,10 +109,6 @@ properties:
     description: (0008, 1030) Study Description.
     type: string
 
-  study_location:
-    description: The location or geographical site of imaging, or the name of the clinic that performed the imaging study.
-    type: string
-
   study_modality:
     description: The modalities of the imaging study; derived from (0008, 0060) Modality.
     type: array

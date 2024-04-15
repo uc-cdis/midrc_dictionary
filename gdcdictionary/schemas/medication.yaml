@@ -77,13 +77,6 @@ properties:
       - Systemic steroids
       - Vaccine
 
-  medication_status:
-    description: Indicates if the medication is in active use.
-    enum:
-      - Active
-      - Inactive
-      - Not Reported
-
   days_to_medication_start:
     description: The number of days from the index date to the date the case started a specific medication.
     type: integer
