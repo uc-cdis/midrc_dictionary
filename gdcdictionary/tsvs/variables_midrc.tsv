@@ -1,284 +1,282 @@
 <node>	<property>	<terms>	<description>	<type>	<pattern>	<maximum>	<minimum>	<items>	<systemAlias>	<format>	<default>
-case	age_at_index		The subject's age at the time of the study. To indicate ages greater than 89 years, please use the property 'age_at_index_gt89'.	number		89.0	0.0
-case	age_at_index_gt89		Indicates whether the subject's age at the time of the study was greater than 89 years.	enum
-case	covid19_positive		An indicator of whether the patient has ever had a positive COVID-19 test.	enum
-case	country_of_origin		The country where the subject is from.	string
-case	token_record_id		An ID used to link a de-identified case in MIDRC to the same case in an external data resource.	string
-case	ethnicity	_terms.yaml#/ethnicity/common		enum
-case	gen3_linked_subjects_available		Indicates whether there is data available for the subject in other data resources.	boolean
-case	icu_indicator		Indicates whether the subject has been admitted to the ICU.	boolean
-case	index_event		The event used as the anchor or start date for all temporal data elements. This acts as day 0 on a timeline of events relating to the patient.	string
-case	linked_external_data		A list of all external data resources that are confirmed to have data for the case.	array				string
-case	race	_terms.yaml#/race/common		enum
-case	sex		The biologic character or quality that distinguishes male and female from one another as expressed by analysis of the person's gonadal, morphologic  (internal and external), chromosomal, and hormonal characteristics.	enum
-case	site_id		A de-identified code used to classify a case as part of a specific data submission.	string
-case	treatment_info		Indicates whether detailed treatment information is available for the subject.	boolean
-case	ventilator_indicator		Indicates whether the subject has been on a ventilator.	boolean
-case	zip		"The three-digit United States zip code for any population greater than 20,000. For zip codes where the three digit number represents a population less than 20,000 ""000"" will be provided."	integer
-condition	condition_name		The name of the condition the patient has experienced.	string
-condition	days_to_condition_end		The number of days from the index date to the date the subject no longer experienced the condition.	integer
-condition	days_to_condition_start		The number of days from the index date to the date the subject was diagnosed with or began experiencing the condition.	integer
-core_metadata_collection	contributor		An entity responsible for making contributions to the resource. Examples of a Contributor include a person, an organization, or a service. Typically, the name of a Contributor should be used to indicate the entity.	string
-core_metadata_collection	coverage		The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant. Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended best practice is to use a controlled vocabulary such as the Thesaurus of Geographic Names [TGN] (http-//www.getty.edu/research/tools/vocabulary/tgn/index.html). Where appropriate, named places or time periods can be used in preference to numeric identifiers such as sets of coordinates or date ranges.	string
-core_metadata_collection	creator		An entity primarily responsible for making the resource. Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.	string
-core_metadata_collection	data_type		The nature or genre of the resource. Recommended best practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE]. To describe the file format, physical medium, or dimensions of the resource, use the Format element.	string
-core_metadata_collection	date		The date the collection of data was created.	string
-core_metadata_collection	description		An account of the resource. Description may include but is not limited to- an abstract, a table of contents, a graphical representation, or a free-text account of the resource.	string
-core_metadata_collection	format		The file format, physical medium, or dimensions of the resource. Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME] (http-//www.iana.org/assignments/media-types/).	string
-core_metadata_collection	language		A language of the resource. Recommended best practice is to use a controlled vocabulary such as RFC 4646 (http-//www.ietf.org/rfc/rfc4646.txt).	string
-core_metadata_collection	publisher		An entity responsible for making the resource available. Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity.	string
-core_metadata_collection	relation		A related resource. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.	string
-core_metadata_collection	rights		Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.	string
-core_metadata_collection	source		A related resource from which the described resource is derived. The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.	string
-core_metadata_collection	subject		The topic of the resource. Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary.	string
-core_metadata_collection	title		A name given to the resource. Typically, a Title will be a name by which the resource is formally known.	string
-cr_series_file	contrast_bolus_agent		(0018, 0010) Contrast/Bolus Agent	array				string
-cr_series_file	detector_type		(0018, 7004) Detector Type	enum
-cr_series_file	image_type		(0008, 0008) Image Type	array				string
-cr_series_file	imager_pixel_spacing		(0018, 1164) Imager Pixel Spacing	array				number
-cr_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum
-cr_series_file	manufacturer		(0008, 0070) Manufacturer	string
-cr_series_file	manufacturer_model_name		(0008, 1090) Manufacturer's Model Name	string
-cr_series_file	modality		(0008, 0060) Modality	string
-cr_series_file	pixel_spacing		(0028, 0030) Pixel Spacing	array				number
-cr_series_file	series_description		A general description of or additional information about the imaging series; (0008, 103e) Series Description.	string
-cr_series_file	series_uid		The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.	string
-cr_series_file	spatial_resolution		(0018, 1050) Spatial Resolution	number
-cr_series_file	view_position		(0018, 5101) View Position	array				string
-cr_series_file	data_category	_terms.yaml#/data_category/common		enum
-cr_series_file	data_format	_terms.yaml#/data_format/common		enum
-cr_series_file	data_type	_terms.yaml#/data_type/common		enum
-cr_series_file	file_description		Any additional text to give this file context in its study.	string
-ct_series_file	acquisition_type		(0018, 9302) Acquisition Type	enum
-ct_series_file	contrast_bolus_agent		(0018, 0010) Contrast/Bolus Agent	array				string
-ct_series_file	convolution_kernel		(0018, 1210) Convolution Kernel	array				string
-ct_series_file	exposure_modulation_type		(0018, 9323) Exposure Modulation Type	string
-ct_series_file	image_type		(0008, 0008) Image Type	array				string
-ct_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum
-ct_series_file	manufacturer		(0008, 0070) Manufacturer	string
-ct_series_file	manufacturer_model_name		(0008, 1090) Manufacturer's Model Name	string
-ct_series_file	modality		(0008, 0060) Modality	string
-ct_series_file	patient_position		(0018,5100) Patient Position	string
-ct_series_file	pixel_spacing		(0028, 0030) Pixel Spacing	array				number
-ct_series_file	series_description		(0008, 103e) Series Description	string
-ct_series_file	series_uid		(0020, 000e) Series Instance UID	string
-ct_series_file	slice_thickness		(0018, 0050) Slice Thickness	array				number
-ct_series_file	spacing_between_slices		(0018, 0088) Spacing Between Slices	array				number
-ct_series_file	data_category	_terms.yaml#/data_category/common		enum
-ct_series_file	data_format	_terms.yaml#/data_format/common		enum
-ct_series_file	data_type	_terms.yaml#/data_type/common		enum
-ct_series_file	file_description		Any additional text to give this file context in its study.	string
-dataset	created_datetime	_definitions.yaml#/datetime
-dataset	id	_definitions.yaml#/UUID
-dataset	project_id	_definitions.yaml#/project_id
-dataset	state	_definitions.yaml#/state
-dataset	submitter_id		A human-readable identifier for the study's record in the database. It can be used in place of the UUID for identifying or recalling a record.	string
-dataset	type		"The name of the node in the database to be used in queries. In this case ""dataset""."	enum
-dataset	updated_datetime	_definitions.yaml#/datetime
-dataset	acknowledgement		Publication acknowledgement(s) for the published dataset.	string
-dataset	data_citation		The citation for the published dataset.	string
-dataset	data_contributor		The name of the organization or individual that the contributed dataset belongs to.	string
-dataset	data_description		A brief, free-text description of the data files and associated metadata provided for this dataset.	string
-dataset	data_url_doi		A URL or DOI for the source of the dataset or the contributing organization's website.	string
-dataset	disease_type		The primary type of disease studied in this dataset, if applicable.	string
-dataset	license		The license under which the daaset has been published.	string
-dataset	longitudinal		Indicates whether the dataset has longitudinal or time-series data.	boolean
-dataset	primary_site		The primary body site studied in this dataset.	string
-dataset	publication_citation		The major or main publication(s) associated with the data itself or with the publication that published the dataset.	string
-dataset	research_description		If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results.	string
-dataset	research_design		A summary of the goals of the research or a general description of the research's relationship to a clinical application.	string
-dataset	research_objective		The general objective of the research; what the researchers hope to discover or determine.	string
-dataset	research_setup		A high level description of the setup used to achieve the research objectives.	string
-dx_series_file	contrast_bolus_agent		(0018, 0010) Contrast/Bolus Agent	array				string
-dx_series_file	detector_type		(0018, 7004) Detector Type	enum
-dx_series_file	image_type		(0008, 0008) Image Type	array				string
-dx_series_file	imager_pixel_spacing		(0018, 1164) Imager Pixel Spacing	array				number
-dx_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum
-dx_series_file	manufacturer		(0008, 0070) Manufacturer	string
-dx_series_file	manufacturer_model_name		(0008, 1090) Manufacturer's Model Name	string
-dx_series_file	modality		(0008, 0060) Modality	string
-dx_series_file	pixel_spacing		(0028, 0030) Pixel Spacing	array				number
-dx_series_file	series_description		A general description of or additional information about the imaging series; (0008, 103e) Series Description.	string
-dx_series_file	series_uid		The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.	string
-dx_series_file	spatial_resolution		(0018, 1050) Spatial Resolution	number
-dx_series_file	view_position		(0018, 5101) View Position	array				string
-dx_series_file	data_category	_terms.yaml#/data_category/common		enum
-dx_series_file	data_format	_terms.yaml#/data_format/common		enum
-dx_series_file	data_type	_terms.yaml#/data_type/common		enum
-dx_series_file	file_description		Any additional text to give this file context in its study.	string
-imaging_study	days_to_study		The number of days between the case's index date and the date of the imaging study.	number
-imaging_study	days_from_study_to_pos_covid_test		The number of days from the imaging study to the patient's positive COVID-19 test(s).	array				integer
-imaging_study	days_from_study_to_neg_covid_test		The number of days from the imaging study to the patient's negative COVID-19 test(s).	array				integer
-imaging_study	midrc_harmonized_study_description		A standardized representation mapped by MIDRC Data Quality and Harmonization subcommittee to the study_description property in submitted imaging data.	enum
-imaging_study	study_description		(0008, 1030) Study Description.	string
-imaging_study	study_modality		The modalities of the imaging study; derived from (0008, 0060) Modality.	array				string
-imaging_study	age_at_imaging		Age of the patient in years at the time the imaging study was performed. To indicate ages greater than 89 years, please use the property 'age_at_imaging_gt89'.	number		89.0	0.0
-imaging_study	age_at_imaging_gt89		Indicates whether the age of the patient in years at the time the imaging study was performed is greater than 89 years.	enum
-imaging_study	body_part_examined		(0018, 0015) Body Part Examined.	array				string
-imaging_study	study_location		The location or geographical site of imaging, or the name of the clinic that performed the imaging study.	string
-imaging_study	study_uid		(0020, 000d) Study Instance UID	string
-imaging_study	study_year		The year when imaging study was performed; year component of Study Date (0008, 0020).	integer
-imaging_study	study_year_shifted		Indicates whether the study year has been shifted for de-identification.	boolean
-measurement	test_days_from_index		A number of days beginning with the index date and ending with the date of the test.	integer
-measurement	test_name		The name of the test for which this measurement was the result.	enum
-measurement	test_result_text		The measured result of the test described using a list of enumerations.	enum
-measurement	test_method		The test method used to confirm a condition or produce a measurement.	enum
-medication	medication_name		The name of the specific medication the case was prescribed or administered.	string
-medication	medication_type		A categorization of medication used to describe the type of medication the patient was perscribed or administered.	enum
-medication	medication_status		Indicates if the medication is in active use.	enum
-medication	days_to_medication_start		The number of days from the index date to the date the case started a specific medication.	integer
-medication	days_to_medication_end		The number of days from the index date to the date the case stopped a specific medication.	integer
-mg_series_file	contrast_bolus_agent		(0018, 0010) Contrast/Bolus Agent	array				string
-mg_series_file	detector_type		(0018, 7004) Detector Type	enum
-mg_series_file	image_type		(0008, 0008) Image Type	array				string
-mg_series_file	imager_pixel_spacing		(0018, 1164) Imager Pixel Spacing	array				number
-mg_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum
-mg_series_file	manufacturer		(0008, 0070) Manufacturer	string
-mg_series_file	manufacturer_model_name		(0008, 1090) Manufacturer's Model Name	string
-mg_series_file	modality		(0008, 0060) Modality	string
-mg_series_file	pixel_spacing		(0028, 0030) Pixel Spacing	array				number
-mg_series_file	series_description		A general description of or additional information about the imaging series; (0008, 103e) Series Description.	string
-mg_series_file	series_uid		The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.	string
-mg_series_file	sop_class_name		The textual description for the (0008, 0016) SOP Class UID Attribute.	enum
-mg_series_file	sop_class_uid		(0008, 0016) SOP Class UID Attribute.	enum
-mg_series_file	spatial_resolution		(0018, 1050) Spatial Resolution	number
-mg_series_file	view_position		(0018, 5101) View Position - found additional values at https://dicom.innolitics.com/ciods/digital-mammography-x-ray-image/dx-positioning/00185101 - need confirmation	array				string
-mg_series_file	data_category	_terms.yaml#/data_category/common		enum
-mg_series_file	data_format	_terms.yaml#/data_format/common		enum
-mg_series_file	data_type	_terms.yaml#/data_type/common		enum
-mg_series_file	file_description		Any additional text to give this file context in its study.	string
-mr_series_file	contrast_bolus_agent		(0018, 0010) Contrast/Bolus Agent	array				string
-mr_series_file	image_type		(0008, 0008) Image Type	array				string
-mr_series_file	imager_pixel_spacing		(0018, 1164) Imager Pixel Spacing	array				number
-mr_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum
-mr_series_file	magnetic_field_strength		(0018,0087) Magnetic Field Strength	number
-mr_series_file	manufacturer		(0008, 0070) Manufacturer	string
-mr_series_file	manufacturer_model_name		(0008, 1090) Manufacturer's Model Name	string
-mr_series_file	modality		(0008, 0060) Modality	string
-mr_series_file	mr_acquisition_type		(0018, 0023) MR Acquisition Type	string
-mr_series_file	pixel_spacing		(0028, 0030) Pixel Spacing	array				number
-mr_series_file	scanning_sequence		(0018, 0020) Scanning Sequence	array				string
-mr_series_file	sequence_name		(0018, 0024) Sequence Name	string
-mr_series_file	series_description		(0008, 103e) Series Description; a general description of or additional information about the imaging series.	string
-mr_series_file	series_uid		(0020, 000e) Series Instance UID; the UID or unique identification code of the imaging series.	string
-mr_series_file	slice_thickness		(0018, 0050) Slice Thickness	array				number
-mr_series_file	spacing_between_slices		(0018, 0088) Spacing Between Slices	array				number
-mr_series_file	data_category	_terms.yaml#/data_category/common		enum
-mr_series_file	data_format	_terms.yaml#/data_format/common		enum
-mr_series_file	data_type	_terms.yaml#/data_type/common		enum
-mr_series_file	file_description		Any additional text to give this file context in its study.	string
-nm_series_file	body_part_examined		(0018, 0015) Body Part Examined.	array				string
-nm_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum
-nm_series_file	manufacturer		(0008, 0070) Manufacturer	string
-nm_series_file	manufacturer_model_name		(0008, 1090) Manufacturer's Model Name	string
-nm_series_file	modality		(0008, 0060) Modality	string
-nm_series_file	radiopharmaceutical		(0018,0031) Radiopharmaceutical	string
-nm_series_file	series_description		A general description of or additional information about the imaging series; (0008, 103e) Series Description.	string
-nm_series_file	series_uid		The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.	string
-nm_series_file	data_category	_terms.yaml#/data_category/common		enum
-nm_series_file	data_format	_terms.yaml#/data_format/common		enum
-nm_series_file	data_type	_terms.yaml#/data_type/common		enum
-nm_series_file	file_description		Any additional text to give this file context in its study.	string
-observation	observation_name		The short of the observation about the subject obtained in the context of examination, questioning or a during procedure.	string
-observation	observation_answer		The answer or value provided for a specific observation about a subject obtained in the context of examination, questioning or a during procedure.	string
-observation	days_to_observation		The number of days from the index date to the date of the observation.	integer
-procedure	breathing_support_type		The type of breathing support the patient received.	string
-procedure	days_to_procedure_start		The number of days between the case's index date and the start date of the procedure.	integer
-procedure	days_to_procedure_end		The number of days between the case's index date and the end date of the procedure.	integer
-procedure	procedure_name		The name of the procedure performed.	enum
-program	type			string
-program	id	_definitions.yaml#/UUID							node_id
-program	name		Full name/title of the program.	string
-program	dbgap_accession_number		The dbgap accession number provided for the program.	string
-project	availability_mechanism		Mechanism by which the project will be made avilable.	string
-project	availability_type		Is the project open or restricted?	enum
-project	code		Unique identifier for the project.	string
+case	age_at_index		"The subject's age at the time of the study. To indicate ages greater than 89 years, please use the property 'age_at_index_gt89'."	number		89	0				
+case	age_at_index_gt89		Indicates whether the subject's age at the time of the study was greater than 89 years.	enum							
+case	covid19_positive		An indicator of whether the patient has ever had a positive COVID-19 test.	enum							
+case	country_of_origin		The country where the subject is from.	string							
+case	token_record_id		An ID used to link a de-identified case in MIDRC to the same case in an external data resource.	string							
+case	ethnicity	_terms.yaml#/ethnicity/common		enum							
+case	gen3_linked_subjects_available		Indicates whether there is data available for the subject in other data resources.	boolean							
+case	icu_indicator		Indicates whether the subject has been admitted to the ICU.	boolean							
+case	index_event		The event used as the anchor or start date for all temporal data elements. This acts as day 0 on a timeline of events relating to the patient.	string							
+case	linked_external_data		A list of all external data resources that are confirmed to have data for the case.	array				string			
+case	race	_terms.yaml#/race/common		enum							
+case	sex		"The biologic character or quality that distinguishes male and female from one another as expressed by analysis of the person's gonadal, morphologic  (internal and external), chromosomal, and hormonal characteristics."	enum							
+case	site_id		A de-identified code used to classify a case as part of a specific data submission.	string							
+case	treatment_info		Indicates whether detailed treatment information is available for the subject.	boolean							
+case	ventilator_indicator		Indicates whether the subject has been on a ventilator.	boolean							
+case	zip		"The three-digit United States zip code for any population greater than 20,000. For zip codes where the three digit number represents a population less than 20,000 ""000"" will be provided."	integer							
+condition	condition_name		The name of the condition the patient has experienced.	string							
+condition	days_to_condition_end		The number of days from the index date to the date the subject no longer experienced the condition.	integer							
+condition	days_to_condition_start		The number of days from the index date to the date the subject was diagnosed with or began experiencing the condition.	integer							
+core_metadata_collection	contributor		"An entity responsible for making contributions to the resource. Examples of a Contributor include a person, an organization, or a service. Typically, the name of a Contributor should be used to indicate the entity."	string							
+core_metadata_collection	coverage		"The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant. Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended best practice is to use a controlled vocabulary such as the Thesaurus of Geographic Names [TGN] (http-//www.getty.edu/research/tools/vocabulary/tgn/index.html). Where appropriate, named places or time periods can be used in preference to numeric identifiers such as sets of coordinates or date ranges."	string							
+core_metadata_collection	creator		"An entity primarily responsible for making the resource. Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity."	string							
+core_metadata_collection	data_type		"The nature or genre of the resource. Recommended best practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE]. To describe the file format, physical medium, or dimensions of the resource, use the Format element."	string							
+core_metadata_collection	date		The date the collection of data was created.	string							
+core_metadata_collection	description		"An account of the resource. Description may include but is not limited to- an abstract, a table of contents, a graphical representation, or a free-text account of the resource."	string							
+core_metadata_collection	format		"The file format, physical medium, or dimensions of the resource. Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME] (http-//www.iana.org/assignments/media-types/)."	string							
+core_metadata_collection	language		A language of the resource. Recommended best practice is to use a controlled vocabulary such as RFC 4646 (http-//www.ietf.org/rfc/rfc4646.txt).	string							
+core_metadata_collection	publisher		"An entity responsible for making the resource available. Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity."	string							
+core_metadata_collection	relation		A related resource. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.	string							
+core_metadata_collection	rights		"Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights."	string							
+core_metadata_collection	source		A related resource from which the described resource is derived. The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.	string							
+core_metadata_collection	subject		"The topic of the resource. Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary."	string							
+core_metadata_collection	title		"A name given to the resource. Typically, a Title will be a name by which the resource is formally known."	string							
+cr_series_file	contrast_bolus_agent		"(0018, 0010) Contrast/Bolus Agent"	array				string			
+cr_series_file	detector_type		"(0018, 7004) Detector Type"	enum							
+cr_series_file	image_type		"(0008, 0008) Image Type"	array				string			
+cr_series_file	imager_pixel_spacing		"(0018, 1164) Imager Pixel Spacing"	array				number			
+cr_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum							
+cr_series_file	manufacturer		"(0008, 0070) Manufacturer"	string							
+cr_series_file	manufacturer_model_name		"(0008, 1090) Manufacturer's Model Name"	string							
+cr_series_file	modality		"(0008, 0060) Modality"	string							
+cr_series_file	pixel_spacing		"(0028, 0030) Pixel Spacing"	array				number			
+cr_series_file	series_description		"A general description of or additional information about the imaging series; (0008, 103e) Series Description."	string							
+cr_series_file	series_uid		"The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID."	string							
+cr_series_file	spatial_resolution		"(0018, 1050) Spatial Resolution"	number							
+cr_series_file	view_position		"(0018, 5101) View Position"	array				string			
+cr_series_file	data_category	_terms.yaml#/data_category/common		enum							
+cr_series_file	data_format	_terms.yaml#/data_format/common		enum							
+cr_series_file	data_type	_terms.yaml#/data_type/common		enum							
+cr_series_file	file_description		Any additional text to give this file context in its study.	string							
+ct_series_file	acquisition_type		"(0018, 9302) Acquisition Type"	enum							
+ct_series_file	contrast_bolus_agent		"(0018, 0010) Contrast/Bolus Agent"	array				string			
+ct_series_file	convolution_kernel		"(0018, 1210) Convolution Kernel"	array				string			
+ct_series_file	exposure_modulation_type		"(0018, 9323) Exposure Modulation Type"	string							
+ct_series_file	image_type		"(0008, 0008) Image Type"	array				string			
+ct_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum							
+ct_series_file	manufacturer		"(0008, 0070) Manufacturer"	string							
+ct_series_file	manufacturer_model_name		"(0008, 1090) Manufacturer's Model Name"	string							
+ct_series_file	modality		"(0008, 0060) Modality"	string							
+ct_series_file	patient_position		"(0018,5100) Patient Position"	string							
+ct_series_file	pixel_spacing		"(0028, 0030) Pixel Spacing"	array				number			
+ct_series_file	series_description		"(0008, 103e) Series Description"	string							
+ct_series_file	series_uid		"(0020, 000e) Series Instance UID"	string							
+ct_series_file	slice_thickness		"(0018, 0050) Slice Thickness"	array				number			
+ct_series_file	spacing_between_slices		"(0018, 0088) Spacing Between Slices"	array				number			
+ct_series_file	data_category	_terms.yaml#/data_category/common		enum							
+ct_series_file	data_format	_terms.yaml#/data_format/common		enum							
+ct_series_file	data_type	_terms.yaml#/data_type/common		enum							
+ct_series_file	file_description		Any additional text to give this file context in its study.	string							
+dataset	created_datetime	_definitions.yaml#/datetime									
+dataset	id	_definitions.yaml#/UUID									
+dataset	project_id	_definitions.yaml#/project_id									
+dataset	state	_definitions.yaml#/state									
+dataset	submitter_id		A human-readable identifier for the study's record in the database. It can be used in place of the UUID for identifying or recalling a record.	string							
+dataset	type		"The name of the node in the database to be used in queries. In this case ""dataset""."	enum							
+dataset	updated_datetime	_definitions.yaml#/datetime									
+dataset	acknowledgement		Publication acknowledgement(s) for the published dataset.	string							
+dataset	data_citation		The citation for the published dataset.	string							
+dataset	data_contributor		The name of the organization or individual that the contributed dataset belongs to.	string							
+dataset	data_description		"A brief, free-text description of the data files and associated metadata provided for this dataset."	string							
+dataset	data_url_doi		A URL or DOI for the source of the dataset or the contributing organization's website.	string							
+dataset	disease_type		"The primary type of disease studied in this dataset, if applicable."	string							
+dataset	license		The license under which the daaset has been published.	string							
+dataset	longitudinal		Indicates whether the dataset has longitudinal or time-series data.	boolean							
+dataset	primary_site		The primary body site studied in this dataset.	string							
+dataset	publication_citation		The major or main publication(s) associated with the data itself or with the publication that published the dataset.	string							
+dataset	research_description		"If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results."	string							
+dataset	research_design		A summary of the goals of the research or a general description of the research's relationship to a clinical application.	string							
+dataset	research_objective		The general objective of the research; what the researchers hope to discover or determine.	string							
+dataset	research_setup		A high level description of the setup used to achieve the research objectives.	string							
+dx_series_file	contrast_bolus_agent		"(0018, 0010) Contrast/Bolus Agent"	array				string			
+dx_series_file	detector_type		"(0018, 7004) Detector Type"	enum							
+dx_series_file	image_type		"(0008, 0008) Image Type"	array				string			
+dx_series_file	imager_pixel_spacing		"(0018, 1164) Imager Pixel Spacing"	array				number			
+dx_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum							
+dx_series_file	manufacturer		"(0008, 0070) Manufacturer"	string							
+dx_series_file	manufacturer_model_name		"(0008, 1090) Manufacturer's Model Name"	string							
+dx_series_file	modality		"(0008, 0060) Modality"	string							
+dx_series_file	pixel_spacing		"(0028, 0030) Pixel Spacing"	array				number			
+dx_series_file	series_description		"A general description of or additional information about the imaging series; (0008, 103e) Series Description."	string							
+dx_series_file	series_uid		"The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID."	string							
+dx_series_file	spatial_resolution		"(0018, 1050) Spatial Resolution"	number							
+dx_series_file	view_position		"(0018, 5101) View Position"	array				string			
+dx_series_file	data_category	_terms.yaml#/data_category/common		enum							
+dx_series_file	data_format	_terms.yaml#/data_format/common		enum							
+dx_series_file	data_type	_terms.yaml#/data_type/common		enum							
+dx_series_file	file_description		Any additional text to give this file context in its study.	string							
+imaging_study	days_to_study		The number of days between the case's index date and the date of the imaging study.	number							
+imaging_study	days_from_study_to_pos_covid_test		The number of days from the imaging study to the patient's positive COVID-19 test(s).	array				integer			
+imaging_study	days_from_study_to_neg_covid_test		The number of days from the imaging study to the patient's negative COVID-19 test(s).	array				integer			
+imaging_study	midrc_harmonized_study_description		A standardized representation mapped by MIDRC Data Quality and Harmonization subcommittee to the study_description property in submitted imaging data.	enum							
+imaging_study	study_description		"(0008, 1030) Study Description."	string							
+imaging_study	study_modality		"The modalities of the imaging study; derived from (0008, 0060) Modality."	array				string			
+imaging_study	age_at_imaging		"Age of the patient in years at the time the imaging study was performed. To indicate ages greater than 89 years, please use the property 'age_at_imaging_gt89'."	number		89	0				
+imaging_study	age_at_imaging_gt89		Indicates whether the age of the patient in years at the time the imaging study was performed is greater than 89 years.	enum							
+imaging_study	body_part_examined		"(0018, 0015) Body Part Examined."	array				string			
+imaging_study	study_uid		"(0020, 000d) Study Instance UID"	string							
+imaging_study	study_year		"The year when imaging study was performed; year component of Study Date (0008, 0020)."	integer							
+imaging_study	study_year_shifted		Indicates whether the study year has been shifted for de-identification.	boolean							
+measurement	test_days_from_index		A number of days beginning with the index date and ending with the date of the test.	integer							
+measurement	test_name		The name of the test for which this measurement was the result.	enum							
+measurement	test_result_text		The measured result of the test described using a list of enumerations.	enum							
+measurement	test_method		The test method used to confirm a condition or produce a measurement.	enum							
+medication	medication_name		The name of the specific medication the case was prescribed or administered.	string							
+medication	medication_type		A categorization of medication used to describe the type of medication the patient was perscribed or administered.	enum							
+medication	days_to_medication_start		The number of days from the index date to the date the case started a specific medication.	integer							
+medication	days_to_medication_end		The number of days from the index date to the date the case stopped a specific medication.	integer							
+mg_series_file	contrast_bolus_agent		"(0018, 0010) Contrast/Bolus Agent"	array				string			
+mg_series_file	detector_type		"(0018, 7004) Detector Type"	enum							
+mg_series_file	image_type		"(0008, 0008) Image Type"	array				string			
+mg_series_file	imager_pixel_spacing		"(0018, 1164) Imager Pixel Spacing"	array				number			
+mg_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum							
+mg_series_file	manufacturer		"(0008, 0070) Manufacturer"	string							
+mg_series_file	manufacturer_model_name		"(0008, 1090) Manufacturer's Model Name"	string							
+mg_series_file	modality		"(0008, 0060) Modality"	string							
+mg_series_file	pixel_spacing		"(0028, 0030) Pixel Spacing"	array				number			
+mg_series_file	series_description		"A general description of or additional information about the imaging series; (0008, 103e) Series Description."	string							
+mg_series_file	series_uid		"The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID."	string							
+mg_series_file	sop_class_name		"The textual description for the (0008, 0016) SOP Class UID Attribute."	enum							
+mg_series_file	sop_class_uid		"(0008, 0016) SOP Class UID Attribute."	enum							
+mg_series_file	spatial_resolution		"(0018, 1050) Spatial Resolution"	number							
+mg_series_file	view_position		"(0018, 5101) View Position - found additional values at https://dicom.innolitics.com/ciods/digital-mammography-x-ray-image/dx-positioning/00185101 - need confirmation"	array				string			
+mg_series_file	data_category	_terms.yaml#/data_category/common		enum							
+mg_series_file	data_format	_terms.yaml#/data_format/common		enum							
+mg_series_file	data_type	_terms.yaml#/data_type/common		enum							
+mg_series_file	file_description		Any additional text to give this file context in its study.	string							
+mr_series_file	contrast_bolus_agent		"(0018, 0010) Contrast/Bolus Agent"	array				string			
+mr_series_file	image_type		"(0008, 0008) Image Type"	array				string			
+mr_series_file	imager_pixel_spacing		"(0018, 1164) Imager Pixel Spacing"	array				number			
+mr_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum							
+mr_series_file	magnetic_field_strength		"(0018,0087) Magnetic Field Strength"	number							
+mr_series_file	manufacturer		"(0008, 0070) Manufacturer"	string							
+mr_series_file	manufacturer_model_name		"(0008, 1090) Manufacturer's Model Name"	string							
+mr_series_file	modality		"(0008, 0060) Modality"	string							
+mr_series_file	mr_acquisition_type		"(0018, 0023) MR Acquisition Type"	string							
+mr_series_file	pixel_spacing		"(0028, 0030) Pixel Spacing"	array				number			
+mr_series_file	scanning_sequence		"(0018, 0020) Scanning Sequence"	array				string			
+mr_series_file	sequence_name		"(0018, 0024) Sequence Name"	string							
+mr_series_file	series_description		"(0008, 103e) Series Description; a general description of or additional information about the imaging series."	string							
+mr_series_file	series_uid		"(0020, 000e) Series Instance UID; the UID or unique identification code of the imaging series."	string							
+mr_series_file	slice_thickness		"(0018, 0050) Slice Thickness"	array				number			
+mr_series_file	spacing_between_slices		"(0018, 0088) Spacing Between Slices"	array				number			
+mr_series_file	data_category	_terms.yaml#/data_category/common		enum							
+mr_series_file	data_format	_terms.yaml#/data_format/common		enum							
+mr_series_file	data_type	_terms.yaml#/data_type/common		enum							
+mr_series_file	file_description		Any additional text to give this file context in its study.	string							
+nm_series_file	body_part_examined		"(0018, 0015) Body Part Examined."	array				string			
+nm_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum							
+nm_series_file	manufacturer		"(0008, 0070) Manufacturer"	string							
+nm_series_file	manufacturer_model_name		"(0008, 1090) Manufacturer's Model Name"	string							
+nm_series_file	modality		"(0008, 0060) Modality"	string							
+nm_series_file	radiopharmaceutical		"(0018,0031) Radiopharmaceutical"	string							
+nm_series_file	series_description		"A general description of or additional information about the imaging series; (0008, 103e) Series Description."	string							
+nm_series_file	series_uid		"The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID."	string							
+nm_series_file	data_category	_terms.yaml#/data_category/common		enum							
+nm_series_file	data_format	_terms.yaml#/data_format/common		enum							
+nm_series_file	data_type	_terms.yaml#/data_type/common		enum							
+nm_series_file	file_description		Any additional text to give this file context in its study.	string							
+observation	observation_name		"The short of the observation about the subject obtained in the context of examination, questioning or a during procedure."	string							
+observation	observation_answer		"The answer or value provided for a specific observation about a subject obtained in the context of examination, questioning or a during procedure."	string							
+observation	days_to_observation		The number of days from the index date to the date of the observation.	integer							
+procedure	breathing_support_type		The type of breathing support the patient received.	string							
+procedure	days_to_procedure_start		The number of days between the case's index date and the start date of the procedure.	integer							
+procedure	days_to_procedure_end		The number of days between the case's index date and the end date of the procedure.	integer							
+procedure	procedure_name		The name of the procedure performed.	enum							
+program	type			string							
+program	id	_definitions.yaml#/UUID							node_id		
+program	name		Full name/title of the program.	string							
+program	dbgap_accession_number		The dbgap accession number provided for the program.	string							
+project	availability_mechanism		Mechanism by which the project will be made avilable.	string							
+project	availability_type		Is the project open or restricted?	enum							
+project	code		Unique identifier for the project.	string							
 project	complete		"Description of whether the project submission is complete or still in progress.
-"	enum
-project	date_collected		The date or date range in which the project data was collected.	string
-project	dbgap_accession_number		The dbgap accession number provided for the project.	string
-project	id	_definitions.yaml#/UUID	UUID for the project.						node_id
-project	intended_release_date		Tracks a Project's intended release date.	string						date-time
-project	investigator_affiliation		The investigator's affiliation with respect to a research institution.	string
-project	investigator_name		Name of the principal investigator for the project.	string
-project	name		Display name/brief description for the project.	string
+"	enum							
+project	date_collected		The date or date range in which the project data was collected.	string							
+project	dbgap_accession_number		The dbgap accession number provided for the project.	string							
+project	id	_definitions.yaml#/UUID	UUID for the project.						node_id		
+project	intended_release_date		Tracks a Project's intended release date.	string						date-time	
+project	investigator_affiliation		The investigator's affiliation with respect to a research institution.	string							
+project	investigator_name		Name of the principal investigator for the project.	string							
+project	name		Display name/brief description for the project.	string							
 project	releasable		"A project can only be released by the user when `releasable` is true.
-"	boolean							False
+"	boolean							FALSE
 project	released		"To release a project is to tell the GDC to include all submitted
 entities in the next GDC index.
-"	boolean							False
-project	support_source		The name of source providing support/grant resources.	string
-project	support_id		The ID of the source providing support/grant resources.	string
+"	boolean							FALSE
+project	support_source		The name of source providing support/grant resources.	string							
+project	support_id		The ID of the source providing support/grant resources.	string							
 project	state		"The possible states a project can be in. All but 'open' are
 equivalent to some type of locked state.
 "	enum							open
-project	type			string
-project	acknowledgement		Publication acknowledgement(s) for the published dataset.	string
-project	data_citation		The citation for the published dataset.	string
-project	data_contributor		The name of the organization or individual that the contributed dataset belongs to.	string
-project	data_description		A brief, free-text description of the data files and associated metadata provided for this dataset.	string
-project	data_url_doi		A URL or DOI for the source of the dataset or the contributing organization's website.	string
-project	disease_type		The primary type of disease studied in this dataset, if applicable.	string
-project	license		The license under which the daaset has been published.	string
-project	longitudinal		Indicates whether the dataset has longitudinal or time-series data.	boolean
-project	primary_site		The primary body site studied in this dataset.	string
-project	publication_citation		The major or main publication(s) associated with the data itself or with the publication that published the dataset.	string
-project	research_description		If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results.	string
-project	research_design		A summary of the goals of the research or a general description of the research's relationship to a clinical application.	string
-project	research_objective		The general objective of the research; what the researchers hope to discover or determine.	string
-project	research_setup		A high level description of the setup used to achieve the research objectives.	string
-pt_series_file	body_part_examined		(0018, 0015) Body Part Examined.	array				string
-pt_series_file	ct_images		Indicates whether a computed tomography image(s) are assocated with this PET scan (e.g. PET/CT).	boolean
-pt_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum
-pt_series_file	manufacturer		(0008, 0070) Manufacturer	string
-pt_series_file	manufacturer_model_name		(0008, 1090) Manufacturer's Model Name	string
-pt_series_file	modality		(0008, 0060) Modality	string
-pt_series_file	radiopharmaceutical		(0018,0031) Radiopharmaceutical	string
-pt_series_file	series_description		A general description of or additional information about the imaging series; (0008, 103e) Series Description.	string
-pt_series_file	series_uid		The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.	string
-pt_series_file	slice_thickness		(0018, 0050) Slice Thickness	array				number
-pt_series_file	data_category	_terms.yaml#/data_category/common		enum
-pt_series_file	data_format	_terms.yaml#/data_format/common		enum
-pt_series_file	data_type	_terms.yaml#/data_type/common		enum
-pt_series_file	file_description		Any additional text to give this file context in its study.	string
-rf_series_file	contrast_bolus_agent		(0018, 0010) Contrast/Bolus Agent	array				string
-rf_series_file	detector_type		(0018, 7004) Detector Type	enum
-rf_series_file	manufacturer		(0008, 0070) Manufacturer	string
-rf_series_file	manufacturer_model_name		(0008, 1090) Manufacturer's Model Name	string
-rf_series_file	modality		(0008, 0060) Modality	string
-rf_series_file	pixel_spacing		(0028, 0030) Pixel Spacing	array				number
-rf_series_file	series_description		A general description of or additional information about the imaging series; (0008, 103e) Series Description.	string
-rf_series_file	series_uid		The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.	string
-rf_series_file	data_category	_terms.yaml#/data_category/common		enum
-rf_series_file	data_format	_terms.yaml#/data_format/common		enum
-rf_series_file	data_type	_terms.yaml#/data_type/common		enum
-rf_series_file	file_description		Any additional text to give this file context in its study.	string
-us_series_file	doppler_images		Indicates whether this series includes Doppler images included (can we use DICOM (0018, 6012) for this?)	boolean
-us_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum
-us_series_file	manufacturer		(0008, 0070) Manufacturer	string
-us_series_file	manufacturer_model_name		(0008, 1090) Manufacturer's Model Name	string
-us_series_file	modality		(0008, 0060) Modality	string
-us_series_file	multiframe_images		Indicates whether this series includes multiframe images.	boolean
-us_series_file	series_description		A general description of or additional information about the imaging series; (0008, 103e) Series Description.	string
-us_series_file	series_uid		The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.	string
-us_series_file	transducer_type		(0018,6031) Transducer type	enum
-us_series_file	data_category	_terms.yaml#/data_category/common		enum
-us_series_file	data_format	_terms.yaml#/data_format/common		enum
-us_series_file	data_type	_terms.yaml#/data_type/common		enum
-us_series_file	file_description		Any additional text to give this file context in its study.	string
-visit	days_to_hospital_admission		The number of days between the case's index date and the date of the patient's hospital admission.	integer
-visit	days_to_hospital_discharge		The number of days between the case's index date and the date of the patient's hospital discharge.	integer
-visit	days_to_icu_admission		The number of days between the case's index date and the date of the patient's ICU admission.	integer
-visit	days_to_icu_discharge		The number of days between the case's index date and the date of the patient's ICU discharge..	integer
-visit	discharge_type		The status or destination of the patient at the time of discharge.	string
-xa_series_file	image_type		(0008, 0008) Image Type	array				string
-xa_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum
-xa_series_file	manufacturer		(0008, 0070) Manufacturer	string
-xa_series_file	manufacturer_model_name		(0008, 1090) Manufacturer's Model Name	string
-xa_series_file	modality		(0008, 0060) Modality	string
-xa_series_file	series_description		A general description of or additional information about the imaging series; (0008, 103e) Series Description.	string
-xa_series_file	series_uid		The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.	string
-xa_series_file	data_category	_terms.yaml#/data_category/common		enum
-xa_series_file	data_format	_terms.yaml#/data_format/common		enum
-xa_series_file	data_type	_terms.yaml#/data_type/common		enum
-xa_series_file	file_description		Any additional text to give this file context in its study.	string
+project	type			string							
+project	acknowledgement		Publication acknowledgement(s) for the published dataset.	string							
+project	data_citation		The citation for the published dataset.	string							
+project	data_contributor		The name of the organization or individual that the contributed dataset belongs to.	string							
+project	data_description		"A brief, free-text description of the data files and associated metadata provided for this dataset."	string							
+project	data_url_doi		A URL or DOI for the source of the dataset or the contributing organization's website.	string							
+project	disease_type		"The primary type of disease studied in this dataset, if applicable."	string							
+project	license		The license under which the daaset has been published.	string							
+project	longitudinal		Indicates whether the dataset has longitudinal or time-series data.	boolean							
+project	primary_site		The primary body site studied in this dataset.	string							
+project	publication_citation		The major or main publication(s) associated with the data itself or with the publication that published the dataset.	string							
+project	research_description		"If the dataset is related to a research study, provide a brief, free-text description or abstract of the study being performed, for example, the hypothesis being tested and a very brief description of the materials, methods and results."	string							
+project	research_design		A summary of the goals of the research or a general description of the research's relationship to a clinical application.	string							
+project	research_objective		The general objective of the research; what the researchers hope to discover or determine.	string							
+project	research_setup		A high level description of the setup used to achieve the research objectives.	string							
+pt_series_file	body_part_examined		"(0018, 0015) Body Part Examined."	array				string			
+pt_series_file	ct_images		Indicates whether a computed tomography image(s) are assocated with this PET scan (e.g. PET/CT).	boolean							
+pt_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum							
+pt_series_file	manufacturer		"(0008, 0070) Manufacturer"	string							
+pt_series_file	manufacturer_model_name		"(0008, 1090) Manufacturer's Model Name"	string							
+pt_series_file	modality		"(0008, 0060) Modality"	string							
+pt_series_file	radiopharmaceutical		"(0018,0031) Radiopharmaceutical"	string							
+pt_series_file	series_description		"A general description of or additional information about the imaging series; (0008, 103e) Series Description."	string							
+pt_series_file	series_uid		"The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID."	string							
+pt_series_file	slice_thickness		"(0018, 0050) Slice Thickness"	array				number			
+pt_series_file	data_category	_terms.yaml#/data_category/common		enum							
+pt_series_file	data_format	_terms.yaml#/data_format/common		enum							
+pt_series_file	data_type	_terms.yaml#/data_type/common		enum							
+pt_series_file	file_description		Any additional text to give this file context in its study.	string							
+rf_series_file	contrast_bolus_agent		"(0018, 0010) Contrast/Bolus Agent"	array				string			
+rf_series_file	detector_type		"(0018, 7004) Detector Type"	enum							
+rf_series_file	manufacturer		"(0008, 0070) Manufacturer"	string							
+rf_series_file	manufacturer_model_name		"(0008, 1090) Manufacturer's Model Name"	string							
+rf_series_file	modality		"(0008, 0060) Modality"	string							
+rf_series_file	pixel_spacing		"(0028, 0030) Pixel Spacing"	array				number			
+rf_series_file	series_description		"A general description of or additional information about the imaging series; (0008, 103e) Series Description."	string							
+rf_series_file	series_uid		"The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID."	string							
+rf_series_file	data_category	_terms.yaml#/data_category/common		enum							
+rf_series_file	data_format	_terms.yaml#/data_format/common		enum							
+rf_series_file	data_type	_terms.yaml#/data_type/common		enum							
+rf_series_file	file_description		Any additional text to give this file context in its study.	string							
+us_series_file	doppler_images		"Indicates whether this series includes Doppler images included (can we use DICOM (0018, 6012) for this?)"	boolean							
+us_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum							
+us_series_file	manufacturer		"(0008, 0070) Manufacturer"	string							
+us_series_file	manufacturer_model_name		"(0008, 1090) Manufacturer's Model Name"	string							
+us_series_file	modality		"(0008, 0060) Modality"	string							
+us_series_file	multiframe_images		Indicates whether this series includes multiframe images.	boolean							
+us_series_file	series_description		"A general description of or additional information about the imaging series; (0008, 103e) Series Description."	string							
+us_series_file	series_uid		"The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID."	string							
+us_series_file	transducer_type		"(0018,6031) Transducer type"	enum							
+us_series_file	data_category	_terms.yaml#/data_category/common		enum							
+us_series_file	data_format	_terms.yaml#/data_format/common		enum							
+us_series_file	data_type	_terms.yaml#/data_type/common		enum							
+us_series_file	file_description		Any additional text to give this file context in its study.	string							
+visit	days_to_hospital_admission		The number of days between the case's index date and the date of the patient's hospital admission.	integer							
+visit	days_to_hospital_discharge		The number of days between the case's index date and the date of the patient's hospital discharge.	integer							
+visit	days_to_icu_admission		The number of days between the case's index date and the date of the patient's ICU admission.	integer							
+visit	days_to_icu_discharge		The number of days between the case's index date and the date of the patient's ICU discharge..	integer							
+visit	discharge_type		The status or destination of the patient at the time of discharge.	string							
+xa_series_file	image_type		"(0008, 0008) Image Type"	array				string			
+xa_series_file	lossy_image_compression		"(0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to ""01"". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains ""01""."	enum							
+xa_series_file	manufacturer		"(0008, 0070) Manufacturer"	string							
+xa_series_file	manufacturer_model_name		"(0008, 1090) Manufacturer's Model Name"	string							
+xa_series_file	modality		"(0008, 0060) Modality"	string							
+xa_series_file	series_description		"A general description of or additional information about the imaging series; (0008, 103e) Series Description."	string							
+xa_series_file	series_uid		"The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID."	string							
+xa_series_file	data_category	_terms.yaml#/data_category/common		enum							
+xa_series_file	data_format	_terms.yaml#/data_format/common		enum							
+xa_series_file	data_type	_terms.yaml#/data_type/common		enum							
+xa_series_file	file_description		Any additional text to give this file context in its study.	string							
