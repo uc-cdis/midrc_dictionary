@@ -1,0 +1,140 @@
+$schema: "http://json-schema.org/draft-04/schema#"
+
+id: "radiology_report"
+title: Radiology Report
+type: object
+nodeTerms: null
+namespace: https://data.midrc.org
+category: data_file
+program: '*'
+project: '*'
+description: A detailed report that describes the results of an imaging test. A radiology report can include narrative information about the type of imaging test that was done, how it was done, and any labels representing the results of the test.
+additionalProperties: false
+submittable: true
+validators: null
+
+systemProperties:
+  - id
+  - project_id
+  - state
+  - created_datetime
+  - updated_datetime
+  - file_state
+  - error_type
+
+links:
+  - exclusive: false
+    required: true
+    subgroup:
+      - name: core_metadata_collections
+        backref: radiology_reports
+        label: data_from
+        target_type: core_metadata_collection
+        multiplicity: many_to_one
+        required: false
+      - name: datasets
+        backref: radiology_reports
+        label: related_to
+        target_type: dataset
+        multiplicity: many_to_one
+        required: false
+      - name: cases
+        backref: radiology_reports
+        label: related_to
+        target_type: case
+        multiplicity: many_to_one
+        required: false
+      - name: imaging_studies
+        backref: radiology_reports
+        label: related_to
+        target_type: imaging_study
+        multiplicity: many_to_one
+        required: false
+
+required:
+  - submitter_id
+  - type
+  - file_name
+  - file_size
+  - md5sum
+  - data_category
+  - data_format
+  - data_type
+  - study_description
+
+uniqueKeys:
+  - [id]
+  - [project_id, submitter_id]
+
+properties:
+
+  $ref: "_definitions.yaml#/data_file_properties"
+
+  body_part_examined:
+    description: (0018, 0015) Body Part Examined.
+    type: array
+    items:
+      type: string
+
+  data_category:
+    term:
+      $ref: "_terms.yaml#/data_category"
+    enum:
+      - "Radiology Report"
+
+  data_format:
+    term:
+      $ref: "_terms.yaml#/data_format"
+    enum:
+      - "CSV"
+      - "DICOM"
+      - "JSON"
+      - "PDF"
+      - "RTF"
+      - "TSV"
+      - "TXT"
+      - "XML"
+
+  data_type:
+    term:
+      $ref: "_terms.yaml#/data_type"
+    enum:
+      - "Radiology Report"
+
+  modality:
+    description: (0008, 0060) Modality
+    type: string
+
+  report_generation_method:
+    description: A categorical description of the way the report was generated, either through clinical care (Clinical) or through computational means (Synethic).
+    enum:
+      - Clinical
+      - Synthetic
+
+  report_modification_method:
+    description: A categorical description of the type of modification performed on the report, either by redaction of sensitive information (Redacted) or by obscuring it through replacement with random or shifted values (Synthetic replacement). 
+    enum:
+      - Redacted
+      - Synthetic replacement
+
+  study_description:
+    description: (0008, 1030) Study Description.
+    type: string
+
+# ## LINKS
+  core_metadata_collections:
+    description: The submitter_id or id of the core_metadata_collection to which the report belongs, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  datasets:
+    description: The submitter_id or id of the case this report relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  cases:
+    description: The submitter_id or id of the case this report relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
+  imaging_studies:
+    description: The submitter_id or id of the imaging_study this report relates to, i.e., a link to a record in the parent node.
+    $ref: "_definitions.yaml#/to_one"
+
