@@ -182,8 +182,8 @@ properties:
   data_type:
     description: An indication of whether the annotation is expert validated by MIDRC (“Internal Annotation”) or has not be validated by MIDRC experts (“External Annotation”). 
     enum:
-      - "Internal Annotation"
-      - "External Annotation"
+      - Internal Annotation
+      - External Annotation
 
 # ## LINKS
   core_metadata_collections:
