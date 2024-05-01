@@ -158,7 +158,7 @@ properties:
         - midrc_lung_segs
         - midrc_lung_measures
         - midrc_mdai_chestxr
-        - mRALE_Mastermind_Challenge
+        - midrc_mRALE_Mastermind_Challenge
         - SIFT        
 
   class_covid19_pneumonia:
