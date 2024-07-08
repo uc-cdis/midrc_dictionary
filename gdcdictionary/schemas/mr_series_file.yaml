@@ -228,6 +228,10 @@ properties:
     items:
       type: string
 
+  number_of_instances:
+    description: The number of instances included in this series.
+    type: integer
+
   number_of_temporal_positions:
     description: (0020, 0105) Number of Temporal Positions
     type: array
