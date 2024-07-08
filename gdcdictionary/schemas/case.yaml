@@ -84,7 +84,7 @@ properties:
   index_event:
     description: The event used as the anchor or start date for all temporal data elements. This acts as day 0 on a timeline of events relating to the patient.
     enum:
-      - COVID 19-Test
+      - COVID-19 Test
       - Long COVID Diagnosis
       - Study Enrollment
       - First Imaging Study
