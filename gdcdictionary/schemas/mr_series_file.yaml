@@ -198,7 +198,9 @@ properties:
 
   diffusion_b_value:
     description: (0018, 9087) Diffusion b-value
-    type: number
+    type: array
+    items:
+      type: number
 
   diffusion_gradient_orientation:
     description: (0018, 9089) Diffusion Gradient Orientation
