@@ -57,7 +57,8 @@ properties:
   $ref: "_definitions.yaml#/data_file_properties"
 
   contrast_bolus_agent:
-    description: (0018, 0010) Contrast/Bolus Agent
+    term:
+      $ref: "_terms.yaml#/contrast_bolus_agent"
     type: array
     items:
       type: string
@@ -78,81 +79,96 @@ properties:
     type: boolean
 
   image_type:
-    description: (0008, 0008) Image Type
+    term:
+      $ref: "_terms.yaml#/image_type"
     type: array
     items:
       type: string
 
   imager_pixel_spacing:
-    description: (0018, 1164) Imager Pixel Spacing
+    term:
+      $ref: "_terms.yaml#/imager_pixel_spacing"
     type: array
     items:
       type: number
 
   lossy_image_compression:
-    description: (0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to "01". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains "01".
+    term:
+      $ref: "_terms.yaml#/lossy_image_compression"
     enum:
       - "00"
       - "01"
 
   magnetic_field_strength:
-    description: (0018,0087) Magnetic Field Strength
+    term:
+      $ref: "_terms.yaml#/magnetic_field_strength"
     type: array
     items:
       type: number
 
   manufacturer:
-    description: (0008, 0070) Manufacturer
+    term:
+      $ref: "_terms.yaml#/manufacturer"
     type: string
 
   manufacturer_model_name:
-    description: (0008, 1090) Manufacturer's Model Name
+    term:
+      $ref: "_terms.yaml#/manufacturer_model_name"
     type: string
 
   modality:
-    description: (0008, 0060) Modality
+    term:
+      $ref: "_terms.yaml#/modality"
     type: string
 
   mr_acquisition_type:
-    description: (0018, 0023) MR Acquisition Type
+    term:
+      $ref: "_terms.yaml#/mr_acquisition_type"
     type: array
     items:
       type: string
 
   pixel_spacing:
-    description: (0028, 0030) Pixel Spacing
+    term:
+      $ref: "_terms.yaml#/pixel_spacing"
     type: array
     items:
       type: number
 
   scanning_sequence:
-    description: (0018, 0020) Scanning Sequence
+    term:
+      $ref: "_terms.yaml#/scanning_sequence"
     type: array
     items:
       type: string
 
   sequence_name:
-    description: (0018, 0024) Sequence Name
+    term:
+      $ref: "_terms.yaml#/sequence_name"
     type: array
     items:
       type: string
 
   series_description:
-    description: (0008, 103e) Series Description; a general description of or additional information about the imaging series.
+    term:
+      $ref: "_terms.yaml#/series_description"
     type: string
 
   series_uid:
-    description: (0020, 000e) Series Instance UID; the UID or unique identification code of the imaging series.
+    term:
+      $ref: "_terms.yaml#/series_uid"
     type: string
 
   slice_thickness:
-    description: (0018, 0050) Slice Thickness
+    term:
+      $ref: "_terms.yaml#/slice_thickness"
     type: array
     items:
       type: number
 
   spacing_between_slices:
-    description: (0018, 0088) Spacing Between Slices
+    term:
+      $ref: "_terms.yaml#/spacing_between_slices"
     type: array
     items:
       type: number
@@ -191,41 +207,48 @@ properties:
 
   # draft MR properties, 2023-03-08
   angio_flag:
-    description: (0018, 0025) Angio Flag
+    term:
+      $ref: "_terms.yaml#/angio_flag"
     type: array
     items:
       type: string
 
   diffusion_b_value:
-    description: (0018, 9087) Diffusion b-value
+    term:
+      $ref: "_terms.yaml#/diffusion_b_value"
     type: array
     items:
       type: number
 
   diffusion_gradient_orientation:
-    description: (0018, 9089) Diffusion Gradient Orientation
+    term:
+      $ref: "_terms.yaml#/diffusion_gradient_orientation"
     type: string
 
   echo_number:
-    description: (0018, 0086) Echo Number
+    term:
+      $ref: "_terms.yaml#/echo_number"
     type: array
     items:
       type: integer
 
   echo_time:
-    description: (0018, 0081) Echo Time
+    term:
+      $ref: "_terms.yaml#/echo_time"
     type: array
     items:
       type: number
 
   echo_train_length:
-    description: (0018, 0091) Echo Train Length
+    term:
+      $ref: "_terms.yaml#/echo_train_length"
     type: array
     items:
       type: integer
 
   imaged_nucleus:
-    description: (0018, 0085) Imaged Nucleus
+    term:
+      $ref: "_terms.yaml#/imaged_nucleus"
     type: array
     items:
       type: string
@@ -235,29 +258,34 @@ properties:
     type: integer
 
   number_of_temporal_positions:
-    description: (0020, 0105) Number of Temporal Positions
+    term:
+      $ref: "_terms.yaml#/number_of_temporal_positions"
     type: array
     items:
       type: integer
 
   repetition_time:
-    description: (0018, 0080) Repetition Time
+    term:
+      $ref: "_terms.yaml#/repetition_time"
     type: array
     items:
       type: number
 
   scan_options:
-    description: (0018, 0022) Scan Options
+    term:
+      $ref: "_terms.yaml#/scan_options"
     type: array
     items:
       type: string
 
   sequence_variant:
-    description: (0018, 0021) Sequence Variant
+    term:
+      $ref: "_terms.yaml#/sequence_variant"
     type: array
     items:
       type: string
 
   software_version:
-    description: (0018, 1020) Software Version(s)
+    term:
+      $ref: "_terms.yaml#/software_version"
     type: string

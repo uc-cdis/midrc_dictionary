@@ -57,19 +57,22 @@ properties:
   $ref: "_definitions.yaml#/data_file_properties"
 
   code_meaning:
-    description: "(0008,0104) Code Meaning. Note that code_meaning is pulled from the View Code Sequence (0054,0220)"
+    term:
+      $ref: "_terms.yaml#/code_meaning"
     type: array
     items:
       type: string
 
   contrast_bolus_agent:
-    description: "(0018, 0010) Contrast/Bolus Agent"
+    term:
+      $ref: "_terms.yaml#/contrast_bolus_agent"
     type: array
     items:
       type: string
 
   detector_type:
-    description: (0018, 7004) Detector Type
+    term:
+      $ref: "_terms.yaml#/detector_type"
     enum:
       - DIRECT
       - SCINTILLATOR
@@ -92,33 +95,39 @@ properties:
     type: boolean
 
   image_type:
-    description: (0008, 0008) Image Type
+    term:
+      $ref: "_terms.yaml#/image_type"
     type: array
     items:
       type: string
 
   imager_pixel_spacing:
-    description: (0018, 1164) Imager Pixel Spacing
+    term:
+      $ref: "_terms.yaml#/imager_pixel_spacing"
     type: array
     items:
       type: number
 
   lossy_image_compression:
-    description: (0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to "01". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains "01".
+    term:
+      $ref: "_terms.yaml#/lossy_image_compression"
     enum:
       - "00"
       - "01"
 
   manufacturer:
-    description: (0008, 0070) Manufacturer
+    term:
+      $ref: "_terms.yaml#/manufacturer"
     type: string
 
   manufacturer_model_name:
-    description: (0008, 1090) Manufacturer's Model Name
+    term:
+      $ref: "_terms.yaml#/manufacturer_model_name"
     type: string
 
   modality:
-    description: (0008, 0060) Modality
+    term:
+      $ref: "_terms.yaml#/modality"
     type: string
 
   number_of_instances:
@@ -126,7 +135,8 @@ properties:
     type: integer
 
   pixel_spacing:
-    description: (0028, 0030) Pixel Spacing
+    term:
+      $ref: "_terms.yaml#/pixel_spacing"
     type: array
     items:
       type: number
@@ -138,15 +148,18 @@ properties:
   #     - Diagnostic
 
   series_description:
-    description: A general description of or additional information about the imaging series; (0008, 103e) Series Description.
+    term:
+      $ref: "_terms.yaml#/series_description"
     type: string
 
   series_uid:
-    description: The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.
+    term:
+      $ref: "_terms.yaml#/series_uid"
     type: string
 
   sop_class_name:
-    description: The textual description for the (0008, 0016) SOP Class UID Attribute.
+    term:
+      $ref: "_terms.yaml#/sop_class_name"
     enum:
       - Digital Mammography X-Ray Image Storage - For Presentation
       - Digital Mammography X-Ray Image Storage - For Processing
@@ -155,7 +168,8 @@ properties:
       - Breast Projection X-Ray Image Storage - For Processing
 
   sop_class_uid:
-    description: (0008, 0016) SOP Class UID Attribute.
+    term:
+      $ref: "_terms.yaml#/sop_class_uid"
     enum:
       - 1.2.840.10008.5.1.4.1.1.1.2
       - 1.2.840.10008.5.1.4.1.1.1.2.1
@@ -164,7 +178,8 @@ properties:
       - 1.2.840.10008.5.1.4.1.1.13.1.5
 
   spatial_resolution:
-    description: (0018, 1050) Spatial Resolution
+    term:
+      $ref: "_terms.yaml#/spatial_resolution"
     type: number
 
   # spot_compression_spot_magnification:
@@ -178,7 +193,8 @@ properties:
   #   type: boolean
 
   view_position:
-    description: (0018, 5101) View Position - found additional values at https://dicom.innolitics.com/ciods/digital-mammography-x-ray-image/dx-positioning/00185101 - need confirmation
+    term:
+      $ref: "_terms.yaml#/view_position"
     type: array
     items:
       type: string
