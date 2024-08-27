@@ -142,7 +142,7 @@ properties:
     type: string
 
   series_uid:
-     term:
+    term:
       $ref: "_terms.yaml#/series_uid"
     type: string
 
