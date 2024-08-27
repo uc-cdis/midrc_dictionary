@@ -135,12 +135,12 @@ properties:
       type: number
 
   series_description:
-     term:
+    term:
       $ref: "_terms.yaml#/series_description"
     type: string
 
   series_uid:
-     term:
+    term:
       $ref: "_terms.yaml#/series_uid"
     type: string
 
