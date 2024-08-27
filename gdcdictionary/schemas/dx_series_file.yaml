@@ -104,24 +104,24 @@ properties:
       type: number
 
   lossy_image_compression:
-     term:
+    term:
       $ref: "_terms.yaml#/lossy_image_compression"
     enum:
       - "00"
       - "01"
 
   manufacturer:
-     term:
+    term:
       $ref: "_terms.yaml#/manufacturer"
     type: string
 
   manufacturer_model_name:
-     term:
+    term:
       $ref: "_terms.yaml#/manufacturer_model_name"
     type: string
 
   modality:
-     term:
+    term:
       $ref: "_terms.yaml#/modality"
     type: string
 
@@ -130,14 +130,14 @@ properties:
     type: integer
 
   pixel_spacing:
-     term:
+    term:
       $ref: "_terms.yaml#/pixel_spacing"
     type: array
     items:
       type: number
 
   series_description:
-     term:
+    term:
       $ref: "_terms.yaml#/series_description"
     type: string
 
@@ -147,12 +147,12 @@ properties:
     type: string
 
   spatial_resolution:
-     term:
+    term:
       $ref: "_terms.yaml#/spatial_resolution"
     type: number
 
   view_position:
-     term:
+    term:
       $ref: "_terms.yaml#/view_position"
     type: array
     items:
