@@ -86,37 +86,45 @@ properties:
     type: boolean
 
   loinc_code:
-    description: The LOINC code assigned based on the study description provided.
+    term:
+      $ref: "_terms.yaml#/loinc_code"
     type: string
 
   loinc_contrast:
-    description: The LOINC indicator noting whether the image was completed with or without contrast, as associated with the assigned LOINC code.
+    term:
+      $ref: "_terms.yaml#/loinc_contrast"
     type: string
 
   loinc_long_common_name:
-    description: The LOINC long common name associated with the assigned LOINC code.
+    term:
+      $ref: "_terms.yaml#/loinc_long_common_name"
     type: string
 
   loinc_method:
-    description: The LOINC method or imaging modality associated with the assigned LOINC code.
+    term:
+      $ref: "_terms.yaml#/loinc_method"
     type: string
 
   loinc_system:
-    description: The LOINC system or body part examined associated with the assigned LOINC code.
+    term:
+      $ref: "_terms.yaml#/loinc_system"
     type: string
 
   study_description:
-    description: (0008, 1030) Study Description.
+    term:
+      $ref: "_terms.yaml#/study_description"
     type: string
 
   study_modality:
-    description: The modalities of the imaging study; derived from (0008, 0060) Modality.
+    term:
+      $ref: "_terms.yaml#/study_modality"
     type: array
     items:
       type: string
 
   study_uid:
-    description: (0020, 000d) Study Instance UID
+    term:
+      $ref: "_terms.yaml#/study_uid"
     type: string
 
   study_year:

@@ -57,7 +57,8 @@ properties:
   $ref: "_definitions.yaml#/data_file_properties"
 
   body_part_examined:
-    description: (0018, 0015) Body Part Examined.
+    term:
+      $ref: "_terms.yaml#/body_part_examined"
     type: array
     items:
       type: string
@@ -78,21 +79,25 @@ properties:
     type: boolean
 
   lossy_image_compression:
-    description: (0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to "01". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains "01".
+    term:
+      $ref: "_terms.yaml#/lossy_image_compression"
     enum:
       - "00"
       - "01"
 
   manufacturer:
-    description: (0008, 0070) Manufacturer
+    term:
+      $ref: "_terms.yaml#/manufacturer"
     type: string
 
   manufacturer_model_name:
-    description: (0008, 1090) Manufacturer's Model Name
+    term:
+      $ref: "_terms.yaml#/manufacturer_model_name"
     type: string
 
   modality:
-    description: (0008, 0060) Modality
+    term:
+      $ref: "_terms.yaml#/modality"
     type: string
 
   number_of_instances:
@@ -100,17 +105,19 @@ properties:
     type: integer
 
   radiopharmaceutical:
-    description: (0018,0031) Radiopharmaceutical
+    term:
+      $ref: "_terms.yaml#/radiopharmaceutical"
     type: string
 
   series_description:
-    description: A general description of or additional information about the imaging series; (0008, 103e) Series Description.
+    term:
+      $ref: "_terms.yaml#/series_description"
     type: string
 
   series_uid:
-    description: The UID or unique identification code of the imaging series; (0020, 000e) Series Instance UID.
+    term:
+      $ref: "_terms.yaml#/series_uid"
     type: string
-
 
   data_category:
     term:

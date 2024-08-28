@@ -1,5 +1,526 @@
 id: _terms
 
+## New Terms
+##DICOM TERMS
+acquisition_type:
+  description: >
+    (0018, 9302) Acquisition Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Acquisition Type"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+angio_flag:
+  description: >
+    (0018, 0025) Angio Flag. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Angio Flag"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    
+body_part_examined:
+  description: >
+    (0018, 0015) Body Part Examined. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Body Part Examined"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+
+code_meaning:
+  description: >
+    (0008,0104) Code Meaning. Note that code_meaning is pulled from the View Code Sequence (0054,0220). The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Code Meaning"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+contrast_bolus_agent:
+  description: >
+    (0018, 0010) Contrast/Bolus Agent. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Contrast Bolus Agent"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+convolution_kernel:
+  description: >
+    (0018, 1210) Convolution Kernel. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Convolution Kernel"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+detector_type:
+  description: >
+    (0018, 7004) Detector Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Detector Type"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+diffusion_b_value:
+  description: >
+    (0018, 9087) Diffusion b-value. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Diffusion b-value"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+diffusion_gradient_orientation:
+  description: >
+    (0018, 9089) Diffusion Gradient Orientation. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Diffusion Gradient Orientation"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+echo_number:
+  description: >
+    (0018, 0086) Echo Number. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Echo Number"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+echo_time:
+  description: >
+    (0018, 0081) Echo Time. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Echo Time"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+echo_train_length:
+  description: >
+    (0018, 0091) Echo Train Length. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Echo Train Length"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+exposure_modulation_type:
+  description: >
+    (0018, 9323) Exposure Modulation Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Exposure Modulation Type"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+image_type:
+  description: >
+    (0008, 0008) Image Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Image Type"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+imaged_nucleus:
+  description: >
+    (0018, 0085) Imaged Nucleus. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Imaged Nucleus"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+imager_pixel_spacing:
+  description: >
+    (0018, 1164) Imager Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Imager Pixel Spacing"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+lossy_image_compression:
+  description: >
+    (0028, 2110) Lossy Image Compression; Note, if an image is compressed with a lossy algorithm, the Attribute Lossy Image Compression (0028,2110) is set to "01". Subsequently, if the image is decompressed and transferred in uncompressed format, this Attribute value remains "01". The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Lossy Image Compression"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+magnetic_field_strength:
+  description: >
+    (0018,0087) Magnetic Field Strength. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Magnetic Field Strength"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+manufacturer:
+  description: >
+    (0008, 0070) Manufacturer. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Manufacturer"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+manufacturer_model_name:
+  description: >
+    (0008, 1090) Manufacturer's Model Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Manufacturer's Model Name"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+modality:
+  description: >
+    (0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Modality"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+mr_acquisition_type:
+  description: >
+    (0018, 0023) MR Acquisition Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "MR Acquisition Type"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+number_of_temporal_positions:
+  description: >
+    (0018, 0023) MR Acquisition Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "MR Acquisition Type"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+patient_position:
+  description: >
+    (0018,5100) Patient Position. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Patient Position"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+pixel_spacing:
+  description: >
+    (0028, 0030) Pixel Spacing. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Pixel Spacing"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+radiation_setting:
+  description: >
+    (0018, 1155) Radiation Setting. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Radiation Setting"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+radiopharmaceutical:
+  description: >
+    (0018,0031) Radiopharmaceutical. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Radiopharmaceutical"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+region_spatial_format:
+  description: >
+    (0018,6012) Region Spatial Format. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Region Spatial Format"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+repetition_time:
+  description: >
+    (0018, 0080) Repetition Time. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Repetition Time"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+scan_options:
+  description: >
+    (0018, 0022) Scan Options. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Scan Options"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+scanning_sequence:
+  description: >
+    (0018, 0020) Scanning Sequence. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Scanning Sequence"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+sequence_name:
+  description: >
+    (0018, 0024) Sequence Name. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Sequence Name"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+sequence_variant:
+  description: >
+    (0018, 0021) Sequence Variant. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Sequence Variant"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+series_description:
+  description: >
+    (0008, 103e) Series Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Series Description"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+series_uid:
+  description: >
+    (0020, 000e) Series Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Series Instance UID"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+slice_thickness:
+  description: >
+    (0018, 0050) Slice Thickness. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Slice Thickness"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+software_version:
+  description: >
+    (0018, 1020) Software Version(s). The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Software Version(s)"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+sop_class_name:
+  description: >
+    The textual description for the (0008, 0016) SOP Class UID Attribute. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "SOP Class"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+sop_class_uid:
+  description: >
+    (0008, 0016) SOP Class UID Attribute.. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "SOP Class UID"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+spacing_between_slices:
+  description: >
+    (0018, 0088) Spacing Between Slices. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Spacing Between Slices"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+spatial_resolution:
+  description: >
+    (0018, 1050) Spatial Resolution. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Spatial Resolution"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+study_description:
+  description: >
+    (0008, 1030) Study Description. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Study Description"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+    
+study_modality:
+  description: >
+    The modalities of the imaging study; derived from (0008, 0060) Modality. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Study Modality"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+study_uid:
+  description: >
+    (0020, 000d) Study Instance UID. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Study Instance UID"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+transducer_type:
+  description: >
+    (0018,6031) Transducer type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "Transducer type"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+view_position:
+  description: >
+    (0018, 5101) View Position. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "View Position"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+dicom_standard:
+  description: >
+    The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
+  termDef:
+    term: "DICOM Standard"
+    source: DICOM
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.dicomstandard.org/current"
+
+loinc_code:
+  description: >
+    The LOINC code assigned based on the study description provided. The Logical Observation Identifiers, Names, and Codes (LOINC) standard is A common language (set of identifiers, names, and codes) for clinical and laboratory observations.
+  termDef:
+    term: "LOINC Code"
+    source: LOINC
+    cde_id: null
+    cde_version: null
+    term_url: "https://loinc.org/search/?t=1&s=playbook"
+
+loinc_contrast:
+  description: >
+    The LOINC indicator noting whether the image was completed with or without contrast, as associated with the assigned LOINC code. The Logical Observation Identifiers, Names, and Codes (LOINC) standard is A common language (set of identifiers, names, and codes) for clinical and laboratory observations.
+  termDef:
+    term: "LOINC Contrast"
+    source: LOINC
+    cde_id: null
+    cde_version: null
+    term_url: "https://loinc.org/search/?t=1&s=playbook"
+
+loinc_long_common_name:
+  description: >
+    The LOINC long common name associated with the assigned LOINC code. The Logical Observation Identifiers, Names, and Codes (LOINC) standard is A common language (set of identifiers, names, and codes) for clinical and laboratory observations.
+  termDef:
+    term: "LOINC Long Common Name"
+    source: LOINC
+    cde_id: null
+    cde_version: null
+    term_url: "https://loinc.org/search/?t=1&s=playbook"
+
+loinc_method:
+  description: >
+    The LOINC method or imaging modality associated with the assigned LOINC code. The Logical Observation Identifiers, Names, and Codes (LOINC) standard is A common language (set of identifiers, names, and codes) for clinical and laboratory observations.
+  termDef:
+    term: "LOINC Method"
+    source: LOINC
+    cde_id: null
+    cde_version: null
+    term_url: "https://loinc.org/search/?t=1&s=playbook"
+
+loinc_system:
+  description: >
+    The LOINC system or body part examined associated with the assigned LOINC code. The Logical Observation Identifiers, Names, and Codes (LOINC) standard is A common language (set of identifiers, names, and codes) for clinical and laboratory observations.
+  termDef:
+    term: "LOINC System"
+    source: LOINC
+    cde_id: null
+    cde_version: null
+    term_url: "https://loinc.org/search/?t=1&s=playbook"
+
+##Old Terms
 28s_16s_ribosomal_rna_ratio:
   description: >
     The 28S/18S ribosomal RNA band ratio used to assess the quality of total RNA.
@@ -660,15 +1181,13 @@ estrogen_receptor_result_ihc:
 
 ethnicity:
   description: >
-    An individual's self-described social and cultural grouping, specifically whether an individual
-    describes themselves as Hispanic or Latino. The provided values are based on the categories
-    defined by the U.S. Office of Management and Business and used by the U.S. Census Bureau.
+    A social group characterized by a distinctive social and cultural tradition that is maintained from generation to generation. Members share a common history and origin and a sense of identification with the group. They have similar and distinctive features in their lifestyle habits and shared experiences. They often have a common genetic heritage which may be reflected in their experience of health and disease.
   termDef:
-    term: Ethnic Group Category Text
-    source: caDSR
-    cde_id: 2192217
-    cde_version: 2.0
-    term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=2192217&version=2.0"
+    term: Ethnic Group
+    source: NCIt
+    cde_id: C16564
+    cde_version: 24.07e
+    term_url: "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=C16564"
 
 experiment_name: # TOREVIEW
   description: >
@@ -1422,17 +1941,14 @@ qc_metric_state:
 
 race:
   description: >
-    An arbitrary classification of a taxonomic group that is a division of a species. It usually
-    arises as a consequence of geographical isolation within a species and is characterized by
-    shared heredity, physical attributes and behavior, and in the case of humans, by common history,
-    nationality, or geographic distribution. The provided values are based on the categories defined
-    by the U.S. Office of Management and Business and used by the U.S. Census Bureau.
+    A geographic ancestral origin category that is assigned to a population group based mainly on physical characteristics that are thought to be distinct and inherent.
   termDef:
-    term: Race Category Text
-    source: caDSR
-    cde_id: 2192199
-    cde_version: 1.0
-    term_url: "https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=2192199&version=1.0"
+    term: Race
+    source: NCIt
+    cde_id: C17049
+    cde_version: 24.07e
+    term_url: "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=C17049
+"
 
 read_length: # TOREVIEW
   description: >
