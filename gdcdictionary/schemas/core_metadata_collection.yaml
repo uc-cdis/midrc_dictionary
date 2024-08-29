@@ -67,7 +67,7 @@ properties:
 
   data_type:
     description: The nature or genre of the resource. Recommended best practice is
-      to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE].
+      to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE](https://www.dublincore.org/specifications/dublin-core/dcmi-type-vocabulary/).
       To describe the file format, physical medium, or dimensions of the resource,
       use the Format element.
     type: string

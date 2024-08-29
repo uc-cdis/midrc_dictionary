@@ -7,7 +7,7 @@ namespace: https://data.midrc.org/
 category: medical_history
 program: '*'
 project: '*'
-description: Information about the subject obtained in the context of examination, questioning orduring a procedure.
+description: Information about the subject obtained in the context of examination, questioning or during a procedure.
 additionalProperties: false
 submittable: true
 validators: null
@@ -41,11 +41,11 @@ properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
   observation_name:
-    description: The short of the observation about the subject obtained in the context of examination, questioning or a during procedure.
+    description: The short name of the observation about the subject obtained in the context of examination, questioning or a during procedure.
     type: string
 
   observation_answer:
-    description: The answer or value provided for a specific observation about a subject obtained in the context of examination, questioning or a during procedure.
+    description: The answer or value provided for a specific observation about a subject obtained in the context of examination, questioning or during a procedure.
     type: string
 
   days_to_observation:

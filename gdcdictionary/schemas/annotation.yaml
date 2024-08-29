@@ -159,7 +159,7 @@ properties:
         - midrc_lung_measures
         - midrc_mdai_chestxr
         - midrc_mRALE_Mastermind_Challenge
-        - SIFT        
+        - SIFT
 
   class_covid19_pneumonia:
     description: Values are extracted from the annotation file midrc_mdai_chestxr; Accepted values include "typical" appearance, which is multifocal bilateral, peripheral opacities, or opacities with rounded morphology, lower lung-predominant distribution;  "indeterminate" appearance, which is absence of typical findings and unilateral, central or upper lung predominant distribution of airspace disease; "atypical" appearance, which is pneumothorax or pleural effusion, pulmonary edema, lobar consolidation, solitary lung nodule, or mass diffuse tiny nodules cavity; "negative" for pneumonia, which is no lung opacities.
@@ -170,7 +170,7 @@ properties:
         - typical
 
   instance_uids:
-    description: Used to denote that this annotation applies only to specific images (image instances) in a series.  When absent, the annotation when referencing an imaging series node applies to the entire imaging series.
+    description: Used to denote that this annotation applies only to specific images (image instances) in a series.  If absent, an annotation that references an imaging series node applies to the entire imaging series.
     type: array
     items:
         type: string
