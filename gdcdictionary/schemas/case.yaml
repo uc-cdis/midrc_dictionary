@@ -114,7 +114,7 @@ properties:
       - Not Reported
 
   sex:
-    description: The biologic character or quality that distinguishes male and female from one another as expressed by analysis of the person's gonadal, morphologic  (internal and external), chromosomal, and hormonal characteristics.
+    description: The biologic character or quality that distinguishes male and female from one another as expressed by analysis of the person's gonadal, morphologic (internal and external), chromosomal, and hormonal characteristics.
     enum:
       - Female
       - Male

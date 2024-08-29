@@ -158,7 +158,7 @@ properties:
     type: string
 
   instance_uids:
-    description: Used to denote that this annotation applies only to specific images (image instances) in a series.  When absent, the annotation when referencing an imaging series node applies to the entire imaging series.
+    description: Used to denote that this annotation applies only to specific images (image instances) in a series.  If absent, an annotation that references an imaging series node applies to the entire imaging series.
     type: array
     items:
         type: string
@@ -180,7 +180,7 @@ properties:
       - TXT
 
   data_type:
-    description: An indication of whether the annotation is expert validated by MIDRC (“Internal Annotation”) or has not be validated by MIDRC experts (“External Annotation”). 
+    description: An indication of whether the annotation is expert validated by MIDRC (“Internal Annotation”) or has not been validated by MIDRC experts (“External Annotation”).
     enum:
       - Internal Annotation
       - External Annotation
@@ -191,7 +191,7 @@ properties:
     $ref: "_definitions.yaml#/to_one"
 
   datasets:
-    description: The submitter_id or id of the case this annotation relates to, i.e., a link to a record in the parent node.
+    description: The submitter_id or id of the dataset this annotation relates to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
 
   cases:

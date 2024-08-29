@@ -7,7 +7,7 @@ namespace: https://data.midrc.org/
 category: data_file
 program: '*'
 project: '*'
-description: Information related to a US imaging series to which one or more Ultrasound image belong.
+description: Information related to a US imaging series to which one or more Ultrasound images belong.
 additionalProperties: false
 submittable: true
 validators: null
@@ -57,7 +57,7 @@ properties:
   $ref: "_definitions.yaml#/data_file_properties"
 
   image_data_modification_name:
-    description: A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org. 
+    description: A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org.
     type: integer
 
   image_data_modification_method:
