@@ -8,7 +8,7 @@ acquisition_type:
   termDef:
     term: "Acquisition Type"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 9302)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -18,7 +18,7 @@ angio_flag:
   termDef:
     term: "Angio Flag"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0025)
     cde_version: null
     
 body_part_examined:
@@ -27,7 +27,7 @@ body_part_examined:
   termDef:
     term: "Body Part Examined"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0015)
     cde_version: null
 
 code_meaning:
@@ -36,7 +36,7 @@ code_meaning:
   termDef:
     term: "Code Meaning"
     source: DICOM
-    cde_id: null
+    cde_id: (0008,0104)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -46,7 +46,7 @@ contrast_bolus_agent:
   termDef:
     term: "Contrast Bolus Agent"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0010)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -56,7 +56,7 @@ convolution_kernel:
   termDef:
     term: "Convolution Kernel"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 1210)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -66,7 +66,7 @@ detector_type:
   termDef:
     term: "Detector Type"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 7004)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -76,7 +76,7 @@ diffusion_b_value:
   termDef:
     term: "Diffusion b-value"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 9087)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -86,7 +86,7 @@ diffusion_gradient_orientation:
   termDef:
     term: "Diffusion Gradient Orientation"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 9089)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -96,7 +96,7 @@ echo_number:
   termDef:
     term: "Echo Number"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0086)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -106,7 +106,7 @@ echo_time:
   termDef:
     term: "Echo Time"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0081)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -116,7 +116,7 @@ echo_train_length:
   termDef:
     term: "Echo Train Length"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0091)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -126,7 +126,7 @@ exposure_modulation_type:
   termDef:
     term: "Exposure Modulation Type"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 9323)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -136,7 +136,7 @@ image_type:
   termDef:
     term: "Image Type"
     source: DICOM
-    cde_id: null
+    cde_id: (0008, 0008)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -146,7 +146,7 @@ imaged_nucleus:
   termDef:
     term: "Imaged Nucleus"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0085)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -156,7 +156,7 @@ imager_pixel_spacing:
   termDef:
     term: "Imager Pixel Spacing"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 1164)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -166,7 +166,7 @@ lossy_image_compression:
   termDef:
     term: "Lossy Image Compression"
     source: DICOM
-    cde_id: null
+    cde_id: (0028, 2110)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -176,7 +176,7 @@ magnetic_field_strength:
   termDef:
     term: "Magnetic Field Strength"
     source: DICOM
-    cde_id: null
+    cde_id: (0018,0087)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -186,7 +186,7 @@ manufacturer:
   termDef:
     term: "Manufacturer"
     source: DICOM
-    cde_id: null
+    cde_id: (0008, 0070)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -196,7 +196,7 @@ manufacturer_model_name:
   termDef:
     term: "Manufacturer's Model Name"
     source: DICOM
-    cde_id: null
+    cde_id: (0008, 1090)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -206,7 +206,7 @@ modality:
   termDef:
     term: "Modality"
     source: DICOM
-    cde_id: null
+    cde_id: (0008, 0060)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -216,7 +216,7 @@ mr_acquisition_type:
   termDef:
     term: "MR Acquisition Type"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0023)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -226,7 +226,7 @@ number_of_temporal_positions:
   termDef:
     term: "MR Acquisition Type"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0023)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -236,7 +236,7 @@ patient_position:
   termDef:
     term: "Patient Position"
     source: DICOM
-    cde_id: null
+    cde_id: (0018,5100)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -246,7 +246,7 @@ pixel_spacing:
   termDef:
     term: "Pixel Spacing"
     source: DICOM
-    cde_id: null
+    cde_id: (0028, 0030)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -256,7 +256,7 @@ radiation_setting:
   termDef:
     term: "Radiation Setting"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 1155)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -266,7 +266,7 @@ radiopharmaceutical:
   termDef:
     term: "Radiopharmaceutical"
     source: DICOM
-    cde_id: null
+    cde_id: (0018,0031)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -276,7 +276,7 @@ region_spatial_format:
   termDef:
     term: "Region Spatial Format"
     source: DICOM
-    cde_id: null
+    cde_id: (0018,6012)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -286,7 +286,7 @@ repetition_time:
   termDef:
     term: "Repetition Time"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0080)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -296,7 +296,7 @@ scan_options:
   termDef:
     term: "Scan Options"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0022)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -306,7 +306,7 @@ scanning_sequence:
   termDef:
     term: "Scanning Sequence"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0020)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -316,7 +316,7 @@ sequence_name:
   termDef:
     term: "Sequence Name"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0024)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -326,7 +326,7 @@ sequence_variant:
   termDef:
     term: "Sequence Variant"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0021)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -336,7 +336,7 @@ series_description:
   termDef:
     term: "Series Description"
     source: DICOM
-    cde_id: null
+    cde_id: (0008, 103e)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -346,7 +346,7 @@ series_uid:
   termDef:
     term: "Series Instance UID"
     source: DICOM
-    cde_id: null
+    cde_id: (0020, 000e)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -356,7 +356,7 @@ slice_thickness:
   termDef:
     term: "Slice Thickness"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0050)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -366,7 +366,7 @@ software_version:
   termDef:
     term: "Software Version(s)"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 1020)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -376,7 +376,7 @@ sop_class_name:
   termDef:
     term: "SOP Class"
     source: DICOM
-    cde_id: null
+    cde_id: (0008, 0016)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -386,7 +386,7 @@ sop_class_uid:
   termDef:
     term: "SOP Class UID"
     source: DICOM
-    cde_id: null
+    cde_id: (0008, 0016)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -396,7 +396,7 @@ spacing_between_slices:
   termDef:
     term: "Spacing Between Slices"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 0088)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -406,7 +406,7 @@ spatial_resolution:
   termDef:
     term: "Spatial Resolution"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 1050)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -416,7 +416,7 @@ study_description:
   termDef:
     term: "Study Description"
     source: DICOM
-    cde_id: null
+    cde_id: (0008, 1030)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
     
@@ -426,7 +426,7 @@ study_modality:
   termDef:
     term: "Study Modality"
     source: DICOM
-    cde_id: null
+    cde_id: (0008, 0060)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -436,7 +436,7 @@ study_uid:
   termDef:
     term: "Study Instance UID"
     source: DICOM
-    cde_id: null
+    cde_id: (0020, 000d)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -446,7 +446,7 @@ transducer_type:
   termDef:
     term: "Transducer type"
     source: DICOM
-    cde_id: null
+    cde_id: (0018,6031)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -456,7 +456,7 @@ view_position:
   termDef:
     term: "View Position"
     source: DICOM
-    cde_id: null
+    cde_id: (0018, 5101)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
@@ -476,7 +476,7 @@ loinc_code:
   termDef:
     term: "LOINC Code"
     source: LOINC
-    cde_id: null
+    cde_id: LOINC
     cde_version: null
     term_url: "https://loinc.org/search/?t=1&s=playbook"
 
@@ -486,7 +486,7 @@ loinc_contrast:
   termDef:
     term: "LOINC Contrast"
     source: LOINC
-    cde_id: null
+    cde_id: LOINC
     cde_version: null
     term_url: "https://loinc.org/search/?t=1&s=playbook"
 
@@ -496,7 +496,7 @@ loinc_long_common_name:
   termDef:
     term: "LOINC Long Common Name"
     source: LOINC
-    cde_id: null
+    cde_id: LOINC
     cde_version: null
     term_url: "https://loinc.org/search/?t=1&s=playbook"
 
@@ -506,7 +506,7 @@ loinc_method:
   termDef:
     term: "LOINC Method"
     source: LOINC
-    cde_id: null
+    cde_id: LOINC
     cde_version: null
     term_url: "https://loinc.org/search/?t=1&s=playbook"
 
@@ -516,7 +516,7 @@ loinc_system:
   termDef:
     term: "LOINC System"
     source: LOINC
-    cde_id: null
+    cde_id: LOINC
     cde_version: null
     term_url: "https://loinc.org/search/?t=1&s=playbook"
 
