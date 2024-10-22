@@ -42,15 +42,18 @@ properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
   condition_code:
-    description: The code for a specific condition, assigned by the code system.
+    term:
+      $ref: "_terms.yaml#/condition_code"
     type: string
 
   condition_code_system:
-    description: The system that assigned the code for a specific condition.
+    term:
+      $ref: "_terms.yaml#/condition_code_system"
     type: string
 
   condition_name:
-    description: The name of the condition the patient has experienced.
+    term:
+      $ref: "_terms.yaml#/condition_name"
     type: string
 
   days_to_condition_end:
