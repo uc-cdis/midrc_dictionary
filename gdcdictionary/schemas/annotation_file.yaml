@@ -163,6 +163,10 @@ properties:
     items:
         type: string
 
+  software_versions:
+    description: (0018,1020) Software Versions. This is the software version of the application where the annotation series was created.
+    type: string
+
 # ## File properties:
   data_category:
     description: The category of the file; must be "annotation_file".
@@ -178,6 +182,7 @@ properties:
       - JPEG
       - TIF
       - TXT
+      - NII
 
   data_type:
     description: An indication of whether the annotation is expert validated by MIDRC (“Internal Annotation”) or has not been validated by MIDRC experts (“External Annotation”).

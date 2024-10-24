@@ -42,7 +42,8 @@ properties:
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
   age_at_index:
-    description: The study participant's age, in years, at the index event. The index event is determined by the data submitter and used as an anchor date for all temporal variables. Note that an age of 0 indicates a participant who is younger than 1 year old. For participants with ages greater than 89 years, please use the property 'age_at_index_gt89'.
+    term:
+      $ref: "_terms.yaml#/age_at_index"
     type: number
     maximum: 89
     minimum: 0
@@ -53,17 +54,19 @@ properties:
       - "Yes"
       - "No"
 
+  country_of_residence:
+    term:
+      $ref: "_terms.yaml#/country_of_residence"
+    type: string
+
   covid19_positive:
-    description: "An indicator of whether the patient has ever had a positive COVID-19 test or been diagnosed with one of the following ICD-10 COVID-19 conditions: COVID-19 (U07. 1), Influenza due to unidentified influenza virus with other manifestations (J11.8), Post COVID-19 condition (U09.9), Myalgic encephalomyelitis/chronic fatigue syndrome (G93.32), or Sequelae of other specified infectious and parasitic diseases (B94.8). For more information about a patient's specific COVID-19 diagnosis, details can be found under Condition."
+    term:
+      $ref: "_terms.yaml#/covid19_positive"
     enum:
       - "Yes"
       - "No"
       - "Indeterminate"
       - "Not Reported"
-
-  country_of_residence:
-    description: The country where the subject resides.
-    type: string
 
   ethnicity:
     term:
@@ -78,7 +81,8 @@ properties:
     type: boolean
 
   icu_indicator:
-    description: Indicates whether the subject has been admitted to the ICU.
+    term:
+      $ref: "_terms.yaml#/icu_indicator"
     type: boolean
 
   index_event:
@@ -96,7 +100,8 @@ properties:
       type: string
 
   long_covid_diagnosis:
-    description: "An indicator of whether the patient has ever been diagnosed with one of the following ICD-10 long COVID-19 conditions: U09.9 (Post COVID-19 condition, unspecified), G93.32 (Myalgic encephalomyelitis/chronic fatigue syndrome), and B94.8 (Sequelae of other specified infectious and parasitic diseases).  'Positive' means the patient was diagnosed with a long COVID condition, while 'Not Reported' means the patient has never been diagnosed with a long COVID condition."
+    term:
+      $ref: "_terms.yaml#/long_covid_diagnosis"
     enum:
       - Positive
       - Not Reported
@@ -114,14 +119,16 @@ properties:
       - Not Reported
 
   sex:
-    description: The biologic character or quality that distinguishes male and female from one another as expressed by analysis of the person's gonadal, morphologic (internal and external), chromosomal, and hormonal characteristics.
+    term:
+      $ref: "_terms.yaml#/sex"
     enum:
       - Female
       - Male
       - Not Reported
 
   site_id:
-    description: A de-identified code used to classify a case as part of a specific data submission.
+    term:
+      $ref: "_terms.yaml#/site_id"
     type: string
 
   token_record_id:
@@ -129,11 +136,13 @@ properties:
     type: string
 
   treatment_info:
-    description: Indicates whether detailed treatment information is available for the subject.
+    term:
+      $ref: "_terms.yaml#/treatment_info"
     type: boolean
 
   ventilator_indicator:
-    description: Indicates whether the subject has been on a ventilator.
+    term:
+      $ref: "_terms.yaml#/ventilator_indicator"
     type: boolean
 
   zip:

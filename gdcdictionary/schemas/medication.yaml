@@ -51,15 +51,18 @@ properties:
     type: string
 
   medication_code_system:
-    description: The system that assigned the code for a specific medication.
-    type: string
-
-  medication_name:
-    description: The name of the specific medication the case was prescribed or administered.
+    term:
+      $ref: "_terms.yaml#/medication_code_system"
     type: string
 
   medication_manufacturer:
-    description: The name of the company that manufactured the medication.
+    term:
+      $ref: "_terms.yaml#/medication_manufacturer"
+    type: string
+
+  medication_name:
+    term:
+      $ref: "_terms.yaml#/medication_name"
     type: string
 
   medication_type:

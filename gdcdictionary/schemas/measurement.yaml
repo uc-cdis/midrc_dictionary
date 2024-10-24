@@ -59,24 +59,27 @@ properties:
     description: A number of days beginning with the index date and ending with the date of the test.
     type: integer
 
+  test_method:
+    term:
+      $ref: "_terms.yaml#/test_method"
+    enum:
+      - RT-PCR
+      - Rapid antigen test
+      - Not Reported
+
   test_name:
-    description: The name of the test for which this measurement was the result.
+    term:
+      $ref: "_terms.yaml#/test_name"
     enum:
       - COVID-19
 
   test_result_text:
-    description: The measured result of the test described using a list of enumerations.
+    term:
+      $ref: "_terms.yaml#/test_result_text"
     enum:
       - Indeterminate
       - Negative
       - Positive
-      - Not Reported
-
-  test_method:
-    description: The test method used to confirm a condition or produce a measurement.
-    enum:
-      - RT-PCR
-      - Rapid antigen test
       - Not Reported
 
   cases:
