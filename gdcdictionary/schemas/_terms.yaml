@@ -791,6 +791,19 @@ transducer_type:
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
+UUID:
+  description: >
+    A 128-bit identifier. Depending on the mechanism used to generate it, it is either guaranteed to
+    be different from all other UUIDs/GUIDs generated until 3400 AD or extremely likely to be
+    different. Its relatively small size lends itself well to sorting, ordering, and hashing of all
+    sorts, storing in databases, simple allocation, and ease of programming in general.
+  termDef:
+    term: Universally Unique Identifier
+    source: NCIt
+    cde_id: C54100
+    cde_version: null
+    term_url: "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=16.02d&ns=NCI_Thesaurus&code=C54100"
+
 ventilator_indicator:
   description: >
     Indicates whether the subject has been on a ventilator.
