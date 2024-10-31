@@ -130,6 +130,26 @@ covid19_positive:
     cde_version: null
     term_url: "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=24.07e&ns=ncit&code=C171614"
 
+data_category:
+  description: >
+    Broad categorization of the contents of the data file.
+
+data_file_error_type:
+  description: >
+    Type of error for the data file object.
+
+data_format:
+  description: >
+    Format of the data files.
+
+data_type:
+  description: >
+    Specific content type of the data file.
+
+datetime:
+  description: >
+    A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]
+
 detector_type:
   description: >
     (0018, 7004) Detector Type. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
@@ -219,6 +239,18 @@ exposure_modulation_type:
     cde_id: (0018, 9323)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
+
+file_name:
+  description: >
+    The name (or part of a name) of a file (of any type).
+
+file_size:
+  description: >
+    The size of the data file (object) in bytes.
+
+file_state:
+  description: >
+    The current state of the data file object.
 
 icu_indicator:
   description: >
@@ -360,6 +392,11 @@ manufacturer_model_name:
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
+md5sum:
+  description: >
+    The 128-bit hash value expressed as a 32 digit hexadecimal number used as a file's digital
+    fingerprint.
+
 medication_code_system:
   description: >
     The code for a specific medication, assigned by the code system.
@@ -420,6 +457,10 @@ number_of_temporal_positions:
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
+object_id:
+type: string
+description: "The GUID of the object in the index service."
+
 patient_position:
   description: >
     (0018,5100) Patient Position. The Digital Imaging and Communications in Medicine (DICOM) standard is the international standard to transmit, store, retrieve, print, process, and display medical imaging information.
@@ -449,6 +490,22 @@ procedure_name:
     cde_id: C201325
     cde_version: null
     term_url: "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=24.07e&ns=ncit&code=C201325"
+
+project_id:
+  description: >
+    Unique ID for any specific defined piece of work that is undertaken or attempted to
+    meet a single requirement.
+
+qc_metric_state:
+  description: >
+    State classification given by FASTQC for the metric. Metric specific details about the states
+    are available on their website.
+  termDef:
+    term: QC Metric State
+    source: FastQC
+    cde_id: null
+    cde_version: null
+    term_url: "http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/"
 
 race:
   description: >
@@ -639,6 +696,10 @@ spatial_resolution:
     cde_id: (0018, 1050)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
+
+state:
+  description: >
+    The current state of the object.
 
 study_description:
   description: >
