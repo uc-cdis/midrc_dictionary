@@ -39,6 +39,16 @@ angio_flag:
     cde_id: (0018, 0025)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
+
+annotation_name:
+  description: >
+    The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected.  All MIDRC created annotations start with "midrc_".
+  termDef:
+    term: Annotation Name
+    source: MIDRC
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.midrc.org/annotations"
     
 body_part_examined:
   description: >
@@ -239,6 +249,10 @@ exposure_modulation_type:
     cde_id: (0018, 9323)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
+
+file_format: 
+  desctiption:
+    The standard format used for a specific file (object).
 
 file_name:
   description: >
