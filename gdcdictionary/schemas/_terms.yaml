@@ -39,6 +39,16 @@ angio_flag:
     cde_id: (0018, 0025)
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
+
+annotation_name:
+  description: >
+    The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected.  All MIDRC created annotations start with "midrc_".
+  termDef:
+    term: Annotation Name
+    source: MIDRC
+    cde_id: null
+    cde_version: null
+    term_url: "https://www.midrc.org/annotations"
     
 body_part_examined:
   description: >
@@ -240,6 +250,10 @@ exposure_modulation_type:
     cde_version: null
     term_url: "https://www.dicomstandard.org/current"
 
+file_format: 
+  desctiption:
+    The standard format used for a specific file (object).
+
 file_name:
   description: >
     The name (or part of a name) of a file (of any type).
@@ -407,7 +421,7 @@ medication_code_system:
     cde_version: null
     term_url: "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=24.07e&ns=ncit&code=C70895"
 
-medication_manufactuer:
+medication_manufacturer:
   description: >
     The name of the company that manufactured the medication.
   termDef:
