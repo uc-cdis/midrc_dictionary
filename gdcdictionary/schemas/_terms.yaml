@@ -421,7 +421,7 @@ medication_code_system:
     cde_version: null
     term_url: "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&version=24.07e&ns=ncit&code=C70895"
 
-medication_manufactuer:
+medication_manufacturer:
   description: >
     The name of the company that manufactured the medication.
   termDef:
