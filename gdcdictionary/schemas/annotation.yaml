@@ -151,7 +151,8 @@ properties:
         - Retrospective_auto
 
   annotation_name:
-    description: The name of the annotation. These names are unique and assigned by MIDRC. Annotation names reference a document posted on the MIDRC website describing the annotation, methods and values expected. All MIDRC created annotations start with "midrc_".
+    term:
+      $ref: "_terms.yaml#/annotation_name"
     enum:
         - midrc_bpr_landmarks
         - midrc_bpr_regions
