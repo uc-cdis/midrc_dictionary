@@ -57,11 +57,11 @@ properties:
     type: string
 
   days_to_condition_end:
-    description: The number of days from the index date to the date the subject no longer experienced the condition. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be foudn here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
+    description: The number of days from the index date to the date the subject no longer experienced the condition. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
     type: integer
 
   days_to_condition_start:
-    description: The number of days from the index date to the date the subject was diagnosed with or began experiencing the condition. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be foudn here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
+    description: The number of days from the index date to the date the subject was diagnosed with or began experiencing the condition. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
     type: integer
 
   cases:

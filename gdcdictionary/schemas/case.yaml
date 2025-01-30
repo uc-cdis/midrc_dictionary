@@ -49,7 +49,7 @@ properties:
     minimum: 0
 
   age_at_index_gt89:
-    description: Indicates whether the subject's age at the time of the study was greater than 89 years. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be foudn here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html. 
+    description: Indicates whether the subject's age at the time of the study was greater than 89 years. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html. 
     enum:
       - "Yes"
       - "No"
@@ -86,7 +86,7 @@ properties:
     type: boolean
 
   index_event:
-    description: The event used as the anchor or start date for all temporal data elements. This acts as day 0 on a timeline of events relating to the patient. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be foudn here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
+    description: The event used as the anchor or start date for all temporal data elements. This acts as day 0 on a timeline of events relating to the patient. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
     enum:
       - COVID-19 Test
       - Long COVID Diagnosis

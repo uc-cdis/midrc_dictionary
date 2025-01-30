@@ -22,7 +22,7 @@ age_at_imaging:
 
 age_at_index:
   description: >
-    The study participant's age, in years, at the index event. The index event is determined by the data submitter and used as an anchor date for all temporal variables. Note that an age of 0 indicates a participant who is younger than 1 year old. For participants with ages greater than 89 years, please use the property 'age_at_index_gt89'. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be foudn here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
+    The study participant's age, in years, at the index event. The index event is determined by the data submitter and used as an anchor date for all temporal variables. Note that an age of 0 indicates a participant who is younger than 1 year old. For participants with ages greater than 89 years, please use the property 'age_at_index_gt89'. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
   termDef:
     term: "Age in Years at Index Date"
     source: NCIt

@@ -55,7 +55,7 @@ properties:
     minimum: 0
 
   age_at_imaging_gt89:
-    description: Indicates whether the age of the patient in years at the time the imaging study was performed is greater than 89 years. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be foudn here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
+    description: Indicates whether the age of the patient in years at the time the imaging study was performed is greater than 89 years. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
     enum:
       - "Yes"
       - "No"
@@ -68,19 +68,19 @@ properties:
       type: string
 
   days_from_study_to_neg_covid_test:
-    description: The number of days from the imaging study to the patient's negative COVID-19 test(s).  This property takes a list of values, each of which represents a COVID-19 test for the patient. A positive value for this property means that a negative COVID-19 test result was obtained for the patient that many days after the imaging study was performed. A negative value indicates that a negative COVID-19 test result was obtained prior to the date of imaging. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be foudn here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
+    description: The number of days from the imaging study to the patient's negative COVID-19 test(s).  This property takes a list of values, each of which represents a COVID-19 test for the patient. A positive value for this property means that a negative COVID-19 test result was obtained for the patient that many days after the imaging study was performed. A negative value indicates that a negative COVID-19 test result was obtained prior to the date of imaging. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
     type: array
     items:
       type: integer
 
   days_from_study_to_pos_covid_test:
-    description: The number of days from the imaging study to the patient's positive COVID-19 test(s).  This property takes a list of values, each of which represents a COVID-19 test for the patient. A positive value for this property means that a positive COVID-19 test result was obtained for the patient that many days after the imaging study was performed. A negative value indicates that the positive COVID-19 test result was obtained prior to the date of imaging. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be foudn here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
+    description: The number of days from the imaging study to the patient's positive COVID-19 test(s).  This property takes a list of values, each of which represents a COVID-19 test for the patient. A positive value for this property means that a positive COVID-19 test result was obtained for the patient that many days after the imaging study was performed. A negative value indicates that the positive COVID-19 test result was obtained prior to the date of imaging. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
     type: array
     items:
       type: integer
 
   days_to_study:
-    description: The number of days between the case's index date and the date of the imaging study. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be foudn here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
+    description: The number of days between the case's index date and the date of the imaging study. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
     type: number
 
   image_data_modified:
@@ -135,7 +135,7 @@ properties:
     type: integer
 
   study_year_shifted:
-    description: Indicates whether the study year has been shifted for de-identification. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be foudn here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
+    description: Indicates whether the study year has been shifted for de-identification. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
     type: boolean
 
   cases:
