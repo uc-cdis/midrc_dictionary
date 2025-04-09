@@ -152,7 +152,7 @@ properties:
         - midrc_lung_measures
         - midrc_mdai_chestxr
         - midrc_mRALE_Mastermind_Challenge
-        - midrc_duke-CSpineSeg
+        - duke-CSpineSeg
         - SIFT
 
   annotator_id:
