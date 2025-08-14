@@ -60,7 +60,6 @@ required:
   - data_category
   - data_format
   - data_type
-  - study_description
 
 uniqueKeys:
   - [id]
@@ -112,7 +111,7 @@ properties:
       - Synthetic
 
   report_modification_method:
-    description: A categorical description of the type of modification performed on the report, either by redaction of sensitive information (Redacted) or by obscuring it through replacement with random or shifted values (Synthetic replacement). 
+    description: A categorical description of the type of modification performed on the report, either by redaction of sensitive information (Redacted) or by obscuring it through replacement with random or shifted values (Synthetic replacement).
     enum:
       - Redacted
       - Synthetic replacement
@@ -137,4 +136,3 @@ properties:
   imaging_studies:
     description: The submitter_id or id of the imaging_study this report relates to, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
-
