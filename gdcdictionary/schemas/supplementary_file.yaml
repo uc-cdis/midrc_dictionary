@@ -58,7 +58,6 @@ uniqueKeys:
   - [ project_id, submitter_id ]
 
 properties:
-  $ref: "_definitions.yaml#/ubiquitous_properties"
   $ref: "_definitions.yaml#/data_file_properties"
 
   file_description:
@@ -80,7 +79,8 @@ properties:
 
   core_metadata_collections:
     description: The submitter_id or id of the core_metadata_collection to which the supplementary file belongs, i.e., a link to a record in the parent node.
-    $ref: "_definitions.yaml#/to_many"
+    $ref: "_definitions.yaml#/to_one"
+
   datasets:
     description: The submitter_id or id of the dataset to which the supplementary file belongs, i.e., a link to a record in the parent node.
-    $ref: "_definitions.yaml#/to_many"
+    $ref: "_definitions.yaml#/to_one"
