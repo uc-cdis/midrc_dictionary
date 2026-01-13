@@ -211,9 +211,6 @@ data_file_properties:
     $ref: "#/file_state"
   error_type:
     $ref: "#/data_file_error_type"
-
-image_file_properties:
-  $ref: "#/data_file_properties"
   dicom_header_file_guid:
     $ref: "#/dicom_header_file_guid"
 

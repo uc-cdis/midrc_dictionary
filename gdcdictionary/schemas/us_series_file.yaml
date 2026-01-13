@@ -54,7 +54,7 @@ uniqueKeys:
 
 properties:
 
-  $ref: "_definitions.yaml#/image_file_properties"
+  $ref: "_definitions.yaml#/data_file_properties"
 
   image_data_modification_name:
     description: A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org.
