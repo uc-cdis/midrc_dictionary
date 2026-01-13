@@ -56,7 +56,7 @@ uniqueKeys:
 
 properties:
 
-  $ref: "_definitions.yaml#/data_file_properties"
+  $ref: "_definitions.yaml#/image_file_properties"
 
   contrast_bolus_agent:
     term:
