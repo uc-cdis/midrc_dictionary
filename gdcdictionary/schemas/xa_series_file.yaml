@@ -54,7 +54,7 @@ uniqueKeys:
 
 properties:
 
-  $ref: "_definitions.yaml#/"
+  $ref: "_definitions.yaml#/data_file_properties"
 
   body_part_examined:
     term:
