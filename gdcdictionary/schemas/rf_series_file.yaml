@@ -177,7 +177,7 @@ properties:
       - "NIfTI"
 
   dicom_header_file_guid:
-    $ref: "#/dicom_header_file_guid"
+    $ref: "_definitions.yaml#/dicom_header_file_guid"
 
 
   core_metadata_collections:
