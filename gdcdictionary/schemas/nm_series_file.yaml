@@ -63,6 +63,9 @@ properties:
     items:
       type: string
 
+  dicom_header_file_guid:
+    $ref: "_definitions.yaml#/dicom_header_file_guid"
+
   image_data_modification_name:
     description: A MIDRC classification describing specific methods (e.g., software tools, processes) used to modify the study series. More information can be found at midrc.org. 
     type: integer

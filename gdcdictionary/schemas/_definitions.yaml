@@ -211,8 +211,6 @@ data_file_properties:
     $ref: "#/file_state"
   error_type:
     $ref: "#/data_file_error_type"
-  dicom_header_file_guid:
-    $ref: "#/dicom_header_file_guid"
 
 workflow_properties:
   $ref: "#/ubiquitous_properties"
