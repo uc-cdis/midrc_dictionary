@@ -223,6 +223,9 @@ properties:
       - "DICOM"
       - "NIfTI"
 
+  dicom_header_file_guid:
+    $ref: "#/dicom_header_file_guid"
+
   core_metadata_collections:
     description: The submitter_id or id of the core_metadata_collection to which the mg_series_file belongs, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"

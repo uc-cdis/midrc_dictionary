@@ -133,6 +133,7 @@ properties:
       - Internal Annotation
       - External Annotation
 
+
 # ## LINKS
   core_metadata_collections:
     description: The submitter_id or id of the core_metadata_collection to which the rf_series_file belongs, i.e., a link to a record in the parent node.
