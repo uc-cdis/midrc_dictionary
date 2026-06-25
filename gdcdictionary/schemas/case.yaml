@@ -118,6 +118,93 @@ properties:
       - White
       - Not Reported
 
+  race_ethnicity:
+    description: Race and/or ethnicity minimum required category as defined in the Revisions to OMB's Statistical Policy Directive No. 15 - Standards for Maintaining, Collecting, and Presenting Federal Data on Race and Ethnicity. Only 7 race minimum categories are enumerated, as determined by SPD 15; this question is presented as 'select all that apply', so single individuals may select multiple categories. There may be additional detailed categories provided in the property 'race_ethnicity_detail'; detailed categories must be subcategories of one of these minimum categories. In the case where race is 'Other', there may be additional information in the property 'race_ethnicity_write_in'.
+    type: array
+    items:
+      enum:
+        - Other
+        - Not Reported
+        - American Indian or Alaska Native
+        - Asian
+        - Black or African American
+        - Hispanic or Latino
+        - Middle Eastern or North African
+        - Native Hawaiian or Pacific Islander
+        - White
+
+  race_ethnicity_detail:
+    description: Race and/or ethnicity detailed category as defined in the Revisions to OMB's Statistical Policy Directive No. 15 - Standards for Maintaining, Collecting, and Presenting Federal Data on Race and Ethnicity; this question is presented as 'select all that apply', so single individuals may select multiple categories. Only 6 to 9 detailed race categories are enumerated, as determined by SPD 15; in the case where the detailed category is 'Another group', there may be additional information provided in the property 'race_ethnicity_write_in'.
+    type: array
+    items:
+      enum:
+        - Another group
+        - Not Reported
+        - Navajo Nation
+        - Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+        - Native Village of Barrow Inupiat Traditional Government
+        - Nome Eskimo Community
+        - Aztec
+        - Maya
+        - Chinese
+        - Asian Indian
+        - Filipino
+        - Japanese
+        - Korean
+        - Vietnamese
+        - Pakistani
+        - Hmong
+        - Afghan
+        - African American
+        - Jamaican
+        - Haitian
+        - Nigerian
+        - Ethiopian
+        - Somali
+        - Trinidadian and Tobagonian
+        - Ghanaian
+        - Congolese
+        - Mexican
+        - Puerto Rican
+        - Cuban
+        - Salvadoran
+        - Dominican
+        - Guatemalan
+        - Colombian
+        - Honduran
+        - Spaniard
+        - Lebanese
+        - Iranian
+        - Egyptian
+        - Syrian
+        - Iraqi
+        - Israeli
+        - Moroccan
+        - Yemeni
+        - Kurdish
+        - Native Hawaiian
+        - Samoan
+        - Chamorro
+        - Tongan
+        - Fijian
+        - Marshallese
+        - Chuukese
+        - Palauan
+        - Tahitian
+        - English
+        - German
+        - Irish
+        - Italian
+        - Polish
+        - Scottish
+        - French
+        - Swedish
+        - Norwegian
+
+  race_ethnicity_write_in:
+    description: Free-text details related to race and/or ethnicity as defined in the Revisions to OMB's Statistical Policy Directive No. 15 - Standards for Maintaining, Collecting, and Presenting Federal Data on Race and Ethnicity. This property is only used if there is additional race information that does not match any of the minimum or detailed race categories.
+    type: string
+
   sex:
     term:
       $ref: "_terms.yaml#/sex"
