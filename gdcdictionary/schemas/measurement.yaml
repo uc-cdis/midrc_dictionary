@@ -55,6 +55,34 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
+  6_minute_walk_test:
+    description: An indicator confirming whether the patient completed the 6 Minute Walk Test (6MWT).
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  home_oxygen_use:
+    description: An indicator confirming whether home oxygen is used.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  oxygenation_measurement_environment:
+    description: The environment in which the oxygenation test was performed.
+    enum:
+      - Room air
+      - Supplmental Oxygen
+      - Not Reported
+
+  pulmonary_function_test:
+    description: An indicator confirming whether a pulmonary function test was performed.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
   test_days_from_index:
     description: A number of days beginning with the index date and ending with the date of the test.
     type: integer
@@ -72,6 +100,24 @@ properties:
       $ref: "_terms.yaml#/test_name"
     enum:
       - COVID-19
+      - FVC (L)
+      - FEV1 (L)
+      - 6-Minute Walk Test Distance
+      - 6-Minute Walk Test Exertional Drop in O2 (%)
+      - Oxygenation (SpO2)
+      - Home Oxygen Quantity
+
+  test_result_number:
+    description: The result a test represented by a number.
+    type: number
+
+  test_result_percent:
+    description: The result a test represented by a percent.
+    type: number
+
+  test_result_ratio:
+    description: The result a test represented by a ratio.
+    type: number
 
   test_result_text:
     term:

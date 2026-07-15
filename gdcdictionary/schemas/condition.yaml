@@ -64,6 +64,112 @@ properties:
     description: The number of days from the index date to the date the subject was diagnosed with or began experiencing the condition. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
     type: integer
 
+  days_to_symptom_onset:
+    description: The number of days from the index date to the date the symptoms began.
+    type: integer
+
+  fibrosis_confirmation:
+    description: An indicator confirming whether the patient received a diagnosis of fibrosis.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  fibrosis_lung_involvement_grading:
+    description: A visual measure of the involvment of fibrosis in the lungs.
+    enum:
+      - Mild (≤25%)
+      - Moderate (26–50%)
+      - Severe (>50%)
+      - Not reported
+
+  fibrosis_volume_loss_grading:
+    description: A visual measure of the volume loss or shrinkage of the lungs due to fibrosis.
+    enum:
+      - Mild
+      - Moderate
+      - Severe
+      - Not reported
+
+  history_of_connective_tissue_disease:
+    description: An indicator confirming a history of connective tissue disease.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  history_of_connective_tissue_disease_type:
+    description: A description of the type of connective tissue disease.
+    enum:
+      - Rheumatoid Arthritis
+      - Systemic Lupus Erythematosus
+      - Scleroderma
+      - Unknown
+
+  history_of_hiv:
+    description: An indicator confirming a history of human immunodeficiency virus (HIV).
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  history_of_hiv_treatment:
+    description: A description of the type of HIV treatment received.
+    type: array
+    enum:
+      - On current anti-viral treatment
+      - Past Treatment
+      - Not Reported
+
+  history_of_interstatial_lung_disease:
+    description: An indicator confirming a history of interstatial lung disease.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  history_of_lung_cancer:
+    description: An indicator confirming a history of lung cancer.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  history_of_other_disease:
+    description: A description of the confirmed history of other diseases not previously listed.
+    enum:
+      - Hypertension
+      - Hypersensitivity Pneumonitis
+      - Sarcoidosis
+      - None
+      - Other
+      - Unknown
+
+  history_of_tuberculosis:
+    description: The indicator related to medical history of the condition tuberculosis (TB).
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  history_of_tuberculosis_treatment:
+    description: A description of the type of tuberculosis treatment received.
+    type: array
+    enum:
+      - On current treatment
+      - Past treatment
+      - Not Reported
+
+  presenting_symptoms:
+    description: A description noting the presenting symtoms at the onset of the condition.
+    enum:
+      - Dyspnea
+      - Chronic Cough
+      - Difficulty in Breathing
+      - Chest pain
+      - Incidental finding
+      - Other
+
   cases:
     description: The submitter_id or id of the case this condition describes, i.e., a link to a record in the parent node.
     $ref: "_definitions.yaml#/to_one"
