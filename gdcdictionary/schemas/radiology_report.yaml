@@ -78,11 +78,13 @@ properties:
 
   airway_involvement_type:
     description: A description noting the specific type of airway involvement discovered during imaging.
-    enum:
-      - Bronchial Stenosis
-      - Bronchofistula
-      - Other
-      - Not Reported
+    type: array
+    items:
+      enum:
+        - Bronchial Stenosis
+        - Bronchofistula
+        - Other
+        - Not Reported
 
   body_part_examined:
     description: (0018, 0015) Body Part Examined.
@@ -112,14 +114,15 @@ properties:
   ct_protocol:
     description: A description of the protocol used for a computed tomography (CT) scan.
     type: array
-    enum:
-      - High Resolution CT (HRCT)
-      - Routine Non-Contrast
-      - Routine CT Chest with Contrast
-      - CT Pulmonary Angiogram (PE Protocol)
-      - Slice thickness
-      - Expiration
-      - Inspiration
+    items:
+      enum:
+        - High Resolution CT (HRCT)
+        - Routine Non-Contrast
+        - Routine CT Chest with Contrast
+        - CT Pulmonary Angiogram (PE Protocol)
+        - Slice thickness
+        - Expiration
+        - Inspiration
 
   cysts_bullae:
     description: An indicator confirming whether cysts or bullae were discovered during imaging.
@@ -187,10 +190,12 @@ properties:
 
   fibrosis_segments:
     description: A description of the specific anatomic location of the fibrosis.
-    enum:
-      - Upper
-      - Middle
-      - Lower
+    type: array
+    items:
+      enum:
+        - Upper
+        - Middle
+        - Lower
 
   ground_glass_opacities:
     description: An indicator confirming whether ground-glass opacities (GGOs) were discovered during imaging.
@@ -267,16 +272,19 @@ properties:
   pleural_involvement_phase:
     description: A description noting the phase of pleural involvement.
     type: array
-    enum:
-      - Effusion
-      - Thickening
-      - Calcification
+    items:
+      enum:
+        - Effusion
+        - Thickening
+        - Calcification
 
   pulmonary_hypertension_signs:
     description: A description noting the specific signs of pulmonary hypertension discovered during imaging.
-    enum:
-      - Pulmonary Artery Dilatation
-      - Right Ventricle Enlargement
+    type: array
+    items:
+      enum:
+        - Pulmonary Artery Dilatation
+        - Right Ventricle Enlargement
 
   pulmonary_hypertension_signs_indicator:
     description: An indicator confirming whether imaging showed signs of pulmonary hypertension.

@@ -116,10 +116,11 @@ properties:
   history_of_hiv_treatment:
     description: A description of the type of HIV treatment received.
     type: array
-    enum:
-      - On current anti-viral treatment
-      - Past Treatment
-      - Not Reported
+    items:
+      enum:
+        - On current anti-viral treatment
+        - Past Treatment
+        - Not Reported
 
   history_of_interstatial_lung_disease:
     description: An indicator confirming a history of interstatial lung disease.
@@ -155,10 +156,11 @@ properties:
   history_of_tuberculosis_treatment:
     description: A description of the type of tuberculosis treatment received.
     type: array
-    enum:
-      - On current treatment
-      - Past treatment
-      - Not Reported
+    items:
+      enum:
+        - On current treatment
+        - Past treatment
+        - Not Reported
 
   presenting_symptoms:
     description: A description noting the presenting symtoms at the onset of the condition.
