@@ -100,7 +100,7 @@ properties:
       - "Not Reported"
 
   cavities_count:
-    description: The number of cavities discovered during imaing.
+    description: The number of cavities discovered during imaging.
     type: integer
 
   cavities_largest_size:

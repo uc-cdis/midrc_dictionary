@@ -76,7 +76,7 @@ properties:
       - "Not Reported"
 
   fibrosis_lung_involvement_grading:
-    description: A visual measure of the involvment of fibrosis in the lungs.
+    description: A visual measure of the involvement of fibrosis in the lungs.
     enum:
       - Mild (≤25%)
       - Moderate (26–50%)
@@ -122,8 +122,8 @@ properties:
         - Past Treatment
         - Not Reported
 
-  history_of_interstatial_lung_disease:
-    description: An indicator confirming a history of interstatial lung disease.
+  history_of_interstitial_lung_disease:
+    description: An indicator confirming a history of interstitial lung disease.
     enum:
       - "Yes"
       - "No"
@@ -163,7 +163,7 @@ properties:
         - Not Reported
 
   presenting_symptoms:
-    description: A description noting the presenting symtoms at the onset of the condition.
+    description: A description noting the presenting symptoms at the onset of the condition.
     enum:
       - Dyspnea
       - Chronic Cough

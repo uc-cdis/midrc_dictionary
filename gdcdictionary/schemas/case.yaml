@@ -102,7 +102,7 @@ properties:
       - First Imaging Study
 
   indoor_biomass_smoke_exposure:
-    description: An indicator confirming exposure to indoor biomas smoke (wood, charcoal).
+    description: An indicator confirming exposure to indoor biomass smoke (wood, charcoal).
     enum:
       - "Yes"
       - "No"
