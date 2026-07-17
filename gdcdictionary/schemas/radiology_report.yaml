@@ -69,11 +69,67 @@ properties:
 
   $ref: "_definitions.yaml#/data_file_properties"
 
+  airway_involvement:
+    description: An indicator confirming whether airway involvement was discovered during imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  airway_involvement_type:
+    description: A description noting the specific type of airway involvement discovered during imaging.
+    type: array
+    items:
+      enum:
+        - Bronchial Stenosis
+        - Bronchofistula
+        - Other
+        - Not Reported
+
   body_part_examined:
     description: (0018, 0015) Body Part Examined.
     type: array
     items:
       type: string
+
+  cavities:
+    description: An indicator confirming whether cavities were discovered during imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  cavities_count:
+    description: The number of cavities discovered during imaging.
+    type: integer
+
+  cavities_largest_size:
+    description: A measure in size of the largest cavity discovered during imaging.
+    type: number
+
+  cavities_wall_thickness:
+    description: A measure of wall thickness of the cavities discovered during imaging.
+    type: number
+
+  ct_protocol:
+    description: A description of the protocol used for a computed tomography (CT) scan.
+    type: array
+    items:
+      enum:
+        - High Resolution CT (HRCT)
+        - Routine Non-Contrast
+        - Routine CT Chest with Contrast
+        - CT Pulmonary Angiogram (PE Protocol)
+        - Slice thickness
+        - Expiration
+        - Inspiration
+
+  cysts_bullae:
+    description: An indicator confirming whether cysts or bullae were discovered during imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
 
   data_category:
     term:
@@ -100,9 +156,142 @@ properties:
     enum:
       - "Radiology Report"
 
+  distribution_axial:
+    description: A description noting the distribution of fibrosis across the different zones relative to the center of the lung.
+    enum:
+      - Peripheral
+      - Central
+      - Diffuse
+      - Not reported
+
+  distribution_zone:
+    description: A description noting the distribution of fibrosis across the different zones within the lungs.
+    enum:
+      - Upper
+      - Mid
+      - Lower
+      - Not Reported
+
+  fibrocalcific_scarring:
+    description: An indicator confirming whether fibrocalcific scaring was discovered during imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  fibrosis_pattern:
+    description: A description of the pattern of fibrosis related scaring, determined by imaging.
+    enum:
+      - Usual Interstitial Pneumonia (UIP)
+      - Probable UIP
+      - Indeterminate
+      - Alternative Diagnosis
+      - Not reported
+
+  fibrosis_segments:
+    description: A description of the specific anatomic location of the fibrosis.
+    type: array
+    items:
+      enum:
+        - Upper
+        - Middle
+        - Lower
+
+  ground_glass_opacities:
+    description: An indicator confirming whether ground-glass opacities (GGOs) were discovered during imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  ground_glass_opacities_focality:
+    description: A description noting whether confirmed ground-glass opacities (GGOs) were localized (focal) or spread across multiple locations (diffuse).
+    enum:
+      - Focal
+      - Diffuse
+
+  honeycombing:
+    description: An indicator confirming whether honeycomb fibrosis was discovered during imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  honeycombing_focality:
+    description: A description noting whether confirmed honeycomb fibrosis was localized (focal) or spread across multiple locations (diffuse).
+    enum:
+      - Focal
+      - Diffuse
+
+  image_quality:
+    description: A description noting the quality of the image(s) used for the radiology report.
+    enum:
+      - Optimal
+      - Suboptimal
+      - Non-diagnostic
+
+  laterality:
+    description: Laterality type relative to the anatomic site of the body examined or affected.
+    enum:
+      - Unilaterall
+      - Bilateral
+      - Not reported
+
+  lymphadenopathy_consolidation:
+    description: An indicator confirming whether lymphadenopathy or consolidation were discovered during imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
   modality:
     description: (0008, 0060) Modality
     type: string
+
+  paracicatricial_emphysema:
+    description: An indicator confirming whether paracicatricial emphysema was discovered during imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  parenchymal_bands:
+    description: An indicator confirming whether parenchymal bands were discovered during imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  pleural_involvement:
+    description: An indication of whether the pleura impacted by the fibrosis, based on imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  pleural_involvement_phase:
+    description: A description noting the phase of pleural involvement.
+    type: array
+    items:
+      enum:
+        - Effusion
+        - Thickening
+        - Calcification
+
+  pulmonary_hypertension_signs:
+    description: A description noting the specific signs of pulmonary hypertension discovered during imaging.
+    type: array
+    items:
+      enum:
+        - Pulmonary Artery Dilatation
+        - Right Ventricle Enlargement
+
+  pulmonary_hypertension_signs_indicator:
+    description: An indicator confirming whether imaging showed signs of pulmonary hypertension.
+    enum:
+      - Effusion
+      - Thickening
+      - Calcification
 
   report_generation_method:
     description: A categorical description of the way the report was generated, either through clinical care (Clinical) or through computational means (Synethic).
@@ -116,9 +305,49 @@ properties:
       - Redacted
       - Synthetic replacement
 
+  reticular_opacities:
+    description: An indicator confirming whether reticular opacities were discovered during imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  reticular_opacities_focality:
+    description: A description noting whether confirmed reticular opacities were localized (focal) or spread across multiple locations (diffuse).
+    enum:
+      - Focal
+      - Diffuse
+
   study_description:
     description: (0008, 1030) Study Description.
     type: string
+
+  symmetry:
+    description: A description noting how the fibrotic changes are distributed throughout the organ or tissue.
+    enum:
+      - Symmetrical
+      - Asymmetrical
+      - Not reported
+
+  traction_bronchiectasis:
+    description: A indicator confirming whether traction bronchiectasis was discovered during imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  traction_bronchiectasis_focality:
+    description: A description noting whether confirmed traction bronchiectasis was localized (focal) or spread across multiple locations (diffuse).
+    enum:
+      - Focal
+      - Diffuse
+
+  tuberculoma_calcified_ghon_focus:
+    description: An indicator confirming whether a tuberculoma calcified ghon focus was discovered during imaging.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
 
 # ## LINKS
   core_metadata_collections:

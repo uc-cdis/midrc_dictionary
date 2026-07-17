@@ -49,7 +49,7 @@ properties:
     minimum: 0
 
   age_at_index_gt89:
-    description: Indicates whether the subject's age at the time of the study was greater than 89 years. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html. 
+    description: Indicates whether the subject's age at the time of the study was greater than 89 years. This property is included to ensure personal privacy protection in accordance with the HIPAA Safe Harbor Method. More information can be found here https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html.
     enum:
       - "Yes"
       - "No"
@@ -67,6 +67,14 @@ properties:
       - "No"
       - "Indeterminate"
       - "Not Reported"
+
+  days_to_death:
+    description: The number of days from the index date to the date of death.
+    type: integer
+
+  days_to_last_follow_up:
+    description: The number of days from the index date to the date of last follow-up.
+    type: integer
 
   ethnicity:
     term:
@@ -93,6 +101,13 @@ properties:
       - Study Enrollment
       - First Imaging Study
 
+  indoor_biomass_smoke_exposure:
+    description: An indicator confirming exposure to indoor biomass smoke (wood, charcoal).
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
   linked_external_data:
     description: A list of all external data resources that are confirmed to have data for the case.
     type: array
@@ -104,6 +119,51 @@ properties:
       $ref: "_terms.yaml#/long_covid_diagnosis"
     enum:
       - Positive
+      - Not Reported
+
+  mortality_status:
+    description: Status of participant/subject as alive or dead.
+    enum:
+      - Alive
+      - Deceased
+      - Not Reported
+
+  number_of_pack_years:
+    description: If participant is a former or current cigarette smoker, documents the number of pack-years of smoking [(average number smoked daily)/20] x (number of years smoked) = pack-years].
+    type: number
+
+  occupational_exposure:
+    description: An indicator confirming occupational risk exposure.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  occupational_exposure_type:
+    description: A description of the type of occupational exposure.
+    type: string
+
+  patient_category:
+    description: A category describing whether the patient was an inpatient (residing in the hospital where they were being treated), an outpatient (visiting a healthcare facility for diagnosis or treatment but admitted for an overnight stay), or a patient visiting the Intensive Care Unit (ICU).
+    enum:
+      - Inpatient
+      - Outpatient
+      - ICU
+      - Not Reported
+
+  pulmonary_fibrosis_family_history:
+    description: An indicator confirming a family history of pulmonary fibrosis.
+    enum:
+      - "Yes"
+      - "No"
+      - "Not Reported"
+
+  smoking_history:
+    description: Qualitative categorization of the participant's/subject's smoking history.
+    enum:
+      - Never
+      - Former
+      - Current
       - Not Reported
 
   race:
