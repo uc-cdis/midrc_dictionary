@@ -55,7 +55,7 @@ properties:
 
   $ref: "_definitions.yaml#/ubiquitous_properties"
 
-  6_minute_walk_test:
+  six_minute_walk_test:
     description: An indicator confirming whether the patient completed the 6 Minute Walk Test (6MWT).
     enum:
       - "Yes"
